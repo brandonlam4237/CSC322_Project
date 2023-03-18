@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 function Components() {
   return (
     <div>
-      <Navbar />
+      <Navbar isComponentNav={true} />
       Components
     </div>
   );

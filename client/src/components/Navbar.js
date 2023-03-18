@@ -5,12 +5,13 @@ import cart_icon from "../assets/icons/cart.png";
 import triangle_down from "../assets/icons/triangle.svg";
 import { useState } from "react";
 
-function Navbar() {
+function Navbar({ isBuildNav, isComponentNav, isOtherNav }) {
   const [componentsIsOpen, setComponentsIsOpen] = useState(false);
   const [triangleColor, setTriangleColor] = useState({
     filter:
       "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
   });
+  const accent_color = "#54aeef";
 
   return (
     <main className="navbar">
@@ -20,7 +21,21 @@ function Navbar() {
         <div className="logo__accent">{`>`}</div>
       </Link>
       <section className="options">
-        <Link to="/builds">Featured Builds</Link>
+        {isBuildNav && (
+          <Link
+            to="/builds"
+            className="options__builds"
+            style={{ color: accent_color }}
+          >
+            Featured Builds
+          </Link>
+        )}
+        {!isBuildNav && (
+          <Link to="/builds" className="options__builds">
+            Featured Builds
+          </Link>
+        )}
+
         <div
           className="options__components"
           onMouseOver={() => {
@@ -39,32 +54,83 @@ function Navbar() {
           }}
         >
           <div className="components">
-            <Link to="/components">Components</Link>
+            {isComponentNav && (
+              <Link
+                to="/components"
+                className="components__link"
+                style={{ color: accent_color }}
+              >
+                Components
+              </Link>
+            )}
+            {!isComponentNav && (
+              <Link to="/components" className="components__link">
+                Components
+              </Link>
+            )}
+
             {componentsIsOpen && (
               <ul className="components__menu">
-                <li className="components__menu-item">
-                  <Link to="/components/cpus">CPUs</Link>
+                <li>
+                  <Link to="/components/cpus" className="components__menu-item">
+                    CPUs
+                  </Link>
                 </li>
-                <li className="components__menu-item">
-                  <Link to="/components/coolers">CPU Coolers</Link>
+                <li>
+                  <Link
+                    to="/components/coolers"
+                    className="components__menu-item"
+                  >
+                    CPU Coolers
+                  </Link>
                 </li>
-                <li className="components__menu-item">
-                  <Link to="/components/motherboards">Motherboards</Link>
+                <li>
+                  <Link
+                    to="/components/motherboards"
+                    className="components__menu-item"
+                  >
+                    Motherboards
+                  </Link>
                 </li>
-                <li className="components__menu-item">
-                  <Link to="/components/memory">Memory</Link>
+                <li>
+                  <Link
+                    to="/components/memory"
+                    className="components__menu-item"
+                  >
+                    Memory
+                  </Link>
                 </li>
-                <li className="components__menu-item">
-                  <Link to="/components/storage">Storage</Link>
+                <li>
+                  <Link
+                    to="/components/storage"
+                    className="components__menu-item"
+                  >
+                    Storage
+                  </Link>
                 </li>
-                <li className="components__menu-item">
-                  <Link to="/components/videocards">Video Cards</Link>
+                <li>
+                  <Link
+                    to="/components/videocards"
+                    className="components__menu-item"
+                  >
+                    Video Cards
+                  </Link>
                 </li>
-                <li className="components__menu-item">
-                  <Link to="/components/power">Power Supplies</Link>
+                <li>
+                  <Link
+                    to="/components/power"
+                    className="components__menu-item"
+                  >
+                    Power Supplies
+                  </Link>
                 </li>
-                <li className="components__menu-item">
-                  <Link to="/components/cases">Cases</Link>
+                <li>
+                  <Link
+                    to="/components/cases"
+                    className="components__menu-item"
+                  >
+                    Cases
+                  </Link>
                 </li>
               </ul>
             )}
@@ -77,7 +143,21 @@ function Navbar() {
           />
         </div>
 
-        <Link to="/other">Other</Link>
+        {isOtherNav && (
+          <Link
+            to="/other"
+            className="options__other"
+            style={{ color: accent_color }}
+          >
+            Other
+          </Link>
+        )}
+        {!isOtherNav && (
+          <Link to="/other" className="options__other">
+            Other
+          </Link>
+        )}
+
         <img src={user_icon} className="options__icon" alt="user icon" />
         <img src={cart_icon} className="options__icon" alt="cart icon" />
       </section>

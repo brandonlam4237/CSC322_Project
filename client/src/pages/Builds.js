@@ -1,9 +1,10 @@
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 
 function Builds() {
   return (
     <div>
-      <Navbar /> Featured Builds
+      <Navbar isBuildNav={true} /> Featured Builds
     </div>
   );
 }
