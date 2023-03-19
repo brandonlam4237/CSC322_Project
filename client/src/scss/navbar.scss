@@ -18,15 +18,26 @@
       2.043604004449388rem + 0.7119021134593992vw,
       2.8rem
     );
+    z-index: 10;
     font-weight: bold;
     display: flex;
 
-    &__accent {
+    &__accent-left,
+    &__accent-right {
       color: $accent;
+      transition: 0.4s;
     }
   }
 
+  .logo:hover .logo__accent-left {
+    transform: translateX(-0.5rem);
+  }
+  .logo:hover .logo__accent-right {
+    transform: translateX(0.5rem);
+  }
+
   .options {
+    z-index: 10;
     font-size: clamp(
       1rem,
       0.7327030033370412rem + 0.5339265850945496vw,
@@ -101,8 +112,8 @@
     top: 100%;
     left: 0;
     background-color: white;
-    z-index: 10;
     padding-bottom: 1rem;
+    animation: slideDown 0.5s ease-out;
 
     &__item:hover {
       color: $accent;
@@ -166,5 +177,16 @@
 
   .hamburger:hover .bar {
     background-color: $accent;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    z-index: 0;
+  }
+  100% {
+    transform: translateY(0);
+    z-index: 10;
   }
 }

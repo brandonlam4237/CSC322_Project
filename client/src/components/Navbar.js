@@ -17,9 +17,9 @@ function Navbar({ isBuildNav, isComponentNav, isOtherNav }) {
   return (
     <main className="navbar">
       <Link className="logo" to="/">
-        <div className="logo__accent">{`<`}</div>
+        <div className="logo__accent-left">{`<`}</div>
         <div>LOGO</div>
-        <div className="logo__accent">{`>`}</div>
+        <div className="logo__accent-right">{`>`}</div>
       </Link>
       <section className="options">
         <button

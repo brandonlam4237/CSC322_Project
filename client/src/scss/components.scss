@@ -68,6 +68,10 @@
       padding: clamp(0.5rem, -0.09999999999999998rem + 0.8vw, 0.75rem);
       width: clamp(8rem, 4.444444444444445rem + 7.111111111111111vw, 12rem);
     }
+
+    &__link:hover {
+      background-color: black;
+    }
   }
 }
 
