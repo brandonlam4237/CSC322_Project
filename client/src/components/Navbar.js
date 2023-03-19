@@ -171,35 +171,24 @@ function Navbar({ isBuildNav, isComponentNav, isOtherNav }) {
       </section>
       {hamburgerMenuIsOpen && (
         <div className="hamburger-menu">
-          <Link to="/components/cpus" className="hamburger-menu__item">
-            CPUs
+          <Link to="/builds" className="hamburger-menu__item">
+            Featured Builds
           </Link>
-          <Link to="/components/coolers" className="hamburger-menu__item">
-            CPU Coolers
+          <Link to="/components" className="hamburger-menu__item">
+            Components
           </Link>
-          <Link to="/components/motherboards" className="hamburger-menu__item">
-            Motherboards
-          </Link>
-          <Link to="/components/memory" className="hamburger-menu__item">
-            Memory
-          </Link>
-          <Link to="/components/storage" className="hamburger-menu__item">
-            Storage
-          </Link>
-          <Link to="/components/videocards" className="hamburger-menu__item">
-            Video Cards
-          </Link>
-          <Link to="/components/power" className="hamburger-menu__item">
-            Power Supplies
-          </Link>
-          <Link to="/components/videocards" className="hamburger-menu__item">
-            Cases
+          <Link to="/other" className="hamburger-menu__item">
+            Other
           </Link>
           <img
             src={triangle_down}
             className="hamburger-menu__close"
             onClick={() => {
               setHamburgerMenuIsOpen(false);
+              setTriangleColor({
+                filter:
+                  "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
+              });
             }}
             style={triangleColor}
             onMouseOver={() => {

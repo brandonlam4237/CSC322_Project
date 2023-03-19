@@ -1,0 +1,119 @@
+@import "colors";
+
+.components {
+  .content {
+    height: calc(100vh - 9rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .grid {
+    display: flex;
+    flex-direction: column;
+
+    &__block {
+      display: flex;
+    }
+
+    &__cell-even,
+    &__cell-odd {
+      height: clamp(12rem, 8.789579158316634rem + 6.4128256513026045vw, 14rem);
+      width: clamp(12rem, 8.789579158316634rem + 6.4128256513026045vw, 14rem);
+
+      @media (min-width: 1300px) {
+        height: clamp(14rem, 1rem + 16vw, 18rem);
+        width: clamp(14rem, 1rem + 16vw, 18rem);
+      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__cell-even:hover,
+    &__cell-odd:hover {
+      -webkit-box-shadow: inset 0px 0px 0px 3px $accent;
+      -moz-box-shadow: inset 0px 0px 0px 3px $accent;
+      box-shadow: inset 0px 0px 0px 3px $accent;
+    }
+
+    &__cell-even {
+      background-color: $light-gray;
+    }
+
+    &__cell-odd {
+      background-color: $dark-gray;
+    }
+
+    &__cell-img {
+      height: clamp(
+        7.5rem,
+        3.9444444444444446rem + 7.111111111111111vw,
+        11.5rem
+      );
+    }
+
+    &__link {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba($color: #000000, $alpha: 0.8);
+      color: white;
+      font-weight: bold;
+      font-size: clamp(
+        0.8rem,
+        0.44444444444444453rem + 0.711111111111111vw,
+        1.2rem
+      );
+      padding: clamp(0.5rem, -0.09999999999999998rem + 0.8vw, 0.75rem);
+      width: clamp(8rem, 4.444444444444445rem + 7.111111111111111vw, 12rem);
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .components {
+    .content {
+      height: auto;
+    }
+    .grid {
+      flex-direction: row;
+      justify-content: center;
+
+      &__block {
+        display: block;
+      }
+
+      &__cell-even,
+      &__cell-odd {
+        height: clamp(
+          10rem,
+          5.333333333333334rem + 21.333333333333332vw,
+          16rem
+        );
+        width: clamp(10rem, 5.333333333333334rem + 21.333333333333332vw, 16rem);
+      }
+
+      &__cell-img {
+        height: clamp(7rem, 5.444444444444445rem + 7.111111111111111vw, 9rem);
+      }
+
+      &__link {
+        font-size: clamp(
+          0.8rem,
+          0.6444444444444445rem + 0.711111111111111vw,
+          1rem
+        );
+        width: clamp(7rem, 5.444444444444445rem + 7.111111111111111vw, 9rem);
+      }
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  .components {
+    .grid {
+      margin-left: 1rem;
+    }
+  }
+}
