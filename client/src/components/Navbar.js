@@ -7,6 +7,7 @@ import { useState } from "react";
 
 function Navbar({ isBuildNav, isComponentNav, isOtherNav }) {
   const [componentsIsOpen, setComponentsIsOpen] = useState(false);
+  const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false);
   const [triangleColor, setTriangleColor] = useState({
     filter:
       "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
@@ -21,6 +22,14 @@ function Navbar({ isBuildNav, isComponentNav, isOtherNav }) {
         <div className="logo__accent">{`>`}</div>
       </Link>
       <section className="options">
+        <button
+          className="hamburger"
+          onClick={() => {
+            setHamburgerMenuIsOpen(!hamburgerMenuIsOpen);
+          }}
+        >
+          <div className="bar"></div>
+        </button>
         {isBuildNav && (
           <Link
             to="/builds"
@@ -157,10 +166,58 @@ function Navbar({ isBuildNav, isComponentNav, isOtherNav }) {
             Other
           </Link>
         )}
-
         <img src={user_icon} className="options__icon" alt="user icon" />
         <img src={cart_icon} className="options__icon" alt="cart icon" />
       </section>
+      {hamburgerMenuIsOpen && (
+        <div className="hamburger-menu">
+          <Link to="/components/cpus" className="hamburger-menu__item">
+            CPUs
+          </Link>
+          <Link to="/components/coolers" className="hamburger-menu__item">
+            CPU Coolers
+          </Link>
+          <Link to="/components/motherboards" className="hamburger-menu__item">
+            Motherboards
+          </Link>
+          <Link to="/components/memory" className="hamburger-menu__item">
+            Memory
+          </Link>
+          <Link to="/components/storage" className="hamburger-menu__item">
+            Storage
+          </Link>
+          <Link to="/components/videocards" className="hamburger-menu__item">
+            Video Cards
+          </Link>
+          <Link to="/components/power" className="hamburger-menu__item">
+            Power Supplies
+          </Link>
+          <Link to="/components/videocards" className="hamburger-menu__item">
+            Cases
+          </Link>
+          <img
+            src={triangle_down}
+            className="hamburger-menu__close"
+            onClick={() => {
+              setHamburgerMenuIsOpen(false);
+            }}
+            style={triangleColor}
+            onMouseOver={() => {
+              setTriangleColor({
+                filter:
+                  "invert(65%) sepia(11%) saturate(3206%) hue-rotate(176deg) brightness(99%) contrast(89%)",
+              });
+            }}
+            onMouseLeave={() => {
+              setTriangleColor({
+                filter:
+                  "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
+              });
+            }}
+            alt="up triangle"
+          />
+        </div>
+      )}
     </main>
   );
 }

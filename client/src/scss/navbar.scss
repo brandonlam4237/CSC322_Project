@@ -13,7 +13,11 @@
   margin: auto;
 
   .logo {
-    font-size: 2.5rem;
+    font-size: clamp(
+      2.4rem,
+      2.043604004449388rem + 0.7119021134593992vw,
+      2.8rem
+    );
     font-weight: bold;
     display: flex;
 
@@ -23,7 +27,11 @@
   }
 
   .options {
-    font-size: 1.1rem;
+    font-size: clamp(
+      1rem,
+      0.7327030033370412rem + 0.5339265850945496vw,
+      1.3rem
+    );
     font-weight: bold;
     display: flex;
     gap: 1rem;
@@ -41,7 +49,11 @@
 
       &__menu-item {
         cursor: pointer;
-        font-size: 1rem;
+        font-size: clamp(
+          1rem,
+          0.7327030033370412rem + 0.5339265850945496vw,
+          1.3rem
+        );
       }
 
       &__menu-item:hover {
@@ -77,12 +89,82 @@
       margin-right: -0.4rem;
     }
   }
+
+  .hamburger-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    font-weight: bold;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    z-index: 10;
+    padding-bottom: 1rem;
+
+    &__item:hover {
+      color: $accent;
+    }
+
+    &__close {
+      height: 3rem;
+      transform: scaleY(-1);
+      cursor: pointer;
+    }
+  }
 }
 
 @media (max-width: 800px) {
   .navbar {
     .options {
+      &__components,
+      &__builds,
+      &__other {
+        display: none;
+      }
+    }
+
+    .logo {
+      font-size: clamp(
+        2rem,
+        1.6888888888888889rem + 1.422222222222222vw,
+        2.4rem
+      );
+    }
+  }
+}
+
+.navbar {
+  .hamburger {
+    position: relative;
+    display: block;
+    width: 2.6rem;
+    cursor: pointer;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+
+    @media (min-width: 801px) {
       display: none;
     }
+  }
+
+  .bar,
+  .hamburger:after,
+  .hamburger:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: black;
+    margin: 4px 0px;
+    transition: 0.4s;
+  }
+
+  .hamburger:hover .bar {
+    background-color: $accent;
   }
 }

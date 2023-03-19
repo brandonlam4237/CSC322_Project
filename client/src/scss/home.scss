@@ -11,8 +11,8 @@
     &__area-2 {
       height: 70vh;
       width: 45%;
-      max-width: 45rem;
-      max-height: 40rem;
+      max-width: 40rem;
+      max-height: 32rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -90,7 +90,7 @@
 @media (max-width: 600px) {
   .home {
     .container {
-      margin-left: 1rem;
+      //margin-left: 1rem;
       height: 40rem;
 
       &__link-1,
@@ -107,9 +107,15 @@
 
       &__img-2 {
         height: clamp(8rem, 5.199999999999999rem + 12.8vw, 10rem);
-        transform: translateY(-1rem);
-        z-index: 0;
       }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .home {
+    .container {
+      margin-left: 1rem;
     }
   }
 }
