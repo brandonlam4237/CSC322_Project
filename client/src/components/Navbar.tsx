@@ -1,3 +1,4 @@
+import React from "react";
 import "../scss/navbar.scss";
 import { Link } from "react-router-dom";
 import user_icon from "../assets/icons/user.svg";
@@ -5,7 +6,14 @@ import cart_icon from "../assets/icons/cart.png";
 import triangle_down from "../assets/icons/triangle.svg";
 import { useState } from "react";
 
-function Navbar({ isBuildNav, isComponentNav, isOtherNav }) {
+type navProps = {
+  isBuildNav: boolean;
+  isComponentNav: boolean;
+  isOtherNav: boolean;
+};
+
+function Navbar(props: navProps) {
+  const { isBuildNav, isComponentNav, isOtherNav } = props;
   const [componentsIsOpen, setComponentsIsOpen] = useState(false);
   const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false);
   const [triangleColor, setTriangleColor] = useState({
