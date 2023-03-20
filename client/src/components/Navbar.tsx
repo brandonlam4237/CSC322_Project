@@ -7,16 +7,21 @@ import triangle_down from "../assets/icons/triangle.svg";
 import { useState } from "react";
 
 type navProps = {
-  isBuildNav: boolean;
-  isComponentNav: boolean;
-  isOtherNav: boolean;
+  isBuildNav?: boolean;
+  isComponentNav?: boolean;
+  isOtherNav?: boolean;
 };
 
-function Navbar(props: navProps) {
-  const { isBuildNav, isComponentNav, isOtherNav } = props;
+function Navbar({ isBuildNav, isComponentNav, isOtherNav }: navProps) {
   const [componentsIsOpen, setComponentsIsOpen] = useState(false);
   const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false);
+  const [hamburgerComponentsIsOpen, setHamburgerComponentsIsOpen] =
+    useState(false);
   const [triangleColor, setTriangleColor] = useState({
+    filter:
+      "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
+  });
+  const [miniTriangleColor, setMiniTriangleColor] = useState({
     filter:
       "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
   });
@@ -34,6 +39,7 @@ function Navbar(props: navProps) {
           className="hamburger"
           onClick={() => {
             setHamburgerMenuIsOpen(!hamburgerMenuIsOpen);
+            setHamburgerComponentsIsOpen(false);
           }}
         >
           <div className="bar"></div>
@@ -182,9 +188,154 @@ function Navbar(props: navProps) {
           <Link to="/builds" className="hamburger-menu__item">
             Featured Builds
           </Link>
-          <Link to="/components" className="hamburger-menu__item">
-            Components
-          </Link>
+          <div>
+            <div className="hamburger-components">
+              <div className="hamburger-components__flex">
+                <Link to="/components" className="hamburger-menu__item">
+                  Components
+                </Link>
+                {!hamburgerComponentsIsOpen && (
+                  <img
+                    src={triangle_down}
+                    className="hamburger-components__triangle"
+                    style={miniTriangleColor}
+                    alt="down triangle"
+                    onClick={() => {
+                      setHamburgerComponentsIsOpen(!hamburgerComponentsIsOpen);
+                    }}
+                    onMouseOver={() => {
+                      setMiniTriangleColor({
+                        filter:
+                          "invert(65%) sepia(11%) saturate(3206%) hue-rotate(176deg) brightness(99%) contrast(89%)",
+                      });
+                    }}
+                    onMouseLeave={() => {
+                      setMiniTriangleColor({
+                        filter:
+                          "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
+                      });
+                    }}
+                  />
+                )}
+                {hamburgerComponentsIsOpen && (
+                  <img
+                    src={triangle_down}
+                    className="hamburger-components__triangle hamburger-components__triangle-up"
+                    style={miniTriangleColor}
+                    alt="down triangle"
+                    onClick={() => {
+                      setHamburgerComponentsIsOpen(!hamburgerComponentsIsOpen);
+                    }}
+                    onMouseOver={() => {
+                      setMiniTriangleColor({
+                        filter:
+                          "invert(65%) sepia(11%) saturate(3206%) hue-rotate(176deg) brightness(99%) contrast(89%)",
+                      });
+                    }}
+                    onMouseLeave={() => {
+                      setMiniTriangleColor({
+                        filter:
+                          "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
+                      });
+                    }}
+                  />
+                )}
+              </div>
+              {hamburgerComponentsIsOpen && (
+                <ul className="hamburger-components__menu">
+                  <li>
+                    <Link
+                      to="/components/cpus"
+                      className="hamburger-components__menu-item"
+                    >
+                      CPUs
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/components/coolers"
+                      className="hamburger-components__menu-item"
+                    >
+                      CPU Coolers
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/components/motherboards"
+                      className="hamburger-components__menu-item"
+                    >
+                      Motherboards
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/components/memory"
+                      className="hamburger-components__menu-item"
+                    >
+                      Memory
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/components/storage"
+                      className="hamburger-components__menu-item"
+                    >
+                      Storage
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/components/videocards"
+                      className="hamburger-components__menu-item"
+                    >
+                      Video Cards
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/components/power"
+                      className="hamburger-components__menu-item"
+                    >
+                      Power Supplies
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/components/cases"
+                      className="hamburger-components__menu-item"
+                    >
+                      Cases
+                    </Link>
+                  </li>
+                  <li>
+                    <img
+                      src={triangle_down}
+                      className="hamburger-components__triangle hamburger-components__triangle-up"
+                      style={miniTriangleColor}
+                      alt="down triangle"
+                      onClick={() => {
+                        setHamburgerComponentsIsOpen(
+                          !hamburgerComponentsIsOpen
+                        );
+                      }}
+                      onMouseOver={() => {
+                        setMiniTriangleColor({
+                          filter:
+                            "invert(65%) sepia(11%) saturate(3206%) hue-rotate(176deg) brightness(99%) contrast(89%)",
+                        });
+                      }}
+                      onMouseLeave={() => {
+                        setMiniTriangleColor({
+                          filter:
+                            "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
+                        });
+                      }}
+                    />
+                  </li>
+                </ul>
+              )}
+            </div>
+          </div>
           <Link to="/other" className="hamburger-menu__item">
             Other
           </Link>
@@ -193,6 +344,7 @@ function Navbar(props: navProps) {
             className="hamburger-menu__close"
             onClick={() => {
               setHamburgerMenuIsOpen(false);
+              setHamburgerComponentsIsOpen(false);
               setTriangleColor({
                 filter:
                   "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",

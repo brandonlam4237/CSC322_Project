@@ -13,7 +13,7 @@ import cases from "../assets/images/cases.png";
 function Components() {
   return (
     <main className="components">
-      <Navbar isBuildNav={false} isComponentNav={true} isOtherNav={false} />
+      <Navbar isComponentNav={true} />
       <section className="content">
         <div className="grid">
           <div className="grid__block">

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <main className="home">
-      <Navbar isBuildNav={false} isComponentNav={false} isOtherNav={false} />
+      <Navbar />
       <section className="container">
         <div className="container__area-1">
           <Link to="/builds" className="container__link-1">

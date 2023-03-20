@@ -115,6 +115,31 @@
     padding-bottom: 1rem;
     animation: slideDown 0.5s ease-out;
 
+    .hamburger-components {
+      &__flex {
+        display: flex;
+        align-items: center;
+      }
+
+      &__menu {
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      &__menu-item:hover {
+        color: $accent;
+      }
+
+      &__triangle {
+        height: 2rem;
+        cursor: pointer;
+      }
+
+      &__triangle-up {
+        transform: scaleY(-1);
+      }
+    }
+
     &__item:hover {
       color: $accent;
     }
