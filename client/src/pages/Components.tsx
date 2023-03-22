@@ -1,4 +1,3 @@
-import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import "../scss/components.scss";
 import cpu from "../assets/images/cpu.png";
@@ -13,7 +12,6 @@ import cases from "../assets/images/cases.png";
 function Components() {
   return (
     <main className="components">
-      <Navbar isComponentNav={true} />
       <section className="content">
         <div className="grid">
           <div className="grid__block">

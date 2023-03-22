@@ -48,6 +48,10 @@
     gap: 1rem;
     align-items: center;
 
+    a.active {
+      color: $accent;
+    }
+
     .components {
       position: relative;
 

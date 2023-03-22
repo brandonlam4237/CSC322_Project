@@ -1,18 +1,12 @@
 import React from "react";
 import "../scss/navbar.scss";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import user_icon from "../assets/icons/user.svg";
 import cart_icon from "../assets/icons/cart.png";
 import triangle_down from "../assets/icons/triangle.svg";
 import { useState } from "react";
 
-type navProps = {
-  isBuildNav?: boolean;
-  isComponentNav?: boolean;
-  isOtherNav?: boolean;
-};
-
-function Navbar({ isBuildNav, isComponentNav, isOtherNav }: navProps) {
+function Navbar() {
   const [componentsIsOpen, setComponentsIsOpen] = useState(false);
   const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false);
   const [hamburgerComponentsIsOpen, setHamburgerComponentsIsOpen] =
@@ -25,7 +19,6 @@ function Navbar({ isBuildNav, isComponentNav, isOtherNav }: navProps) {
     filter:
       "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
   });
-  const accent_color = "#54aeef";
 
   return (
     <main className="navbar">
@@ -44,20 +37,9 @@ function Navbar({ isBuildNav, isComponentNav, isOtherNav }: navProps) {
         >
           <div className="bar"></div>
         </button>
-        {isBuildNav && (
-          <Link
-            to="/builds"
-            className="options__builds"
-            style={{ color: accent_color }}
-          >
-            Featured Builds
-          </Link>
-        )}
-        {!isBuildNav && (
-          <Link to="/builds" className="options__builds">
-            Featured Builds
-          </Link>
-        )}
+        <NavLink to="/builds" className="options__builds">
+          Featured Builds
+        </NavLink>
 
         <div
           className="options__components"
@@ -77,83 +59,75 @@ function Navbar({ isBuildNav, isComponentNav, isOtherNav }: navProps) {
           }}
         >
           <div className="components">
-            {isComponentNav && (
-              <Link
-                to="/components"
-                className="components__link"
-                style={{ color: accent_color }}
-              >
-                Components
-              </Link>
-            )}
-            {!isComponentNav && (
-              <Link to="/components" className="components__link">
-                Components
-              </Link>
-            )}
+            <NavLink to="/components" className="components__link">
+              Components
+            </NavLink>
 
             {componentsIsOpen && (
               <ul className="components__menu">
                 <li>
-                  <Link to="/components/cpus" className="components__menu-item">
+                  <NavLink
+                    to="/components/cpus"
+                    className="components__menu-item"
+                  >
                     CPUs
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link
+                  <NavLink
                     to="/components/coolers"
                     className="components__menu-item"
                   >
                     CPU Coolers
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link
+                  <NavLink
                     to="/components/motherboards"
                     className="components__menu-item"
                   >
                     Motherboards
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link
+                  <NavLink
                     to="/components/memory"
                     className="components__menu-item"
                   >
                     Memory
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link
+                  <NavLink
                     to="/components/storage"
                     className="components__menu-item"
                   >
                     Storage
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link
+                  <NavLink
                     to="/components/videocards"
                     className="components__menu-item"
                   >
                     Video Cards
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link
+                  <NavLink
                     to="/components/power"
                     className="components__menu-item"
                   >
                     Power Supplies
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link
+                  <NavLink
                     to="/components/cases"
                     className="components__menu-item"
                   >
                     Cases
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             )}
@@ -166,34 +140,23 @@ function Navbar({ isBuildNav, isComponentNav, isOtherNav }: navProps) {
           />
         </div>
 
-        {isOtherNav && (
-          <Link
-            to="/other"
-            className="options__other"
-            style={{ color: accent_color }}
-          >
-            Other
-          </Link>
-        )}
-        {!isOtherNav && (
-          <Link to="/other" className="options__other">
-            Other
-          </Link>
-        )}
+        <NavLink to="/other" className="options__other">
+          Other
+        </NavLink>
         <img src={user_icon} className="options__icon" alt="user icon" />
         <img src={cart_icon} className="options__icon" alt="cart icon" />
       </section>
       {hamburgerMenuIsOpen && (
         <div className="hamburger-menu">
-          <Link to="/builds" className="hamburger-menu__item">
+          <NavLink to="/builds" className="hamburger-menu__item">
             Featured Builds
-          </Link>
+          </NavLink>
           <div>
             <div className="hamburger-components">
               <div className="hamburger-components__flex">
-                <Link to="/components" className="hamburger-menu__item">
+                <NavLink to="/components" className="hamburger-menu__item">
                   Components
-                </Link>
+                </NavLink>
                 {!hamburgerComponentsIsOpen && (
                   <img
                     src={triangle_down}
@@ -244,68 +207,68 @@ function Navbar({ isBuildNav, isComponentNav, isOtherNav }: navProps) {
               {hamburgerComponentsIsOpen && (
                 <ul className="hamburger-components__menu">
                   <li>
-                    <Link
+                    <NavLink
                       to="/components/cpus"
                       className="hamburger-components__menu-item"
                     >
                       CPUs
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to="/components/coolers"
                       className="hamburger-components__menu-item"
                     >
                       CPU Coolers
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to="/components/motherboards"
                       className="hamburger-components__menu-item"
                     >
                       Motherboards
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to="/components/memory"
                       className="hamburger-components__menu-item"
                     >
                       Memory
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to="/components/storage"
                       className="hamburger-components__menu-item"
                     >
                       Storage
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to="/components/videocards"
                       className="hamburger-components__menu-item"
                     >
                       Video Cards
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to="/components/power"
                       className="hamburger-components__menu-item"
                     >
                       Power Supplies
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to="/components/cases"
                       className="hamburger-components__menu-item"
                     >
                       Cases
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
                     <img
@@ -336,9 +299,9 @@ function Navbar({ isBuildNav, isComponentNav, isOtherNav }: navProps) {
               )}
             </div>
           </div>
-          <Link to="/other" className="hamburger-menu__item">
+          <NavLink to="/other" className="hamburger-menu__item">
             Other
-          </Link>
+          </NavLink>
           <img
             src={triangle_down}
             className="hamburger-menu__close"
