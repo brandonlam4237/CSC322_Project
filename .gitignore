@@ -6,6 +6,9 @@ venv
 .env
 .venv
 
+# PostgreSQL Env File
+server/.env
+
 # Server Database
 server/db.sqlite3
 
