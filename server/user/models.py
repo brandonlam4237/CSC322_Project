@@ -6,7 +6,15 @@ class UserAccountManager(BaseUserManager):
     """
     Account Manager to create different users
     """
-    def create_user(self, username, email, password=None):
+
+    def create_user(self, data: dict, password=None):
+        # User Data
+        username = data['username']
+        email = data['email']
+        first_name = data['first_name']
+        last_name = data['last_name']
+        password = data['password']
+
         if not email:
             raise ValueError('Users must have an email address')
 
@@ -14,7 +22,9 @@ class UserAccountManager(BaseUserManager):
 
         user = self.model(
             username=username,
-            email=email
+            email=email,
+            first_name=first_name,
+            last_name=last_name,
         )
 
         user.set_password(password)
@@ -22,19 +32,27 @@ class UserAccountManager(BaseUserManager):
 
         return user
 
-    def create_staff(self, username, email, password=None):
-        user = self.create_user(username, email, password)
+    def create_employee(self, data: dict, password=None):
+        user = self.create_user(data, password)
 
-        user.is_realtor = True
+        user.is_employee = True
+        user.save(using=self._db)
+
+        return user
+    
+    def create_customer(self, data: dict, password=None):
+        user = self.create_user(data, password)
+
+        user.is_employee = True
         user.save(using=self._db)
 
         return user
 
-    def create_superuser(self, username, email, password=None):
-        user = self.create_user(username, email, password)
+    def create_superuser(self, data: dict, password=None):
+        user = self.create_user(data, password)
 
+        user.is_active = True
         user.is_superuser = True
-        user.is_staff = True
 
         user.save(using=self._db)
         return user
@@ -45,22 +63,27 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     User Model - attributes can be found in ER Diagram
     """
 
+    # User Detail Fields
     username = models.CharField(max_length=255, unique=True)
     email = models.EmailField(max_length=255, unique=True)
     is_active = models.BooleanField(default=False)
 
-    first_name = models.CharField(max_length=255)
-    last_name = models.CharField(max_length=255)
+    first_name = models.CharField(max_length=150)
+    last_name = models.CharField(max_length=150)
 
-    is_staff = models.BooleanField(default=False)
+    # User Type Fields
+    is_customer = models.BooleanField(default=False)
+    is_employee = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
-    blacklisted = models.BooleanField(default=False)
 
+    # Shop Related Fields
+    blacklisted = models.BooleanField(default=False)
     balance = models.IntegerField(default=0)
 
     # TODO: Implement Shopping Cart
+    # shopping_cart = models.ForeignKey()
 
-    object = UserAccountManager()
+    objects = UserAccountManager()
 
     USERNAME_FIELD = 'username'
     EMAIL_FIELD = 'email'
