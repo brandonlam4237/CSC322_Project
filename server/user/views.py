@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework import permissions, status
 from rest_framework.response import Response
 
-# from .serializers import CustomerSerializer, StaffSerializer
+from .serializers import CustomerSerializer, EmployeeSerializer
 
 User = get_user_model()
 
@@ -54,6 +54,11 @@ class RegisterView(APIView):
             else:
                 User.objects.create_employee(data, password)
 
+            return Response(
+                {'error': 'User account created successfully'},
+                status=status.HTTP_201_CREATED
+            )
+
         except KeyError:
             return Response(
                 {'error': 'Something went wrong when registering an account'},
@@ -61,7 +66,14 @@ class RegisterView(APIView):
             )
 
 
-class RetrieveCustomersView(APIView):
+class RetrieveUsersView(APIView):
+    """RetrieveCustomersView _summary_
+
+    Parameters
+    ----------
+    APIView : _type_
+        _description_
+    """
 
     def get(self, request, format=None):
         try:
@@ -72,10 +84,18 @@ class RetrieveCustomersView(APIView):
                     {'error': 'User doesn\'t have the proper permissions for accessing customer data'},
                     status=status.HTTP_500_INTERNAL_SERVER_ERROR
                 )
-            pass
 
-        except Exception:
+            customers = User.objects.order_by(
+                '-date_created').filter(is_superuser=False)
+            customers = CustomerSerializer(customers)
+
             return Response(
-                {'error': 'Something went wrong when registering an account'},
+                {'customers': customers.data},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
+        except AttributeError:
+            return Response(
+                {'error': 'Something went wrong when retrieving customer data'},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
