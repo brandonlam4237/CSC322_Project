@@ -1,0 +1,25 @@
+.input-field {
+  width: 100%;
+  height: 40px;
+  transition: 200ms;
+  border: rgba(0, 0, 0, 0.2) solid 1px;
+  outline: transparent solid 1px;
+  outline-offset: 2px;
+  border-radius: 5px;
+  font-size: large;
+
+  &:focus {
+    border-color: #54aeef;
+    box-shadow: #54aeef 0px 0px 0px 1px;
+  }
+
+  textarea:focus {
+    padding: 2px;
+  }
+}
+
+textarea:focus,
+input:focus {
+  border-color: #54aeef;
+  box-shadow: #54aeef 0px 0px 0px 1px;
+}

@@ -10,11 +10,15 @@ import Components from "./pages/Components";
 import Builds from "./pages/Builds";
 import Other from "./pages/Other";
 import RootLayout from "./layouts/RootLayout";
+import Login from "./pages/Login";
+import Register from "./pages/Register"; 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
+      <Route path="/login" element = {<Login />}/>
+      <Route path="/register" element = {<Register/>}/>
       <Route path="/components" element={<Components />} />
       <Route path="/builds" element={<Builds />} />
       <Route path="/other" element={<Other />} />

@@ -24,7 +24,7 @@ function Navbar() {
     <main className="navbar">
       <Link className="logo" to="/">
         <div className="logo__accent-left">{`<`}</div>
-        <div>LOGO</div>
+        <div>DP</div>
         <div className="logo__accent-right">{`>`}</div>
       </Link>
       <section className="options">

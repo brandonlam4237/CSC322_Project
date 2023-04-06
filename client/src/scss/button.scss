@@ -1,0 +1,23 @@
+button {
+  /* size and shape */
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+
+  /* extras */
+  background-color: #54aeef;
+  border: transparent solid 2px;
+  color: white;
+  cursor: pointer;
+  transition: 200ms;
+  
+}
+/* button effects */
+button:hover {
+  background-color: #3d91cd;
+}
+button:active {
+  background-color: white;
+  color: #54aeef;
+  border: #3d91cd solid 2px;
+}

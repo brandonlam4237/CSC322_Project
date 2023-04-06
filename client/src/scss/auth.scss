@@ -1,0 +1,58 @@
+@import "colors";
+
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: calc(100vh - 9rem);
+  margin: 64px;
+
+  &__header {
+    margin: 10px 0px;
+    align-self: center;
+    font-weight: bold;
+  }
+
+  .container {
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-top: 2rem;
+    padding: 0px 40px;
+    display: flex;
+    row-gap: 20px;
+    flex-direction: column;
+    align-content: center;
+
+    &__forms {
+      padding-top: 20px;
+      form {
+        width: 100%;
+        p {
+          margin: 10px 0px;
+        }
+      }
+      &__name {
+        display: flex;
+        column-gap: 20px;
+        // justify-content: space-between;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+      }
+    }
+    &__footer {
+      align-self: center;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.redirect-link {
+  color: #54aeef;
+  &:hover {
+    text-decoration: underline;
+  }
+}
