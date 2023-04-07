@@ -273,7 +273,7 @@ class BlacklistUser(APIView):
                 )
 
             data = request.data
-            if len(data) != 1 or not data['blacklisted']:
+            if len(data) != 1 or not data['blacklisted'] or not data['memo']:
                 return Response(
                     {'error': 'Body should only include \'blacklisted\' attribute'},
                     status=status.HTTP_400_BAD_REQUEST
@@ -348,7 +348,7 @@ class ActivateUser(APIView):
                 )
 
             data = request.data
-            if len(data) != 1 or not data['is_active']:
+            if len(data) != 2 or not data['is_active'] or not data['memo']:
                 return Response(
                     {'error': 'Body should only include \'is_active\' attribute'},
                     status=status.HTTP_400_BAD_REQUEST
