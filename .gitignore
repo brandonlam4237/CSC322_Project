@@ -1,1 +1,26 @@
 .DS_Store
+
+# Virtual Environment
+env
+venv
+.env
+.venv
+
+# PostgreSQL Env File
+server/.env
+
+# Random Notes
+notes
+
+# Server Database
+server/db.sqlite3
+
+# Database migrations
+server/*/migrations
+
+# Pycache in server
+server/*/**__pycache__
+server/*/*/__pycache__
+
+# VSCode
+.vscode
