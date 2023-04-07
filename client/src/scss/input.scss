@@ -7,12 +7,12 @@
   outline-offset: 2px;
   border-radius: 5px;
   font-size: large;
+  padding-left: 10px;
 
   &:focus {
     border-color: #54aeef;
     box-shadow: #54aeef 0px 0px 0px 1px;
   }
-
   textarea:focus {
     padding: 2px;
   }

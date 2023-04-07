@@ -3,36 +3,91 @@ import "../scss/auth.scss";
 import Input from "src/components/Input";
 import Button from "src/components/Button";
 import "../scss/radio.scss";
+import { useState } from "react";
+import "../scss/input.scss";
+
+interface RegisterForm {
+  email: string;
+  username: string;
+  firstName: string;
+  lastName: string;
+  userType: string;
+  password: string;
+  confirmPassword: string;
+}
 
 export default function Register() {
+  const [registerForm, setRegisterForm] = useState<RegisterForm>({
+    email: "",
+    username: "",
+    firstName: "",
+    lastName: "",
+    userType: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  function handleOnFormChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const fieldName: string = event.target.name;
+    const fieldValue: string = event.target.value;
+    setRegisterForm({
+      ...registerForm,
+      [fieldName]: fieldValue,
+    });
+  }
+
   return (
-    <main className="register">
-      <h1 className="register__header">Register your account</h1>
+    <main className="auth">
+      <h1 className="auth__header">Register your account</h1>
       <section className="container">
         <div className="container__forms">
           <form>
             <label>
               <p>Email</p>
-              <Input />
+              <input
+                className="input-field"
+                type="text"
+                name="email"
+                value={registerForm.email}
+                onChange={handleOnFormChange}
+              />
             </label>
           </form>
           <form>
             <label>
               <p>Username</p>
-              <Input />
+              <input
+                className="input-field"
+                type="text"
+                name="username"
+                value={registerForm.username}
+                onChange={handleOnFormChange}
+              />
             </label>
           </form>
           <div className="container__forms__name">
             <form>
               <label>
                 <p>First Name</p>
-                <Input />
+                <input
+                  className="input-field"
+                  type="text"
+                  name="firstName"
+                  value={registerForm.firstName}
+                  onChange={handleOnFormChange}
+                />
               </label>
             </form>
             <form>
               <label>
                 <p>Last Name</p>
-                <Input />
+                <input
+                  className="input-field"
+                  type="text"
+                  name="lastName"
+                  value={registerForm.lastName}
+                  onChange={handleOnFormChange}
+                />
               </label>
             </form>
           </div>
@@ -41,9 +96,11 @@ export default function Register() {
             <label htmlFor="userType-customer" className="radio">
               <input
                 type="radio"
-                name="customer"
+                name="userType"
                 id="userType-customer"
                 className="radio__input"
+                value="customer"
+                onChange={handleOnFormChange}
               />
               <div className="radio__radio"></div>
               Customer
@@ -51,9 +108,11 @@ export default function Register() {
             <label htmlFor="userType-employee" className="radio">
               <input
                 type="radio"
-                name="customer"
+                name="userType"
                 id="userType-employee"
                 className="radio__input"
+                value="employee"
+                onChange={handleOnFormChange}
               />
               <div className="radio__radio"></div>
               Employee
@@ -62,18 +121,27 @@ export default function Register() {
           <form>
             <label>
               <p>Password</p>
-              <Input />
+              <input
+                className="input-field"
+                type="password"
+                name="password"
+                value={registerForm.password}
+                onChange={handleOnFormChange}
+              />
             </label>
           </form>
           <form>
             <label>
               <p>Confirm Password</p>
-              <Input />
+              <input
+                className="input-field"
+                type="password"
+                name="confirmPassword"
+                value={registerForm.confirmPassword}
+                onChange={handleOnFormChange}
+              />
             </label>
           </form>
-        </div>
-        <div className="container__button">
-          <Button label="Register" />
         </div>
         <footer className="container__footer">
           Already have an account?{" "}
@@ -81,6 +149,9 @@ export default function Register() {
             Login
           </Link>
         </footer>
+        <div className="container__button">
+          <Button variant="primary">Register</Button>
+        </div>
       </section>
     </main>
   );

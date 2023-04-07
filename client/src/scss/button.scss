@@ -11,13 +11,15 @@ button {
   cursor: pointer;
   transition: 200ms;
   
+  /* button effects */
+  &:hover {
+    background-color: #3d91cd;
+  }
+  &:active {
+    background-color: white;
+    color: #54aeef;
+    border: #3d91cd solid 2px;
+  }
 }
-/* button effects */
-button:hover {
-  background-color: #3d91cd;
-}
-button:active {
-  background-color: white;
-  color: #54aeef;
-  border: #3d91cd solid 2px;
-}
+
+
