@@ -7,14 +7,10 @@ class UserAccountManager(BaseUserManager):
     Account Manager to create different users
     """
 
-    def create_user(self, data: dict, password=None):
-        # User Data
-        username = data['username']
-        email = data['email']
-        first_name = data['first_name']
-        last_name = data['last_name']
-        password = data['password']
-
+    def create_user(self, username, email, first_name, last_name, password=None):
+        """
+        Creates a general UserAccount
+        """
         if not email:
             raise ValueError('Users must have an email address')
 
@@ -32,24 +28,36 @@ class UserAccountManager(BaseUserManager):
 
         return user
 
-    def create_employee(self, data: dict, password=None):
-        user = self.create_user(data, password)
+    def create_employee(self, username, email, first_name, last_name, password=None):
+        """
+        Creates an Employee UserAccount
+        """
+        user = self.create_user(username=username, email=email,
+                                first_name=first_name, last_name=last_name, password=password)
 
         user.is_employee = True
         user.save(using=self._db)
 
         return user
-    
-    def create_customer(self, data: dict, password=None):
-        user = self.create_user(data, password)
 
-        user.is_employee = True
+    def create_customer(self, username, email, first_name, last_name, password=None):
+        """
+        Creates a Customer UserAccount
+        """
+        user = self.create_user(username=username, email=email,
+                                first_name=first_name, last_name=last_name, password=password)
+
+        user.is_customer = True
         user.save(using=self._db)
 
         return user
 
-    def create_superuser(self, data: dict, password=None):
-        user = self.create_user(data, password)
+    def create_superuser(self, username, email, first_name, last_name, password=None):
+        """
+        Creates an Owner UserAccount
+        """
+        user = self.create_user(username=username, email=email,
+                                first_name=first_name, last_name=last_name, password=password)
 
         user.is_active = True
         user.is_superuser = True
@@ -71,10 +79,11 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=150)
     last_name = models.CharField(max_length=150)
 
+    date_created = models.DateTimeField(auto_now_add=True)
+
     # User Type Fields
     is_customer = models.BooleanField(default=False)
     is_employee = models.BooleanField(default=False)
-    is_admin = models.BooleanField(default=False)
 
     # Shop Related Fields
     blacklisted = models.BooleanField(default=False)
