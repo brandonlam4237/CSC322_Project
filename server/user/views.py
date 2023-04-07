@@ -44,7 +44,7 @@ class UserList(APIView):
             users = UserSerializer(users, many=True)
 
             return Response(
-                {'customers': users.data},
+                {'users': users.data},
                 status=status.HTTP_200_OK
             )
 
@@ -170,7 +170,7 @@ class CustomerDetail(APIView):
 
             customer = CustomerSerializer(customer, many=False)
             return Response(
-                {'customers': customer.data},
+                {'customer': customer.data},
                 status=status.HTTP_200_OK
             )
 
