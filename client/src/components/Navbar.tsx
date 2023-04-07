@@ -8,6 +8,7 @@ import { useState } from "react";
 
 function Navbar() {
   const [componentsIsOpen, setComponentsIsOpen] = useState(false);
+  const [profileIsOpen, setProfileIsOpen] = useState(false);
   const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false);
   const [hamburgerComponentsIsOpen, setHamburgerComponentsIsOpen] =
     useState(false);
@@ -24,7 +25,7 @@ function Navbar() {
     <main className="navbar">
       <Link className="logo" to="/">
         <div className="logo__accent-left">{`<`}</div>
-        <div>LOGO</div>
+        <div>DP</div>
         <div className="logo__accent-right">{`>`}</div>
       </Link>
       <section className="options">
@@ -143,9 +144,48 @@ function Navbar() {
         <NavLink to="/other" className="options__other">
           Other
         </NavLink>
-        <img src={user_icon} className="options__icon" alt="user icon" />
+        <div
+          className="options__profile-container"
+          onMouseEnter={() => {
+            setProfileIsOpen(true);
+          }}
+          onMouseLeave={() => {
+            setProfileIsOpen(false);
+          }}
+        >
+          <img src={user_icon} className="options__icon" alt="user icon" />
+          {profileIsOpen && (
+            <ul className="options__profile-menu">
+              <li>{`{User's Email}`}</li>
+              <li className="line"></li>
+              <li>
+                <NavLink to="/accountDetails" className="options__navLink">
+                  Account Details
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/addBalance" className="options__navLink">
+                  Add Balance
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/orderHistory" className="options__navLink">
+                  Order History
+                </NavLink>
+              </li>
+
+              <li className="line"></li>
+              <li>
+                <NavLink to="/temp" className="options__navLink">
+                  Sign Out
+                </NavLink>
+              </li>
+            </ul>
+          )}
+        </div>
         <img src={cart_icon} className="options__icon" alt="cart icon" />
       </section>
+
       {hamburgerMenuIsOpen && (
         <div className="hamburger-menu">
           <NavLink to="/builds" className="hamburger-menu__item">
