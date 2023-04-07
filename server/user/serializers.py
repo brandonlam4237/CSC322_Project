@@ -5,16 +5,80 @@ User = get_user_model()
 
 
 class UserSerializer(serializers.ModelSerializer):
+    """
+    Serializer for general user type
+    """
     class Meta:
+        """
+        Fields
+        ------
+        model : django Model
+            User model
+        fields : tuple[str]
+            Tuple of every field to be serialized
+        """
         model = User
-        fields = '__all__'
+        fields = (
+            'id',
+            'username',
+            'email',
+            'is_active',
+            'first_name',
+            'last_name',
+            'date_created',
+            'is_customer',
+            'is_employee',
+            'blacklisted',
+            'balance',
+        )
 
 
-# TODO: Staff Serializer
 class EmployeeSerializer(serializers.ModelSerializer):
-    pass
+    """
+    Serializer for Employee user type
+    """
+    class Meta:
+        """
+        Fields
+        ------
+        model : django Model
+            User model
+        fields : tuple[str]
+            Tuple of every field to be serialized
+        """
+        model = User
+        fields = (
+            'id',
+            'username',
+            'email',
+            'is_active',
+            'first_name',
+            'last_name',
+            'blacklisted',
+        )
 
 
-# TODO: Customer Serializer
 class CustomerSerializer(serializers.ModelSerializer):
-    pass
+    """
+    Serializer for Customer user type
+    """
+    class Meta:
+        """
+        Fields
+        ------
+        model : django Model
+            User model
+        fields : tuple[str]
+            Tuple of every field to be serialized
+        """
+        model = User
+        fields = (
+            'id',
+            'username',
+            'email',
+            'is_active',
+            'first_name',
+            'last_name',
+            'balance',
+            'blacklisted',
+        )
