@@ -88,6 +88,7 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     # Shop Related Fields
     blacklisted = models.BooleanField(default=False)
     balance = models.IntegerField(default=0)
+    memo = models.TextField(default="")
 
     # TODO: Implement Shopping Cart
     # shopping_cart = models.ForeignKey()
