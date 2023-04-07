@@ -146,6 +146,11 @@
       &__flex {
         display: flex;
         align-items: center;
+        justify-content: center;
+
+        .email:hover {
+          color: black;
+        }
       }
 
       &__menu {
@@ -184,7 +189,8 @@
     .options {
       &__components,
       &__builds,
-      &__other {
+      &__other,
+      &__profile-container {
         display: none;
       }
     }
