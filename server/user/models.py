@@ -60,6 +60,7 @@ class UserAccountManager(BaseUserManager):
                                 first_name=first_name, last_name=last_name, password=password)
 
         user.is_active = True
+        user.is_staff = True
         user.is_superuser = True
 
         user.save(using=self._db)
@@ -84,10 +85,12 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     # User Type Fields
     is_customer = models.BooleanField(default=False)
     is_employee = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
 
     # Shop Related Fields
     blacklisted = models.BooleanField(default=False)
     balance = models.IntegerField(default=0)
+    memo = models.TextField(default="")
 
     # TODO: Implement Shopping Cart
     # shopping_cart = models.ForeignKey()

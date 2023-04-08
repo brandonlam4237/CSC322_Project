@@ -44,7 +44,7 @@ class UserList(APIView):
             users = UserSerializer(users, many=True)
 
             return Response(
-                {'customers': users.data},
+                {'users': users.data},
                 status=status.HTTP_200_OK
             )
 
@@ -170,7 +170,7 @@ class CustomerDetail(APIView):
 
             customer = CustomerSerializer(customer, many=False)
             return Response(
-                {'customers': customer.data},
+                {'customer': customer.data},
                 status=status.HTTP_200_OK
             )
 
@@ -273,7 +273,7 @@ class BlacklistUser(APIView):
                 )
 
             data = request.data
-            if len(data) != 1 or not data['blacklisted']:
+            if len(data) != 1 or not data['blacklisted'] or not data['memo']:
                 return Response(
                     {'error': 'Body should only include \'blacklisted\' attribute'},
                     status=status.HTTP_400_BAD_REQUEST
@@ -348,7 +348,7 @@ class ActivateUser(APIView):
                 )
 
             data = request.data
-            if len(data) != 1 or not data['is_active']:
+            if len(data) != 2 or not data['is_active'] or not data['memo']:
                 return Response(
                     {'error': 'Body should only include \'is_active\' attribute'},
                     status=status.HTTP_400_BAD_REQUEST
