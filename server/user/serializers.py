@@ -28,6 +28,7 @@ class UserSerializer(serializers.ModelSerializer):
             'date_created',
             'is_customer',
             'is_employee',
+            'is_superuser',
             'blacklisted',
             'balance',
             'memo',
