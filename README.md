@@ -16,6 +16,42 @@ Donut PCs is a website application that uses React and Django
 
 ## Setup
 
+### Environment Variables Setup
+
+1. Run secret_key.py to get Django secret key
+
+   ```txt
+   python server/scripts/secret_key.py
+   ```
+
+2. create a ``.env`` file within `server/`
+
+   ```txt
+   cp .env.example .env
+   ```
+
+3. Enter your PostgreSQL username, password, and Django secret_key in the env file.
+
+   ```txt
+   POSTGRES_USERNAME="<PostgreSQL Username>"
+   POSTGRES_PASSWORD="<PostgreSQL Password>"
+   SECRET_KEY="<SECRET_KEY>"
+   ```
+
+### Database Setup
+
+> This section assumes that PostgreSQL has been installed and configured on you system
+
+1. Create a database in PostgreSQL named `donut_pcs`
+
+   ```txt
+   psql
+   ```
+   
+   ```txt
+   CREATE DATABASE donut_pcs;
+   ```
+
 ### Server Setup
 
 1. Install `virtualenv` on your system.
@@ -27,6 +63,12 @@ Donut PCs is a website application that uses React and Django
    ```
 
    **Windows**
+
+   Before starting, you may need to add python as an environment variable to PATH on your system.
+   
+   ```txt
+   python -m ensurepip
+   ``` 
 
    ```txt
    py -m pip install --user virtualenv
@@ -51,6 +93,10 @@ Donut PCs is a website application that uses React and Django
    ```txt
    .\env\Scripts\activate
    ```
+   If the environment doesn't get activated, open powershell as adminstrator and run the following command first:
+   ```txt
+   Set-ExecutionPolicy RemoteSigned
+   ```
 
 4. Install the packages in `requirements.txt`.
 
@@ -66,6 +112,8 @@ Donut PCs is a website application that uses React and Django
 
 6. Set up and migrate the database.
 
+   Prior to running these commands, make sure that your project Environment Variables are set up
+
    ```txt
    python manage.py makemigrations
    python manage.py migrate
@@ -75,32 +123,6 @@ Donut PCs is a website application that uses React and Django
 
    ```txt
    python manage.py createsuperuser
-   ```
-
-### Database Setup
-
-1. Create a database in PostgreSQL named `donut_pcs`
-
-   ```txt
-   CREATE DATABASE donut_pcs;
-   ```
-
-### Environment Variables Setup
-
-1. Run secret_key.py to get Django secret key
-
-   ```txt
-   python server/scripts/secret_key.py
-   ```
-
-2. Open `server/.env` file.
-
-3. Enter your PostgreSQL username, password, and Django secret_key in the env file.
-
-   ```txt
-   POSTGRES_USERNAME=<PostgreSQL Username>
-   POSTGRES_PASSWORD=<PostgreSQL Password>
-   SECRET_KEY=<SECRET_KEY>
    ```
 
 ## How to Run
