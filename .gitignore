@@ -16,7 +16,8 @@ notes
 server/db.sqlite3
 
 # Database migrations
-server/*/migrations
+server/*/migrations/*
+!server/*/migrations/__init__.py
 
 # Pycache in server
 server/*/**__pycache__
