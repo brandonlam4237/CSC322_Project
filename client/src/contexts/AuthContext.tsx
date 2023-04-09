@@ -11,8 +11,8 @@ import {
 // If adding more functions/variables to the AuthProvider, then
 // IAuthContext is expected to be updated
 interface IAuthContext {
-  user: object;
-  setUser: (value: UserState) => void;
+  userData: UserState;
+  setUserData: (value: UserState) => void;
   registerUser: (value: object) => void;
   loginUser: (username: string, password: string) => void;
   logoutUser: () => void;
@@ -21,8 +21,26 @@ interface IAuthContext {
 // Also need to give default values for the fields the authcontext is expected to have
 // since its strictly typed.
 export const AuthContext = createContext<IAuthContext>({
-  user: {},
-  setUser: (value: UserState) => {
+  userData: {
+    access: "",
+    refresh: "",
+    user: {
+      id: null,
+      username: "",
+      email: "",
+      is_active: false,
+      first_name: "",
+      last_name: "",
+      date_created: "",
+      is_customer: false,
+      is_employee: false,
+      is_superuser: false,
+      blacklisted: false,
+      balance: null,
+      memo: "",
+    },
+  },
+  setUserData: (value: UserState) => {
     /* do nothing */
   },
   registerUser: (value) => {
@@ -48,21 +66,52 @@ interface AuthProvidorProps {
   children?: ReactNode;
 }
 
+interface UserCredentials {
+  id: number | null;
+  username: string;
+  email: string;
+  is_active: boolean;
+  first_name: string;
+  last_name: string;
+  date_created: string;
+  is_customer: boolean;
+  is_employee: boolean;
+  is_superuser: boolean;
+  blacklisted: boolean;
+  balance: number | null;
+  memo: "";
+}
+
 // access and refresh refer to tokens
-// user attribute refers to user credentials (yes, it is accessed via user.user -_-)
+// user_info attribute refers to user credentials
 interface UserState {
   access: string;
   refresh: string;
-  user: object;
+  user: UserCredentials;
 }
 
 export function AuthContextProvider({ children }: AuthProvidorProps) {
-  const [user, setUser] = useState<UserState>({
+  const userDataTemplate : UserState = {
     access: "",
     refresh: "",
-    user: {},
-  });
-
+    user: {
+      id: null,
+      username: "",
+      email: "",
+      is_active: false,
+      first_name: "",
+      last_name: "",
+      date_created: "",
+      is_customer: false,
+      is_employee: false,
+      is_superuser: false,
+      blacklisted: false,
+      balance: null,
+      memo: "",
+    },
+  }
+  const [userData, setUserData] = useState<UserState>(userDataTemplate);
+  
   async function loginUser(username: string, password: string) {
     try {
       const response = await fetch("/auth/login", {
@@ -76,7 +125,7 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
         }),
       });
       const responseData = await response.json();
-      setUser(responseData);
+      setUserData(responseData);
     } catch (error) {
       console.log(error);
     }
@@ -101,18 +150,19 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${user.access}`,
+          Authorization: `Bearer ${userData.access}`,
         },
-        body: JSON.stringify({ refresh: user.refresh }),
+        body: JSON.stringify({ refresh: userData.refresh }),
       });
+      setUserData(userDataTemplate)
     } catch (error) {
       console.log(error);
     }
   }
 
   const authValues = {
-    user,
-    setUser,
+    userData,
+    setUserData,
     loginUser,
     registerUser,
     logoutUser,
