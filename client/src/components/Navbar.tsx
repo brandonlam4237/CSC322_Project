@@ -4,6 +4,7 @@ import user_icon from "../assets/icons/user.svg";
 import cart_icon from "../assets/icons/cart.png";
 import triangle_down from "../assets/icons/triangle.svg";
 import { useState } from "react";
+import { useAuthContext } from "src/contexts/AuthContext";
 
 function Navbar() {
   const [componentsIsOpen, setComponentsIsOpen] = useState(false);
@@ -29,6 +30,9 @@ function Navbar() {
       "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
   });
 
+  // logout User async function
+  const logoutUser = useAuthContext().logoutUser;
+  
   return (
     <main className="navbar">
       <Link className="logo" to="/">
@@ -197,9 +201,9 @@ function Navbar() {
 
               <li className="line"></li>
               <li>
-                <NavLink to="/temp" className="options__navLink">
+                <Link to="/" className="options__navLink" onClick={async () => await logoutUser()}>
                   Sign Out
-                </NavLink>
+                </Link>
               </li>
             </ul>
           )}

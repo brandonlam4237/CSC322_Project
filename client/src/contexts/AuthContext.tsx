@@ -101,13 +101,12 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${user.access}`,
+          Authorization: `Bearer ${user.access}`,
         },
-        body: JSON.stringify({refresh:user.refresh}),
+        body: JSON.stringify({ refresh: user.refresh }),
       });
-
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 

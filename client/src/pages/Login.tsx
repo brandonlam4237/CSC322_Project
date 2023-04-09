@@ -3,6 +3,7 @@ import Button from "src/components/Button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import "../scss/auth.scss";
+import { useAuthContext } from "src/contexts/AuthContext";
 
 interface LoginForm {
   username: string;
@@ -15,6 +16,8 @@ export default function Login() {
     password: "",
   });
 
+  const authValues = useAuthContext();
+
   function handleOnFormChange(event: React.ChangeEvent<HTMLInputElement>) {
     const fieldName: string = event.target.name;
     const fieldValue: string = event.target.value;
@@ -22,6 +25,10 @@ export default function Login() {
       ...loginForm,
       [fieldName]: fieldValue,
     });
+  }
+
+  async function loginButtonHandler() {
+    await authValues.loginUser(loginForm.username, loginForm.password);
   }
 
   return (
@@ -61,7 +68,9 @@ export default function Login() {
           </Link>
         </footer>
         <div className="container__button">
-          <Button variant="primary">Login</Button>
+          <Button variant="primary" onClick={loginButtonHandler}>
+            Login
+          </Button>
         </div>
       </section>
     </main>
