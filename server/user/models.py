@@ -75,11 +75,8 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     # User Detail Fields
     username = models.CharField(max_length=255, unique=True)
     email = models.EmailField(max_length=255, unique=True)
-    is_active = models.BooleanField(default=False)
-
     first_name = models.CharField(max_length=150)
     last_name = models.CharField(max_length=150)
-
     date_created = models.DateTimeField(auto_now_add=True)
 
     # User Type Fields
@@ -90,10 +87,18 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     # Shop Related Fields
     blacklisted = models.BooleanField(default=False)
     balance = models.IntegerField(default=0)
-    memo = models.TextField(default="")
 
-    # TODO: Implement Shopping Cart
-    # shopping_cart = models.ForeignKey()
+    # Account Activation Fields
+    is_active = models.BooleanField(default=False)
+    application_memo = models.TextField(default="")
+
+    # Employee Related Fields
+    # Positive Number means promotion. Negative Number means demotion.
+    position_tier = models.SmallIntegerField(default=0)
+
+    # Warnings and Compliments
+    warnings = models.SmallIntegerField(default=0)
+    compliments = models.SmallIntegerField(default=0)
 
     objects = UserAccountManager()
 
@@ -105,6 +110,24 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
         'first_name',
         'last_name',
     ]
+
+    @property
+    def user_type(self):
+        """
+        Returns User Type
+        """
+        if self.is_customer:
+            return "Customer"
+        if self.is_employee:
+            return "Employee"
+        return "Owner"
+
+    @property
+    def full_name(self):
+        """
+        Returns the user's full name
+        """
+        return f"{self.first_name} {self.last_name}"
 
     def __str__(self) -> str:
         return f"[Username: {self.username}, Email: {self.email}]"
