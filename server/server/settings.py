@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
 
     'user',
-    'computer_parts',
+    'items',
 ]
 
 REST_FRAMEWORK = {
