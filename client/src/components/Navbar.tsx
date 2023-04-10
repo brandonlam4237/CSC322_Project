@@ -4,6 +4,7 @@ import user_icon from "../assets/icons/user.svg";
 import cart_icon from "../assets/icons/cart.png";
 import triangle_down from "../assets/icons/triangle.svg";
 import { useState } from "react";
+import { useAuthContext } from "src/contexts/AuthContext";
 
 function Navbar() {
   const [componentsIsOpen, setComponentsIsOpen] = useState(false);
@@ -28,6 +29,20 @@ function Navbar() {
     filter:
       "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
   });
+
+  // logout User async function
+  const authValues = useAuthContext();
+  const logoutUser = authValues.logoutUser;
+  const user = authValues.userData.user;
+
+  async function handleSignoutButton() {
+    await logoutUser();
+    setProfileIsOpen(false);
+    setProfileColor({
+      filter:
+        "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
+    });
+  }
 
   return (
     <main className="navbar">
@@ -152,58 +167,68 @@ function Navbar() {
         <NavLink to="/other" className="options__other">
           Other
         </NavLink>
-        <div
-          className="options__profile-container"
-          onMouseEnter={() => {
-            setProfileIsOpen(true);
-            setProfileColor({
-              filter:
-                "invert(65%) sepia(11%) saturate(3206%) hue-rotate(176deg) brightness(99%) contrast(89%)",
-            });
-          }}
-          onMouseLeave={() => {
-            setProfileIsOpen(false);
-            setProfileColor({
-              filter:
-                "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
-            });
-          }}
-        >
-          <img
-            src={user_icon}
-            className="options__icon"
-            alt="user icon"
-            style={profileColor}
-          />
-          {profileIsOpen && (
-            <ul className="options__profile-menu">
-              <li>{`{User's Email}`}</li>
-              <li className="line"></li>
-              <li>
-                <NavLink to="/accountDetails" className="options__navLink">
-                  Account Details
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/addBalance" className="options__navLink">
-                  Add Balance
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/orderHistory" className="options__navLink">
-                  Order History
-                </NavLink>
-              </li>
+        {!user.is_active ? (
+          <NavLink to="/login" className="options__navLink">
+            Login
+          </NavLink>
+        ) : (
+          <div
+            className="options__profile-container"
+            onMouseEnter={() => {
+              setProfileIsOpen(true);
+              setProfileColor({
+                filter:
+                  "invert(65%) sepia(11%) saturate(3206%) hue-rotate(176deg) brightness(99%) contrast(89%)",
+              });
+            }}
+            onMouseLeave={() => {
+              setProfileIsOpen(false);
+              setProfileColor({
+                filter:
+                  "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
+              });
+            }}
+          >
+            <img
+              src={user_icon}
+              className="options__icon"
+              alt="user icon"
+              style={profileColor}
+            />
+            {profileIsOpen && (
+              <ul className="options__profile-menu">
+                <li>{user.email}</li>
+                <li className="line"></li>
+                <li>
+                  <NavLink to="/accountDetails" className="options__navLink">
+                    Account Details
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/addBalance" className="options__navLink">
+                    Add Balance
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/orderHistory" className="options__navLink">
+                    Order History
+                  </NavLink>
+                </li>
 
-              <li className="line"></li>
-              <li>
-                <NavLink to="/temp" className="options__navLink">
-                  Sign Out
-                </NavLink>
-              </li>
-            </ul>
-          )}
-        </div>
+                <li className="line"></li>
+                <li>
+                  <Link
+                    to="/"
+                    className="options__navLink"
+                    onClick={handleSignoutButton}
+                  >
+                    Sign Out
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </div>
+        )}
         <img src={cart_icon} className="options__icon" alt="cart icon" />
       </section>
 
@@ -368,103 +393,35 @@ function Navbar() {
             Other
           </NavLink>
           <div>
-            <div className="hamburger-components">
-              <div className="hamburger-components__flex">
-                <div className="hamburger-menu__item email">{`{User's Email}`}</div>
-                {!hamburgerProfileIsOpen && (
-                  <img
-                    src={triangle_down}
-                    className="hamburger-components__triangle"
-                    style={miniTriangleColor2}
-                    alt="down triangle"
-                    onClick={() => {
-                      setHamburgerProfileIsOpen(!hamburgerProfileIsOpen);
-                    }}
-                    onMouseOver={() => {
-                      setMiniTriangleColor2({
-                        filter:
-                          "invert(65%) sepia(11%) saturate(3206%) hue-rotate(176deg) brightness(99%) contrast(89%)",
-                      });
-                    }}
-                    onMouseLeave={() => {
-                      setMiniTriangleColor2({
-                        filter:
-                          "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
-                      });
-                    }}
-                  />
-                )}
-                {hamburgerProfileIsOpen && (
-                  <img
-                    src={triangle_down}
-                    className="hamburger-components__triangle hamburger-components__triangle-up"
-                    style={miniTriangleColor2}
-                    alt="down triangle"
-                    onClick={() => {
-                      setHamburgerProfileIsOpen(!hamburgerProfileIsOpen);
-                    }}
-                    onMouseOver={() => {
-                      setMiniTriangleColor2({
-                        filter:
-                          "invert(65%) sepia(11%) saturate(3206%) hue-rotate(176deg) brightness(99%) contrast(89%)",
-                      });
-                    }}
-                    onMouseLeave={() => {
-                      setMiniTriangleColor2({
-                        filter:
-                          "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
-                      });
-                    }}
-                  />
-                )}
-              </div>
-              {hamburgerProfileIsOpen && (
-                <ul className="hamburger-components__menu">
-                  <li>
-                    <NavLink
-                      to="/accountDetails"
-                      className="hamburger-components__menu-item"
-                    >
-                      Account Details
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      to="/addBalance"
-                      className="hamburger-components__menu-item"
-                    >
-                      Add Balance
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      to="/orderHistory"
-                      className="hamburger-components__menu-item"
-                    >
-                      Order History
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      to="/temp"
-                      className="hamburger-components__menu-item"
-                    >
-                      Sign Out
-                    </NavLink>
-                  </li>
-
-                  <li>
+            {/* to conditionally render user email and options */}
+            {!user.is_active ? (
+              <NavLink
+                to="/login"
+                className="options__navLink"
+                onClick={() => {
+                  setHamburgerMenuIsOpen(false);
+                  setHamburgerComponentsIsOpen(false);
+                  setHamburgerProfileIsOpen(false);
+                  setTriangleColor({
+                    filter:
+                      "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
+                  });
+                }}
+              >
+                Login
+              </NavLink>
+            ) : (
+              <div className="hamburger-components">
+                <div className="hamburger-components__flex">
+                  <div className="hamburger-menu__item email">{user.email}</div>
+                  {!hamburgerProfileIsOpen && (
                     <img
                       src={triangle_down}
-                      className="hamburger-components__triangle hamburger-components__triangle-up"
+                      className="hamburger-components__triangle"
                       style={miniTriangleColor2}
                       alt="down triangle"
                       onClick={() => {
                         setHamburgerProfileIsOpen(!hamburgerProfileIsOpen);
-                        setMiniTriangleColor2({
-                          filter:
-                            "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
-                        });
                       }}
                       onMouseOver={() => {
                         setMiniTriangleColor2({
@@ -479,10 +436,108 @@ function Navbar() {
                         });
                       }}
                     />
-                  </li>
-                </ul>
-              )}
-            </div>
+                  )}
+                  {hamburgerProfileIsOpen && (
+                    <img
+                      src={triangle_down}
+                      className="hamburger-components__triangle hamburger-components__triangle-up"
+                      style={miniTriangleColor2}
+                      alt="down triangle"
+                      onClick={() => {
+                        setHamburgerProfileIsOpen(!hamburgerProfileIsOpen);
+                      }}
+                      onMouseOver={() => {
+                        setMiniTriangleColor2({
+                          filter:
+                            "invert(65%) sepia(11%) saturate(3206%) hue-rotate(176deg) brightness(99%) contrast(89%)",
+                        });
+                      }}
+                      onMouseLeave={() => {
+                        setMiniTriangleColor2({
+                          filter:
+                            "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
+                        });
+                      }}
+                    />
+                  )}
+                </div>
+                {hamburgerProfileIsOpen && (
+                  <ul className="hamburger-components__menu">
+                    <li>
+                      <NavLink
+                        to="/accountDetails"
+                        className="hamburger-components__menu-item"
+                      >
+                        Account Details
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/addBalance"
+                        className="hamburger-components__menu-item"
+                      >
+                        Add Balance
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/orderHistory"
+                        className="hamburger-components__menu-item"
+                      >
+                        Order History
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/"
+                        className="hamburger-components__menu-item"
+                        onClick={async () => {
+                          setHamburgerMenuIsOpen(false);
+                          setHamburgerComponentsIsOpen(false);
+                          setHamburgerProfileIsOpen(false);
+                          setTriangleColor({
+                            filter:
+                              "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
+                          });
+
+                          handleSignoutButton();
+                        }}
+                      >
+                        Sign Out
+                      </NavLink>
+                    </li>
+
+                    <li>
+                      <img
+                        src={triangle_down}
+                        className="hamburger-components__triangle hamburger-components__triangle-up"
+                        style={miniTriangleColor2}
+                        alt="down triangle"
+                        onClick={() => {
+                          setHamburgerProfileIsOpen(!hamburgerProfileIsOpen);
+                          setMiniTriangleColor2({
+                            filter:
+                              "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
+                          });
+                        }}
+                        onMouseOver={() => {
+                          setMiniTriangleColor2({
+                            filter:
+                              "invert(65%) sepia(11%) saturate(3206%) hue-rotate(176deg) brightness(99%) contrast(89%)",
+                          });
+                        }}
+                        onMouseLeave={() => {
+                          setMiniTriangleColor2({
+                            filter:
+                              "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
+                          });
+                        }}
+                      />
+                    </li>
+                  </ul>
+                )}
+              </div>
+            )}
           </div>
           <img
             src={triangle_down}

@@ -1,31 +1,37 @@
 import { Link } from "react-router-dom";
 import "../scss/auth.scss";
-import Input from "src/components/Input";
 import Button from "src/components/Button";
 import "../scss/radio.scss";
 import { useState } from "react";
 import "../scss/input.scss";
+import { useAuthContext } from "src/contexts/AuthContext";
 
 interface RegisterForm {
   email: string;
   username: string;
-  firstName: string;
-  lastName: string;
-  userType: string;
+  first_name: string;
+  last_name: string;
+  user_type: string;
   password: string;
-  confirmPassword: string;
+  re_password: string;
 }
 
 export default function Register() {
   const [registerForm, setRegisterForm] = useState<RegisterForm>({
     email: "",
     username: "",
-    firstName: "",
-    lastName: "",
-    userType: "",
+    first_name: "",
+    last_name: "",
+    user_type: "",
     password: "",
-    confirmPassword: "",
+    re_password: "",
   });
+
+  const authValues = useAuthContext();
+
+  async function registerButtonHandler() {
+    await authValues.registerUser(registerForm);
+  }
 
   function handleOnFormChange(event: React.ChangeEvent<HTMLInputElement>) {
     const fieldName: string = event.target.name;
@@ -72,8 +78,8 @@ export default function Register() {
                 <input
                   className="input-field"
                   type="text"
-                  name="firstName"
-                  value={registerForm.firstName}
+                  name="first_name"
+                  value={registerForm.first_name}
                   onChange={handleOnFormChange}
                 />
               </label>
@@ -84,8 +90,8 @@ export default function Register() {
                 <input
                   className="input-field"
                   type="text"
-                  name="lastName"
-                  value={registerForm.lastName}
+                  name="last_name"
+                  value={registerForm.last_name}
                   onChange={handleOnFormChange}
                 />
               </label>
@@ -96,7 +102,7 @@ export default function Register() {
             <label htmlFor="userType-customer" className="radio">
               <input
                 type="radio"
-                name="userType"
+                name="user_type"
                 id="userType-customer"
                 className="radio__input"
                 value="customer"
@@ -108,7 +114,7 @@ export default function Register() {
             <label htmlFor="userType-employee" className="radio">
               <input
                 type="radio"
-                name="userType"
+                name="user_type"
                 id="userType-employee"
                 className="radio__input"
                 value="employee"
@@ -136,8 +142,8 @@ export default function Register() {
               <input
                 className="input-field"
                 type="password"
-                name="confirmPassword"
-                value={registerForm.confirmPassword}
+                name="re_password"
+                value={registerForm.re_password}
                 onChange={handleOnFormChange}
               />
             </label>
@@ -150,7 +156,9 @@ export default function Register() {
           </Link>
         </footer>
         <div className="container__button">
-          <Button variant="primary">Register</Button>
+          <Button variant="primary" onClick={registerButtonHandler}>
+            Register
+          </Button>
         </div>
       </section>
     </main>
