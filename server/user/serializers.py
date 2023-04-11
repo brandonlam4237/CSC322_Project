@@ -31,7 +31,7 @@ class UserSerializer(serializers.ModelSerializer):
             'is_superuser',
             'blacklisted',
             'balance',
-            'memo',
+            'application_memo',
         )
 
 
@@ -57,7 +57,7 @@ class EmployeeSerializer(serializers.ModelSerializer):
             'first_name',
             'last_name',
             'blacklisted',
-            'memo',
+            'application_memo',
         )
 
 
@@ -84,5 +84,5 @@ class CustomerSerializer(serializers.ModelSerializer):
             'last_name',
             'balance',
             'blacklisted',
-            'memo',
+            'application_memo',
         )
