@@ -33,8 +33,8 @@ function Navbar() {
   // logout User async function
   const authValues = useAuthContext();
   const logoutUser = authValues.logoutUser;
-  const user = authValues.userData.user;
-
+  const user = authValues.userData;
+  
   async function handleSignoutButton() {
     await logoutUser();
     setProfileIsOpen(false);
