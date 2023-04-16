@@ -1,15 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
 import user_icon from "../../assets/icons/user.svg";
-
-const svgBlack: object = {
-  filter:
-    "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
-};
-
-const svgAccentColor: object = {
-  filter:
-    "invert(65%) sepia(11%) saturate(3206%) hue-rotate(176deg) brightness(99%) contrast(89%)",
-};
+import { svgBlack, svgAccentColor } from "./svgColors";
 
 type props = {
   setProfileIsOpen: Function;
@@ -17,7 +8,7 @@ type props = {
   setProfileColor: Function;
   profileColor: object;
   email: string;
-  handleSignoutButton: any;
+  handleSignoutButton: Function;
 };
 
 function NavOptProfileMenu(props: props) {
@@ -73,7 +64,9 @@ function NavOptProfileMenu(props: props) {
             <Link
               to="/"
               className="options__navLink"
-              onClick={handleSignoutButton}
+              onClick={() => {
+                handleSignoutButton();
+              }}
             >
               Sign Out
             </Link>
