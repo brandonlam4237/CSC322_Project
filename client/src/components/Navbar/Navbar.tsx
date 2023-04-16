@@ -6,11 +6,7 @@ import { useAuthContext } from "src/contexts/AuthContext";
 import NavOptComponents from "./NavOptComponents";
 import NavOptProfileMenu from "./NavOptProfileMenu";
 import HamburgerMenu from "./HamburgerMenu";
-
-const svgBlack: object = {
-  filter:
-    "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
-};
+import { svgBlack } from "./svgColors";
 
 function Navbar() {
   const [profileIsOpen, setProfileIsOpen] = useState(false);
