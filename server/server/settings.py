@@ -193,4 +193,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'user.UserAccount'
 
-ALLOWED_HOSTS = ['http://localhost:3000']
+
+# For Production
+# ALLOWED_HOSTS = ['http://localhost:3000', 'localhost', 'http://127.0.0.1:3000/']
+# CORS_ORIGIN_ALLOW_ALL = False
+# CORS_ORIGIN_WHITELIST = (
+#        'http://localhost:3000',
+# )
+
+# For Development
+ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_ALLOW_ALL = True
