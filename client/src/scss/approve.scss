@@ -1,0 +1,37 @@
+@import "colors";
+
+.component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: calc(100vh - 9rem);
+  margin: 64px;
+
+  &__header {
+    margin: 10px 0px;
+    align-self: center;
+    font-weight: bold;
+    display: flex;
+    .logo {
+      &__accent-left,
+      &__accent-right {
+        color: $accent;
+        transition: 0.4s;
+      }
+    }
+  }
+  &__content {
+    max-width: 800px;
+    width: 100%;
+    background: #F7F7F7;
+    box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    display: flex;
+    row-gap: 20px;
+    flex-direction: column;
+    align-content: center;
+  }
+}
+
+
