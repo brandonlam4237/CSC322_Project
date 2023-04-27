@@ -34,7 +34,7 @@ function Navbar() {
   const authValues = useAuthContext();
   const logoutUser = authValues.logoutUser;
   const user = authValues.userData;
-  
+
   async function handleSignoutButton() {
     await logoutUser();
     setProfileIsOpen(false);
@@ -43,7 +43,6 @@ function Navbar() {
         "invert(0%) sepia(9%) saturate(7464%) hue-rotate(255deg) brightness(96%) contrast(94%)",
     });
   }
-
   return (
     <main className="navbar">
       <Link className="logo" to="/">
@@ -205,16 +204,21 @@ function Navbar() {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/addBalance" className="options__navLink">
-                    Add Balance
-                  </NavLink>
+                  {user.is_customer ? (
+                    <NavLink to="/addBalance" className="options__navLink">
+                      Add Balance
+                    </NavLink>
+                  ) : (
+                    <NavLink to="/approve" className="options__navLink">
+                      Account Requests
+                    </NavLink>
+                  )}
                 </li>
                 <li>
                   <NavLink to="/orderHistory" className="options__navLink">
                     Order History
                   </NavLink>
                 </li>
-
                 <li className="line"></li>
                 <li>
                   <Link
