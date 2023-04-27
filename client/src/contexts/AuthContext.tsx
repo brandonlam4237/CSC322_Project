@@ -26,7 +26,7 @@ interface IAuthContext {
 // since its strictly typed.
 export const AuthContext = createContext<IAuthContext>({
   userData: {
-    id: null,
+    id: -1,
     username: "",
     email: "",
     is_active: false,
@@ -71,7 +71,7 @@ interface AuthProvidorProps {
 }
 
 export interface UserCredentials {
-  id: number | null;
+  id: number;
   username: string;
   email: string;
   is_active: boolean;
@@ -87,7 +87,7 @@ export interface UserCredentials {
 }
 // to keep typescript happy
 export const userDataTemplate: UserCredentials = {
-  id: null,
+  id: -1,
   username: "",
   email: "",
   is_active: false,

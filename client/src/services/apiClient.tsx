@@ -1,4 +1,5 @@
 import axios from "axios"
+import { IApprovalForm } from "src/pages/UserRow"
 
 class ApiClient {
   // specify class variables along with their types
@@ -34,8 +35,17 @@ class ApiClient {
     }
   }
 
-  async getUsers() {
-    return await this.apiRequest({endpoint:"users/", method:"GET", data:{}})
+  async getUsers(usersParam:string) {
+    return await this.apiRequest({endpoint:`users/${usersParam}`, method:"GET", data:{}})
+  }
+
+  // not working at the moment
+  async activateUser({approvalForm, userId}: {approvalForm:IApprovalForm, userId:number} ) {
+    let data = {
+      is_active:approvalForm.is_active,
+      memo:approvalForm.memo
+    }
+    return await this.apiRequest({endpoint:`users/activate/${userId}`, method:"PATCH", data})
   }
 }
 
