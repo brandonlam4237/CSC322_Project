@@ -149,7 +149,7 @@ class LoginUser(APIView):
 
         if user.is_superuser:
             user = UserSerializer(user)
-        elif user.is_custoner:
+        elif user.is_customer:
             user = CustomerSerializer(user)
         else:
             user = EmployeeSerializer(user)

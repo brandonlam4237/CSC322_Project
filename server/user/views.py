@@ -350,7 +350,7 @@ class ActivateUser(APIView):
             data = request.data
             if len(data) != 2 or not data['is_active'] or not data['memo']:
                 return Response(
-                    {'error': 'Body should only include \'is_active\' attribute'},
+                    {'error': 'Body should only include \'is_active\' and \'memo\' attribute'},
                     status=status.HTTP_400_BAD_REQUEST
                 )
 
