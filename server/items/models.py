@@ -67,6 +67,8 @@ class Product(models.Model):
     upc_number = models.CharField(max_length=20, null=False)
     specs = models.JSONField(null=False)
 
+    objects = models.Manager()
+
     def __str__(self) -> str:
         return f"{self.brand} - {self.product_name}"
 
