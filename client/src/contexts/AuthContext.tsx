@@ -1,3 +1,5 @@
+import axios from "axios";
+import apiClient from "src/services/apiClient";
 import {
   useState,
   useEffect,
@@ -13,6 +15,7 @@ const LOCAL_STORAGE_AUTH_KEY = "donut_pcs_local_storage_tokens_key";
 // IAuthContext is expected to be updated
 interface IAuthContext {
   userData: UserCredentials;
+  userTokens: UserTokens;
   setUserData: (value: UserCredentials) => void;
   registerUser: (value: object) => void;
   loginUser: (username: string, password: string) => void;
@@ -23,7 +26,7 @@ interface IAuthContext {
 // since its strictly typed.
 export const AuthContext = createContext<IAuthContext>({
   userData: {
-    id: null,
+    id: -1,
     username: "",
     email: "",
     is_active: false,
@@ -36,6 +39,10 @@ export const AuthContext = createContext<IAuthContext>({
     blacklisted: false,
     balance: null,
     memo: "",
+  },
+  userTokens: {
+    refresh: "",
+    access: "",
   },
   setUserData: (value: UserCredentials) => {
     /* do nothing */
@@ -63,8 +70,8 @@ interface AuthProvidorProps {
   children?: ReactNode;
 }
 
-interface UserCredentials {
-  id: number | null;
+export interface UserCredentials {
+  id: number;
   username: string;
   email: string;
   is_active: boolean;
@@ -78,33 +85,33 @@ interface UserCredentials {
   balance: number | null;
   memo: "";
 }
-interface UserTokens {
+// to keep typescript happy
+export const userDataTemplate: UserCredentials = {
+  id: -1,
+  username: "",
+  email: "",
+  is_active: false,
+  first_name: "",
+  last_name: "",
+  date_created: "",
+  is_customer: false,
+  is_employee: false,
+  is_superuser: false,
+  blacklisted: false,
+  balance: null,
+  memo: "",
+};
+export interface UserTokens {
   access: string;
   refresh: string;
 }
+// to keep typescript happy
+export const userTokensTemplate: UserTokens = {
+  refresh: "",
+  access: "",
+};
 
 export function AuthContextProvider({ children }: AuthProvidorProps) {
-  const userDataTemplate: UserCredentials = {
-    id: null,
-    username: "",
-    email: "",
-    is_active: false,
-    first_name: "",
-    last_name: "",
-    date_created: "",
-    is_customer: false,
-    is_employee: false,
-    is_superuser: false,
-    blacklisted: false,
-    balance: null,
-    memo: "",
-  };
-
-  const userTokensTemplate: UserTokens = {
-    refresh: "",
-    access: "",
-  };
-
   const [userTokens, setUserTokens] = useState<UserTokens>(userTokensTemplate);
   const [userData, setUserData] = useState<UserCredentials>(userDataTemplate);
 
@@ -122,20 +129,23 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
       });
 
       const tokensData: UserTokens = await tokensResponse.json();
-      // put tokens in local storage to use for login persistance
+      // set tokens state to contain the response data
+      setUserTokens({ ...tokensData });
+      /* put tokens in local storage to use for login persistance. 
+      (the following two lines do the same thing, will delete one of them later) */
       localStorage.setItem(LOCAL_STORAGE_AUTH_KEY, JSON.stringify(tokensData));
-      // now use the tokens to log the user in
-      setUserTokens(tokensData);
+      apiClient.setTokens(tokensData)
 
       // finally, login the user using the tokens
-      loginWithTokens(tokensData.access, tokensData.refresh);
+      loginWithToken(tokensData.access);
     } catch (error) {
       console.log(error);
     }
   }
+
   async function registerUser(registerForm: object) {
     try {
-      const response = await fetch("/auth/register", {
+      await fetch("/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -146,38 +156,40 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
       console.log(error);
     }
   }
-  async function logoutUser() {
 
-    const refreshToken : string = userTokens.refresh
-    const accessToken : string = userTokens.access
+  async function logoutUser() {
+    const refreshToken: string = userTokens.refresh;
+    const accessToken: string = userTokens.access;
     try {
       await fetch("/auth/logout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${accessToken}`,
+          Authorization: `Bearer ${accessToken}`,
         },
         body: JSON.stringify({ refresh: refreshToken }),
       });
       setUserData(userDataTemplate);
-      setUserTokens(userTokensTemplate)
-      localStorage.removeItem(LOCAL_STORAGE_AUTH_KEY)
+      setUserTokens(userTokensTemplate);
+      localStorage.removeItem(LOCAL_STORAGE_AUTH_KEY);
     } catch (error) {
       console.log(error);
     }
   }
 
-  async function loginWithTokens(access: string, refresh: string) {
+  async function loginWithToken(access: string) {
     try {
-      const response = await fetch("auth/me", {
+      const headers: any = {
+        "Content-Type": "application/json",
+      };
+      headers["Authorization"] = `Bearer ${access}`;
+      const response = await axios({
+        url: "auth/me",
         method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization":`Bearer ${access}`,
-        },
+        data: {},
+        headers: headers,
       });
-      const responseData: UserCredentials = await response.json();
-      setUserData(responseData);
+      setUserData(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -193,12 +205,15 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
     const tokenString = localStorage.getItem(LOCAL_STORAGE_AUTH_KEY);
     if (isString(tokenString)) {
       const tokens = JSON.parse(tokenString);
-      loginWithTokens(tokens.access, tokens.refresh);
+      setUserTokens(tokens);
+      apiClient.setTokens(tokens);
+      loginWithToken(tokens.access);
     }
   }, []);
 
   const authValues = {
     userData,
+    userTokens,
     setUserData,
     loginUser,
     registerUser,

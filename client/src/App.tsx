@@ -12,6 +12,7 @@ import Other from "./pages/Other";
 import RootLayout from "./layouts/RootLayout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Approve from "./pages/Approve";
 import { AuthContextProvider } from "./contexts/AuthContext";
 
 const router = createBrowserRouter(
@@ -20,6 +21,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/approve" element={<Approve />} />
       <Route path="/components" element={<Components />} />
       <Route path="/builds" element={<Builds />} />
       <Route path="/other" element={<Other />} />

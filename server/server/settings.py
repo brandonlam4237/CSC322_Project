@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
 
+    'corsheaders',
+
     'user',
     'items',
 ]
@@ -102,6 +104,9 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -187,3 +192,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'user.UserAccount'
+
+# For Production
+# ALLOWED_HOSTS = ['http://localhost:3000', 'localhost', 'http://127.0.0.1:3000/']
+# CORS_ORIGIN_ALLOW_ALL = False
+# CORS_ORIGIN_WHITELIST = (
+#        'http://localhost:3000',
+# )
+
+# For Development
+ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_ALLOW_ALL = True
