@@ -24,7 +24,7 @@ Donut PCs is a website application that uses React and Django
    python server/scripts/secret_key.py
    ```
 
-2. create a ``.env`` file within `server/`
+2. create a `.env` file within `server/`
 
    ```txt
    cp .env.example .env
@@ -47,7 +47,7 @@ Donut PCs is a website application that uses React and Django
    ```txt
    psql
    ```
-   
+
    ```txt
    CREATE DATABASE donut_pcs;
    ```
@@ -65,10 +65,10 @@ Donut PCs is a website application that uses React and Django
    **Windows**
 
    Before starting, you may need to add python as an environment variable to PATH on your system.
-   
+
    ```txt
    python -m ensurepip
-   ``` 
+   ```
 
    ```txt
    py -m pip install --user virtualenv
@@ -93,7 +93,9 @@ Donut PCs is a website application that uses React and Django
    ```txt
    .\env\Scripts\activate
    ```
+
    If the environment doesn't get activated, open powershell as adminstrator and run the following command first:
+
    ```txt
    Set-ExecutionPolicy RemoteSigned
    ```
