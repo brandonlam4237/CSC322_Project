@@ -125,6 +125,12 @@ Donut PCs is a website application that uses React and Django
    python manage.py createsuperuser
    ```
 
+8. Load the fixtures
+
+   ```txt
+   python manage.py loaddata items/fixtures/*.json
+   ```
+
 ## How to Run
 
 ### Running the Server
