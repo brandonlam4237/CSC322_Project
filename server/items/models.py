@@ -41,75 +41,36 @@ class Product(models.Model):
     product_name = models.CharField(max_length=255, null=False)
     price = models.DecimalField(max_digits=7, decimal_places=2, null=False)
     comments = models.ManyToManyField(Comment, blank=True)
+    image_url = models.URLField(max_length=200, null=False)
 
-
-class ComputerPart(Product):
-    """
-    Computer Part Model
-
-    Fields
-    ------
-    category : CharField
-        Category of the computer part
-    product_sku : IntegerField
-        Stock keeping unit number
-    upc_number : PositiveBigIntegerField
-        Universal Product Code number
-    specs : JSON Field
-        JSON Object of specifications of the computer part
-    """
     class Category(models.TextChoices):
         """
         Categories of Item
         """
-        CPU = "CPU", "Processors/CPUs"
-        GPU = "GPU", "Graphics Cards"
-        MOTHERBOARD = "MOTHERBOARD", "Motherboards"
-        STORAGE = "STORAGE", "Drives & Storage"
-        RAM = "RAM", "Computer Memory"
-        CASE = "CASE", "Computer Cases"
-        PSU = "PSU", "Power Supplies"
-        COOLING = "COOLING", "Air & Water Cooling"
+        CPU = "Processors/CPUs", "Processors/CPUs"
+        GPU = "Graphics Cards", "Graphics Cards"
+        MOTHERBOARD = "Motherboards", "Motherboards"
+        STORAGE = "Drives & Storage", "Drives & Storage"
+        RAM = "Computer Memory", "Computer Memory"
+        CASE = "Computer Cases", "Computer Cases"
+        PSU = "Power Supplies", "Power Supplies"
+        COOLING = "Air & Water Cooling", "Air & Water Cooling"
+        GAMING_PC = "Gaming PCs", "Gaming PCs"
+        WORKSTATION = "Workstations", "Workstations"
+        SERVER = "Servers", "Servers"
 
     category = models.CharField(
         max_length=20, choices=Category.choices, null=False)
 
     product_sku = models.IntegerField(null=False)
     manufacturer_part_number = models.CharField(max_length=100, null=False)
-    upc_number = models.PositiveBigIntegerField(null=False)
+    upc_number = models.CharField(max_length=20, null=False)
     specs = models.JSONField(null=False)
 
+    objects = models.Manager()
 
-class Computer(Product):
-    """
-    Computer Model
-
-    Fields
-    ------
-    category : CharField
-        Category of the computer
-    product_sku : IntegerField
-        Stock keeping unit number
-    upc_number : PositiveBigIntegerField
-        Universal Product Code number
-    specs : JSON Field
-        JSON Object of specifications of the computer
-    """
-    class DesktopTypes(models.TextChoices):
-        """
-        Categories of Desktop Types
-        """
-        GAMING_PC = "GAME", "Gaming PCs"
-        WORKSTATION = "WORK", "Workstations"
-        SERVER = "SERVER", "Servers"
-
-    category = models.CharField(
-        max_length=20, choices=DesktopTypes.choices, null=False)
-
-    product_sku = models.IntegerField(null=False)
-    manufacturer_part_number = models.CharField(max_length=100, null=False)
-    upc_number = models.PositiveBigIntegerField(null=False)
-    specs = models.JSONField(null=False)
+    def __str__(self) -> str:
+        return f"{self.brand} - {self.product_name}"
 
 
 class CustomBuild(models.Model):
@@ -127,7 +88,7 @@ class CustomBuild(models.Model):
     """
     build_maker = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
     build_name = models.CharField(max_length=50, unique=True, null=False)
-    parts = models.ManyToManyField(ComputerPart)
+    parts = models.ManyToManyField(Product)
 
 
 class Order(models.Model):
