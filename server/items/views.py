@@ -1,6 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework import status, permissions
 from rest_framework.response import Response
+from django.shortcuts import get_object_or_404
 
 from .models import Product
 from .serializers import ProductSerializer
@@ -41,9 +42,27 @@ class ProductList(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        product_list = ProductSerializer(product_list, many=True)
+        serializer = ProductSerializer(product_list, many=True)
 
         return Response(
-            {'products': product_list.data},
+            {'products': serializer.data},
+            status=status.HTTP_200_OK
+        )
+
+
+class ProductDetail(APIView):
+    """
+    Endpoint to get a product detail
+    """
+    permission_classes = (permissions.AllowAny,)
+
+    def get(self, request, id, format=None):
+        """
+        Handles a GET request to retrieve a product detail
+        """
+        product = get_object_or_404(Product, id=id)
+        serializer = ProductSerializer(product, many=False)
+        return Response(
+            {'products': serializer.data},
             status=status.HTTP_200_OK
         )
