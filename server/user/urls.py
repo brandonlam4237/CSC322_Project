@@ -3,6 +3,7 @@ from .views import CustomerList
 from .views import BlacklistedUserList, BlacklistUser, CustomerDetail
 from .views import UserList
 from .views import ActivateUser
+from .views import AddBalance
 
 urlpatterns = [
     path('', UserList.as_view()),
@@ -13,5 +14,7 @@ urlpatterns = [
     path('blacklist', BlacklistedUserList.as_view()),
     path('blacklist/<int:id>', BlacklistUser.as_view()),
 
-    path('activate/<int:id>', ActivateUser.as_view())
+    path('activate/<int:id>', ActivateUser.as_view()),
+
+    path('balance', AddBalance.as_view()),
 ]
