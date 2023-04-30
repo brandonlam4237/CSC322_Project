@@ -47,17 +47,15 @@ class Product(models.Model):
         """
         Categories of Item
         """
-        CPU = "Processors/CPUs", "Processors/CPUs"
-        GPU = "Graphics Cards", "Graphics Cards"
-        MOTHERBOARD = "Motherboards", "Motherboards"
-        STORAGE = "Drives & Storage", "Drives & Storage"
-        RAM = "Computer Memory", "Computer Memory"
-        CASE = "Computer Cases", "Computer Cases"
-        PSU = "Power Supplies", "Power Supplies"
-        COOLING = "Air & Water Cooling", "Air & Water Cooling"
-        GAMING_PC = "Gaming PCs", "Gaming PCs"
-        WORKSTATION = "Workstations", "Workstations"
-        SERVER = "Servers", "Servers"
+        CPU = "CPU", "Processors/CPUs"
+        GPU = "GPU", "Graphics Cards"
+        MOTHERBOARD = "Motherboard", "Motherboards"
+        STORAGE = "Storage", "Drives & Storage"
+        RAM = "RAM", "Computer Memory"
+        CASE = "Case", "Computer Cases"
+        PSU = "PSU", "Power Supplies"
+        COOLING = "Cooling", "Air & Water Cooling"
+        DESKTOP_COMPUTER = "Desktop", "Desktop Computers"
 
     category = models.CharField(
         max_length=20, choices=Category.choices, null=False)
