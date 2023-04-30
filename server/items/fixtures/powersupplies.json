@@ -1,7 +1,7 @@
 [
     {
         "model": "items.Product",
-        "pk": 180,
+        "pk": 280,
         "fields": {
             "brand": "Lian Li",
             "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
@@ -34,90 +34,12 @@
                 "Parts": "5 Years Limited",
                 "Labor": "5 Years Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 181,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 182,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 183,
+        "pk": 281,
         "fields": {
             "brand": "Lian Li",
             "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
@@ -150,12 +72,12 @@
                 "Parts": "5 Years Limited",
                 "Labor": "5 Years Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 184,
+        "pk": 282,
         "fields": {
             "brand": "Corsair",
             "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
@@ -189,51 +111,12 @@
                 "Parts": "10 Year Limited",
                 "Labor": "10 Year Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 185,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 186,
+        "pk": 283,
         "fields": {
             "brand": "Lian Li",
             "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
@@ -266,90 +149,12 @@
                 "Parts": "5 Years Limited",
                 "Labor": "5 Years Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 187,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 188,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 189,
+        "pk": 284,
         "fields": {
             "brand": "Lian Li",
             "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
@@ -382,167 +187,12 @@
                 "Parts": "5 Years Limited",
                 "Labor": "5 Years Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 190,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 191,
-        "fields": {
-            "brand": "Lian Li",
-            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
-            "price": "129.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=638104_281337_01_front_comping-jpg",
-            "product_sku": "281337",
-            "manufacturer_part_number": "G89.SP750B.00US",
-            "upc_number": "840353040816",
-            "specs": {
-                "Cooling Fans": "92mm Hydraulic Bearing Fan",
-                "Wattage": "750 Watts",
-                "Form Factor": "SFX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "20+4-pin",
-                "ATX 12V Connector": "2 x 4+4-pin",
-                "Graphics Connector": "3 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "4",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Power Supply Depth": "3.94 in. (100.00 mm)",
-                "Width": "4.92 in. (125.00 mm)",
-                "Height": "2.50 in. (63.50 mm)",
-                "What's in the Box": "Power Supply, Power Cord, Motherboard Cable, CPU Cable, 2x PCIe Cables, Peripheral Cable, 2x SATA Cables",
-                "Parts": "5 Years Limited",
-                "Labor": "5 Years Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 192,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 193,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 194,
+        "pk": 285,
         "fields": {
             "brand": "Seasonic USA",
             "product_name": "FOCUS GX-750, 750W 80+ Gold, Full-Modular, Fan Control in Fanless, Silent, and Cooling Mode, 10 Year Warranty, Perfect Power Supply for Gaming and Various Application, SSR-750FX.",
@@ -580,478 +230,12 @@
                 "Parts": "10 Year Limited",
                 "Labor": "10 Year Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 195,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 196,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 197,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 198,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 199,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 200,
-        "fields": {
-            "brand": "Lian Li",
-            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
-            "price": "129.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=638104_281337_01_front_comping-jpg",
-            "product_sku": "281337",
-            "manufacturer_part_number": "G89.SP750B.00US",
-            "upc_number": "840353040816",
-            "specs": {
-                "Cooling Fans": "92mm Hydraulic Bearing Fan",
-                "Wattage": "750 Watts",
-                "Form Factor": "SFX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "20+4-pin",
-                "ATX 12V Connector": "2 x 4+4-pin",
-                "Graphics Connector": "3 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "4",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Power Supply Depth": "3.94 in. (100.00 mm)",
-                "Width": "4.92 in. (125.00 mm)",
-                "Height": "2.50 in. (63.50 mm)",
-                "What's in the Box": "Power Supply, Power Cord, Motherboard Cable, CPU Cable, 2x PCIe Cables, Peripheral Cable, 2x SATA Cables",
-                "Parts": "5 Years Limited",
-                "Labor": "5 Years Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 201,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 202,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 203,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 204,
-        "fields": {
-            "brand": "Lian Li",
-            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
-            "price": "129.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=638104_281337_01_front_comping-jpg",
-            "product_sku": "281337",
-            "manufacturer_part_number": "G89.SP750B.00US",
-            "upc_number": "840353040816",
-            "specs": {
-                "Cooling Fans": "92mm Hydraulic Bearing Fan",
-                "Wattage": "750 Watts",
-                "Form Factor": "SFX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "20+4-pin",
-                "ATX 12V Connector": "2 x 4+4-pin",
-                "Graphics Connector": "3 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "4",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Power Supply Depth": "3.94 in. (100.00 mm)",
-                "Width": "4.92 in. (125.00 mm)",
-                "Height": "2.50 in. (63.50 mm)",
-                "What's in the Box": "Power Supply, Power Cord, Motherboard Cable, CPU Cable, 2x PCIe Cables, Peripheral Cable, 2x SATA Cables",
-                "Parts": "5 Years Limited",
-                "Labor": "5 Years Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 205,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 206,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 207,
+        "pk": 286,
         "fields": {
             "brand": "Seasonic USA",
             "product_name": "PRIME TX-850, 850W 80+ Titanium, Full Modular, Fan Control in Fanless, Silent, and Cooling Mode, 12 Year Warranty, Perfect Power Supply for Gaming and High-Performance Systems, SSR-850TR.",
@@ -1099,12 +283,129 @@
                 "Parts": "12 Years",
                 "Labor": "12 Years"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 208,
+        "pk": 287,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 288,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 289,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 290,
         "fields": {
             "brand": "Seasonic USA",
             "product_name": "FOCUS GX-750, 750W 80+ Gold, Full-Modular, Fan Control in Fanless, Silent, and Cooling Mode, 10 Year Warranty, Perfect Power Supply for Gaming and Various Application, SSR-750FX.",
@@ -1142,12 +443,12 @@
                 "Parts": "10 Year Limited",
                 "Labor": "10 Year Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 209,
+        "pk": 291,
         "fields": {
             "brand": "Corsair",
             "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
@@ -1181,12 +482,12 @@
                 "Parts": "10 Year Limited",
                 "Labor": "10 Year Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 210,
+        "pk": 292,
         "fields": {
             "brand": "Corsair",
             "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
@@ -1220,12 +521,12 @@
                 "Parts": "10 Year Limited",
                 "Labor": "10 Year Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 211,
+        "pk": 293,
         "fields": {
             "brand": "Lian Li",
             "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
@@ -1258,12 +559,12 @@
                 "Parts": "5 Years Limited",
                 "Labor": "5 Years Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 212,
+        "pk": 294,
         "fields": {
             "brand": "Corsair",
             "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
@@ -1297,12 +598,12 @@
                 "Parts": "10 Year Limited",
                 "Labor": "10 Year Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 213,
+        "pk": 295,
         "fields": {
             "brand": "Corsair",
             "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
@@ -1336,12 +637,12 @@
                 "Parts": "10 Year Limited",
                 "Labor": "10 Year Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 214,
+        "pk": 296,
         "fields": {
             "brand": "Corsair",
             "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
@@ -1375,12 +676,12 @@
                 "Parts": "10 Year Limited",
                 "Labor": "10 Year Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 215,
+        "pk": 297,
         "fields": {
             "brand": "Lian Li",
             "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
@@ -1413,12 +714,12 @@
                 "Parts": "5 Years Limited",
                 "Labor": "5 Years Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 216,
+        "pk": 298,
         "fields": {
             "brand": "Corsair",
             "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
@@ -1452,12 +753,12 @@
                 "Parts": "10 Year Limited",
                 "Labor": "10 Year Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 217,
+        "pk": 299,
         "fields": {
             "brand": "Lian Li",
             "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
@@ -1490,12 +791,12 @@
                 "Parts": "5 Years Limited",
                 "Labor": "5 Years Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 218,
+        "pk": 300,
         "fields": {
             "brand": "Corsair",
             "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
@@ -1529,12 +830,90 @@
                 "Parts": "10 Year Limited",
                 "Labor": "10 Year Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 219,
+        "pk": 301,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 302,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 303,
         "fields": {
             "brand": "Lian Li",
             "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
@@ -1567,12 +946,12 @@
                 "Parts": "5 Years Limited",
                 "Labor": "5 Years Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 220,
+        "pk": 304,
         "fields": {
             "brand": "Corsair",
             "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
@@ -1606,12 +985,12 @@
                 "Parts": "10 Year Limited",
                 "Labor": "10 Year Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 221,
+        "pk": 305,
         "fields": {
             "brand": "Corsair",
             "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
@@ -1645,12 +1024,12 @@
                 "Parts": "10 Year Limited",
                 "Labor": "10 Year Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 222,
+        "pk": 306,
         "fields": {
             "brand": "Lian Li",
             "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
@@ -1683,12 +1062,12 @@
                 "Parts": "5 Years Limited",
                 "Labor": "5 Years Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 223,
+        "pk": 307,
         "fields": {
             "brand": "Corsair",
             "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
@@ -1722,12 +1101,90 @@
                 "Parts": "10 Year Limited",
                 "Labor": "10 Year Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 224,
+        "pk": 308,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 309,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 310,
         "fields": {
             "brand": "Lian Li",
             "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
@@ -1760,51 +1217,12 @@
                 "Parts": "5 Years Limited",
                 "Labor": "5 Years Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 225,
-        "fields": {
-            "brand": "Corsair",
-            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
-            "price": "149.99",
-            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
-            "product_sku": "225219",
-            "manufacturer_part_number": "CP-9020200-NA",
-            "upc_number": "840006604839",
-            "specs": {
-                "Series": "RMx Series",
-                "Wattage": "850 Watts",
-                "Form Factor": "ATX",
-                "Color": "Black",
-                "LED Color": "None",
-                "ATi CrossFire": "CrossFire Compatible",
-                "NVIDIA SLI": "SLI Compatible",
-                "Modular": "Fully-Modular",
-                "ATX Connector": "24-pin",
-                "ATX 12V Connector": "3 x 4+4-pin",
-                "Graphics Connector": "4 x 6+2-pin",
-                "Molex Connector": "4",
-                "SATA Connector": "8",
-                "Floppy Connector": "1",
-                "PFC": "Active",
-                "Rating": "80 PLUS Gold Certified",
-                "+12V Rails": "1",
-                "Height": "3.39 in. (86.00 mm)",
-                "Power Supply Depth": "6.30 in. (160.02 mm)",
-                "Width": "5.91 in. (150.00 mm)",
-                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
-                "Parts": "10 Year Limited",
-                "Labor": "10 Year Limited"
-            },
-            "category": "Power Supplies"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 226,
+        "pk": 311,
         "fields": {
             "brand": "Lian Li",
             "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
@@ -1837,12 +1255,12 @@
                 "Parts": "5 Years Limited",
                 "Labor": "5 Years Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
         }
     },
     {
         "model": "items.Product",
-        "pk": 227,
+        "pk": 312,
         "fields": {
             "brand": "Corsair",
             "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
@@ -1876,7 +1294,589 @@
                 "Parts": "10 Year Limited",
                 "Labor": "10 Year Limited"
             },
-            "category": "Power Supplies"
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 313,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 314,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 315,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 316,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 317,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 318,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 319,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 320,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 321,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=638104_281337_01_front_comping-jpg",
+            "product_sku": "281337",
+            "manufacturer_part_number": "G89.SP750B.00US",
+            "upc_number": "840353040816",
+            "specs": {
+                "Cooling Fans": "92mm Hydraulic Bearing Fan",
+                "Wattage": "750 Watts",
+                "Form Factor": "SFX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "20+4-pin",
+                "ATX 12V Connector": "2 x 4+4-pin",
+                "Graphics Connector": "3 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "4",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Power Supply Depth": "3.94 in. (100.00 mm)",
+                "Width": "4.92 in. (125.00 mm)",
+                "Height": "2.50 in. (63.50 mm)",
+                "What's in the Box": "Power Supply, Power Cord, Motherboard Cable, CPU Cable, 2x PCIe Cables, Peripheral Cable, 2x SATA Cables",
+                "Parts": "5 Years Limited",
+                "Labor": "5 Years Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 322,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 323,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 324,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=638104_281337_01_front_comping-jpg",
+            "product_sku": "281337",
+            "manufacturer_part_number": "G89.SP750B.00US",
+            "upc_number": "840353040816",
+            "specs": {
+                "Cooling Fans": "92mm Hydraulic Bearing Fan",
+                "Wattage": "750 Watts",
+                "Form Factor": "SFX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "20+4-pin",
+                "ATX 12V Connector": "2 x 4+4-pin",
+                "Graphics Connector": "3 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "4",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Power Supply Depth": "3.94 in. (100.00 mm)",
+                "Width": "4.92 in. (125.00 mm)",
+                "Height": "2.50 in. (63.50 mm)",
+                "What's in the Box": "Power Supply, Power Cord, Motherboard Cable, CPU Cable, 2x PCIe Cables, Peripheral Cable, 2x SATA Cables",
+                "Parts": "5 Years Limited",
+                "Labor": "5 Years Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 325,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=638104_281337_01_front_comping-jpg",
+            "product_sku": "281337",
+            "manufacturer_part_number": "G89.SP750B.00US",
+            "upc_number": "840353040816",
+            "specs": {
+                "Cooling Fans": "92mm Hydraulic Bearing Fan",
+                "Wattage": "750 Watts",
+                "Form Factor": "SFX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "20+4-pin",
+                "ATX 12V Connector": "2 x 4+4-pin",
+                "Graphics Connector": "3 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "4",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Power Supply Depth": "3.94 in. (100.00 mm)",
+                "Width": "4.92 in. (125.00 mm)",
+                "Height": "2.50 in. (63.50 mm)",
+                "What's in the Box": "Power Supply, Power Cord, Motherboard Cable, CPU Cable, 2x PCIe Cables, Peripheral Cable, 2x SATA Cables",
+                "Parts": "5 Years Limited",
+                "Labor": "5 Years Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 326,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 327,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99",
+            "image_url": "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=632808_225219_01_front_comping-jpg",
+            "product_sku": "225219",
+            "manufacturer_part_number": "CP-9020200-NA",
+            "upc_number": "840006604839",
+            "specs": {
+                "Series": "RMx Series",
+                "Wattage": "850 Watts",
+                "Form Factor": "ATX",
+                "Color": "Black",
+                "LED Color": "None",
+                "ATi CrossFire": "CrossFire Compatible",
+                "NVIDIA SLI": "SLI Compatible",
+                "Modular": "Fully-Modular",
+                "ATX Connector": "24-pin",
+                "ATX 12V Connector": "3 x 4+4-pin",
+                "Graphics Connector": "4 x 6+2-pin",
+                "Molex Connector": "4",
+                "SATA Connector": "8",
+                "Floppy Connector": "1",
+                "PFC": "Active",
+                "Rating": "80 PLUS Gold Certified",
+                "+12V Rails": "1",
+                "Height": "3.39 in. (86.00 mm)",
+                "Power Supply Depth": "6.30 in. (160.02 mm)",
+                "Width": "5.91 in. (150.00 mm)",
+                "What's in the Box": "RMx Series ATX Power Supply, Power cord, Mounting screws, Cable ties, Corsair case badge, User manual",
+                "Parts": "10 Year Limited",
+                "Labor": "10 Year Limited"
+            },
+            "category": "PSU"
         }
     }
 ]
