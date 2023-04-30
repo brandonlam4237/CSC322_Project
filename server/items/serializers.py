@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from .models import Item
+from .models import Product
 
 
-class ItemSerializer(serializers.ModelSerializer):
+class ProductSerializer(serializers.ModelSerializer):
     """
     Serializer for Computer Part Data
     """
@@ -11,5 +11,5 @@ class ItemSerializer(serializers.ModelSerializer):
         """
         Serialize all fields in Computer Part model
         """
-        model = Item
+        model = Product
         fields = '__all__'
