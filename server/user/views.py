@@ -279,6 +279,8 @@ class AddBalance(APIView):
         exp_date = request.data.get('exp_date')
         balance = request.data.get('balance')
 
+        balance = round(balance, 2)
+
         if not credit_card_num:
             return Response(
                 {'error': 'Please provide credit card number'},
