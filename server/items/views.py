@@ -13,17 +13,15 @@ class ProductList(APIView):
     """
     permission_classes = (permissions.AllowAny,)
     PRODUCT_CATEGORIES = {
-        "Processors/CPUs",
-        "Graphics Cards",
-        "Motherboards",
-        "Drives & Storage",
-        "Computer Memory",
-        "Computer Cases",
-        "Power Supplies",
-        "Air & Water Cooling",
-        "Gaming PCs",
-        "Workstations",
-        "Servers"
+        "CPU",
+        "GPU",
+        "Motherboard",
+        "Storage",
+        "RAM",
+        "Case",
+        "PSU",
+        "Cooling",
+        "Desktop"
     }
 
     def get(self, request, format=None):

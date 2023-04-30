@@ -1,7 +1,7 @@
 [
     {
         "model": "items.Product",
-        "pk": 369,
+        "pk": 233,
         "fields": {
             "brand": "Supermicro",
             "product_name": "A+ Server AS- 1014S-WTRT",
@@ -62,12 +62,12 @@
                 "Parts": "1 Year Limited",
                 "Labor": "3 Years Limited"
             },
-            "category": "Desktop Computers"
+            "category": "Desktop"
         }
     },
     {
         "model": "items.Product",
-        "pk": 370,
+        "pk": 234,
         "fields": {
             "brand": "Supermicro",
             "product_name": "A+ Server AS- 1014S-WTRT",
@@ -128,12 +128,12 @@
                 "Parts": "1 Year Limited",
                 "Labor": "3 Years Limited"
             },
-            "category": "Desktop Computers"
+            "category": "Desktop"
         }
     },
     {
         "model": "items.Product",
-        "pk": 371,
+        "pk": 235,
         "fields": {
             "brand": "Supermicro",
             "product_name": "A+ Server AS- 1014S-WTRT",
@@ -194,12 +194,12 @@
                 "Parts": "1 Year Limited",
                 "Labor": "3 Years Limited"
             },
-            "category": "Desktop Computers"
+            "category": "Desktop"
         }
     },
     {
         "model": "items.Product",
-        "pk": 372,
+        "pk": 236,
         "fields": {
             "brand": "Supermicro",
             "product_name": "A+ Server AS- 1014S-WTRT",
@@ -260,12 +260,12 @@
                 "Parts": "1 Year Limited",
                 "Labor": "3 Years Limited"
             },
-            "category": "Desktop Computers"
+            "category": "Desktop"
         }
     },
     {
         "model": "items.Product",
-        "pk": 373,
+        "pk": 237,
         "fields": {
             "brand": "Supermicro",
             "product_name": "A+ Server AS- 1014S-WTRT",
@@ -326,12 +326,12 @@
                 "Parts": "1 Year Limited",
                 "Labor": "3 Years Limited"
             },
-            "category": "Desktop Computers"
+            "category": "Desktop"
         }
     },
     {
         "model": "items.Product",
-        "pk": 374,
+        "pk": 238,
         "fields": {
             "brand": "Supermicro",
             "product_name": "A+ Server AS- 1014S-WTRT",
@@ -392,7 +392,7 @@
                 "Parts": "1 Year Limited",
                 "Labor": "3 Years Limited"
             },
-            "category": "Desktop Computers"
+            "category": "Desktop"
         }
     }
 ]

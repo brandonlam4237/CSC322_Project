@@ -57,12 +57,25 @@ def process_data(item_paths) -> tuple:
 
                 # Category
                 if "Graphics" in old_data["category"]:
-                    old_data["category"] = "Graphics Cards"
+                    old_data["category"] = "GPU"
                 if "Storage" in old_data["category"]:
-                    old_data["category"] = "Drives & Storage"
+                    old_data["category"] = "Storage"
+                if "Cooling" in old_data["category"]:
+                    old_data["category"] = "Cooling"
+                if "Memory" in old_data["category"]:
+                    old_data["category"] = "RAM"
+                if "Case" in old_data["category"]:
+                    old_data["category"] = "Case"
+                if "Power" in old_data["category"]:
+                    old_data["category"] = "PSU"
+                if "Desktop" in old_data["category"]:
+                    old_data["category"] = "Desktop"
+                if "CPU" in old_data["category"]:
+                    old_data["category"] = "CPU"
+                if "Motherboards" in old_data["category"]:
+                    old_data["category"] = "Motherboard"
 
-                fields["category"] = old_data["category"].replace(
-                    "&amp;", "&")
+                fields["category"] = old_data["category"]
 
                 file_name = f"{category}.json".replace(
                     "&amp;", "&")
