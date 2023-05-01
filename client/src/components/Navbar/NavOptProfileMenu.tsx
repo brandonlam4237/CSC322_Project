@@ -1,7 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
 import user_icon from "../../assets/icons/user.svg";
 import { svgBlack, svgAccentColor } from "./svgColors";
-import { UserCredentials } from '../../contexts/AuthContext';
+import { TUserType } from "../../contexts/AuthContext";
 
 type props = {
   setProfileIsOpen: Function;
@@ -10,7 +10,7 @@ type props = {
   profileColor: object;
   email: string;
   handleSignoutButton: () => void;
-  user: UserCredentials;
+  userType: TUserType;
 };
 
 function NavOptProfileMenu(props: props) {
@@ -21,7 +21,7 @@ function NavOptProfileMenu(props: props) {
     profileColor,
     email,
     handleSignoutButton,
-    user,
+    userType,
   } = props;
 
   return (
@@ -52,9 +52,9 @@ function NavOptProfileMenu(props: props) {
             </NavLink>
           </li>
           <li>
-            {user.is_customer ? (
-              <NavLink to="/addBalance" className="options__navLink">
-                Add Balance
+            {userType === "Customer" ? (
+              <NavLink to="/orderHistory" className="options__navLink">
+                Order History
               </NavLink>
             ) : (
               <NavLink to="/approve" className="options__navLink">
@@ -62,12 +62,6 @@ function NavOptProfileMenu(props: props) {
               </NavLink>
             )}
           </li>
-          <li>
-            <NavLink to="/orderHistory" className="options__navLink">
-              Order History
-            </NavLink>
-          </li>
-
           <li className="line"></li>
           <li>
             <Link
