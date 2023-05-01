@@ -1,4 +1,4 @@
-import "../scss/template.scss";
+import "../scss/approve.scss";
 import { useEffect, useState } from "react";
 import { UserCredentials, useAuthContext } from "src/contexts/AuthContext";
 import apiClient from "src/services/apiClient";
