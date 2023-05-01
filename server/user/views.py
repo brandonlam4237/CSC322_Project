@@ -81,58 +81,51 @@ class CustomerList(APIView):
         Optional Request Params:
             activated? : boolean
         """
-        try:
-            user = request.user
+        user = request.user
 
-            activated = request.query_params.get('activated')
+        activated = request.query_params.get('activated')
 
-            if not (user.is_employee or user.is_superuser):
-                return Response(
-                    {'error': 'User doesn\'t have the proper permissions for accessing customer data'},
-                    status=status.HTTP_401_UNAUTHORIZED
-                )
-
-            # No 'activated' parameter
-            if not activated:
-                customers = User.objects.order_by(
-                    '-date_created').filter(is_customer=True)
-                customers = CustomerSerializer(customers, many=True)
-                return Response(
-                    {'customers': customers.data},
-                    status=status.HTTP_200_OK
-                )
-
-            # Check if 'activated' parameter is available
-            if activated == "true":
-                customers = User.objects.order_by(
-                    '-date_created').filter(is_customer=True, is_active=True)
-                customers = CustomerSerializer(customers, many=True)
-
-                return Response(
-                    {'customers': customers.data},
-                    status=status.HTTP_200_OK
-                )
-
-            if activated == "false":
-                customers = User.objects.order_by(
-                    '-date_created').filter(is_customer=True, is_active=False)
-                customers = CustomerSerializer(customers, many=True)
-
-                return Response(
-                    {'customers': customers.data},
-                    status=status.HTTP_200_OK
-                )
-
+        if not (user.is_employee or user.is_superuser):
             return Response(
-                {'error': 'The \'activated\' parameter can only be true, false, or empty'},
-                status=status.HTTP_400_BAD_REQUEST
+                {'error': 'User doesn\'t have the proper permissions for accessing customer data'},
+                status=status.HTTP_401_UNAUTHORIZED
             )
 
-        except AttributeError:
+        # No 'activated' parameter
+        if not activated:
+            customers = User.objects.order_by(
+                '-date_created').filter(is_customer=True)
+            customers = CustomerSerializer(customers, many=True)
             return Response(
-                {'error': 'Something went wrong when retrieving customer data'},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+                {'customers': customers.data},
+                status=status.HTTP_200_OK
             )
+
+        # Check if 'activated' parameter is available
+        if activated == "true":
+            customers = User.objects.order_by(
+                '-date_created').filter(is_customer=True, is_active=True)
+            customers = CustomerSerializer(customers, many=True)
+
+            return Response(
+                {'customers': customers.data},
+                status=status.HTTP_200_OK
+            )
+
+        if activated == "false":
+            customers = User.objects.order_by(
+                '-date_created').filter(is_customer=True, is_active=False)
+            customers = CustomerSerializer(customers, many=True)
+
+            return Response(
+                {'customers': customers.data},
+                status=status.HTTP_200_OK
+            )
+
+        return Response(
+            {'error': 'The \'activated\' parameter can only be true, false, or empty'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
 
 
 class CustomerDetail(APIView):
@@ -414,9 +407,8 @@ class BlacklistUser(APIView):
                 {'error': 'User is already blacklisted'},
                 status=status.HTTP_400_BAD_REQUEST
             )
-        
-        User.objects.filter(id=user_to_blacklist.id).update(blacklisted=True)
 
+        User.objects.filter(id=user_to_blacklist.id).update(blacklisted=True)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
@@ -438,58 +430,15 @@ class ActivateUser(APIView):
         """
         Handles a PATCH request to activate a user
         """
-        try:
-            user = request.user
+        user = request.user
 
-            user_to_activate = User.objects.get(id=id)
+        user_to_activate = get_object_or_404(User, id=id)
 
-            if user_to_activate.is_active:
-                return Response(
-                    {'error': 'User is already activated'},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
-
-            if user_to_activate.is_employee and not user.is_superuser:
-                return Response(
-                    {'error': 'User doesn\'t have the proper permissions to activate employee users'},
-                    status=status.HTTP_401_UNAUTHORIZED
-                )
-
-            data = request.data
-            if len(data) != 2 or not data['is_active'] or not data['memo']:
-                return Response(
-                    {'error': 'Body should only include \'is_active\' and \'memo\' attribute'},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
-
-            serializer = UserSerializer(
-                user_to_activate, data=data, partial=True)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(
-                    {'success': 'User has been activated'},
-                    status=status.HTTP_200_OK
-                )
-
+        if user_to_activate.is_employee and not user.is_superuser:
             return Response(
-                {'error': 'Bad Request'},
-                status=status.HTTP_400_BAD_REQUEST
+                {'error': 'User doesn\'t have the proper permissions to activate employee users'},
+                status=status.HTTP_401_UNAUTHORIZED
             )
 
-        except ObjectDoesNotExist:
-            return Response(
-                {'error': 'User not found'},
-                status=status.HTTP_404_NOT_FOUND
-            )
-
-        except KeyError:
-            return Response(
-                {'error': 'Necessary data was not passed properly'},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-
-        except Exception:
-            return Response(
-                {'error': 'Something went wrong when retrieving customer data'},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+        User.objects.filter(id=user_to_activate).update(is_active=True)
+        return Response(status=status.HTTP_204_NO_CONTENT)
