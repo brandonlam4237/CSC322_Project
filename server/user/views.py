@@ -1,6 +1,7 @@
 from datetime import date
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ObjectDoesNotExist
+from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.response import Response
@@ -391,68 +392,32 @@ class BlacklistUser(APIView):
         """
         Handles a PATCH request to blacklist a user based on user_id
         """
-        try:
-            user = request.user
+        user = request.user
 
-            if not user.is_superuser:
-                return Response(
-                    {'error': 'User doesn\'t have the proper permissions'
-                     ' for accessing customer data'},
-                    status=status.HTTP_401_UNAUTHORIZED
-                )
-
-            user_to_blacklist = User.objects.get(id=id)
-
-            if user_to_blacklist.is_superuser:
-                return Response(
-                    {'error': 'Cannot blacklist superusers'},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
-
-            if user_to_blacklist.blacklisted:
-                return Response(
-                    {'error': 'User is already blacklisted'},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
-
-            data = request.data
-            if len(data) != 1 or not data['blacklisted'] or not data['memo']:
-                return Response(
-                    {'error': 'Body should only include \'blacklisted\' attribute'},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
-
-            serializer = UserSerializer(
-                user_to_blacklist, data=data, partial=True)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(
-                    {'success': 'User has been blacklisted'},
-                    status=status.HTTP_200_OK
-                )
-
+        if not user.is_superuser:
             return Response(
-                {'error': 'Bad Request'},
+                {'error': 'User doesn\'t have the proper permissions'
+                    ' for accessing customer data'},
+                status=status.HTTP_401_UNAUTHORIZED
+            )
+
+        user_to_blacklist = get_object_or_404(User, id=id)
+
+        if user_to_blacklist.is_superuser:
+            return Response(
+                {'error': 'Cannot blacklist superusers'},
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        except KeyError:
+        if user_to_blacklist.blacklisted:
             return Response(
-                {'error': 'Something went wrong when retrieving customer data'},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+                {'error': 'User is already blacklisted'},
+                status=status.HTTP_400_BAD_REQUEST
             )
+        
+        User.objects.filter(id=user_to_blacklist.id).update(blacklisted=True)
 
-        except ObjectDoesNotExist:
-            return Response(
-                {'error': 'User not found'},
-                status=status.HTTP_404_NOT_FOUND
-            )
-
-        except Exception:
-            return Response(
-                {'error': 'Something went wrong when retrieving customer data'},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class ActivateUser(APIView):
