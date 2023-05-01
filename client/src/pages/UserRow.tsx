@@ -2,9 +2,10 @@ import "../scss/user-row.scss";
 import Button from "src/components/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
-import apiClient from "src/services/apiClient";
 import { useState } from "react";
 import { useAuthContext } from "src/contexts/AuthContext";
+import MemoModal from "src/components/MemoModal";
+
 interface UserRowProps {
   username: string;
   userId: number;
@@ -12,6 +13,7 @@ interface UserRowProps {
   userType: string;
   firstName: string;
   lastName: string;
+  getAllUsers: Function;
 }
 
 export interface IApprovalForm {
@@ -20,18 +22,18 @@ export interface IApprovalForm {
 }
 
 export function UserRow({
-  username,
   userId,
   email,
   userType,
   firstName,
   lastName,
+  getAllUsers,
 }: UserRowProps) {
   const authVariables = useAuthContext();
   const accessToken = authVariables.userTokens.access;
 
   // initialize approval form state in order to fill out when rejecting user
-  const [rejectionMemo, setRejectionMemo] = useState<string>("");
+  const [memoModalOpen, setMemoModalOpen] = useState(false);
 
   async function handleApproveButton() {
     let approvalForm: IApprovalForm = {
@@ -39,7 +41,6 @@ export function UserRow({
       memo: "No Issues With User",
     };
     try {
-      console.log(approvalForm);
       await fetch(`/users/activate/${userId}`, {
         method: "PATCH",
         headers: {
@@ -48,9 +49,14 @@ export function UserRow({
         },
         body: JSON.stringify(approvalForm),
       });
+      getAllUsers();
     } catch (error) {
       console.log(error);
     }
+  }
+
+  function openMemoModal() {
+    setMemoModalOpen(true);
   }
 
   return (
@@ -69,10 +75,22 @@ export function UserRow({
         >
           <FontAwesomeIcon icon={faCheck} size="xl" />
         </Button>
-        <Button className="user-row__buttons__reject">
+        <Button className="user-row__buttons__reject" onClick={openMemoModal}>
           <FontAwesomeIcon icon={faXmark} size="xl" />
         </Button>
       </div>
+      {memoModalOpen && (
+        <MemoModal
+          closeModal={() => {
+            setMemoModalOpen(false);
+          }}
+          userId={userId}
+          accessToken={accessToken}
+          getAllUsers={() => {
+            getAllUsers();
+          }}
+        />
+      )}
     </div>
   );
 }

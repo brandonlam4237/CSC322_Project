@@ -1,11 +1,7 @@
 import "../scss/approve.scss";
 
 import { useEffect, useState } from "react";
-import {
-  UserCredentials,
-  useAuthContext,
-  userDataTemplate,
-} from "src/contexts/AuthContext";
+import { UserCredentials, useAuthContext } from "src/contexts/AuthContext";
 import apiClient from "src/services/apiClient";
 import { UserRow } from "./UserRow";
 
@@ -16,32 +12,33 @@ export default function Approve() {
   const [isLoading, setisLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    async function getAllUsers() {
-      // request parameters for endpoint depends on the userType of the user currenlty logged in
-      let usersParam: string = user.user_type === "Owner" ? "" : "customer";
-      let inActiveUsers;
-      const { data, error } = await apiClient.getUsers(usersParam);
-
-      // If the user currently logged in is super_user then response object is called users
-      if (data.users) {
-        inActiveUsers = data.users.filter((individualUser: UserCredentials) => {
-          return !individualUser.is_active;
-        });
-      }
-      // If the user currently logged in is super_user then response object is called customers
-      else if (data.customers) {
-        inActiveUsers = data.customers.filter(
-          (individualUser: UserCredentials) => {
-            return !individualUser.is_active;
-          }
-        );
-      } else console.log(error);
-
-      setAllUsers(inActiveUsers);
-    }
     getAllUsers();
     setisLoading(false);
   }, []);
+
+  async function getAllUsers() {
+    // request parameters for endpoint depends on the userType of the user currenlty logged in
+    let usersParam: string = user.is_superuser ? "" : "customer";
+    let inActiveUsers;
+    const { data, error } = await apiClient.getUsers(usersParam);
+
+    // If the user currently logged in is super_user then response object is called users
+    if (data.users) {
+      inActiveUsers = data.users.filter((individualUser: UserCredentials) => {
+        return !individualUser.is_active;
+      });
+    }
+    // If the user currently logged in is super_user then response object is called customers
+    else if (data.customers) {
+      inActiveUsers = data.customers.filter(
+        (individualUser: UserCredentials) => {
+          return !individualUser.is_active;
+        }
+      );
+    } else console.log(error);
+
+    setAllUsers(inActiveUsers);
+  }
 
   return isLoading ? (
     <h1>Loading...</h1>
@@ -67,6 +64,7 @@ export default function Approve() {
                 key={index}
                 firstName={individualUser.first_name}
                 lastName={individualUser.last_name}
+                getAllUsers={getAllUsers}
               />
             );
           })}
