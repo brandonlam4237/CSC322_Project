@@ -5,6 +5,8 @@ import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 import apiClient from "src/services/apiClient";
 import { useState } from "react";
 import { useAuthContext } from "src/contexts/AuthContext";
+import MemoModal from "src/components/MemoModal";
+
 interface UserRowProps {
   username: string;
   userId: number;
@@ -34,6 +36,7 @@ export function UserRow({
 
   // initialize approval form state in order to fill out when rejecting user
   const [rejectionMemo, setRejectionMemo] = useState<string>("");
+  const [memoModalOpen, setMemoModalOpen] = useState(false);
 
   async function handleApproveButton() {
     let approvalForm: IApprovalForm = {
@@ -85,6 +88,10 @@ export function UserRow({
     }
   }
 
+  function openMemoModal() {
+    setMemoModalOpen(true);
+  }
+
   return (
     <div className="user-row">
       <div className="user-row__info">
@@ -101,13 +108,17 @@ export function UserRow({
         >
           <FontAwesomeIcon icon={faCheck} size="xl" />
         </Button>
-        <Button
-          className="user-row__buttons__reject"
-          onClick={handleRejectButton}
-        >
+        <Button className="user-row__buttons__reject" onClick={openMemoModal}>
           <FontAwesomeIcon icon={faXmark} size="xl" />
         </Button>
       </div>
+      {memoModalOpen && (
+        <MemoModal
+          closeModal={() => {
+            setMemoModalOpen(false);
+          }}
+        />
+      )}
     </div>
   );
 }
