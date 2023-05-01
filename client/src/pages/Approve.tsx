@@ -1,11 +1,6 @@
-import "../scss/approve.scss";
-
+import "../scss/template.scss";
 import { useEffect, useState } from "react";
-import {
-  UserCredentials,
-  useAuthContext,
-  userDataTemplate,
-} from "src/contexts/AuthContext";
+import { UserCredentials, useAuthContext } from "src/contexts/AuthContext";
 import apiClient from "src/services/apiClient";
 import { UserRow } from "./UserRow";
 
