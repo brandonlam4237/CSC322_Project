@@ -21,6 +21,8 @@ class Comment(models.Model):
     comment = models.TextField(null=False)
     visible = models.BooleanField(default=True)
 
+    objects = models.Manager()
+
 
 class Product(models.Model):
     """
@@ -88,6 +90,8 @@ class CustomBuild(models.Model):
     build_name = models.CharField(max_length=50, unique=True, null=False)
     parts = models.ManyToManyField(Product)
 
+    objects = models.Manager()
+
 
 class Order(models.Model):
     """
@@ -113,6 +117,8 @@ class Order(models.Model):
     total_price = models.DecimalField(
         max_digits=50, decimal_places=2, null=False)
 
+    objects = models.Manager()
+
 
 class ShoppingCart(models.Model):
     """
@@ -127,4 +133,6 @@ class ShoppingCart(models.Model):
     """
     customer = models.OneToOneField(User, on_delete=models.CASCADE, null=False)
     items = models.ManyToManyField(
-        Product, related_name='shopping_list', blank=True)
+        Product, related_name='items', blank=True)
+
+    objects = models.Manager()
