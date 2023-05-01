@@ -1,0 +1,67 @@
+@import "colors";
+
+.mybuild__component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: calc(100vh - 9rem);
+  margin: 16px 0px;
+  padding: 20px;
+  background: #F7F7F7;
+  // to make the component more compact
+  font-size: 16px;
+
+  &__header {
+    margin: 10px 0px;
+    align-self: center;
+    font-weight: bold;
+    display: flex;
+    .logo {
+      &__accent-left,
+      &__accent-right {
+        color: $accent;
+        transition: 0.4s;
+      }
+    }
+  }
+  &__content {
+    max-width: 1200px;
+    width: 100%;
+    background: #F7F7F7;
+    padding: 40px;
+    display: flex;
+    row-gap: 20px;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+}
+
+.compatibility-banner{
+  color: white;
+  width: 1200px;
+  padding: 10px;
+  border-radius: 5px;
+  align-items: flex-start;
+  font-weight: bold;
+}
+
+.compatible {
+  background-color: #3CD296;
+}
+
+.incompatible {
+  background-color: #D23C3C;
+}
+
+.mybuild__component__content__header-row{
+  height: 70px;
+  background-color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 12px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 10px;
+}

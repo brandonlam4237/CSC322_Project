@@ -46,17 +46,16 @@ function Navbar() {
         >
           <div className="bar"></div>
         </button>
-        <NavLink to="/builds" className="options__builds">
-          Featured Builds
-        </NavLink>
-
         <NavOptComponents
           setTriangleColor={setTriangleColor}
           triangleColor={triangleColor}
         />
+        <NavLink to="/builds" className="options__builds">
+          Featured Builds
+        </NavLink>
 
-        <NavLink to="/other" className="options__other">
-          Other
+        <NavLink to="/mybuild" className="options__other">
+          My Build
         </NavLink>
         {!user.is_active ? (
           <NavLink to="/login" className="options__navLink">

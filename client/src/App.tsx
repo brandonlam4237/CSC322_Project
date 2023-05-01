@@ -13,6 +13,7 @@ import RootLayout from "./layouts/RootLayout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Approve from "./pages/Approve";
+import MyBuild from "./pages/MyBuild";
 import { AuthContextProvider } from "./contexts/AuthContext";
 
 const router = createBrowserRouter(
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
       <Route path="/components" element={<Components />} />
       <Route path="/builds" element={<Builds />} />
       <Route path="/other" element={<Other />} />
+      <Route path="/mybuild" element={<MyBuild />} />
     </Route>
   )
 );
