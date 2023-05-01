@@ -70,7 +70,7 @@ function Navbar() {
             profileColor={profileColor}
             email={user.email}
             handleSignoutButton={handleSignoutButton}
-            user = {user}
+            userType={user.user_type}
           />
         )}
         <img src={cart_icon} className="options__icon" alt="cart icon" />
