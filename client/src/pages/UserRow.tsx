@@ -2,7 +2,6 @@ import "../scss/user-row.scss";
 import Button from "src/components/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
-import apiClient from "src/services/apiClient";
 import { useState } from "react";
 import { useAuthContext } from "src/contexts/AuthContext";
 import MemoModal from "src/components/MemoModal";
@@ -23,7 +22,6 @@ export interface IApprovalForm {
 }
 
 export function UserRow({
-  username,
   userId,
   email,
   userType,
@@ -35,7 +33,6 @@ export function UserRow({
   const accessToken = authVariables.userTokens.access;
 
   // initialize approval form state in order to fill out when rejecting user
-  const [rejectionMemo, setRejectionMemo] = useState<string>("");
   const [memoModalOpen, setMemoModalOpen] = useState(false);
 
   async function handleApproveButton() {
@@ -44,7 +41,6 @@ export function UserRow({
       memo: "No Issues With User",
     };
     try {
-      console.log(approvalForm);
       await fetch(`/users/activate/${userId}`, {
         method: "PATCH",
         headers: {

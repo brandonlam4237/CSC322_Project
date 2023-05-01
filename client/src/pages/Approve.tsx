@@ -1,11 +1,7 @@
 import "../scss/approve.scss";
 
 import { useEffect, useState } from "react";
-import {
-  UserCredentials,
-  useAuthContext,
-  userDataTemplate,
-} from "src/contexts/AuthContext";
+import { UserCredentials, useAuthContext } from "src/contexts/AuthContext";
 import apiClient from "src/services/apiClient";
 import { UserRow } from "./UserRow";
 
@@ -52,7 +48,6 @@ export default function Approve() {
     setAllUsers(inActiveUsers);
   }
 
-  console.log(allUsers);
   return isLoading ? (
     <h1>Loading...</h1>
   ) : (

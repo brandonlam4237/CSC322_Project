@@ -25,7 +25,6 @@ function MemoModal(Props: UserRowProps) {
       memo: `${memo}`,
     };
     try {
-      console.log(approvalForm);
       await fetch(`/users/activate/${userId}`, {
         method: "PATCH",
         headers: {
