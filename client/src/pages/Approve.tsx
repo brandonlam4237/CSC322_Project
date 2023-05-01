@@ -17,7 +17,7 @@ export default function Approve() {
 
   async function getAllUsers() {
     // request parameters for endpoint depends on the userType of the user currenlty logged in
-    let usersParam: string = user.user_type == "Owner" ? "" : "customer";
+    let usersParam: string = user.user_type === "Owner" ? "" : "customer";
     let inActiveUsers;
     const { data, error } = await apiClient.getUsers(usersParam);
 
