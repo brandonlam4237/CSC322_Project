@@ -52,22 +52,32 @@ function MemoModal(Props: UserRowProps) {
   return (
     <div className="modal">
       <div className="modal__content">
-        <button
-          onClick={() => {
-            closeModal();
-          }}
-        >
-          <FontAwesomeIcon icon={faArrowLeft} size="xl" />
-        </button>
+        <div className="modal__header">
+          <button
+            className="modal__close-btn"
+            onClick={() => {
+              closeModal();
+            }}
+          >
+            <FontAwesomeIcon icon={faArrowLeft} size="xl" />
+          </button>
+          <div className="modal__title">
+            <div className="accent">{"<"}</div> Rejection Memo{" "}
+            <div className="accent">{">"}</div>
+          </div>
+        </div>
         <textarea
           className="modal__textarea"
           id="memo"
           value={memo}
+          placeholder="Enter rejection memo here"
           onChange={(e) => {
             setMemo(e.target.value);
           }}
         />
-        <button onClick={handleRejectButton}>Submit</button>
+        <button onClick={handleRejectButton} className="modal__submit-btn">
+          Submit
+        </button>
       </div>
       <div
         onClick={() => {

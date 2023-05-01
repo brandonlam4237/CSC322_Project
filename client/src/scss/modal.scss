@@ -1,14 +1,22 @@
+@import "colors";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 .modal {
   position: absolute;
+
   &__content {
     background-color: white;
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 50vh;
-    width: 50vw;
     z-index: 11;
+    height: 25rem;
+    width: clamp(20rem, 12.666666666666668rem + 21.333333333333332vw, 30rem);
+    padding: 1.5rem;
   }
 
   &__overlay {
@@ -22,6 +30,30 @@
     z-index: 10;
   }
 
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    width: 100%;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+
+    .accent {
+      color: $accent;
+    }
+  }
+
+  &__close-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0px;
+    position: absolute;
+  }
+
   &__textarea {
     resize: none;
     overflow: auto;
@@ -29,5 +61,16 @@
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    height: 80%;
+    border: solid 1.5px black;
+    font-family: "Poppins", sans-serif;
+    padding: 0.5rem;
+  }
+
+  &__submit-btn {
+    border-radius: 0px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0.5rem;
   }
 }
