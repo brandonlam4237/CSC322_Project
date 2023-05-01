@@ -33,9 +33,7 @@ export const AuthContext = createContext<IAuthContext>({
     first_name: "",
     last_name: "",
     date_created: "",
-    is_customer: false,
-    is_employee: false,
-    is_superuser: false,
+    user_type:"",
     blacklisted: false,
     balance: null,
     memo: "",
@@ -78,9 +76,7 @@ export interface UserCredentials {
   first_name: string;
   last_name: string;
   date_created: string;
-  is_customer: boolean;
-  is_employee: boolean;
-  is_superuser: boolean;
+  user_type: "Onwer" | "Employee" | "Customer" | "";
   blacklisted: boolean;
   balance: number | null;
   memo: "";
@@ -94,9 +90,7 @@ export const userDataTemplate: UserCredentials = {
   first_name: "",
   last_name: "",
   date_created: "",
-  is_customer: false,
-  is_employee: false,
-  is_superuser: false,
+  user_type: "",
   blacklisted: false,
   balance: null,
   memo: "",
