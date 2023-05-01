@@ -56,6 +56,35 @@ export function UserRow({
     }
   }
 
+  async function handleRejectButton() {
+    let approvalForm: IApprovalForm = {
+      is_active: true,
+      memo: "REJECTION MEMO",
+    };
+    try {
+      console.log(approvalForm);
+      await fetch(`/users/activate/${userId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify(approvalForm),
+      });
+      await fetch(`/users/blacklist/${userId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify({ blacklisted: true }),
+      });
+      getAllUsers();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div className="user-row">
       <div className="user-row__info">
@@ -72,7 +101,10 @@ export function UserRow({
         >
           <FontAwesomeIcon icon={faCheck} size="xl" />
         </Button>
-        <Button className="user-row__buttons__reject">
+        <Button
+          className="user-row__buttons__reject"
+          onClick={handleRejectButton}
+        >
           <FontAwesomeIcon icon={faXmark} size="xl" />
         </Button>
       </div>
