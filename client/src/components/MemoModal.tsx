@@ -18,12 +18,19 @@ export interface IApprovalForm {
 function MemoModal(Props: UserRowProps) {
   const { closeModal, userId, accessToken, getAllUsers } = Props;
   const [memo, setMemo] = useState("");
+  const [textareaBorder, setTextareaBorder] = useState({
+    border: "solid 1.5px black",
+  });
 
   async function handleRejectButton() {
     let approvalForm: IApprovalForm = {
       is_active: true,
       memo: `${memo}`,
     };
+    if (!memo) {
+      setTextareaBorder({ border: "solid 1.5px red" });
+      return;
+    }
     try {
       await fetch(`/users/activate/${userId}`, {
         method: "PATCH",
@@ -66,6 +73,7 @@ function MemoModal(Props: UserRowProps) {
           </div>
         </div>
         <textarea
+          style={textareaBorder}
           className="modal__textarea"
           id="memo"
           value={memo}
