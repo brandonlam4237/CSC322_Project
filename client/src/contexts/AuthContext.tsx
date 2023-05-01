@@ -33,9 +33,7 @@ export const AuthContext = createContext<IAuthContext>({
     first_name: "",
     last_name: "",
     date_created: "",
-    is_customer: false,
-    is_employee: false,
-    is_superuser: false,
+    user_type: "Visitor",
     blacklisted: false,
     balance: null,
     memo: "",
@@ -70,6 +68,9 @@ interface AuthProvidorProps {
   children?: ReactNode;
 }
 
+// T stands for "type". This defined type will be used for components such as navbar and approve
+export type TUserType = "Owner" | "Employee" | "Customer" | "Visitor";
+
 export interface UserCredentials {
   id: number;
   username: string;
@@ -78,9 +79,7 @@ export interface UserCredentials {
   first_name: string;
   last_name: string;
   date_created: string;
-  is_customer: boolean;
-  is_employee: boolean;
-  is_superuser: boolean;
+  user_type: TUserType;
   blacklisted: boolean;
   balance: number | null;
   memo: "";
@@ -94,9 +93,7 @@ export const userDataTemplate: UserCredentials = {
   first_name: "",
   last_name: "",
   date_created: "",
-  is_customer: false,
-  is_employee: false,
-  is_superuser: false,
+  user_type: "Visitor",
   blacklisted: false,
   balance: null,
   memo: "",
@@ -134,7 +131,7 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
       /* put tokens in local storage to use for login persistance. 
       (the following two lines do the same thing, will delete one of them later) */
       localStorage.setItem(LOCAL_STORAGE_AUTH_KEY, JSON.stringify(tokensData));
-      apiClient.setTokens(tokensData)
+      apiClient.setTokens(tokensData);
 
       // finally, login the user using the tokens
       loginWithToken(tokensData.access);

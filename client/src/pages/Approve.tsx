@@ -5,21 +5,13 @@ import { UserCredentials, useAuthContext } from "src/contexts/AuthContext";
 import apiClient from "src/services/apiClient";
 import { UserRow } from "./UserRow";
 
-function getUserType(user: UserCredentials): string {
-  if (user.is_superuser) return "Superuser";
-  else if (user.is_employee) return "Employee";
-  else return "Customer";
-}
-
 export default function Approve() {
   const authValues = useAuthContext();
   const user = authValues.userData;
   const [allUsers, setAllUsers] = useState([]);
   const [isLoading, setisLoading] = useState<boolean>(true);
-  const [userType, setUserType] = useState<string>(getUserType(user));
 
   useEffect(() => {
-    setUserType(getUserType(user));
     getAllUsers();
     setisLoading(false);
   }, []);
@@ -68,7 +60,7 @@ export default function Approve() {
                 username={individualUser.username}
                 userId={individualUser.id}
                 email={individualUser.email}
-                userType={getUserType(individualUser)}
+                userType={individualUser.user_type}
                 key={index}
                 firstName={individualUser.first_name}
                 lastName={individualUser.last_name}
