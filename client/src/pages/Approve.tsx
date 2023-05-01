@@ -23,34 +23,34 @@ export default function Approve() {
   const [userType, setUserType] = useState<string>(getUserType(user));
 
   useEffect(() => {
-    async function getAllUsers() {
-      // request parameters for endpoint depends on the userType of the user currenlty logged in 
-      let usersParam: string = user.is_superuser ? "" : "customer";
-      let inActiveUsers;
-      const { data, error } = await apiClient.getUsers(usersParam);
-      
-      // If the user currently logged in is super_user then response object is called users
-      if (data.users) {
-        inActiveUsers = data.users.filter((individualUser: UserCredentials) => {
-          return !individualUser.is_active;
-        });
-      } 
-      // If the user currently logged in is super_user then response object is called customers
-      else if (data.customers) {  
-        inActiveUsers = data.customers.filter(
-          (individualUser: UserCredentials) => {
-            return !individualUser.is_active;
-          }
-        );
-      } else console.log(error);
-
-      setAllUsers(inActiveUsers);
-    }
-
     setUserType(getUserType(user));
     getAllUsers();
     setisLoading(false);
   }, []);
+
+  async function getAllUsers() {
+    // request parameters for endpoint depends on the userType of the user currenlty logged in
+    let usersParam: string = user.is_superuser ? "" : "customer";
+    let inActiveUsers;
+    const { data, error } = await apiClient.getUsers(usersParam);
+
+    // If the user currently logged in is super_user then response object is called users
+    if (data.users) {
+      inActiveUsers = data.users.filter((individualUser: UserCredentials) => {
+        return !individualUser.is_active;
+      });
+    }
+    // If the user currently logged in is super_user then response object is called customers
+    else if (data.customers) {
+      inActiveUsers = data.customers.filter(
+        (individualUser: UserCredentials) => {
+          return !individualUser.is_active;
+        }
+      );
+    } else console.log(error);
+
+    setAllUsers(inActiveUsers);
+  }
 
   console.log(allUsers);
   return isLoading ? (
@@ -77,6 +77,7 @@ export default function Approve() {
                 key={index}
                 firstName={individualUser.first_name}
                 lastName={individualUser.last_name}
+                getAllUsers={getAllUsers}
               />
             );
           })}

@@ -12,6 +12,7 @@ interface UserRowProps {
   userType: string;
   firstName: string;
   lastName: string;
+  getAllUsers: Function;
 }
 
 export interface IApprovalForm {
@@ -26,6 +27,7 @@ export function UserRow({
   userType,
   firstName,
   lastName,
+  getAllUsers,
 }: UserRowProps) {
   const authVariables = useAuthContext();
   const accessToken = authVariables.userTokens.access;
@@ -48,6 +50,7 @@ export function UserRow({
         },
         body: JSON.stringify(approvalForm),
       });
+      getAllUsers();
     } catch (error) {
       console.log(error);
     }
