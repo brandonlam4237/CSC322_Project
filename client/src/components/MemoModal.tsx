@@ -81,6 +81,12 @@ function MemoModal(Props: UserRowProps) {
           onChange={(e) => {
             setMemo(e.target.value);
           }}
+          onFocus={() => {
+            setTextareaBorder({ border: "solid 1.5px #54aeef" });
+          }}
+          onBlur={() => {
+            setTextareaBorder({ border: "solid 1.5px black" });
+          }}
         />
         <button onClick={handleRejectButton} className="modal__submit-btn">
           Submit
