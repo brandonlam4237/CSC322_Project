@@ -130,7 +130,7 @@ Donut PCs is a website application that uses React and Django
 8. Load the fixtures
 
    ```txt
-   python manage.py loaddata items/fixtures/*.json
+   python manage.py loaddata items/fixtures/primary/*.json items/fixtures/secondary/*.json
    ```
 
 ## How to Run
@@ -158,3 +158,20 @@ Donut PCs is a website application that uses React and Django
   ```txt
   python manage.py flush
   ```
+
+- How can I reset the database if I'm having issues with `makemigrations` and `migrate`?
+
+  1. Use `psql` to recreate the database.
+
+     ```txt
+     postgres#= DROP DATABASE donut_pcs;
+     DROP DATABASE
+     postgres#= CREATE DATABASE donut_pcs;
+     CREATE DATABASE
+     ```
+
+  2. Go under every folder in the server folder and empty the migration folder except for `__init__.py`
+
+  3. Run `makemigrations` and `migrate`.
+
+   User data will be lost so you will need to create another superuser and other users you may have created.
