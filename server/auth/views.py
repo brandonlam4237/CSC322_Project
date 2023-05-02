@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
+from django.apps import apps
 from rest_framework.views import APIView
 from rest_framework import permissions, status
 from rest_framework.response import Response
@@ -7,6 +8,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from .serializers import CustomerSerializer, EmployeeSerializer, UserSerializer
 
 User = get_user_model()
+Cart = apps.get_model('items', 'Cart')
 
 
 class RegisterUser(APIView):
@@ -73,8 +75,10 @@ class RegisterUser(APIView):
 
             # User Creation
             if user_type == "customer":
-                User.objects.create_customer(
+                user = User.objects.create_customer(
                     username, email, first_name, last_name, password)
+                Cart.objects.create(customer=user)
+
             else:
                 User.objects.create_employee(
                     username, email, first_name, last_name, password)

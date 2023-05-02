@@ -1,0 +1,425 @@
+[
+    {
+        "model": "items.Product",
+        "pk": 375,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance LPX 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMK32GX4M2E3200 - Black",
+            "price": "79.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 376,
+        "fields": {
+            "brand": "Micro Center",
+            "product_name": "256GB SuperSpeed USB 3.1 (Gen 1) Flash Drive - Purple",
+            "price": "18.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 377,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance RGB Pro 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit 16GX4M2C320C16W - White",
+            "price": "52.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 378,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "VENGEANCE RGB PRO SL 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMH16GX4M2E3200 - Black",
+            "price": "52.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 379,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "VENGEANCE RGB PRO SL 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMH16GX4M2E3200 - Black",
+            "price": "52.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 380,
+        "fields": {
+            "brand": "Micro Center",
+            "product_name": "256GB SuperSpeed USB 3.1 (Gen 1) Flash Drive - Purple",
+            "price": "18.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 381,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "VENGEANCE RGB PRO SL 32GB (2 x 16GB) DDR4-3600 PC4-28800 CL18 Dual Channel Desktop Memory Kit CMH32GX4M2D3600 - Black",
+            "price": "99.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 382,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "16GB (2 x 8GB) DDR4-3200 PC4-25600 CL22 Dual Channel Desktop Memory Kit CT2K8G4DFRA32A - Green",
+            "price": "39.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 383,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance RGB Pro 16GB (2 x 8GB) DDR4-3600 PC4-28800 CL18 Dual Channel Desktop Memory Kit CMW16GX4M2D3600C18 - Black",
+            "price": "54.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 384,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance LPX 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMK32GX4M2E3200 - Black",
+            "price": "79.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 385,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance LPX 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMK32GX4M2E3200 - Black",
+            "price": "79.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 386,
+        "fields": {
+            "brand": "Micro Center",
+            "product_name": "256GB SuperSpeed USB 3.1 (Gen 1) Flash Drive - Purple",
+            "price": "18.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 387,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance LPX 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMK32GX4M2E3200 - Black",
+            "price": "79.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 388,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance LPX 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMK32GX4M2E3200 - Black",
+            "price": "79.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 389,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance LPX 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMK32GX4M2E3200 - Black",
+            "price": "79.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 390,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance RGB Pro 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit 16GX4M2C320C16W - White",
+            "price": "52.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 391,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "VENGEANCE RGB PRO SL 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMH16GX4M2E3200 - Black",
+            "price": "52.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 392,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance RGB Pro 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit 16GX4M2C320C16W - White",
+            "price": "52.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 393,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance RGB Pro 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit 16GX4M2C320C16W - White",
+            "price": "52.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 394,
+        "fields": {
+            "brand": "Micro Center",
+            "product_name": "256GB SuperSpeed USB 3.1 (Gen 1) Flash Drive - Purple",
+            "price": "18.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 395,
+        "fields": {
+            "brand": "Micro Center",
+            "product_name": "256GB SuperSpeed USB 3.1 (Gen 1) Flash Drive - Purple",
+            "price": "18.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 396,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance LPX 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMK32GX4M2E3200 - Black",
+            "price": "79.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 397,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "VENGEANCE RGB PRO SL 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMH16GX4M2E3200 - Black",
+            "price": "52.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 398,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "VENGEANCE RGB PRO SL 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMH16GX4M2E3200 - Black",
+            "price": "52.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 399,
+        "fields": {
+            "brand": "Micro Center",
+            "product_name": "256GB SuperSpeed USB 3.1 (Gen 1) Flash Drive - Purple",
+            "price": "18.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 400,
+        "fields": {
+            "brand": "G.Skill",
+            "product_name": "Ripjaws S5 32GB (2 x 16GB) DDR5-6000 PC5-48000 CL36 Dual Channel Desktop Memory Kit F5-6000J3636F16GX2-RS5K - Black",
+            "price": "139.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 401,
+        "fields": {
+            "brand": "Micro Center",
+            "product_name": "256GB SuperSpeed USB 3.1 (Gen 1) Flash Drive - Purple",
+            "price": "18.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 402,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "VENGEANCE RGB PRO SL 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMH16GX4M2E3200 - Black",
+            "price": "52.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 403,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "VENGEANCE RGB PRO SL 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMH16GX4M2E3200 - Black",
+            "price": "52.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 404,
+        "fields": {
+            "brand": "Micro Center",
+            "product_name": "256GB SuperSpeed USB 3.1 (Gen 1) Flash Drive - Purple",
+            "price": "18.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 405,
+        "fields": {
+            "brand": "Micro Center",
+            "product_name": "256GB SuperSpeed USB 3.1 (Gen 1) Flash Drive - Purple",
+            "price": "18.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 406,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "VENGEANCE RGB PRO SL 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMH16GX4M2E3200 - Black",
+            "price": "52.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 407,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "VENGEANCE RGB PRO SL 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMH32GX4M2E32KW - White",
+            "price": "94.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 408,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance LPX 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMK32GX4M2E3200 - Black",
+            "price": "79.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 409,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "VENGEANCE RGB PRO SL 32GB (2 x 16GB) DDR4-3600 PC4-28800 CL18 Dual Channel Desktop Memory Kit CMH32GX4M2D3600 - Black",
+            "price": "99.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 410,
+        "fields": {
+            "brand": "Micro Center",
+            "product_name": "256GB SuperSpeed USB 3.1 (Gen 1) Flash Drive - Purple",
+            "price": "18.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 411,
+        "fields": {
+            "brand": "Micro Center",
+            "product_name": "256GB SuperSpeed USB 3.1 (Gen 1) Flash Drive - Purple",
+            "price": "18.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 412,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance LPX 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMK32GX4M2E3200 - Black",
+            "price": "79.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 413,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "VENGEANCE RGB PRO SL 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMH16GX4M2E3200 - Black",
+            "price": "52.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 414,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "VENGEANCE RGB PRO SL 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMH16GX4M2E3200 - Black",
+            "price": "52.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 415,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance RGB Pro 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMW16GX4M2E3200C16 - Black",
+            "price": "64.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 416,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance LPX 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMK32GX4M2E3200 - Black",
+            "price": "79.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 417,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance LPX 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMK32GX4M2E3200 - Black",
+            "price": "79.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 418,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "VENGEANCE RGB PRO SL 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMH16GX4M2E3200 - Black",
+            "price": "52.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 419,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "VENGEANCE RGB PRO SL 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMH16GX4M2E3200 - Black",
+            "price": "52.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 420,
+        "fields": {
+            "brand": "Micro Center",
+            "product_name": "256GB SuperSpeed USB 3.1 (Gen 1) Flash Drive - Purple",
+            "price": "18.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 421,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "Vengeance RGB Pro 16GB (2 x 8GB) DDR4-3600 PC4-28800 CL18 Dual Channel Desktop Memory Kit CMW16GX4M2D3600C18 - Black",
+            "price": "54.99"
+        }
+    }
+]

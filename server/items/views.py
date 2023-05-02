@@ -3,11 +3,11 @@ from rest_framework import status, permissions
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 
-from .models import Product
-from .serializers import ProductSerializer
+from .models import ComputerPart
+from .serializers import ComputerPartSerializer
 
 
-class ProductList(APIView):
+class PartList(APIView):
     """
     Gets a list of products
     """
@@ -31,16 +31,16 @@ class ProductList(APIView):
         category = request.query_params.get('category')
 
         if category is None:
-            product_list = Product.objects.all()
+            product_list = ComputerPart.objects.order_by('id')
         elif category in self.PRODUCT_CATEGORIES:
-            product_list = Product.objects.filter(category=category)
+            product_list = ComputerPart.objects.filter(category=category)
         else:
             return Response(
                 {'error': 'This category doesn\'t exist'},
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        serializer = ProductSerializer(product_list, many=True)
+        serializer = ComputerPartSerializer(product_list, many=True)
 
         return Response(
             {'products': serializer.data},
@@ -48,7 +48,7 @@ class ProductList(APIView):
         )
 
 
-class ProductDetail(APIView):
+class PartDetail(APIView):
     """
     Endpoint to get a product detail
     """
@@ -58,8 +58,8 @@ class ProductDetail(APIView):
         """
         Handles a GET request to retrieve a product detail
         """
-        product = get_object_or_404(Product, id=id)
-        serializer = ProductSerializer(product, many=False)
+        part = get_object_or_404(ComputerPart, id=id)
+        serializer = ComputerPartSerializer(part, many=False)
         return Response(
             {'products': serializer.data},
             status=status.HTTP_200_OK
