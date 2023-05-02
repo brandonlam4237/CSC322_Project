@@ -8,10 +8,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 10px;
   margin: auto;
 
   .logo {
+    margin-left: 20px;
     font-size: clamp(
       2.4rem,
       2.043604004449388rem + 0.7119021134593992vw,
@@ -46,7 +47,7 @@
     display: flex;
     gap: 1rem;
     align-items: center;
-
+    margin-right: 20px;
     a.active {
       color: $accent;
     }

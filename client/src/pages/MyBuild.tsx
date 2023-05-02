@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuthContext } from "src/contexts/AuthContext";
 import "../scss/mybuild.scss";
+import Table from "src/components/Table";
 
 export default function MyBuild() {
   const [isCompatible, setIsCompatible] = useState(true);
@@ -15,23 +16,22 @@ export default function MyBuild() {
         <div className="logo__accent-right">{`>`}</div>
       </h1>
 
-      {isCompatible ? (
-        <p className="compatibility-banner compatible">
-          There are no compatibility issues with your build!
-        </p>
-      ) : (
-        <p className="compatibility-banner incompatible">
-          There are compatibility issues with your build! Please check: CPU,
-          Motherboard
-        </p>
-      )}
-
       <div className="mybuild__component__content">
-        <div className="mybuild__component__content__header-row">
+        {isCompatible ? (
+          <p className="compatibility-banner compatible">
+            There are no compatibility issues with your build!
+          </p>
+        ) : (
+          <p className="compatibility-banner incompatible">
+            There are compatibility issues with your build! Please check: CPU,
+            Motherboard
+          </p>
+        )}
+        
+        <Table/>
+        
 
         </div>
-        <div className="mybuild__component__content__parts-row"></div>
-      </div>
     </main>
   );
 }
