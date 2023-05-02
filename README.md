@@ -174,4 +174,4 @@ Donut PCs is a website application that uses React and Django
 
   3. Run `makemigrations` and `migrate`.
 
-   User data will be lost so you will need to create another superuser and other users you may have created.
+  User data will be lost so you will need to create another superuser and other users you may have created.
