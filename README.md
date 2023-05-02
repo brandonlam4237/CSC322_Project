@@ -4,15 +4,15 @@ Donut PCs is a website application that uses React and Django
 
 ## Table of Contents
 
-1. [Setup](#setup)
-
-   - [Server Setup](#server-setup)
-   - [Database Setup](#database-setup)
-   - [Environment Variables Setup](#environment-variables-setup)
-
-2. [How To Run](#how-to-run)
-
-   - [Running the Server](#running-the-server)
+- [Donut PCs](#donut-pcs)
+  - [Table of Contents](#table-of-contents)
+  - [Setup](#setup)
+    - [Environment Variables Setup](#environment-variables-setup)
+    - [Database Setup](#database-setup)
+    - [Server Setup](#server-setup)
+  - [How to Run](#how-to-run)
+    - [Running the Server](#running-the-server)
+  - [FAQ](#faq)
 
 ## Setup
 
@@ -130,7 +130,7 @@ Donut PCs is a website application that uses React and Django
 8. Load the fixtures
 
    ```txt
-   python manage.py loaddata items/fixtures/primary/*.json items/fixtures/secondary/*.json
+   python manage.py loaddata items/fixtures/*/*.json
    ```
 
 ## How to Run
