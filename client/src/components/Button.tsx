@@ -2,17 +2,16 @@ import "../scss/button.scss";
 import { ReactNode } from "react";
 
 interface ButtonProps extends React.ComponentProps<"button"> {
-  variant?: "primary" | "secondary";
   children?: ReactNode
 }
 
 export default function Button({
-  variant,
+  className,
   children,
   ...remainderProps
 }: ButtonProps) {
   return (
-    <button className={`${variant}`} {...remainderProps}>
+    <button className={`${className}`} {...remainderProps}>
       {children}
     </button>
   );
