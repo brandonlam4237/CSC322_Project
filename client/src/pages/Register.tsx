@@ -156,7 +156,7 @@ export default function Register() {
           </Link>
         </footer>
         <div className="container__button">
-          <Button variant="primary" onClick={registerButtonHandler}>
+          <Button onClick={registerButtonHandler}>
             Register
           </Button>
         </div>
