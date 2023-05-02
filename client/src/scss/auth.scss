@@ -49,6 +49,9 @@
 
     &__button {
       padding-bottom: 20px;
+      button {
+        width: 100%;
+      }
     }
   }
 }
