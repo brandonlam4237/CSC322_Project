@@ -452,7 +452,17 @@ class ActivateUser(APIView):
                 status=status.HTTP_401_UNAUTHORIZED
             )
 
-        User.objects.filter(id=user_to_activate.id).update(is_active=True)
+        memo = request.data.get('memo')
+        if not memo:
+            return Response(
+                {'error': 'Invalid memo'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        memo = str(memo)
+
+        User.objects.filter(id=user_to_activate.id).update(
+            is_active=True, memo=memo)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
