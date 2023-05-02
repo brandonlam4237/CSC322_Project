@@ -2,14 +2,27 @@ from datetime import date
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import get_object_or_404
+from django.apps import apps
 from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.response import Response
 
 
 from .serializers import CustomerSerializer, UserSerializer
+from .serializers import ProductSerializer, ComputerPartSerializer, CustomBuildSerializer
+from .serializers import CartItemsSerializer, CartSerializer
 
 User = get_user_model()
+Product = apps.get_model('items', 'Product')
+ComputerPart = apps.get_model('items', 'ComputerPart')
+CustomBuild = apps.get_model('items', 'CustomBuild')
+Cart = apps.get_model('items', 'Cart')
+CartItem = apps.get_model('items', 'CartItem')
+
+
+"""
+User Detail Views
+"""
 
 
 class UserList(APIView):
@@ -175,11 +188,10 @@ class CustomerDetail(APIView):
                 status=status.HTTP_404_NOT_FOUND
             )
 
-        except Exception:
-            return Response(
-                {'error': 'Something went wrong when retrieving customer data'},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+
+"""
+Modify User Views
+"""
 
 
 class AddBalance(APIView):
@@ -440,5 +452,130 @@ class ActivateUser(APIView):
                 status=status.HTTP_401_UNAUTHORIZED
             )
 
-        User.objects.filter(id=user_to_activate).update(is_active=True)
+        User.objects.filter(id=user_to_activate.id).update(is_active=True)
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+"""
+Shopping Cart Views
+"""
+
+
+class CustomerCart(APIView):
+    """
+    Endpoint to get a customer shopping cart
+    """
+
+    def get(self, request):
+        """
+        Handles a GET request to get customer cart
+        """
+        user = request.user
+
+        if user.user_type != "Customer":
+            return Response(
+                {'error': 'Only customers can access their own cart'},
+                status=status.HTTP_401_UNAUTHORIZED
+            )
+
+        shopping_cart = Cart.objects.get(customer=user)
+        cart_items = CartItem.objects.filter(cart=shopping_cart).all()
+        cart_items = CartItemsSerializer(cart_items, many=True)
+
+        total_price = shopping_cart.total_price
+        num_items = shopping_cart.num_items
+
+        return Response(
+            {
+                'items': cart_items.data,
+                'total_price': total_price,
+                'num_items': num_items
+            },
+            status=status.HTTP_200_OK
+        )
+
+
+class ManageCart(APIView):
+    """
+    Endpoint to manage a customer cart
+    """
+
+    def put(self, request, id):
+        """
+        Handles a PUT request to add item to customer cart
+        """
+        user = request.user
+
+        if user.user_type != "Customer":
+            return Response(
+                {'error': 'Only customers can access their own cart'},
+                status=status.HTTP_401_UNAUTHORIZED
+            )
+
+        product = get_object_or_404(Product, id=id)
+        shopping_cart = user.cart
+
+        cart_item, _ = CartItem.objects.get_or_create(
+            cart=shopping_cart, product=product)
+        if cart_item.quantity < 10:
+            cart_item.quantity += 1
+            cart_item.save()
+            return Response(status=status.HTTP_201_CREATED)
+        else:
+            return Response(
+                {'error': 'You can only have 10 of this item'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+    def patch(self, request, id):
+        """
+        Handles a PUT request to change quantity of an item in a cart or delete it
+        """
+        user = request.user
+
+        if user.user_type != "Customer":
+            return Response(
+                {'error': 'Only customers can access their own cart'},
+                status=status.HTTP_401_UNAUTHORIZED
+            )
+
+        try:
+            quantity = request.data.get('quantity')
+            if not quantity:
+                return Response(
+                    {'error': 'Please enter the quantity amount'},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+
+            quantity = int(quantity)
+            if quantity < 0 or quantity > 10:
+                return Response(
+                    {'error': 'Quantity can only be between 0 and 10'},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+        except ValueError:
+            return Response(
+                {'error': 'Quantity is invalid'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        product = get_object_or_404(Product, id=id)
+        shopping_cart = user.cart
+
+        try:
+            cart_item = CartItem.objects.get(
+                cart=shopping_cart, product=product)
+            if quantity == 0:
+                CartItem.objects.delete(cart_item)
+            else:
+                cart_item.quantity = quantity
+                cart_item.save()
+        except ObjectDoesNotExist:
+            return Response(
+                {'error': 'Object to patch doesn\'t exist'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        return Response(
+            status=status.HTTP_205_RESET_CONTENT
+        )
