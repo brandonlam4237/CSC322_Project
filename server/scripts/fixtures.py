@@ -1,14 +1,20 @@
 import os
 import json
 
-os.chdir(os.path.join("..", "scraper", "Data"))
+os.chdir(os.path.join("scraper", "Data"))
 DATA_DIR = os.getcwd()
 
 # Create Fixtures Directory if it doesn't exist
-os.chdir(os.path.join("..", "..", "server", "items"))
+os.chdir(os.path.join("..", "..", "items"))
 FIXTURES_DIR = os.path.join(os.getcwd(), "fixtures")
+PRIMARY_FIXTURES_DIR = os.path.join(FIXTURES_DIR, "primary")
+SECONDARY_FIXTURES_DIR = os.path.join(FIXTURES_DIR, "secondary")
 if not os.path.exists(FIXTURES_DIR):
     os.makedirs(FIXTURES_DIR)
+if not os.path.exists(PRIMARY_FIXTURES_DIR):
+    os.makedirs(PRIMARY_FIXTURES_DIR)
+if not os.path.exists(SECONDARY_FIXTURES_DIR):
+    os.makedirs(SECONDARY_FIXTURES_DIR)
 
 CATEGORY_DIR = os.path.join(DATA_DIR, "ItemInfo")
 CATEGORY_PATHS = [os.path.join(CATEGORY_DIR, path)
@@ -18,10 +24,11 @@ global item_num
 item_num = 1
 
 
-def process_data(item_paths) -> tuple:
+def process_secondary_data(item_paths) -> tuple:
+    """
+    Function for processing ComputerPart data
+    """
     global item_num
-
-    COMPUTER_CATEGORIES = {"gamingpc", "servers", "workstations"}
 
     category = item_paths[0].split('/')[-2]
     data_list = []
@@ -31,7 +38,7 @@ def process_data(item_paths) -> tuple:
             new_data = {}
             old_data = json.load(item_file)[0]
 
-            model = "items.Product"
+            model = "items.ComputerPart"
 
             new_data["model"] = model
             new_data["pk"] = item_num
@@ -77,7 +84,7 @@ def process_data(item_paths) -> tuple:
 
                 fields["category"] = old_data["category"]
 
-                file_name = f"{category}.json".replace(
+                file_name = f"{category}-secondary.json".replace(
                     "&amp;", "&")
 
                 if "" in fields.values():
@@ -86,7 +93,48 @@ def process_data(item_paths) -> tuple:
                 new_data["fields"] = fields
 
                 data_list.append(new_data)
+                item_num += 1
+            except:
+                continue
 
+    return (data_list, file_name)
+
+
+def process_primary_data(item_paths) -> tuple:
+    """
+    Function for processing Product data
+    """
+    global item_num
+
+    category = item_paths[0].split('/')[-2]
+    data_list = []
+
+    for item in item_paths:
+        with open(item) as item_file:
+            new_data = {}
+            old_data = json.load(item_file)[0]
+
+            model = "items.Product"
+
+            new_data["model"] = model
+            new_data["pk"] = item_num
+
+            fields = {}
+            try:
+                # Product Fields
+                fields["brand"] = old_data["brand"]
+                fields["product_name"] = old_data["name"]
+                fields["price"] = old_data["price"]
+
+                file_name = f"{category}-primary.json".replace(
+                    "&amp;", "&")
+
+                if "" in fields.values():
+                    continue
+
+                new_data["fields"] = fields
+
+                data_list.append(new_data)
                 item_num += 1
             except:
                 continue
@@ -95,13 +143,26 @@ def process_data(item_paths) -> tuple:
 
 
 def main():
+    global item_num
+
+    item_num = 1
     for category in CATEGORY_PATHS:
         item_paths = [os.path.join(CATEGORY_DIR, category, path)
                       for path in os.listdir(category)]
 
-        data_list, file_name = process_data(item_paths=item_paths)
+        data_list, file_name = process_primary_data(item_paths=item_paths)
 
-        with open(os.path.join(FIXTURES_DIR, file_name), 'w') as fixture_file:
+        with open(os.path.join(PRIMARY_FIXTURES_DIR, file_name), 'w') as fixture_file:
+            json.dump(data_list, fixture_file, indent=4)
+
+    item_num = 1
+    for category in CATEGORY_PATHS:
+        item_paths = [os.path.join(CATEGORY_DIR, category, path)
+                      for path in os.listdir(category)]
+
+        data_list, file_name = process_secondary_data(item_paths=item_paths)
+
+        with open(os.path.join(SECONDARY_FIXTURES_DIR, file_name), 'w') as fixture_file:
             json.dump(data_list, fixture_file, indent=4)
 
     print(os.getcwd())
