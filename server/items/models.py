@@ -17,9 +17,8 @@ class Comment(models.Model):
     visible : BooleanField
         Boolean to indicate if the comment is visible
     """
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    username = models.CharField(max_length=255, null=False)
     comment = models.TextField(null=False)
-    visible = models.BooleanField(default=True)
 
     objects = models.Manager()
 
