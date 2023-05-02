@@ -1,0 +1,425 @@
+[
+    {
+        "model": "items.Product",
+        "pk": 328,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "LANCOOL III RGB Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 329,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "LANCOOL III RGB Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 330,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "LANCOOL III RGB Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 331,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "LANCOOL III RGB Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 332,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 333,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "Lancool 205M Mesh Tempered Glass microATX Mid-Tower Computer Case - Black",
+            "price": "64.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 334,
+        "fields": {
+            "brand": "Fractal Design",
+            "product_name": "Torrent Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "279.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 335,
+        "fields": {
+            "brand": "Fractal Design",
+            "product_name": "Torrent Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "279.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 336,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "O11D Mini Tempered Glass ATX Mini Tower Computer Case - Black",
+            "price": "109.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 337,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "LANCOOL III RGB Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 338,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "LANCOOL III RGB Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 339,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 340,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "LANCOOL III RGB Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 341,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 342,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 343,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 344,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "LANCOOL III RGB Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 345,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 346,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 347,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "Lancool 205M Mesh Tempered Glass microATX Mid-Tower Computer Case - Black",
+            "price": "64.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 348,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 349,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 350,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 351,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 352,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "LANCOOL III RGB Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 353,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "LANCOOL III RGB Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 354,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "Lancool 205M Mesh Tempered Glass microATX Mid-Tower Computer Case - Black",
+            "price": "64.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 355,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "LANCOOL III RGB Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 356,
+        "fields": {
+            "brand": "Fractal Design",
+            "product_name": "Meshify 2 Black ATX Flexible Light Tinted Tempered Glass Window Mid Tower Computer Case",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 357,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 358,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "LANCOOL III RGB Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 359,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "LANCOOL III RGB Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 360,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 361,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 362,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 363,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "Lancool 205M Mesh Tempered Glass microATX Mid-Tower Computer Case - Black",
+            "price": "64.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 364,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "4000D Airflow Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "104.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 365,
+        "fields": {
+            "brand": "Fractal Design",
+            "product_name": "Torrent Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "279.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 366,
+        "fields": {
+            "brand": "Fractal Design",
+            "product_name": "Torrent Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "279.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 367,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 368,
+        "fields": {
+            "brand": "Fractal Design",
+            "product_name": "Torrent Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "279.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 369,
+        "fields": {
+            "brand": "Montech",
+            "product_name": "X1 Tempered Glass ATX Mid-Tower Computer Case - White",
+            "price": "51.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 370,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "LANCOOL III RGB Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 371,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "LANCOOL III RGB Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 372,
+        "fields": {
+            "brand": "Fractal Design",
+            "product_name": "Torrent Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "279.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 373,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "LANCOOL III RGB Tempered Glass ATX Mid-Tower Computer Case - Black",
+            "price": "169.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 374,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "Lancool 205M Mesh Tempered Glass microATX Mid-Tower Computer Case - Black",
+            "price": "64.99"
+        }
+    }
+]

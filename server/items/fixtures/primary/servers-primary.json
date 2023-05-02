@@ -1,0 +1,56 @@
+[
+    {
+        "model": "items.Product",
+        "pk": 233,
+        "fields": {
+            "brand": "Supermicro",
+            "product_name": "A+ Server AS- 1014S-WTRT",
+            "price": "2199.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 234,
+        "fields": {
+            "brand": "Supermicro",
+            "product_name": "A+ Server AS- 1014S-WTRT",
+            "price": "2199.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 235,
+        "fields": {
+            "brand": "Supermicro",
+            "product_name": "A+ Server AS- 1014S-WTRT",
+            "price": "2199.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 236,
+        "fields": {
+            "brand": "Supermicro",
+            "product_name": "A+ Server AS- 1014S-WTRT",
+            "price": "2199.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 237,
+        "fields": {
+            "brand": "Supermicro",
+            "product_name": "A+ Server AS- 1014S-WTRT",
+            "price": "2199.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 238,
+        "fields": {
+            "brand": "Supermicro",
+            "product_name": "A+ Server AS- 1014S-WTRT",
+            "price": "2199.99"
+        }
+    }
+]

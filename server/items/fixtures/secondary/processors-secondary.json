@@ -1,6 +1,6 @@
 [
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 239,
         "fields": {
             "brand": "Intel",
@@ -56,7 +56,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 240,
         "fields": {
             "brand": "Intel",
@@ -112,7 +112,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 241,
         "fields": {
             "brand": "AMD",
@@ -162,7 +162,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 242,
         "fields": {
             "brand": "AMD",
@@ -207,7 +207,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 243,
         "fields": {
             "brand": "Intel",
@@ -260,7 +260,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 244,
         "fields": {
             "brand": "AMD",
@@ -310,7 +310,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 245,
         "fields": {
             "brand": "Intel",
@@ -366,7 +366,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 246,
         "fields": {
             "brand": "AMD",
@@ -416,7 +416,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 247,
         "fields": {
             "brand": "AMD",
@@ -457,7 +457,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 248,
         "fields": {
             "brand": "AMD",
@@ -507,7 +507,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 249,
         "fields": {
             "brand": "AMD",
@@ -545,7 +545,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 250,
         "fields": {
             "brand": "AMD",
@@ -595,7 +595,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 251,
         "fields": {
             "brand": "Intel",
@@ -651,7 +651,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 252,
         "fields": {
             "brand": "AMD",
@@ -701,7 +701,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 253,
         "fields": {
             "brand": "AMD",
@@ -751,7 +751,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 254,
         "fields": {
             "brand": "AMD",
@@ -801,7 +801,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 255,
         "fields": {
             "brand": "Intel",
@@ -857,7 +857,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 256,
         "fields": {
             "brand": "AMD",
@@ -912,7 +912,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 257,
         "fields": {
             "brand": "AMD",
@@ -967,7 +967,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 258,
         "fields": {
             "brand": "AMD",
@@ -1017,7 +1017,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 259,
         "fields": {
             "brand": "AMD",
@@ -1067,7 +1067,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 260,
         "fields": {
             "brand": "AMD",
@@ -1117,7 +1117,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 261,
         "fields": {
             "brand": "AMD",
@@ -1167,7 +1167,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 262,
         "fields": {
             "brand": "AMD",
@@ -1217,7 +1217,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 263,
         "fields": {
             "brand": "AMD",
@@ -1262,7 +1262,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 264,
         "fields": {
             "brand": "AMD",
@@ -1310,7 +1310,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 265,
         "fields": {
             "brand": "Intel",
@@ -1363,7 +1363,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 266,
         "fields": {
             "brand": "AMD",
@@ -1411,7 +1411,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 267,
         "fields": {
             "brand": "Intel",
@@ -1467,7 +1467,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 268,
         "fields": {
             "brand": "AMD",
@@ -1517,7 +1517,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 269,
         "fields": {
             "brand": "AMD",
@@ -1567,7 +1567,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 270,
         "fields": {
             "brand": "AMD",
@@ -1617,7 +1617,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 271,
         "fields": {
             "brand": "AMD",
@@ -1667,7 +1667,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 272,
         "fields": {
             "brand": "AMD",
@@ -1717,7 +1717,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 273,
         "fields": {
             "brand": "Intel",
@@ -1773,7 +1773,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 274,
         "fields": {
             "brand": "AMD",
@@ -1828,7 +1828,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 275,
         "fields": {
             "brand": "AMD",
@@ -1878,7 +1878,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 276,
         "fields": {
             "brand": "AMD",
@@ -1923,7 +1923,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 277,
         "fields": {
             "brand": "Intel",
@@ -1979,7 +1979,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 278,
         "fields": {
             "brand": "AMD",
@@ -2029,7 +2029,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 279,
         "fields": {
             "brand": "AMD",

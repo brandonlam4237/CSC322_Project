@@ -1,0 +1,434 @@
+[
+    {
+        "model": "items.Product",
+        "pk": 94,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "iCUE H100i ELITE CAPELLIX XT 240mm All in One Liquid CPU Cooling Kit",
+            "price": "179.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 95,
+        "fields": {
+            "brand": "Noctua",
+            "product_name": "NH-D15 Black CPU Cooler",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 96,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "iCUE H150i ELITE CAPELLIX XT 360mm All in One Liquid CPU Cooling Kit - White",
+            "price": "229.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 97,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "iCUE H150i ELITE CAPELLIX XT 360mm All in One Liquid CPU Cooling Kit - White",
+            "price": "229.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 98,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 99,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 100,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 101,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "iCUE H150i ELITE CAPELLIX XT 360mm All in One Liquid CPU Cooling Kit - White",
+            "price": "229.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 102,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "iCUE H150i ELITE CAPELLIX XT 360mm All in One Liquid CPU Cooling Kit - White",
+            "price": "229.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 103,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "iCUE H150i ELITE CAPELLIX XT 360mm All in One Liquid CPU Cooling Kit - White",
+            "price": "229.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 104,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "Uni Fan SL120 V2 Fluid Dynamic Bearing 120mm Case Fan - White 3 Pack",
+            "price": "89.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 105,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 106,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "iCUE H150i ELITE CAPELLIX XT 360mm All in One Liquid CPU Cooling Kit - White",
+            "price": "229.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 107,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "iCUE H150i ELITE CAPELLIX XT 360mm All in One Liquid CPU Cooling Kit - White",
+            "price": "229.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 108,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 109,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "Uni Fan SL120 V2 Fluid Dynamic Bearing 120mm Case Fan - White 3 Pack",
+            "price": "89.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 110,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 111,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 112,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 113,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 114,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 115,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "iCUE H150i ELITE LCD XT 360mm All in One Liquid CPU Cooling Kit - White",
+            "price": "299.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 116,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 117,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "Uni Fan SL120 V2 Fluid Dynamic Bearing 120mm Case Fan - White 3 Pack",
+            "price": "89.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 118,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 119,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 120,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 121,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 122,
+        "fields": {
+            "brand": "Noctua",
+            "product_name": "NH-D15 Black CPU Cooler",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 123,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "Galahad 240mm RGB Water Cooling Kit - Black",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 124,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 125,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "iCUE H100i ELITE CAPELLIX XT 240mm All in One Liquid CPU Cooling Kit",
+            "price": "179.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 126,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 127,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 128,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "iCUE H100i ELITE CAPELLIX XT 240mm All in One Liquid CPU Cooling Kit",
+            "price": "179.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 129,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "iCUE H150i ELITE LCD Display Liquid CPU Cooler",
+            "price": "289.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 130,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "iCUE H150i ELITE CAPELLIX XT 360mm All in One Liquid CPU Cooling Kit - White",
+            "price": "229.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 131,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 132,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 133,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 134,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - 3 Pack Black",
+            "price": "109.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 135,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "iCUE H150i ELITE LCD Display Liquid CPU Cooler",
+            "price": "289.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 136,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - 3 Pack Black",
+            "price": "109.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 137,
+        "fields": {
+            "brand": "Deep Cool",
+            "product_name": "LS720 High-Performance Liquid CPU Cooler",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 138,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 139,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 140,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 141,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "UNI Fan SL Infinity Fluid Dynamic Bearing 120mm Case Fan - White",
+            "price": "32.99"
+        }
+    }
+]

@@ -1,0 +1,434 @@
+[
+    {
+        "model": "items.Product",
+        "pk": 142,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 143,
+        "fields": {
+            "brand": "Solidigm",
+            "product_name": "P41 Plus Series 1TB SSD PCIe NVMe 4.0 x4 144L 3D QLC NAND Flash M.2 2280 Internal Solid State Drive",
+            "price": "49.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 144,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 145,
+        "fields": {
+            "brand": "Samsung",
+            "product_name": "980 Pro SSD 2TB M.2 NVMe Interface PCIe Gen 4x4 Internal Solid State Drive with V-NAND 3 bit MLC Technology (MZ-V8P2T0B/AM)",
+            "price": "159.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 146,
+        "fields": {
+            "brand": "Samsung",
+            "product_name": "870 EVO 4TB SSD 3-bit MLC V-NAND SATA III 6Gb/s 2.5\" Internal Solid State Drive",
+            "price": "269.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 147,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 148,
+        "fields": {
+            "brand": "WD",
+            "product_name": "Black SN850X 2TB 112L 3D TLC NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "159.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 149,
+        "fields": {
+            "brand": "Samsung",
+            "product_name": "870 EVO 4TB SSD 3-bit MLC V-NAND SATA III 6Gb/s 2.5\" Internal Solid State Drive",
+            "price": "269.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 150,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 151,
+        "fields": {
+            "brand": "Samsung",
+            "product_name": "870 EVO 4TB SSD 3-bit MLC V-NAND SATA III 6Gb/s 2.5\" Internal Solid State Drive",
+            "price": "269.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 152,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 153,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 154,
+        "fields": {
+            "brand": "Solidigm",
+            "product_name": "P41 Plus Series 1TB SSD PCIe NVMe 4.0 x4 144L 3D QLC NAND Flash M.2 2280 Internal Solid State Drive",
+            "price": "49.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 155,
+        "fields": {
+            "brand": "Samsung",
+            "product_name": "870 EVO 4TB SSD 3-bit MLC V-NAND SATA III 6Gb/s 2.5\" Internal Solid State Drive",
+            "price": "269.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 156,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 157,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 158,
+        "fields": {
+            "brand": "WD",
+            "product_name": "Black SN770 2TB SSD 112L TLC NAND M.2 2280 PCIe NVMe 4.0 x4 Internal Solid State Drive",
+            "price": "134.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 159,
+        "fields": {
+            "brand": "Samsung",
+            "product_name": "980 Pro SSD 2TB M.2 NVMe Interface PCIe Gen 4x4 Internal Solid State Drive with V-NAND 3 bit MLC Technology (MZ-V8P2T0B/AM)",
+            "price": "159.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 160,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 161,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 162,
+        "fields": {
+            "brand": "Intel",
+            "product_name": "670p Series 2TB SSD 3D QLC NAND Flash M.2 2280 PCIe NVMe 3.0 x4 Internal Solid State Drive",
+            "price": "89.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 163,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 164,
+        "fields": {
+            "brand": "Samsung",
+            "product_name": "980 Pro SSD 2TB M.2 NVMe Interface PCIe Gen 4x4 Internal Solid State Drive with V-NAND 3 bit MLC Technology (MZ-V8P2T0B/AM)",
+            "price": "159.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 165,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 166,
+        "fields": {
+            "brand": "WD",
+            "product_name": "Black SN770 2TB SSD 112L TLC NAND M.2 2280 PCIe NVMe 4.0 x4 Internal Solid State Drive",
+            "price": "134.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 167,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 168,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 169,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 170,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 171,
+        "fields": {
+            "brand": "Samsung",
+            "product_name": "970 EVO Plus SSD 2TB M.2 NVMe Interface PCIe 3.0 x4 Internal Solid State Drive with V-NAND 3 bit MLC Technology (MZ-V7S2T0B/AM)",
+            "price": "139.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 172,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 173,
+        "fields": {
+            "brand": "Inland",
+            "product_name": "Gaming Performance Plus 8TB SSD 3D TLC NAND PCIe NVMe Gen 4 x 4 M.2 2280 Heatsink Internal Solid State Drive",
+            "price": "999.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 174,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 175,
+        "fields": {
+            "brand": "Intel",
+            "product_name": "670p Series 2TB SSD 3D QLC NAND Flash M.2 2280 PCIe NVMe 3.0 x4 Internal Solid State Drive",
+            "price": "89.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 176,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 177,
+        "fields": {
+            "brand": "Samsung",
+            "product_name": "980 Pro SSD 2TB M.2 NVMe Interface PCIe Gen 4x4 Internal Solid State Drive with V-NAND 3 bit MLC Technology (MZ-V8P2T0B/AM)",
+            "price": "159.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 178,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 179,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 180,
+        "fields": {
+            "brand": "Solidigm",
+            "product_name": "P41 Plus Series 1TB SSD PCIe NVMe 4.0 x4 144L 3D QLC NAND Flash M.2 2280 Internal Solid State Drive",
+            "price": "49.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 181,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 182,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 183,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 184,
+        "fields": {
+            "brand": "Samsung",
+            "product_name": "970 EVO Plus SSD 2TB M.2 NVMe Interface PCIe 3.0 x4 Internal Solid State Drive with V-NAND 3 bit MLC Technology (MZ-V7S2T0B/AM)",
+            "price": "139.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 185,
+        "fields": {
+            "brand": "Solidigm",
+            "product_name": "P41 Plus Series 1TB SSD PCIe NVMe 4.0 x4 144L 3D QLC NAND Flash M.2 2280 Internal Solid State Drive",
+            "price": "49.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 186,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 187,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 188,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 189,
+        "fields": {
+            "brand": "Crucial",
+            "product_name": "P3 Plus 4TB 3D NAND Flash PCIe Gen 4 x4 NVMe M.2 Internal SSD",
+            "price": "224.99"
+        }
+    }
+]

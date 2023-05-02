@@ -1,6 +1,6 @@
 [
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 142,
         "fields": {
             "brand": "Crucial",
@@ -28,7 +28,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 143,
         "fields": {
             "brand": "Solidigm",
@@ -62,7 +62,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 144,
         "fields": {
             "brand": "Crucial",
@@ -90,7 +90,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 145,
         "fields": {
             "brand": "Samsung",
@@ -120,7 +120,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 146,
         "fields": {
             "brand": "Samsung",
@@ -152,7 +152,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 147,
         "fields": {
             "brand": "Crucial",
@@ -180,7 +180,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 148,
         "fields": {
             "brand": "WD",
@@ -206,7 +206,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 149,
         "fields": {
             "brand": "Samsung",
@@ -238,7 +238,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 150,
         "fields": {
             "brand": "Crucial",
@@ -266,7 +266,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 151,
         "fields": {
             "brand": "Samsung",
@@ -298,7 +298,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 152,
         "fields": {
             "brand": "Crucial",
@@ -326,7 +326,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 153,
         "fields": {
             "brand": "Crucial",
@@ -354,7 +354,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 154,
         "fields": {
             "brand": "Solidigm",
@@ -388,7 +388,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 155,
         "fields": {
             "brand": "Samsung",
@@ -420,7 +420,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 156,
         "fields": {
             "brand": "Crucial",
@@ -448,7 +448,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 157,
         "fields": {
             "brand": "Crucial",
@@ -476,7 +476,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 158,
         "fields": {
             "brand": "WD",
@@ -504,7 +504,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 159,
         "fields": {
             "brand": "Samsung",
@@ -534,7 +534,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 160,
         "fields": {
             "brand": "Crucial",
@@ -562,7 +562,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 161,
         "fields": {
             "brand": "Crucial",
@@ -590,7 +590,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 162,
         "fields": {
             "brand": "Intel",
@@ -621,7 +621,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 163,
         "fields": {
             "brand": "Crucial",
@@ -649,7 +649,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 164,
         "fields": {
             "brand": "Samsung",
@@ -679,7 +679,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 165,
         "fields": {
             "brand": "Crucial",
@@ -707,7 +707,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 166,
         "fields": {
             "brand": "WD",
@@ -735,7 +735,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 167,
         "fields": {
             "brand": "Crucial",
@@ -763,7 +763,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 168,
         "fields": {
             "brand": "Crucial",
@@ -791,7 +791,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 169,
         "fields": {
             "brand": "Crucial",
@@ -819,7 +819,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 170,
         "fields": {
             "brand": "Crucial",
@@ -847,7 +847,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 171,
         "fields": {
             "brand": "Samsung",
@@ -882,7 +882,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 172,
         "fields": {
             "brand": "Crucial",
@@ -910,7 +910,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 173,
         "fields": {
             "brand": "Inland",
@@ -941,7 +941,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 174,
         "fields": {
             "brand": "Crucial",
@@ -969,7 +969,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 175,
         "fields": {
             "brand": "Intel",
@@ -1000,7 +1000,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 176,
         "fields": {
             "brand": "Crucial",
@@ -1028,7 +1028,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 177,
         "fields": {
             "brand": "Samsung",
@@ -1058,7 +1058,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 178,
         "fields": {
             "brand": "Crucial",
@@ -1086,7 +1086,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 179,
         "fields": {
             "brand": "Crucial",
@@ -1114,7 +1114,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 180,
         "fields": {
             "brand": "Solidigm",
@@ -1148,7 +1148,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 181,
         "fields": {
             "brand": "Crucial",
@@ -1176,7 +1176,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 182,
         "fields": {
             "brand": "Crucial",
@@ -1204,7 +1204,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 183,
         "fields": {
             "brand": "Crucial",
@@ -1232,7 +1232,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 184,
         "fields": {
             "brand": "Samsung",
@@ -1267,7 +1267,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 185,
         "fields": {
             "brand": "Solidigm",
@@ -1301,7 +1301,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 186,
         "fields": {
             "brand": "Crucial",
@@ -1329,7 +1329,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 187,
         "fields": {
             "brand": "Crucial",
@@ -1357,7 +1357,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 188,
         "fields": {
             "brand": "Crucial",
@@ -1385,7 +1385,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 189,
         "fields": {
             "brand": "Crucial",

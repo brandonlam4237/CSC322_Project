@@ -1,6 +1,6 @@
 [
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 375,
         "fields": {
             "brand": "Corsair",
@@ -34,7 +34,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 376,
         "fields": {
             "brand": "Micro Center",
@@ -61,7 +61,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 377,
         "fields": {
             "brand": "Corsair",
@@ -95,7 +95,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 378,
         "fields": {
             "brand": "Corsair",
@@ -129,7 +129,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 379,
         "fields": {
             "brand": "Corsair",
@@ -163,7 +163,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 380,
         "fields": {
             "brand": "Micro Center",
@@ -190,7 +190,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 381,
         "fields": {
             "brand": "Corsair",
@@ -224,7 +224,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 382,
         "fields": {
             "brand": "Crucial",
@@ -255,7 +255,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 383,
         "fields": {
             "brand": "Corsair",
@@ -288,7 +288,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 384,
         "fields": {
             "brand": "Corsair",
@@ -322,7 +322,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 385,
         "fields": {
             "brand": "Corsair",
@@ -356,7 +356,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 386,
         "fields": {
             "brand": "Micro Center",
@@ -383,7 +383,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 387,
         "fields": {
             "brand": "Corsair",
@@ -417,7 +417,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 388,
         "fields": {
             "brand": "Corsair",
@@ -451,7 +451,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 389,
         "fields": {
             "brand": "Corsair",
@@ -485,7 +485,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 390,
         "fields": {
             "brand": "Corsair",
@@ -519,7 +519,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 391,
         "fields": {
             "brand": "Corsair",
@@ -553,7 +553,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 392,
         "fields": {
             "brand": "Corsair",
@@ -587,7 +587,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 393,
         "fields": {
             "brand": "Corsair",
@@ -621,7 +621,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 394,
         "fields": {
             "brand": "Micro Center",
@@ -648,7 +648,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 395,
         "fields": {
             "brand": "Micro Center",
@@ -675,7 +675,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 396,
         "fields": {
             "brand": "Corsair",
@@ -709,7 +709,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 397,
         "fields": {
             "brand": "Corsair",
@@ -743,7 +743,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 398,
         "fields": {
             "brand": "Corsair",
@@ -777,7 +777,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 399,
         "fields": {
             "brand": "Micro Center",
@@ -804,7 +804,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 400,
         "fields": {
             "brand": "G.Skill",
@@ -837,7 +837,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 401,
         "fields": {
             "brand": "Micro Center",
@@ -864,7 +864,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 402,
         "fields": {
             "brand": "Corsair",
@@ -898,7 +898,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 403,
         "fields": {
             "brand": "Corsair",
@@ -932,7 +932,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 404,
         "fields": {
             "brand": "Micro Center",
@@ -959,7 +959,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 405,
         "fields": {
             "brand": "Micro Center",
@@ -986,7 +986,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 406,
         "fields": {
             "brand": "Corsair",
@@ -1020,7 +1020,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 407,
         "fields": {
             "brand": "Corsair",
@@ -1054,7 +1054,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 408,
         "fields": {
             "brand": "Corsair",
@@ -1088,7 +1088,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 409,
         "fields": {
             "brand": "Corsair",
@@ -1122,7 +1122,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 410,
         "fields": {
             "brand": "Micro Center",
@@ -1149,7 +1149,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 411,
         "fields": {
             "brand": "Micro Center",
@@ -1176,7 +1176,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 412,
         "fields": {
             "brand": "Corsair",
@@ -1210,7 +1210,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 413,
         "fields": {
             "brand": "Corsair",
@@ -1244,7 +1244,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 414,
         "fields": {
             "brand": "Corsair",
@@ -1278,7 +1278,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 415,
         "fields": {
             "brand": "Corsair",
@@ -1311,7 +1311,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 416,
         "fields": {
             "brand": "Corsair",
@@ -1345,7 +1345,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 417,
         "fields": {
             "brand": "Corsair",
@@ -1379,7 +1379,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 418,
         "fields": {
             "brand": "Corsair",
@@ -1413,7 +1413,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 419,
         "fields": {
             "brand": "Corsair",
@@ -1447,7 +1447,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 420,
         "fields": {
             "brand": "Micro Center",
@@ -1474,7 +1474,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 421,
         "fields": {
             "brand": "Corsair",

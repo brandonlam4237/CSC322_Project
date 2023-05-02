@@ -1,6 +1,6 @@
 [
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 233,
         "fields": {
             "brand": "Supermicro",
@@ -66,7 +66,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 234,
         "fields": {
             "brand": "Supermicro",
@@ -132,7 +132,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 235,
         "fields": {
             "brand": "Supermicro",
@@ -198,7 +198,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 236,
         "fields": {
             "brand": "Supermicro",
@@ -264,7 +264,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 237,
         "fields": {
             "brand": "Supermicro",
@@ -330,7 +330,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 238,
         "fields": {
             "brand": "Supermicro",

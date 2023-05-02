@@ -1,6 +1,6 @@
 [
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 328,
         "fields": {
             "brand": "Lian Li",
@@ -72,7 +72,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 329,
         "fields": {
             "brand": "Lian Li",
@@ -144,7 +144,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 330,
         "fields": {
             "brand": "Lian Li",
@@ -216,7 +216,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 331,
         "fields": {
             "brand": "Lian Li",
@@ -288,7 +288,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 332,
         "fields": {
             "brand": "Montech",
@@ -345,7 +345,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 333,
         "fields": {
             "brand": "Lian Li",
@@ -414,7 +414,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 334,
         "fields": {
             "brand": "Fractal Design",
@@ -497,7 +497,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 335,
         "fields": {
             "brand": "Fractal Design",
@@ -580,7 +580,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 336,
         "fields": {
             "brand": "Lian Li",
@@ -643,7 +643,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 337,
         "fields": {
             "brand": "Lian Li",
@@ -715,7 +715,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 338,
         "fields": {
             "brand": "Lian Li",
@@ -787,7 +787,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 339,
         "fields": {
             "brand": "Montech",
@@ -844,7 +844,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 340,
         "fields": {
             "brand": "Lian Li",
@@ -916,7 +916,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 341,
         "fields": {
             "brand": "Montech",
@@ -973,7 +973,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 342,
         "fields": {
             "brand": "Montech",
@@ -1030,7 +1030,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 343,
         "fields": {
             "brand": "Montech",
@@ -1087,7 +1087,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 344,
         "fields": {
             "brand": "Lian Li",
@@ -1159,7 +1159,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 345,
         "fields": {
             "brand": "Montech",
@@ -1216,7 +1216,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 346,
         "fields": {
             "brand": "Montech",
@@ -1273,7 +1273,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 347,
         "fields": {
             "brand": "Lian Li",
@@ -1342,7 +1342,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 348,
         "fields": {
             "brand": "Montech",
@@ -1399,7 +1399,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 349,
         "fields": {
             "brand": "Montech",
@@ -1456,7 +1456,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 350,
         "fields": {
             "brand": "Montech",
@@ -1513,7 +1513,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 351,
         "fields": {
             "brand": "Montech",
@@ -1570,7 +1570,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 352,
         "fields": {
             "brand": "Lian Li",
@@ -1642,7 +1642,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 353,
         "fields": {
             "brand": "Lian Li",
@@ -1714,7 +1714,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 354,
         "fields": {
             "brand": "Lian Li",
@@ -1783,7 +1783,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 355,
         "fields": {
             "brand": "Lian Li",
@@ -1855,7 +1855,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 356,
         "fields": {
             "brand": "Fractal Design",
@@ -1935,7 +1935,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 357,
         "fields": {
             "brand": "Montech",
@@ -1992,7 +1992,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 358,
         "fields": {
             "brand": "Lian Li",
@@ -2064,7 +2064,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 359,
         "fields": {
             "brand": "Lian Li",
@@ -2136,7 +2136,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 360,
         "fields": {
             "brand": "Montech",
@@ -2193,7 +2193,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 361,
         "fields": {
             "brand": "Montech",
@@ -2250,7 +2250,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 362,
         "fields": {
             "brand": "Montech",
@@ -2307,7 +2307,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 363,
         "fields": {
             "brand": "Lian Li",
@@ -2376,7 +2376,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 364,
         "fields": {
             "brand": "Corsair",
@@ -2457,7 +2457,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 365,
         "fields": {
             "brand": "Fractal Design",
@@ -2540,7 +2540,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 366,
         "fields": {
             "brand": "Fractal Design",
@@ -2623,7 +2623,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 367,
         "fields": {
             "brand": "Montech",
@@ -2680,7 +2680,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 368,
         "fields": {
             "brand": "Fractal Design",
@@ -2763,7 +2763,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 369,
         "fields": {
             "brand": "Montech",
@@ -2820,7 +2820,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 370,
         "fields": {
             "brand": "Lian Li",
@@ -2892,7 +2892,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 371,
         "fields": {
             "brand": "Lian Li",
@@ -2964,7 +2964,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 372,
         "fields": {
             "brand": "Fractal Design",
@@ -3047,7 +3047,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 373,
         "fields": {
             "brand": "Lian Li",
@@ -3119,7 +3119,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 374,
         "fields": {
             "brand": "Lian Li",

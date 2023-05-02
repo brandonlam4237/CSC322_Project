@@ -1,0 +1,434 @@
+[
+    {
+        "model": "items.Product",
+        "pk": 280,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 281,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 282,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 283,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 284,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 285,
+        "fields": {
+            "brand": "Seasonic USA",
+            "product_name": "FOCUS GX-750, 750W 80+ Gold, Full-Modular, Fan Control in Fanless, Silent, and Cooling Mode, 10 Year Warranty, Perfect Power Supply for Gaming and Various Application, SSR-750FX.",
+            "price": "139.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 286,
+        "fields": {
+            "brand": "Seasonic USA",
+            "product_name": "PRIME TX-850, 850W 80+ Titanium, Full Modular, Fan Control in Fanless, Silent, and Cooling Mode, 12 Year Warranty, Perfect Power Supply for Gaming and High-Performance Systems, SSR-850TR.",
+            "price": "259.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 287,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 288,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 289,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 290,
+        "fields": {
+            "brand": "Seasonic USA",
+            "product_name": "FOCUS GX-750, 750W 80+ Gold, Full-Modular, Fan Control in Fanless, Silent, and Cooling Mode, 10 Year Warranty, Perfect Power Supply for Gaming and Various Application, SSR-750FX.",
+            "price": "139.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 291,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 292,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 293,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 294,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 295,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 296,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 297,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 298,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 299,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 300,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 301,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 302,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 303,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 304,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 305,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 306,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 307,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 308,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 309,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 310,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 311,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 312,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 313,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 314,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 315,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 316,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 317,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 318,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 319,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 320,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 321,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 322,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 323,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 324,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 325,
+        "fields": {
+            "brand": "Lian Li",
+            "product_name": "SP750 750 Watt 80 Plus Gold SFX Fully Modular Power Supply",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 326,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 327,
+        "fields": {
+            "brand": "Corsair",
+            "product_name": "RMx Series RM850x 850 Watt 80 Plus Gold ATX Fully Modular Power Supply",
+            "price": "149.99"
+        }
+    }
+]

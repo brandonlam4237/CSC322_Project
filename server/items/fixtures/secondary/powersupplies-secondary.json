@@ -1,6 +1,6 @@
 [
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 280,
         "fields": {
             "brand": "Lian Li",
@@ -38,7 +38,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 281,
         "fields": {
             "brand": "Lian Li",
@@ -76,7 +76,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 282,
         "fields": {
             "brand": "Corsair",
@@ -115,7 +115,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 283,
         "fields": {
             "brand": "Lian Li",
@@ -153,7 +153,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 284,
         "fields": {
             "brand": "Lian Li",
@@ -191,7 +191,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 285,
         "fields": {
             "brand": "Seasonic USA",
@@ -234,7 +234,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 286,
         "fields": {
             "brand": "Seasonic USA",
@@ -287,7 +287,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 287,
         "fields": {
             "brand": "Corsair",
@@ -326,7 +326,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 288,
         "fields": {
             "brand": "Corsair",
@@ -365,7 +365,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 289,
         "fields": {
             "brand": "Corsair",
@@ -404,7 +404,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 290,
         "fields": {
             "brand": "Seasonic USA",
@@ -447,7 +447,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 291,
         "fields": {
             "brand": "Corsair",
@@ -486,7 +486,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 292,
         "fields": {
             "brand": "Corsair",
@@ -525,7 +525,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 293,
         "fields": {
             "brand": "Lian Li",
@@ -563,7 +563,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 294,
         "fields": {
             "brand": "Corsair",
@@ -602,7 +602,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 295,
         "fields": {
             "brand": "Corsair",
@@ -641,7 +641,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 296,
         "fields": {
             "brand": "Corsair",
@@ -680,7 +680,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 297,
         "fields": {
             "brand": "Lian Li",
@@ -718,7 +718,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 298,
         "fields": {
             "brand": "Corsair",
@@ -757,7 +757,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 299,
         "fields": {
             "brand": "Lian Li",
@@ -795,7 +795,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 300,
         "fields": {
             "brand": "Corsair",
@@ -834,7 +834,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 301,
         "fields": {
             "brand": "Corsair",
@@ -873,7 +873,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 302,
         "fields": {
             "brand": "Corsair",
@@ -912,7 +912,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 303,
         "fields": {
             "brand": "Lian Li",
@@ -950,7 +950,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 304,
         "fields": {
             "brand": "Corsair",
@@ -989,7 +989,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 305,
         "fields": {
             "brand": "Corsair",
@@ -1028,7 +1028,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 306,
         "fields": {
             "brand": "Lian Li",
@@ -1066,7 +1066,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 307,
         "fields": {
             "brand": "Corsair",
@@ -1105,7 +1105,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 308,
         "fields": {
             "brand": "Corsair",
@@ -1144,7 +1144,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 309,
         "fields": {
             "brand": "Corsair",
@@ -1183,7 +1183,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 310,
         "fields": {
             "brand": "Lian Li",
@@ -1221,7 +1221,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 311,
         "fields": {
             "brand": "Lian Li",
@@ -1259,7 +1259,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 312,
         "fields": {
             "brand": "Corsair",
@@ -1298,7 +1298,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 313,
         "fields": {
             "brand": "Corsair",
@@ -1337,7 +1337,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 314,
         "fields": {
             "brand": "Corsair",
@@ -1376,7 +1376,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 315,
         "fields": {
             "brand": "Corsair",
@@ -1415,7 +1415,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 316,
         "fields": {
             "brand": "Corsair",
@@ -1454,7 +1454,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 317,
         "fields": {
             "brand": "Corsair",
@@ -1493,7 +1493,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 318,
         "fields": {
             "brand": "Corsair",
@@ -1532,7 +1532,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 319,
         "fields": {
             "brand": "Corsair",
@@ -1571,7 +1571,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 320,
         "fields": {
             "brand": "Corsair",
@@ -1610,7 +1610,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 321,
         "fields": {
             "brand": "Lian Li",
@@ -1648,7 +1648,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 322,
         "fields": {
             "brand": "Corsair",
@@ -1687,7 +1687,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 323,
         "fields": {
             "brand": "Corsair",
@@ -1726,7 +1726,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 324,
         "fields": {
             "brand": "Lian Li",
@@ -1764,7 +1764,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 325,
         "fields": {
             "brand": "Lian Li",
@@ -1802,7 +1802,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 326,
         "fields": {
             "brand": "Corsair",
@@ -1841,7 +1841,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 327,
         "fields": {
             "brand": "Corsair",

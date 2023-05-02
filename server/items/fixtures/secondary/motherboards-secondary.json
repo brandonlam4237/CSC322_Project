@@ -1,6 +1,6 @@
 [
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 49,
         "fields": {
             "brand": "ASUS",
@@ -106,7 +106,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 50,
         "fields": {
             "brand": "ASUS",
@@ -212,7 +212,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 51,
         "fields": {
             "brand": "ASUS",
@@ -318,7 +318,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 52,
         "fields": {
             "brand": "ASUS",
@@ -443,7 +443,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 53,
         "fields": {
             "brand": "ASUS",
@@ -549,7 +549,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 54,
         "fields": {
             "brand": "ASUS",
@@ -655,7 +655,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 55,
         "fields": {
             "brand": "ASUS",
@@ -761,7 +761,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 56,
         "fields": {
             "brand": "ASUS",
@@ -867,7 +867,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 57,
         "fields": {
             "brand": "ASUS",
@@ -973,7 +973,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 58,
         "fields": {
             "brand": "ASUS",
@@ -1079,7 +1079,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 59,
         "fields": {
             "brand": "ASUS",
@@ -1185,7 +1185,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 60,
         "fields": {
             "brand": "ASUS",
@@ -1291,7 +1291,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 61,
         "fields": {
             "brand": "MSI",
@@ -1410,7 +1410,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 62,
         "fields": {
             "brand": "ASUS",
@@ -1516,7 +1516,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 63,
         "fields": {
             "brand": "ASUS",
@@ -1622,7 +1622,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 64,
         "fields": {
             "brand": "ASUS",
@@ -1728,7 +1728,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 65,
         "fields": {
             "brand": "Gigabyte",
@@ -1838,7 +1838,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 66,
         "fields": {
             "brand": "ASUS",
@@ -1944,7 +1944,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 67,
         "fields": {
             "brand": "ASUS",
@@ -2050,7 +2050,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 68,
         "fields": {
             "brand": "Gigabyte",
@@ -2160,7 +2160,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 69,
         "fields": {
             "brand": "ASUS",
@@ -2285,7 +2285,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 70,
         "fields": {
             "brand": "ASUS",
@@ -2406,7 +2406,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 71,
         "fields": {
             "brand": "ASUS",
@@ -2531,7 +2531,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 72,
         "fields": {
             "brand": "ASUS",
@@ -2637,7 +2637,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 73,
         "fields": {
             "brand": "ASUS",
@@ -2743,7 +2743,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 74,
         "fields": {
             "brand": "ASUS",
@@ -2849,7 +2849,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 75,
         "fields": {
             "brand": "ASUS",
@@ -2970,7 +2970,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 76,
         "fields": {
             "brand": "MSI",
@@ -3089,7 +3089,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 77,
         "fields": {
             "brand": "ASUS",
@@ -3214,7 +3214,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 78,
         "fields": {
             "brand": "ASUS",
@@ -3320,7 +3320,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 79,
         "fields": {
             "brand": "ASUS",
@@ -3441,7 +3441,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 80,
         "fields": {
             "brand": "ASUS",
@@ -3547,7 +3547,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 81,
         "fields": {
             "brand": "ASUS",
@@ -3653,7 +3653,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 82,
         "fields": {
             "brand": "ASUS",
@@ -3774,7 +3774,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 83,
         "fields": {
             "brand": "ASUS",
@@ -3880,7 +3880,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 84,
         "fields": {
             "brand": "ASUS",
@@ -4005,7 +4005,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 85,
         "fields": {
             "brand": "ASUS",
@@ -4111,7 +4111,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 86,
         "fields": {
             "brand": "ASUS",
@@ -4217,7 +4217,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 87,
         "fields": {
             "brand": "ASUS",
@@ -4323,7 +4323,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 88,
         "fields": {
             "brand": "ASUS",
@@ -4442,7 +4442,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 89,
         "fields": {
             "brand": "MSI",
@@ -4561,7 +4561,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 90,
         "fields": {
             "brand": "ASUS",
@@ -4667,7 +4667,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 91,
         "fields": {
             "brand": "ASUS",
@@ -4773,7 +4773,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 92,
         "fields": {
             "brand": "ASUS",
@@ -4892,7 +4892,7 @@
         }
     },
     {
-        "model": "items.Product",
+        "model": "items.ComputerPart",
         "pk": 93,
         "fields": {
             "brand": "ASUS",
