@@ -3,10 +3,10 @@ from rest_framework import status, permissions
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 
+from better_profanity import profanity
+
 from .models import ComputerPart, Product
 from .serializers import ComputerPartSerializer
-
-from better_profanity import profanity
 
 
 class PartList(APIView):

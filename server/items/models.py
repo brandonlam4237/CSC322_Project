@@ -120,19 +120,26 @@ class Cart(models.Model):
     ------
     customer : OneToOneField
         Customer who owns the shopping cart
+
+    Properties
+    ----------
+    total_price : float
+        Total price of all cart items
+    num_items : int
+        Total number of cart items
     """
     customer = models.OneToOneField(User, on_delete=models.CASCADE, null=False)
 
     objects = models.Manager()
 
     @property
-    def total_price(self):
+    def total_price(self) -> float:
         cartitems = self.cart_items.all()
         total = sum([item.price for item in cartitems])
-        return total
+        return round(total, 2)
 
     @property
-    def num_items(self):
+    def num_items(self) -> int:
         cartitems = self.cart_items.all()
         quantity = sum([item.quantity for item in cartitems])
         return quantity
@@ -142,6 +149,23 @@ class Cart(models.Model):
 
 
 class CartItem(models.Model):
+    """
+    CartItem Model
+
+    Fields
+    ------
+    product : ForeignKey
+        Product relating to the Cart Item
+    cart : ForeignKey
+        Cart relating to the Cart Item
+    quantity : IntegerField
+        Quantity of cart item
+    
+    Properties
+    ----------
+    price : float
+        Price of cart item times the quantity
+    """
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, related_name='items')
     cart = models.ForeignKey(
@@ -150,13 +174,13 @@ class CartItem(models.Model):
 
     objects = models.Manager()
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.product.product_name
 
     @property
     def price(self):
         new_price = self.product.price * self.quantity
-        return new_price
+        return round(new_price, 2)
 
 
 class Order(models.Model):

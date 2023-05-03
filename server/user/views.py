@@ -9,8 +9,7 @@ from rest_framework.response import Response
 
 
 from .serializers import CustomerSerializer, UserSerializer
-from .serializers import ProductSerializer, ComputerPartSerializer, CustomBuildSerializer
-from .serializers import CartItemsSerializer, CartSerializer
+from .serializers import CartItemsSerializer
 from .serializers import OrderSerializer
 
 User = get_user_model()
