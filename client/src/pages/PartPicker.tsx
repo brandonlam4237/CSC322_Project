@@ -29,14 +29,38 @@ export default function MyBuild() {
             </p>
           )}
           <PartsTable />
+          {user.user_type == ("Owner" || "Employee") ? (
+            <div className="build-description-container">
+              <form>
+                <h3>
+                  <label htmlFor="suggested-build-form">
+                    Build Description
+                  </label>
+                </h3>
+                <textarea
+                  id="suggested-build-form"
+                  className="input-field"
+                  placeholder="description..."
+                ></textarea>
+              </form>
+            </div>
+          ) : (
+            ""
+          )}
           <div className="buttons-container">
             <div className="buttons-container__save-options">
               <Button className="blue-primary">Save Build</Button>
               <Button className="blue-secondary">Discard</Button>
             </div>
-            <Button className="buttons-container__submit-build black-primary">
-              Add Built to Cart
-            </Button>
+            {user.user_type == ("Owner" || "Employee") ? (
+              <Button className="buttons-container__submit-build black-primary">
+                Add to Featured Builds
+              </Button>
+            ) : (
+              <Button className="buttons-container__submit-build black-primary">
+                Add to Cart
+              </Button>
+            )}
           </div>
         </div>
       </main>

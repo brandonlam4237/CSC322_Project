@@ -38,9 +38,10 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  column-gap: 10px;
   &__save-options {
     display: flex;  
-    column-gap: 20px;
+    column-gap: 10px;
     flex-direction: row;
     max-width: 500px;
     width: 100%;
@@ -63,6 +64,7 @@
   border-radius: 5px;
   align-items: flex-start;
   font-weight: bold;
+  font-size: 1rem;
 }
 
 .compatible {
@@ -83,4 +85,20 @@
   height:100%;
   width:100%;
   background-color: #F7F7F7;
+}
+
+.build-description-container {
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  h3 {
+    margin: 0px 0px 10px 0px;
+  }
+}
+
+#suggested-build-form {
+  max-width: 1200px;
+  min-height:200px;
+  padding: 10px;
+  resize: none;
 }
