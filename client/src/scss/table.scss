@@ -35,4 +35,9 @@ th, td {
 .remove-icon {
   color:  rgb(141, 141, 141);
   text-align: right;
+  
+  &:hover{
+    color:  rgb(68, 68, 68);
+    cursor: pointer;
+  }
 }
