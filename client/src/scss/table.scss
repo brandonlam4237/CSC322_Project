@@ -1,0 +1,40 @@
+table {
+  max-width: 1200px;
+  width: 100%;
+  text-align: left;
+  vertical-align: middle;
+  border-collapse:collapse;
+}
+
+thead {
+  background-color: white;
+  padding: 20px;
+}
+
+thead tr,
+tbody tr
+ {
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+tbody {
+  background-color: white;
+  padding: 20px;
+  tr {
+  border-bottom:  #F7F7F7 solid 4px;
+  }
+}
+
+th {
+  max-width: 100px;
+}
+th, td {
+  padding: 30px;
+}
+
+.remove-icon {
+  color:  rgb(141, 141, 141);
+  text-align: right;
+}
