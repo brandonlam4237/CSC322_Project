@@ -4,7 +4,7 @@ from .views import BlacklistedUserList, BlacklistUser, CustomerDetail
 from .views import UserList
 from .views import ActivateUser
 from .views import AddBalance
-from .views import CustomerCart, ManageCart
+from .views import CustomerCart, ManageCart, ManageOrders
 
 urlpatterns = [
     path('', UserList.as_view()),
@@ -24,4 +24,7 @@ urlpatterns = [
     # Shopping Cart Endpoints
     path('cart', CustomerCart.as_view()),
     path('cart/<int:id>', ManageCart.as_view()),
+
+    # Order Endpoints
+    path('orders', ManageOrders.as_view()),
 ]

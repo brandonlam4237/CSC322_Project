@@ -11,6 +11,7 @@ from rest_framework.response import Response
 from .serializers import CustomerSerializer, UserSerializer
 from .serializers import ProductSerializer, ComputerPartSerializer, CustomBuildSerializer
 from .serializers import CartItemsSerializer, CartSerializer
+from .serializers import OrderSerializer
 
 User = get_user_model()
 Product = apps.get_model('items', 'Product')
@@ -18,6 +19,7 @@ ComputerPart = apps.get_model('items', 'ComputerPart')
 CustomBuild = apps.get_model('items', 'CustomBuild')
 Cart = apps.get_model('items', 'Cart')
 CartItem = apps.get_model('items', 'CartItem')
+Order = apps.get_model('items', 'Order')
 
 
 """
@@ -462,7 +464,7 @@ class ActivateUser(APIView):
         memo = str(memo)
 
         User.objects.filter(id=user_to_activate.id).update(
-            is_active=True, memo=memo)
+            is_active=True, application_memo=memo)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
@@ -507,7 +509,19 @@ class CustomerCart(APIView):
 
 class ManageCart(APIView):
     """
-    Endpoint to manage a customer cart
+    An API View class for managing user cart.
+
+    Permissions
+    -----------
+        User must be Customer type
+
+    Methods
+    -------
+    put(request)
+        Handles a PUT request to add items to cart
+
+    patch(request)
+        Handles a PATCH request to edit quantity of items in cart
     """
 
     def put(self, request, id):
@@ -589,3 +603,91 @@ class ManageCart(APIView):
         return Response(
             status=status.HTTP_205_RESET_CONTENT
         )
+
+
+"""
+Order Views
+"""
+
+
+class ManageOrders(APIView):
+    """
+    An API View class for Managing User Orders
+
+    Permissions
+    -----------
+        User must be Customer type
+
+    Methods
+    -------
+    get(request)
+        Handles a GET request to retrieve user orders
+
+    put(request)
+        Handles a PUT request to submit a user order
+    """
+
+    def get(self, request):
+        """
+        Handles a GET request to retrieve user orders
+        """
+        user = request.user
+
+        if user.user_type != "Customer":
+            return Response(
+                {'error': 'Only customers can submit orders'},
+                status=status.HTTP_401_UNAUTHORIZED
+            )
+
+        orders = Order.objects.filter(customer=user)
+        serializer = OrderSerializer(orders, many=True)
+        return Response(
+            serializer.data,
+            status=status.HTTP_200_OK
+        )
+
+    def put(self, request):
+        """
+        Handles a PUT request to submit a user order
+        """
+        user = request.user
+
+        if user.user_type != "Customer":
+            return Response(
+                {'error': 'Only customers can submit orders'},
+                status=status.HTTP_401_UNAUTHORIZED
+            )
+
+        if user.cart.num_items == 0:
+            return Response(
+                {'error': 'Customer cannot have an empty cart'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        address = request.data.get('address')
+        if not address:
+            return Response(
+                {'error': 'Address must be provided'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        cart = user.cart
+
+        if cart.total_price > user.balance:
+            user.warnings += 1
+            user.save()
+            return Response(
+                {'error': 'Insufficient balance'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
+        cart_items = cart.cart_items.all()
+        new_order = Order(customer=user, address=address,
+                          total_price=cart.total_price)
+        new_order.save()
+        for item in cart_items:
+            new_order.items.add(item)
+        new_order.save()
+        cart.cart_items.clear()
+
+        return Response(status=status.HTTP_201_CREATED)
