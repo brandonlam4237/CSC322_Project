@@ -7,6 +7,7 @@ import {
   useContext,
   ReactNode,
 } from "react";
+import { IBalanceForm } from "src/pages/AccountDetails";
 
 const LOCAL_STORAGE_AUTH_KEY = "donut_pcs_local_storage_tokens_key";
 
@@ -20,6 +21,7 @@ interface IAuthContext {
   registerUser: (value: object) => void;
   loginUser: (username: string, password: string) => void;
   logoutUser: () => void;
+  askForBalance: (value: IBalanceForm) => void;
 }
 
 // Also need to give default values for the fields the authcontext is expected to have
@@ -52,6 +54,9 @@ export const AuthContext = createContext<IAuthContext>({
     /* do nothing */
   },
   logoutUser: () => {
+    /* do nothing */
+  },
+  askForBalance: () => {
     /* do nothing */
   },
 });
@@ -192,6 +197,22 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
     }
   }
 
+  async function askForBalance(balanceForm: IBalanceForm) {
+    const accessToken: string = userTokens.access;
+    try {
+      await fetch("/users/balance", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify(balanceForm),
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   /* automatically login user upon refresh if refresh and access tokens
     are available in local storage */
   useEffect(() => {
@@ -215,6 +236,7 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
     loginUser,
     registerUser,
     logoutUser,
+    askForBalance
   };
   return (
     <AuthContext.Provider value={authValues}>{children}</AuthContext.Provider>

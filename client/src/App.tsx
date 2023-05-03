@@ -15,6 +15,7 @@ import Register from "./pages/Register";
 import Approve from "./pages/Approve";
 import MyBuild from "./pages/PartPicker";
 import { AuthContextProvider } from "./contexts/AuthContext";
+import AccountDetails from "./pages/AccountDetails";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,14 +28,15 @@ const router = createBrowserRouter(
       <Route path="/builds" element={<Builds />} />
       <Route path="/other" element={<Other />} />
       <Route path="/mybuild" element={<MyBuild />} />
-    </Route>
+      <Route path="/accountdetails" element={<AccountDetails/>} />
+ </Route>
   )
 );
 
 function App() {
   return (
     <AuthContextProvider>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </AuthContextProvider>
   );
 }
