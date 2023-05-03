@@ -1,9 +1,10 @@
 table {
-  max-width: 1200px;
+  max-width: 1400px;
   width: 100%;
   text-align: left;
   vertical-align: middle;
   border-collapse:collapse;
+  font-size: 1rem;
 }
 
 thead {
@@ -27,14 +28,16 @@ tbody {
   }
 }
 
-th {
-  max-width: 100px;
-}
 th, td {
-  padding: 30px;
+  padding: 25px; 
 }
 
 .remove-icon {
   color:  rgb(141, 141, 141);
   text-align: right;
+  
+  &:hover{
+    color:  rgb(68, 68, 68);
+    cursor: pointer;
+  }
 }

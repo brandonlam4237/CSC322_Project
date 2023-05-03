@@ -13,7 +13,7 @@ import RootLayout from "./layouts/RootLayout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Approve from "./pages/Approve";
-import MyBuild from "./pages/MyBuild";
+import MyBuild from "./pages/PartPicker";
 import { AuthContextProvider } from "./contexts/AuthContext";
 
 const router = createBrowserRouter(
