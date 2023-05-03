@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "src/contexts/AuthContext";
-import "../scss/mybuild.scss";
+import "../scss/partpicker.scss";
 import Table from "src/components/Table";
 import Button from "src/components/Button";
 
