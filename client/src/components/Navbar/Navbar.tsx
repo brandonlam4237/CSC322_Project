@@ -54,9 +54,13 @@ function Navbar() {
           Featured Builds
         </NavLink>
 
-        <NavLink to="/mybuild" className="options__other">
-          My Build
-        </NavLink>
+        {user.is_active ? (
+          <NavLink to="/mybuild" className="options__other">
+            My Build
+          </NavLink>
+        ) : (
+          ""
+        )}
         {!user.is_active ? (
           <NavLink to="/login" className="options__navLink">
             Login
