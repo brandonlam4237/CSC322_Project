@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAuthContext } from "src/contexts/AuthContext";
 import "../scss/partpicker.scss";
-import Table from "src/components/Table";
+import PartsTable from "src/components/PartsTable";
 import Button from "src/components/Button";
 
 export default function MyBuild() {
@@ -28,7 +28,7 @@ export default function MyBuild() {
               Motherboard
             </p>
           )}
-          <Table />
+          <PartsTable />
           <div className="buttons-container">
             <div className="buttons-container__save-options">
               <Button className="blue-primary">Save Build</Button>

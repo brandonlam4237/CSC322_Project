@@ -45,7 +45,7 @@ interface PartsList {
   Case: Part;
 }
 
-export default function Table() {
+export default function PartsTable() {
   const [partsList, setPartsList] = useState<any>({
     "CPU Cooler": {
       component_name: "CPU Cooler",
