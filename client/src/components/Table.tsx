@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 export default function Table() {
   return (
-    <>
       <table>
         <thead>
           <tr>
@@ -81,6 +80,5 @@ export default function Table() {
           </tr>
         </tbody>
       </table>
-    </>
   );
 }
