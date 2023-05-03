@@ -3,7 +3,9 @@ from rest_framework import status, permissions
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 
-from .models import ComputerPart
+from better_profanity import profanity
+
+from .models import ComputerPart, Product
 from .serializers import ComputerPartSerializer
 
 
@@ -64,3 +66,43 @@ class PartDetail(APIView):
             {'products': serializer.data},
             status=status.HTTP_200_OK
         )
+
+
+class ManageComment(APIView):
+    """
+    Endpoint to add a comment to a product
+    """
+    permission_classes = (permissions.AllowAny, )
+
+    def put(self, request, id):
+        user = request.user
+        product = get_object_or_404(Product, id=id)
+
+        if not user:
+            username = user.username
+        else:
+            username = "Anonymous"
+
+        comment = request.data.get('comment')
+        if not comment:
+            return Response(
+                {'error': 'Please enter a comment in the body'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        if profanity.contains_profanity(comment):
+            taboo_words = profanity.censor(comment).count("****")
+            if user:
+                if taboo_words > 3:
+                    user.warnings += 2
+                else:
+                    user.warnings += 1
+                user.save()
+
+            return Response(
+                {'error': 'Comments must not have profanity'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
+        product.comments.create(username=username, comment=comment)
+        return Response(status=status.HTTP_201_CREATED)

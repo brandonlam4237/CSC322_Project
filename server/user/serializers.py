@@ -8,6 +8,7 @@ ComputerPart = apps.get_model('items', 'ComputerPart')
 CustomBuild = apps.get_model('items', 'CustomBuild')
 Cart = apps.get_model('items', 'Cart')
 CartItem = apps.get_model('items', 'CartItem')
+Order = apps.get_model('items', 'Order')
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -174,4 +175,25 @@ class CartSerializer(serializers.ModelSerializer):
         fields = (
             'num_items',
             'total_price'
+        )
+
+
+class OrderSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Order Data
+    """
+
+    items = CartItemsSerializer(many=True)
+
+    class Meta:
+        """
+        Fields:
+            address
+            items
+            datetime_ordered
+            total_price
+        """
+        model = Order
+        exclude = (
+            'customer',
         )

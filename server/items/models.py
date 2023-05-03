@@ -17,9 +17,8 @@ class Comment(models.Model):
     visible : BooleanField
         Boolean to indicate if the comment is visible
     """
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    username = models.CharField(max_length=255, null=False)
     comment = models.TextField(null=False)
-    visible = models.BooleanField(default=True)
 
     objects = models.Manager()
 
@@ -113,6 +112,77 @@ class CustomBuild(Product):
         return f"{self.build_maker.username} - {self.product_name}"
 
 
+class Cart(models.Model):
+    """
+    Shopping Cart Model
+
+    Fields
+    ------
+    customer : OneToOneField
+        Customer who owns the shopping cart
+
+    Properties
+    ----------
+    total_price : float
+        Total price of all cart items
+    num_items : int
+        Total number of cart items
+    """
+    customer = models.OneToOneField(User, on_delete=models.CASCADE, null=False)
+
+    objects = models.Manager()
+
+    @property
+    def total_price(self) -> float:
+        cartitems = self.cart_items.all()
+        total = sum([item.price for item in cartitems])
+        return round(total, 2)
+
+    @property
+    def num_items(self) -> int:
+        cartitems = self.cart_items.all()
+        quantity = sum([item.quantity for item in cartitems])
+        return quantity
+
+    def __str__(self) -> str:
+        return f"{self.customer.username}'s cart"
+
+
+class CartItem(models.Model):
+    """
+    CartItem Model
+
+    Fields
+    ------
+    product : ForeignKey
+        Product relating to the Cart Item
+    cart : ForeignKey
+        Cart relating to the Cart Item
+    quantity : IntegerField
+        Quantity of cart item
+    
+    Properties
+    ----------
+    price : float
+        Price of cart item times the quantity
+    """
+    product = models.ForeignKey(
+        Product, on_delete=models.CASCADE, related_name='items')
+    cart = models.ForeignKey(
+        Cart, on_delete=models.CASCADE, related_name='cart_items', null=True)
+    quantity = models.IntegerField(default=0)
+
+    objects = models.Manager()
+
+    def __str__(self) -> str:
+        return self.product.product_name
+
+    @property
+    def price(self):
+        new_price = self.product.price * self.quantity
+        return round(new_price, 2)
+
+
 class Order(models.Model):
     """
     Order Model
@@ -131,54 +201,10 @@ class Order(models.Model):
     customer = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
 
     address = models.TextField(null=False)
-    items = models.ManyToManyField(Product, related_name='order_items')
+    items = models.ManyToManyField(CartItem, related_name='order_items')
 
     datetime_ordred = models.DateTimeField(auto_now_add=True, null=False)
     total_price = models.DecimalField(
         max_digits=50, decimal_places=2, null=False)
 
     objects = models.Manager()
-
-
-class Cart(models.Model):
-    """
-    Shopping Cart Model
-
-    Fields
-    ------
-    customer : OneToOneField
-        Customer who owns the shopping cart
-    """
-    customer = models.OneToOneField(User, on_delete=models.CASCADE, null=False)
-
-    objects = models.Manager()
-
-    @property
-    def total_price(self):
-        cartitems = self.cart_items.all()
-        total = sum([item.price for item in cartitems])
-        return total
-
-    @property
-    def num_items(self):
-        cartitems = self.cart_items.all()
-        quantity = sum([item.quantity for item in cartitems])
-        return quantity
-
-
-class CartItem(models.Model):
-    product = models.ForeignKey(
-        Product, on_delete=models.CASCADE, related_name='items')
-    cart = models.ForeignKey(
-        Cart, on_delete=models.CASCADE, related_name='cart_items')
-    quantity = models.IntegerField(default=0)
-
-    objects = models.Manager()
-
-    def __str__(self):
-        return self.product.product_name
-
-    @property
-    def price(self):
-        new_price = self.product.price * self.quantity
-        return new_price
