@@ -1,24 +1,70 @@
+@import "colors";
+
 button {
   /* size and shape */
   height: 40px;
-  border-radius: 5px;
-
+  // border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
   /* extras */
-  background-color: #54aeef;
-  border: transparent solid 2px;
-  color: white;
+  border: transparent solid 1px;
   cursor: pointer;
   transition: 200ms;
-  
-  /* button effects */
+}
+
+.round {
+  border-radius: 5px;
+}
+
+.blue-primary{
+  color: white;
+  background-color: #54aeef;
   &:hover {
     background-color: #3d91cd;
   }
   &:active {
     background-color: white;
     color: #54aeef;
-    border: #3d91cd solid 2px;
+    border: #54aeef solid 1px;
+  }
+}
+.blue-secondary{
+  background-color: white;
+  color: #54aeef;
+  border: #54aeef solid 1px;
+
+  &:hover {
+    background-color: rgb(249, 252, 255);
+  }
+  &:active {
+    background-color: rgb(225, 239, 250);
+    color: #54aeef;
   }
 }
 
+.black-primary {
+  color: white;
+  background-color: black;
+  &:hover {
+    background-color: rgb(80, 80, 80);
+  }
+  &:active {
+    background-color: white;
+    border: black solid 1px;
+    color: black;
+  }
+}
 
+.black-secondary {
+  color: black;
+  background-color: white;
+  border: black solid 1px;
+  &:hover {
+    background-color: rgb(231, 231, 231);
+  }
+  &:active {
+    background-color: rgb(204, 204, 204);
+    border: black solid 1px;
+    color: black;
+  }
+}

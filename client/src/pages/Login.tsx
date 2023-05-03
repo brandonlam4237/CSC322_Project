@@ -68,7 +68,7 @@ export default function Login() {
           </Link>
         </footer>
         <div className="container__button">
-          <Button onClick={loginButtonHandler}>
+          <Button className="blue-primary round" onClick={loginButtonHandler}>
             Login
           </Button>
         </div>

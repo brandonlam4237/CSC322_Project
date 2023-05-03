@@ -5,10 +5,10 @@
   justify-content: space-between;
   background-color: white;
   padding: 0px 20px;
+  
   &__user-type {
     color: $accent;
   }
-
   &__info {
     font-size:1em;
     p {
@@ -21,27 +21,13 @@
     display: flex;
     column-gap: 10px;
     margin: 15px 0px;
-    
     justify-content: center;
+
     button {
       padding: 0px;
       width: 60px;
       height: 60px;
       border-radius: 0;
-    }
-    &__approve {
-      background-color: $accent;
-    }
-    &__reject {
-      background-color: black;
-      &:hover {
-        background-color: rgb(80, 80, 80);
-      }
-      &:active {
-        background-color: white;
-        border-color: black;
-        color: black;
-      }
     }
   }
 }

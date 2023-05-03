@@ -70,12 +70,12 @@ export function UserRow({
       </div>
       <div className="user-row__buttons">
         <Button
-          className="user-row__buttons__approve"
+          className="user-row__buttons__approve blue-primary"
           onClick={handleApproveButton}
         >
           <FontAwesomeIcon icon={faCheck} size="xl" />
         </Button>
-        <Button className="user-row__buttons__reject" onClick={openMemoModal}>
+        <Button className="user-row__buttons__reject black-primary" onClick={openMemoModal}>
           <FontAwesomeIcon icon={faXmark} size="xl" />
         </Button>
       </div>
