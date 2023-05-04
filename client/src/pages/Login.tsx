@@ -16,7 +16,7 @@ export default function Login() {
   });
 
   const authValues = useAuthContext();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   function handleOnFormChange(event: React.ChangeEvent<HTMLInputElement>) {
     const fieldName: string = event.target.name;
@@ -28,14 +28,9 @@ export default function Login() {
   }
 
   async function loginButtonHandler() {
-    try {
-      await authValues.loginUser(loginForm.username, loginForm.password);
-      navigate("/")
-    }
-    catch (err){
-
-    }
+    await authValues.loginUser(loginForm.username, loginForm.password);
   }
+  if (authValues.userData.user_type!="Visitor") navigate("/");
 
   return (
     <main className="auth">
