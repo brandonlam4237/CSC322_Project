@@ -1,10 +1,9 @@
-import Input from "src/components/Input";
 import Button from "src/components/Button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import "../scss/auth.scss";
 import { useAuthContext } from "src/contexts/AuthContext";
-
+import { useNavigate } from "react-router-dom";
 interface LoginForm {
   username: string;
   password: string;
@@ -17,6 +16,7 @@ export default function Login() {
   });
 
   const authValues = useAuthContext();
+  const navigate = useNavigate();
 
   function handleOnFormChange(event: React.ChangeEvent<HTMLInputElement>) {
     const fieldName: string = event.target.name;
@@ -30,6 +30,7 @@ export default function Login() {
   async function loginButtonHandler() {
     await authValues.loginUser(loginForm.username, loginForm.password);
   }
+  if (authValues.userData.user_type!="Visitor") navigate("/");
 
   return (
     <main className="auth">
