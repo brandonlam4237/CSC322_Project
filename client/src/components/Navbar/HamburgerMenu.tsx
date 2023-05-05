@@ -86,7 +86,7 @@ function HamburgerMenu(props: props) {
                   to="/products/CPU"
                   className="hamburger-components__menu-item"
                 >
-                  CPUs
+                  CPU
                 </NavLink>
               </li>
               <li>
@@ -94,7 +94,7 @@ function HamburgerMenu(props: props) {
                   to="/products/Cooling"
                   className="hamburger-components__menu-item"
                 >
-                  CPU Coolers
+                  Cooling
                 </NavLink>
               </li>
               <li>
@@ -102,7 +102,7 @@ function HamburgerMenu(props: props) {
                   to="/products/Motherboards"
                   className="hamburger-components__menu-item"
                 >
-                  Motherboards
+                  Motherboard
                 </NavLink>
               </li>
               <li>
@@ -110,7 +110,7 @@ function HamburgerMenu(props: props) {
                   to="/products/RAM"
                   className="hamburger-components__menu-item"
                 >
-                  Memory
+                  RAM
                 </NavLink>
               </li>
               <li>
@@ -126,7 +126,7 @@ function HamburgerMenu(props: props) {
                   to="/products/GPU"
                   className="hamburger-components__menu-item"
                 >
-                  Video Cards
+                  GPU
                 </NavLink>
               </li>
               <li>
@@ -134,7 +134,7 @@ function HamburgerMenu(props: props) {
                   to="/products/PSU"
                   className="hamburger-components__menu-item"
                 >
-                  Power Supplies
+                  PSU
                 </NavLink>
               </li>
               <li>
@@ -142,7 +142,7 @@ function HamburgerMenu(props: props) {
                   to="/products/Case"
                   className="hamburger-components__menu-item"
                 >
-                  Cases
+                  Case
                 </NavLink>
               </li>
               <li>

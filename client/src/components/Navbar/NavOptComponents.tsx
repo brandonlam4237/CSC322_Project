@@ -32,12 +32,12 @@ function NavOptComponents(props: props) {
           <ul className="components__menu">
             <li>
               <NavLink to="/products/CPU" className="components__menu-item">
-                CPUs
+                CPU
               </NavLink>
             </li>
             <li>
               <NavLink to="/products/Cooling" className="components__menu-item">
-                CPU Coolers
+                Cooling
               </NavLink>
             </li>
             <li>
@@ -45,12 +45,12 @@ function NavOptComponents(props: props) {
                 to="/products/Motherboard"
                 className="components__menu-item"
               >
-                Motherboards
+                Motherboard
               </NavLink>
             </li>
             <li>
               <NavLink to="/products/RAM" className="components__menu-item">
-                Memory
+                RAM
               </NavLink>
             </li>
             <li>
@@ -60,17 +60,17 @@ function NavOptComponents(props: props) {
             </li>
             <li>
               <NavLink to="/products/GPU" className="components__menu-item">
-                Video Cards
+                GPU
               </NavLink>
             </li>
             <li>
               <NavLink to="/products/PSU" className="components__menu-item">
-                Power Supplies
+                PSU
               </NavLink>
             </li>
             <li>
               <NavLink to="/products/Case" className="components__menu-item">
-                Cases
+                Case
               </NavLink>
             </li>
           </ul>

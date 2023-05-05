@@ -17,19 +17,19 @@ function Components() {
           <div className="grid__block">
             <div className="grid__cell-even">
               <Link to="/products/CPU" className="grid__link">
-                CPUs
+                CPU
               </Link>
               <img src={cpu} alt="cpu" className="grid__cell-img" />
             </div>
             <div className="grid__cell-odd">
               <Link to="/products/Cooling" className="grid__link">
-                CPU Coolers
+                Cooling
               </Link>
               <img src={cooler} alt="cpu cooler" className="grid__cell-img" />
             </div>
             <div className="grid__cell-even">
               <Link to="/products/Motherboard" className="grid__link">
-                Motherboards
+                Motherboard
               </Link>
               <img
                 src={motherboard}
@@ -39,7 +39,7 @@ function Components() {
             </div>
             <div className="grid__cell-odd">
               <Link to="/products/RAM" className="grid__link">
-                Memory
+                RAM
               </Link>
               <img src={memory} alt="memory" className="grid__cell-img" />
             </div>
@@ -53,7 +53,7 @@ function Components() {
             </div>
             <div className="grid__cell-even">
               <Link to="/products/GPU" className="grid__link">
-                Video Cards
+                GPU
               </Link>
               <img
                 src={graphics_card}
@@ -63,7 +63,7 @@ function Components() {
             </div>
             <div className="grid__cell-odd">
               <Link to="/products/PSU" className="grid__link">
-                Power Supplies
+                PSU
               </Link>
               <img
                 src={power}
@@ -73,7 +73,7 @@ function Components() {
             </div>
             <div className="grid__cell-even">
               <Link to="/products/Case" className="grid__link">
-                Cases
+                Case
               </Link>
               <img src={cases} alt="cases" className="grid__cell-img" />
             </div>
