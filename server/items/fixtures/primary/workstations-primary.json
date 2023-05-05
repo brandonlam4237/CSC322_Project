@@ -1,1 +1,146 @@
-[]
+[
+    {
+        "model": "items.Product",
+        "pk": 328,
+        "fields": {
+            "brand": "Dell",
+            "product_name": "Precision 3240 Compact Workstation Desktop Computer",
+            "price": "699.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 329,
+        "fields": {
+            "brand": "HP",
+            "product_name": "Z2 G9 Small Form Factor Workstation",
+            "price": "1399.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 330,
+        "fields": {
+            "brand": "Lenovo",
+            "product_name": "ThinkStation P340 SFF Workstation Desktop Computer Factory Refurbished",
+            "price": "799.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 331,
+        "fields": {
+            "brand": "ASUS",
+            "product_name": "Pro E500 G7 Essential Workstation Desktop Computer",
+            "price": "2299.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 332,
+        "fields": {
+            "brand": "Dell",
+            "product_name": "Precision 5820 Tower Workstation Desktop Computer",
+            "price": "2799.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 333,
+        "fields": {
+            "brand": "HP",
+            "product_name": "Z2 G9 Mini Workstation Desktop Computer",
+            "price": "1639.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 334,
+        "fields": {
+            "brand": "Lenovo",
+            "product_name": "ThinkStation P340 SFF Workstation Desktop Computer",
+            "price": "1599.97"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 335,
+        "fields": {
+            "brand": "Lenovo",
+            "product_name": "ThinkStation P340 SFF Workstation Desktop Computer",
+            "price": "949.96"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 336,
+        "fields": {
+            "brand": "ASUS",
+            "product_name": "Pro E500 G7 Essential Workstation Desktop Computer",
+            "price": "2799.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 337,
+        "fields": {
+            "brand": "Dell",
+            "product_name": "Precision 5820 Workstation Desktop Computer",
+            "price": "1499.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 338,
+        "fields": {
+            "brand": "Lenovo",
+            "product_name": "ThinkStation P620 Tower Workstation Desktop Computer",
+            "price": "2799.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 339,
+        "fields": {
+            "brand": "ASUS",
+            "product_name": "PRO E500 G7 Workstation Desktop Computer",
+            "price": "1799.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 340,
+        "fields": {
+            "brand": "Dell",
+            "product_name": "Precision 7865 Tower Workstation Desktop Computer",
+            "price": "2999.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 341,
+        "fields": {
+            "brand": "Supermicro",
+            "product_name": "Mid-Tower Server",
+            "price": "1349.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 342,
+        "fields": {
+            "brand": "HP",
+            "product_name": "Victus 15L TG02-0137c Gaming PC (Refurbished)",
+            "price": "749.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 343,
+        "fields": {
+            "brand": "Supermicro",
+            "product_name": "High Performance Gold Xeon Workstation",
+            "price": "5799.99"
+        }
+    }
+]
