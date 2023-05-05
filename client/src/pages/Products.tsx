@@ -35,6 +35,7 @@ function Prodcuts() {
                 product_name={item.product_name}
                 image_url="https://90a1c75758623581b3f8-5c119c3de181c9857fcb2784776b17ef.ssl.cf2.rackcdn.com/660700_520452_01_front_zoom.jpg"
                 price={item.price}
+                id={item.id}
               />
             );
           })}
