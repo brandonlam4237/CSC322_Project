@@ -1,52 +1,86 @@
-import axios from "axios"
-import { IApprovalForm } from "src/pages/UserRow"
+import axios from "axios";
+import { IApprovalForm } from "src/pages/UserRow";
 
 class ApiClient {
   // specify class variables along with their types
-  accessToken:string
-  refreshToken:string
-  LOCAL_STORAGE_AUTH_KEY:string
+  accessToken: string;
+  refreshToken: string;
+  LOCAL_STORAGE_AUTH_KEY: string;
+  headers: {
+    "Content-Type": string;
+    Authorization: string | "";
+  };
 
-  constructor(){
-     this.accessToken = "null"
-     this.refreshToken = "null"
-     this.LOCAL_STORAGE_AUTH_KEY = "donut_pcs_local_storage_tokens_key"
+  constructor() {
+    this.accessToken = "null";
+    this.refreshToken = "null";
+    this.LOCAL_STORAGE_AUTH_KEY = "donut_pcs_local_storage_tokens_key";
+    this.headers = {
+      "Content-Type": "application/json",
+      Authorization: "",
+    };
   }
 
-  setTokens(tokens:{access:string, refresh:string}){
-    this.accessToken = tokens.access
-    this.refreshToken = tokens.refresh
+  setTokens(tokens: { access: string; refresh: string }) {
+    this.accessToken = tokens.access;
+    this.refreshToken = tokens.refresh;
     localStorage.setItem(this.LOCAL_STORAGE_AUTH_KEY, JSON.stringify(tokens));
   }
 
-  async apiRequest({endpoint, method, data = {} }:{endpoint:string, method:string, data:any}) : Promise<any> {
-    const headers = {
-        "Content-Type": "application/json",
-        "Authorization": "",
-    };
+  async apiRequest({
+    endpoint,
+    method,
+    requestBody = {},
+  }: {
+    endpoint: string;
+    method: string;
+    requestBody: object;
+  }): Promise<any> {
     if (this.accessToken !== "null") {
-        headers[`Authorization`] = `Bearer ${this.accessToken}`;
+      this.headers[`Authorization`] = `Bearer ${this.accessToken}`;
     }
+    let requestInit;
+
+    // if request method is GET then do exlclude the "body" attribute
+    if (method != "GET") {
+      requestInit = {
+        method: method,
+        headers: this.headers,
+        body: JSON.stringify(requestBody),
+      };
+    } else {
+      requestInit = {
+        method: method,
+        headers: this.headers,
+      };
+    }
+
     try {
-        const res = await axios({ url:endpoint, method, data, headers });
-        return { data: res.data, error: null };
-    } catch (error:any) {
-          console.error(error.response);          
+      const response = await fetch(endpoint, requestInit);
+      return await response.json();
+    } catch (error: any) {
+      console.error(error.response);
     }
   }
 
-  async getUsers(usersParam:string) {
-    return await this.apiRequest({endpoint:`users/${usersParam}`, method:"GET", data:{}})
+  async getUsers(usersParam: string) {
+    return await this.apiRequest({
+      endpoint: `users/${usersParam}`,
+      method: "GET",
+      requestBody: {},
+    });
   }
 
-  // not working at the moment
-  async activateUser({approvalForm, userId}: {approvalForm:IApprovalForm, userId:number} ) {
-    let data = {
-      is_active:approvalForm.is_active,
-      memo:approvalForm.memo
-    }
-    return await this.apiRequest({endpoint:`users/activate/${userId}`, method:"PATCH", data})
+  async activateUser(approvalForm: IApprovalForm, userId: number) {
+    return await this.apiRequest({
+      endpoint: `users/activate/${userId}`,
+      method: "PATCH",
+      requestBody: {
+        is_active: approvalForm.is_active,
+        memo: approvalForm.memo,
+      },
+    });
   }
 }
 
-export default new ApiClient()
+export default new ApiClient();
