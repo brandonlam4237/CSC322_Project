@@ -42,7 +42,7 @@ function NavOptComponents(props: props) {
             </li>
             <li>
               <NavLink
-                to="/products/Motherboards"
+                to="/products/Motherboard"
                 className="components__menu-item"
               >
                 Motherboards
