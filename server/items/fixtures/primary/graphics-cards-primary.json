@@ -3,45 +3,45 @@
         "model": "items.Product",
         "pk": 1,
         "fields": {
-            "brand": "Gigabyte",
-            "product_name": "NVIDIA GeForce RTX 4080 AERO Overclocked Triple Fan 16GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1199.99"
+            "brand": "Zotac",
+            "product_name": "NVIDIA GeForce RTX 4090 Trinity Overclocked Triple Fan 24GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "1649.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 2,
         "fields": {
-            "brand": "MSI",
-            "product_name": "NVIDIA GeForce RTX 4090 Gaming Trio Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1649.99"
+            "brand": "ASUS",
+            "product_name": "NVIDIA GeForce RTX 4080 ROG Strix Overclocked Triple Fan 16GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "1489.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 3,
         "fields": {
-            "brand": "MSI",
-            "product_name": "NVIDIA GeForce RTX 4090 Gaming Trio Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1649.99"
+            "brand": "Gigabyte",
+            "product_name": "NVIDIA GeForce RTX 4070 Ti Gaming Overclocked Triple Fan 12GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "859.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 4,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 3070 Ti TUF Gaming V2 Overclocked Triple Fan 8GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "629.99"
+            "brand": "MSI",
+            "product_name": "NVIDIA GeForce RTX 4070 Ti Gaming Trio Triple Fan 12GB GDDR6 PCIe 4.0 Graphics Card",
+            "price": "879.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 5,
         "fields": {
-            "brand": "ASRock",
-            "product_name": "AMD Radeon RX 6800 XT Phantom Gaming D Overclocked Triple Fan 16GB GDDR6 PCIe 4.0 Graphics Card",
-            "price": "577.99"
+            "brand": "MSI",
+            "product_name": "NVIDIA GeForce RTX 4080 VENTUS 3X Triple Fan 16GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "1224.99"
         }
     },
     {
@@ -57,27 +57,27 @@
         "model": "items.Product",
         "pk": 7,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 4090 ROG Strix Overclocked Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1999.99"
+            "brand": "MSI",
+            "product_name": "GeForce RTX\u00a04090 SUPRIM LIQUID X 24G Hybrid Cooling 24GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "1799.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 8,
         "fields": {
-            "brand": "ASRock",
-            "product_name": "AMD Radeon RX 7900 XT Phantom Gaming Overclocked Triple Fan 20GB GDDR6 PCIe 4.0 Graphics Card",
-            "price": "779.99"
+            "brand": "ASUS",
+            "product_name": "NVIDIA GeForce RTX 4090 ROG Strix White Overclocked Triple Fan 24GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "2099.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 9,
         "fields": {
-            "brand": "ASRock",
-            "product_name": "AMD Radeon RX 6800 XT Phantom Gaming D Overclocked Triple Fan 16GB GDDR6 PCIe 4.0 Graphics Card",
-            "price": "577.99"
+            "brand": "Gigabyte",
+            "product_name": "NVIDIA GeForce RTX 4090 Aero Overclocked Triple Fan 24GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "1749.99"
         }
     },
     {
@@ -93,63 +93,63 @@
         "model": "items.Product",
         "pk": 11,
         "fields": {
-            "brand": "MSI",
-            "product_name": "NVIDIA GeForce RTX 4090 Gaming Trio Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1649.99"
+            "brand": "ASUS",
+            "product_name": "NVIDIA GeForce RTX 4080 ROG Strix White Overclocked Triple Fan 16GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "1599.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 12,
         "fields": {
-            "brand": "MSI",
-            "product_name": "NVIDIA GeForce RTX 4090 Gaming Trio Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1649.99"
+            "brand": "ASUS",
+            "product_name": "NVIDIA GeForce RTX 3060 Ti Dual V2 Overclocked Dual-Fan 8GB GDDR6 PCIe 4.0 Graphics Card",
+            "price": "429.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 13,
         "fields": {
-            "brand": "ASRock",
-            "product_name": "AMD Radeon RX 6800 XT Phantom Gaming D Overclocked Triple Fan 16GB GDDR6 PCIe 4.0 Graphics Card",
-            "price": "577.99"
+            "brand": "MSI",
+            "product_name": "NVIDIA GeForce RTX 3060 Ventus 2x Overclocked Dual-Fan 12GB GDDR6 PCIe 4.0 Graphics Card",
+            "price": "364.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 14,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 4090 ROG Strix Overclocked Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1999.99"
+            "brand": "MSI",
+            "product_name": "NVIDIA GeForce RTX 4070 Ti Ventus 3X Overclocked Triple Fan 12GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "859.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 15,
         "fields": {
-            "brand": "ASRock",
-            "product_name": "AMD Radeon RX 6800 XT Phantom Gaming D Overclocked Triple Fan 16GB GDDR6 PCIe 4.0 Graphics Card",
-            "price": "577.99"
+            "brand": "PNY",
+            "product_name": "NVIDIA GeForce RTX 4070 Ti XLR8 Gaming Verto Epic-X RGB Triple Fan 12GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "839.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 16,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 4090 ROG Strix Overclocked Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1999.99"
+            "brand": "Sapphire Technology",
+            "product_name": "AMD Radeon RX 7900 XTX Nitro Plus Vapor-X Overclocked Triple Fan 24GB GDDR6 PCIe 4.0 Graphics Card",
+            "price": "1199.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 17,
         "fields": {
-            "brand": "MSI",
-            "product_name": "NVIDIA GeForce RTX 4090 Gaming Trio Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1649.99"
+            "brand": "Zotac",
+            "product_name": "NVIDIA GeForce RTX 4070 Ti Trinity Overclocked Triple Fan 12GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "849.99"
         }
     },
     {
@@ -157,71 +157,71 @@
         "pk": 18,
         "fields": {
             "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 3070 Ti TUF Gaming V2 Overclocked Triple Fan 8GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "629.99"
+            "product_name": "NVIDIA GeForce RTX 4080 TUF Gaming Overclocked Triple Fan 16GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "1319.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 19,
         "fields": {
-            "brand": "MSI",
-            "product_name": "NVIDIA GeForce RTX 4090 Gaming Trio Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1649.99"
+            "brand": "ASUS",
+            "product_name": "NVIDIA GeForce RTX 4070 Ti ROG Strix Overclocked Triple Fan 12GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "1049.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 20,
         "fields": {
-            "brand": "MSI",
-            "product_name": "NVIDIA GeForce RTX 4090 Gaming Trio Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1649.99"
+            "brand": "Zotac",
+            "product_name": "NVIDIA GeForce RTX 4090 AMP Extreme AIRO Triple-Fan 24GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "1699.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 21,
         "fields": {
-            "brand": "MSI",
-            "product_name": "NVIDIA GeForce RTX 4090 Gaming Trio Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1649.99"
+            "brand": "ASRock",
+            "product_name": "AMD Radeon RX 6600 Challenger D Dual-Fan 8GB GDDR6 PCIe 4.0 Graphics Card",
+            "price": "199.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 22,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 4090 ROG Strix Overclocked Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1999.99"
+            "brand": "MSI",
+            "product_name": "NVIDIA GeForce RTX 4090 Gaming X Trio Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "1699.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 23,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 4090 ROG Strix Overclocked Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1999.99"
+            "brand": "MSI",
+            "product_name": "GeForce RTX\u00a04090 SUPRIM X 24G Triple-Fan 24GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "1749.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 24,
         "fields": {
-            "brand": "ASRock",
-            "product_name": "AMD Radeon RX 7900 XT Phantom Gaming Overclocked Triple Fan 20GB GDDR6 PCIe 4.0 Graphics Card",
-            "price": "779.99"
+            "brand": "PNY",
+            "product_name": "NVIDIA GeForce RTX 4080 XLR8 Verto Epic-X Overclocked Triple Fan 16GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "1229.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 25,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 4090 ROG Strix Overclocked Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1999.99"
+            "brand": "PowerColor",
+            "product_name": "AMD Radeon RX 7900 XTX Red Devil Overclocked Triple Fan 24GB GDDR6 PCIe 4.0 Graphics Card",
+            "price": "1099.99"
         }
     },
     {
@@ -229,8 +229,8 @@
         "pk": 26,
         "fields": {
             "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 4090 ROG Strix Overclocked Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1999.99"
+            "product_name": "NVIDIA GeForce RTX 4070 Ti TUF Gaming Overclocked Triple Fan 12GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "849.99"
         }
     },
     {
@@ -246,27 +246,27 @@
         "model": "items.Product",
         "pk": 28,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 4090 ROG Strix Overclocked Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1999.99"
+            "brand": "MSI",
+            "product_name": "NVIDIA GeForce RTX 4070 Ti Gaming Trio X Overclocked Triple Fan 12GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "889.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 29,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 4090 ROG Strix Overclocked Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1999.99"
+            "brand": "AMD",
+            "product_name": "Radeon RX 6950 XT Triple Fan 16GB GDDR6 PCIe 4.0 Graphics Card",
+            "price": "649.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 30,
         "fields": {
-            "brand": "ASRock",
-            "product_name": "AMD Radeon RX 6800 XT Phantom Gaming D Overclocked Triple Fan 16GB GDDR6 PCIe 4.0 Graphics Card",
-            "price": "577.99"
+            "brand": "Sapphire Technology",
+            "product_name": "AMD Radeon RX 7900 XTX Pulse Overclocked Triple Fan 24GB GDDR6 PCIe 4.0 Graphics Card",
+            "price": "1069.99"
         }
     },
     {
@@ -274,17 +274,17 @@
         "pk": 31,
         "fields": {
             "brand": "MSI",
-            "product_name": "NVIDIA GeForce RTX 4090 Gaming Trio Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1649.99"
+            "product_name": "NVIDIA GeForce RTX 4080 Suprim X Overclocked Triple Fan 16GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "1399.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 32,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 4090 ROG Strix Overclocked Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1999.99"
+            "brand": "PNY",
+            "product_name": "NVIDIA GeForce RTX 4090 XLR8 Gaming Verto Epic-X RGB Triple Fan 24GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "1599.99"
         }
     },
     {
@@ -300,54 +300,54 @@
         "model": "items.Product",
         "pk": 34,
         "fields": {
-            "brand": "MSI",
-            "product_name": "NVIDIA GeForce RTX 4090 Gaming Trio Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1649.99"
+            "brand": "PowerColor",
+            "product_name": "AMD Radeon RX 7900 XTX Hellhound Overclocked Triple Fan 24GB GDDR6 PCIe 4.0 Graphics Card",
+            "price": "999.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 35,
         "fields": {
-            "brand": "ASRock",
-            "product_name": "AMD Radeon RX 6800 XT Phantom Gaming D Overclocked Triple Fan 16GB GDDR6 PCIe 4.0 Graphics Card",
-            "price": "577.99"
+            "brand": "Gigabyte",
+            "product_name": "NVIDIA GeForce RTX 4070 Ti Eagle Overclocked Triple Fan 12GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "849.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 36,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 4090 ROG Strix Overclocked Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1999.99"
+            "brand": "Zotac",
+            "product_name": "NVIDIA GeForce RTX 3070 Ti Gaming Triple Fan 8GB GDDR6 PCIe 4.0 Graphics Card",
+            "price": "549.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 37,
         "fields": {
-            "brand": "MSI",
-            "product_name": "NVIDIA GeForce RTX 4090 Gaming Trio Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1649.99"
+            "brand": "PNY",
+            "product_name": "NVIDIA GeForce RTX 4070 Ti XLR8 Gaming Verto Epic-RGB Overclocked Triple Fan 12GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "859.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 38,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 4090 ROG Strix Overclocked Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1999.99"
+            "brand": "Gigabyte",
+            "product_name": "NVIDIA GeForce RTX 4090 Gaming Overclocked Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "1699.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 39,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 3070 Ti TUF Gaming V2 Overclocked Triple Fan 8GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "629.99"
+            "brand": "Gigabyte",
+            "product_name": "NVIDIA GeForce RTX 4070 Ti Aero Overclocked Triple Fan 12GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "899.99"
         }
     },
     {
@@ -364,17 +364,17 @@
         "pk": 41,
         "fields": {
             "brand": "ASRock",
-            "product_name": "AMD Radeon RX 7900 XT Phantom Gaming Overclocked Triple Fan 20GB GDDR6 PCIe 4.0 Graphics Card",
-            "price": "779.99"
+            "product_name": "AMD Radeon RX 6650 XT Challenger D Overclocked Dual Fan 8GB GDDR6 PCIe 4.0 Graphics Card",
+            "price": "249.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 42,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 3070 Ti TUF Gaming V2 Overclocked Triple Fan 8GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "629.99"
+            "brand": "ASRock",
+            "product_name": "AMD Radeon RX 7900 XTX Phantom Gaming Overclocked Triple Fan 24GB GDDR6 PCIe 4.0 Graphics Card",
+            "price": "969.99"
         }
     },
     {
@@ -382,17 +382,17 @@
         "pk": 43,
         "fields": {
             "brand": "ASRock",
-            "product_name": "AMD Radeon RX 6800 XT Phantom Gaming D Overclocked Triple Fan 16GB GDDR6 PCIe 4.0 Graphics Card",
-            "price": "577.99"
+            "product_name": "AMD Radeon RX 6750 XT Challenger Pro Overclocked Triple Fan 12 GB GDDR6 PCIe 4.0 Graphics Card",
+            "price": "394.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 44,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 4090 ROG Strix Overclocked Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1999.99"
+            "brand": "MSI",
+            "product_name": "NVIDIA GeForce RTX 4070 Ti Ventus 3X Triple Fan 12GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "814.99"
         }
     },
     {
@@ -400,8 +400,8 @@
         "pk": 45,
         "fields": {
             "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 4090 ROG Strix Overclocked Triple Fan 24 GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1999.99"
+            "product_name": "GeForce RTX\u00a04090 TUF Gaming Overclocked Triple-Fan 24GB GDDR6X PCIe 4.0 Graphics Card",
+            "price": "1799.99"
         }
     },
     {
@@ -417,18 +417,18 @@
         "model": "items.Product",
         "pk": 47,
         "fields": {
-            "brand": "Gigabyte",
-            "product_name": "NVIDIA GeForce RTX 4080 AERO Overclocked Triple Fan 16GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "1199.99"
+            "brand": "PowerColor",
+            "product_name": "AMD Radeon RX 6800 XT Red Dragon Triple-Fan 16GB GDDR6 PCIe 4.0 Graphics Card",
+            "price": "569.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 48,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "NVIDIA GeForce RTX 3070 Ti TUF Gaming V2 Overclocked Triple Fan 8GB GDDR6X PCIe 4.0 Graphics Card",
-            "price": "629.99"
+            "brand": "Zotac",
+            "product_name": "NVIDIA GeForce RTX 3060 Twin Edge Overclocked Dual-Fan 12GB GDDR6 PCIe 4.0 Graphics Card",
+            "price": "349.99"
         }
     }
 ]

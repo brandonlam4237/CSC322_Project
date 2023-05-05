@@ -1,25 +1,25 @@
 [
     {
         "model": "items.Product",
+        "pk": 238,
+        "fields": {
+            "brand": "AMD",
+            "product_name": "Ryzen 9 7900 Raphael AM5 3.7GHz 12-Core Boxed Processor - Wraith Prism Cooler Included",
+            "price": "399.99"
+        }
+    },
+    {
+        "model": "items.Product",
         "pk": 239,
         "fields": {
-            "brand": "Intel",
-            "product_name": "Core i9-13900 Raptor Lake 2.0GHz Twenty Four-Core LGA 1700 Boxed Processor - Heatsink Included",
-            "price": "519.99"
+            "brand": "AMD",
+            "product_name": "Ryzen 7 3700X Matisse 3.6GHz 8-Core AM4 Boxed Processor - Wraith Prism Cooler Included",
+            "price": "159.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 240,
-        "fields": {
-            "brand": "Intel",
-            "product_name": "Core i9-13900 Raptor Lake 2.0GHz Twenty Four-Core LGA 1700 Boxed Processor - Heatsink Included",
-            "price": "519.99"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 241,
         "fields": {
             "brand": "AMD",
             "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
@@ -28,7 +28,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 242,
+        "pk": 241,
         "fields": {
             "brand": "AMD",
             "product_name": "Ryzen 5 5500 Cezanne 3.6GHz 6-Core AM4 Boxed Processor - Wraith Stealth Cooler Included",
@@ -37,11 +37,20 @@
     },
     {
         "model": "items.Product",
+        "pk": 242,
+        "fields": {
+            "brand": "AMD",
+            "product_name": "Ryzen 7 7700 Raphael AM5 3.8GHz 8-Core Boxed Processor - Wraith Prism Cooler Included",
+            "price": "309.99"
+        }
+    },
+    {
+        "model": "items.Product",
         "pk": 243,
         "fields": {
-            "brand": "Intel",
-            "product_name": "Core i7-13700 Raptor Lake 2.1GHz Sixteen-Core LGA 1700 Boxed Processor - Heatsink Included",
-            "price": "359.99"
+            "brand": "AMD",
+            "product_name": "Ryzen 9 7900X Raphael AM5 4.7GHz 12-Core Boxed Processor - Heatsink Not Included",
+            "price": "417.98"
         }
     },
     {
@@ -49,8 +58,8 @@
         "pk": 244,
         "fields": {
             "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "product_name": "Ryzen Threadripper PRO 5975WX Chagall PRO 3.6GHz 32-Core sWRX8 Boxed Processor - Heatsink Not Included",
+            "price": "3199.99"
         }
     },
     {
@@ -58,22 +67,13 @@
         "pk": 245,
         "fields": {
             "brand": "Intel",
-            "product_name": "Core i9-13900 Raptor Lake 2.0GHz Twenty Four-Core LGA 1700 Boxed Processor - Heatsink Included",
-            "price": "519.99"
+            "product_name": "Core i9-13900K Raptor Lake 3.0GHz Twenty Four-Core LGA 1700 Boxed Processor - Heatsink Not Included",
+            "price": "559.98"
         }
     },
     {
         "model": "items.Product",
         "pk": 246,
-        "fields": {
-            "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 247,
         "fields": {
             "brand": "AMD",
             "product_name": "Ryzen Threadripper PRO 5955WX Chagall PRO 4.0GHz 16-Core sWRX8 Boxed Processor - Heatsink Not Included",
@@ -82,16 +82,16 @@
     },
     {
         "model": "items.Product",
-        "pk": 248,
+        "pk": 247,
         "fields": {
             "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "product_name": "Ryzen 7 5700G Cezanne 3.8GHz 8-Core AM4 Boxed Processor - Wraith Stealth Cooler Included",
+            "price": "179.99"
         }
     },
     {
         "model": "items.Product",
-        "pk": 249,
+        "pk": 248,
         "fields": {
             "brand": "AMD",
             "product_name": "Ryzen Threadripper PRO 5965WX Chagall PRO 3.8GHz 24-Core sWRX8 Boxed Processor - Heatsink Not Included",
@@ -100,20 +100,29 @@
     },
     {
         "model": "items.Product",
-        "pk": 250,
+        "pk": 249,
         "fields": {
             "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "product_name": "Ryzen 5 5600 Vermeer 3.5GHz 6-Core AM4 Boxed Processor - Wraith Stealth Cooler Included",
+            "price": "129.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 250,
+        "fields": {
+            "brand": "Intel",
+            "product_name": "Core i9-13900 Raptor Lake 2.0GHz Twenty Four-Core LGA 1700 Boxed Processor - Heatsink Included",
+            "price": "519.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 251,
         "fields": {
-            "brand": "Intel",
-            "product_name": "Core i9-13900 Raptor Lake 2.0GHz Twenty Four-Core LGA 1700 Boxed Processor - Heatsink Included",
-            "price": "519.99"
+            "brand": "AMD",
+            "product_name": "Ryzen 5 5600G Cezanne 3.9GHz 6-Core AM4 Boxed Processor - Wraith Stealth Cooler Included",
+            "price": "129.99"
         }
     },
     {
@@ -121,8 +130,8 @@
         "pk": 252,
         "fields": {
             "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "product_name": "Ryzen 5 5600X Vermeer 3.7GHz 6-Core AM4 Boxed Processor - Wraith Stealth Cooler Included",
+            "price": "156.98"
         }
     },
     {
@@ -130,26 +139,26 @@
         "pk": 253,
         "fields": {
             "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "product_name": "Ryzen 9 5900X Vermeer 3.7GHz 12-Core AM4 Boxed Processor - Heatsink Not Included",
+            "price": "319.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 254,
         "fields": {
-            "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "brand": "Intel",
+            "product_name": "Core i7-12700 Alder Lake 2.1GHz Twelve-Core LGA 1700 Boxed Processor - Intel Stock Cooler Included",
+            "price": "289.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 255,
         "fields": {
-            "brand": "Intel",
-            "product_name": "Core i9-13900 Raptor Lake 2.0GHz Twenty Four-Core LGA 1700 Boxed Processor - Heatsink Included",
-            "price": "519.99"
+            "brand": "AMD",
+            "product_name": "Ryzen 5 4600G Renoir 3.4GHz 6-Core AM4 Boxed Processor - Wraith Stealth Cooler Included",
+            "price": "94.99"
         }
     },
     {
@@ -166,8 +175,8 @@
         "pk": 257,
         "fields": {
             "brand": "AMD",
-            "product_name": "Ryzen 9 5950X Vermeer 3.4GHz 16-Core AM4 Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "product_name": "Ryzen 7 5800X3D Vermeer 3.4GHz 8-Core AM4 Boxed Processor - Cooler Not Included",
+            "price": "299.99"
         }
     },
     {
@@ -175,8 +184,8 @@
         "pk": 258,
         "fields": {
             "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "product_name": "Ryzen 7 5800X Vermeer 3.8GHz 8-Core AM4 Boxed Processor - Heatsink Not Included",
+            "price": "199.99"
         }
     },
     {
@@ -184,8 +193,8 @@
         "pk": 259,
         "fields": {
             "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "product_name": "Ryzen 5 3600 Matisse 3.6GHz 6-Core AM4 Boxed Processor - Wraith Stealth Cooler Included",
+            "price": "112.98"
         }
     },
     {
@@ -193,8 +202,8 @@
         "pk": 260,
         "fields": {
             "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "product_name": "Ryzen 7 5700X Vermeer 3.4GHz 8-Core AM4 Boxed Processor - Heatsink Not Included",
+            "price": "179.99"
         }
     },
     {
@@ -202,8 +211,8 @@
         "pk": 261,
         "fields": {
             "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "product_name": "Ryzen Threadripper PRO 5995WX Chagall PRO 2.7GHz 64-Core sWRX8 Boxed Processor - Heatsink Not Included",
+            "price": "6499.99"
         }
     },
     {
@@ -211,17 +220,17 @@
         "pk": 262,
         "fields": {
             "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "product_name": "Ryzen 5 7600X Raphael AM5 4.7GHz 6-Core Boxed Processor - Heatsink Not Included",
+            "price": "246.98"
         }
     },
     {
         "model": "items.Product",
         "pk": 263,
         "fields": {
-            "brand": "AMD",
-            "product_name": "Ryzen 5 5500 Cezanne 3.6GHz 6-Core AM4 Boxed Processor - Wraith Stealth Cooler Included",
-            "price": "89.99"
+            "brand": "Intel",
+            "product_name": "Core i5-12400 Alder Lake 2.5GHz Six-Core LGA 1700 Boxed Processor - Intel Stock Cooler Included",
+            "price": "169.99"
         }
     },
     {
@@ -246,18 +255,18 @@
         "model": "items.Product",
         "pk": 266,
         "fields": {
-            "brand": "AMD",
-            "product_name": "Ryzen 5 4500 Renoir 3.6GHz 6-Core AM4 Boxed Processor - Wraith Stealth Cooler Included",
-            "price": "74.99"
+            "brand": "Intel",
+            "product_name": "Core i9-13900KS Raptor Lake 3.2GHz Twenty Four-Core LGA 1700 Boxed Processor - Heatsink Not Included",
+            "price": "699.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 267,
         "fields": {
-            "brand": "Intel",
-            "product_name": "Core i9-13900 Raptor Lake 2.0GHz Twenty Four-Core LGA 1700 Boxed Processor - Heatsink Included",
-            "price": "519.99"
+            "brand": "AMD",
+            "product_name": "Ryzen 9 7900X3D Raphael AM5 4.4GHz 12-Core Boxed Processor - Heatsink Not Included",
+            "price": "549.99"
         }
     },
     {
@@ -265,8 +274,8 @@
         "pk": 268,
         "fields": {
             "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "product_name": "Ryzen 9 7950X Raphael AM5 4.5GHz 16-Core Boxed Processor - Heatsink Not Included",
+            "price": "589.98"
         }
     },
     {
@@ -274,71 +283,71 @@
         "pk": 269,
         "fields": {
             "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "product_name": "Ryzen 7 7700X Raphael AM5 4.5GHz 8-Core Boxed Processor - Heatsink Not Included",
+            "price": "342.98"
         }
     },
     {
         "model": "items.Product",
         "pk": 270,
         "fields": {
-            "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "brand": "Intel",
+            "product_name": "Core i7-13700K Raptor Lake 3.4GHz Sixteen-Core LGA 1700 Boxed Processor - Heatsink Not Included",
+            "price": "369.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 271,
         "fields": {
-            "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "brand": "Intel",
+            "product_name": "Core i5-12600K Alder Lake 3.7GHz Ten-Core LGA 1700 Boxed Processor - Heatsink Not Included",
+            "price": "239.98"
         }
     },
     {
         "model": "items.Product",
         "pk": 272,
         "fields": {
-            "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "brand": "Intel",
+            "product_name": "Core i7-12700K Alder Lake 3.6GHz Twelve-Core LGA 1700 Boxed Processor - Heatsink Not Included",
+            "price": "296.98"
         }
     },
     {
         "model": "items.Product",
         "pk": 273,
         "fields": {
-            "brand": "Intel",
-            "product_name": "Core i9-13900 Raptor Lake 2.0GHz Twenty Four-Core LGA 1700 Boxed Processor - Heatsink Included",
-            "price": "519.99"
+            "brand": "AMD",
+            "product_name": "Ryzen 5 7600 Raphael AM5 3.8GHz 6-Core Boxed Processor - Wraith Stealth Cooler Included",
+            "price": "209.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 274,
         "fields": {
-            "brand": "AMD",
-            "product_name": "Ryzen 9 5950X Vermeer 3.4GHz 16-Core AM4 Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "brand": "Intel",
+            "product_name": "Core i3-13100 Raptor Lake 3.4GHz Quad-Core LGA 1700 Boxed Processor - Heat Sink Included",
+            "price": "139.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 275,
         "fields": {
-            "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "brand": "Intel",
+            "product_name": "Core i5-13600K Raptor Lake 3.5GHz Fourteen-Core LGA 1700 Boxed Processor - Heatsink Not Included",
+            "price": "299.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 276,
         "fields": {
-            "brand": "AMD",
-            "product_name": "Ryzen 5 5500 Cezanne 3.6GHz 6-Core AM4 Boxed Processor - Wraith Stealth Cooler Included",
-            "price": "89.99"
+            "brand": "Intel",
+            "product_name": "Core i5-13400 Raptor Lake 2.5GHz Ten-Core LGA 1700 Boxed Processor - Heatsink Included",
+            "price": "219.99"
         }
     },
     {
@@ -346,17 +355,17 @@
         "pk": 277,
         "fields": {
             "brand": "Intel",
-            "product_name": "Core i9-13900 Raptor Lake 2.0GHz Twenty Four-Core LGA 1700 Boxed Processor - Heatsink Included",
-            "price": "519.99"
+            "product_name": "Core i9-12900KS Alder Lake 3.4GHz Sixteen-Core LGA 1700 Boxed Processor - Heatsink Not Included",
+            "price": "399.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 278,
         "fields": {
-            "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "brand": "Intel",
+            "product_name": "Core i9-12900K Alder Lake 3.2GHz Sixteen-Core LGA 1700 Boxed Processor - Heatsink Not Included",
+            "price": "399.99"
         }
     },
     {
@@ -364,8 +373,8 @@
         "pk": 279,
         "fields": {
             "brand": "AMD",
-            "product_name": "Ryzen 7 7800X3D Raphael AM5 4.2GHz 8-Core Boxed Processor - Heatsink Not Included",
-            "price": "449.99"
+            "product_name": "Ryzen 9 7950X3D Raphael AM5 4.2GHz 16-Core Boxed Processor - Heatsink Not Included",
+            "price": "699.99"
         }
     }
 ]
