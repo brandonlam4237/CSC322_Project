@@ -7,7 +7,7 @@
   gap: 1rem;
   padding: 1rem;
   padding-bottom: 4rem;
-  width: 25vw;
+  width: 20rem;
   background-color: $light-gray;
   position: relative;
 
@@ -29,12 +29,12 @@
     align-items: center;
     background-color: white;
     height: 15rem;
-    width: 22vw;
+    width: 18rem;
   }
 
   &__img {
-    height: 12rem;
-    width: 12rem;
+    height: 14rem;
+    width: 14rem;
     object-fit: cover;
   }
 }
