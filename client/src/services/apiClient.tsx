@@ -43,17 +43,17 @@ class ApiClient {
     }
     let requestInit;
 
-    // if request method is GET then do exlclude the "body" attribute
-    if (requestBody) {
+    // if api call does not require a requestBody then exlclude the "body" attribute
+    if (Object.keys(requestBody).length === 0) {
       requestInit = {
         method: method,
         headers: this.headers,
-        // body: JSON.stringify(requestBody),
       };
     } else {
       requestInit = {
         method: method,
         headers: this.headers,
+        body: JSON.stringify(requestBody),
       };
     }
     let requestUrl : string = "http://localhost:8000" + endpoint
