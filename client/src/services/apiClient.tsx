@@ -81,6 +81,34 @@ class ApiClient {
       },
     });
   }
+
+  // get shopping cart
+  async getCustomerCart(){
+    return await this.apiRequest({
+      endpoint:"/users/cart",
+      method:"GET",
+      requestBody:{}
+    })
+  }
+  // add item to shopping cart
+  async addToCart(itemId:number){
+    return await this.apiRequest({
+      endpoint: `users/cart/${itemId}`,
+      method: "PATCH",
+      requestBody: {},
+    });
+  }
+  // adjust quantity of item already in shopping cart
+  // doubles as delete 
+  async editItemQuantity(desiredQuantity:number, itemId:number){
+    return await this.apiRequest({
+      endpoint: `users/cart/${itemId}`,
+      method: "PATCH",
+      requestBody: {
+        quantity:desiredQuantity
+      },
+    });
+  }
 }
 
 export default new ApiClient();
