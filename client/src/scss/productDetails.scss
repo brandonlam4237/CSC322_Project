@@ -1,5 +1,70 @@
+@import "colors";
+
 .productDetails {
+  &__container {
+    height: calc(100vh - 5.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__card-front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark-gray;
+    height: 22rem;
+    width: 22rem;
+    margin-right: -5rem;
+    z-index: 1;
+  }
+
+  &__card-back {
+    background-color: $light-gray;
+    padding: 2rem;
+    width: 30rem;
+    height: 28rem;
+    padding-left: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  &__name,
+  &__price {
+    font-size: 1.1rem;
+  }
+
+  &__price {
+    font-weight: bold;
+  }
+
   &__img {
-    height: 20rem;
+    height: 17rem;
+    width: 17rem;
+    object-fit: cover;
+  }
+
+  &__specs {
+    font-size: 0.7rem;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__comment {
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    cursor: pointer;
+  }
+
+  &__comment-icon {
+    height: 2rem;
   }
 }
