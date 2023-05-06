@@ -89,9 +89,6 @@ function ProductDetail() {
       specKeysArr.push(key);
     }
 
-    console.log(specKeysArr);
-    console.log(specValsArr);
-
     setSpecKeys(specKeysArr);
     setSpecVals(specValsArr);
     setProductDetails(detailsJSON.products);
