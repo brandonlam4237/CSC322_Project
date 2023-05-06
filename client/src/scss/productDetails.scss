@@ -1,0 +1,92 @@
+@import "colors";
+
+.productDetails {
+  &__container {
+    height: calc(100vh - 5.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__card-front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark-gray;
+    height: clamp(22rem, 10rem + 16vw, 28rem);
+    width: clamp(22rem, 10rem + 16vw, 28rem);
+    margin-right: -5rem;
+    @media (min-width: 1400px) {
+      margin-right: -6rem;
+    }
+    @media (min-width: 1600px) {
+      margin-right: -7rem;
+    }
+    @media (min-width: 1800px) {
+      margin-right: -8rem;
+    }
+    font-size: 5rem;
+    z-index: 1;
+  }
+
+  &__card-back {
+    background-color: $light-gray;
+    padding: 2rem;
+    width: clamp(30rem, 10rem + 26.666666666666668vw, 40rem);
+    height: clamp(28rem, 12rem + 21.333333333333336vw, 36rem);
+    padding-left: clamp(8rem, 2rem + 8vw, 11rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  &__name,
+  &__price {
+    font-size: clamp(
+      1.1rem,
+      0.5000000000000004rem + 0.7999999999999995vw,
+      1.4rem
+    );
+  }
+
+  &__price {
+    font-weight: bold;
+  }
+
+  &__img {
+    height: clamp(17rem, 11rem + 8vw, 20rem);
+    width: clamp(17rem, 11rem + 8vw, 20rem);
+    object-fit: cover;
+  }
+
+  &__specs {
+    font-size: clamp(
+      0.7rem,
+      0.29999999999999977rem + 0.5333333333333335vw,
+      0.9rem
+    );
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__comment {
+    font-size: clamp(
+      0.7rem,
+      0.29999999999999977rem + 0.5333333333333335vw,
+      0.9rem
+    );
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    cursor: pointer;
+  }
+
+  &__comment-icon {
+    height: 2rem;
+  }
+}

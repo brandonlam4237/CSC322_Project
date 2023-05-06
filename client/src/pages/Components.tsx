@@ -16,20 +16,20 @@ function Components() {
         <div className="grid">
           <div className="grid__block">
             <div className="grid__cell-even">
-              <Link to="/components/cpus" className="grid__link">
-                CPUs
+              <Link to="/products/CPU" className="grid__link">
+                CPU
               </Link>
               <img src={cpu} alt="cpu" className="grid__cell-img" />
             </div>
             <div className="grid__cell-odd">
-              <Link to="/components/coolers" className="grid__link">
-                CPU Coolers
+              <Link to="/products/Cooling" className="grid__link">
+                Cooling
               </Link>
               <img src={cooler} alt="cpu cooler" className="grid__cell-img" />
             </div>
             <div className="grid__cell-even">
-              <Link to="/components/motherboards" className="grid__link">
-                Motherboards
+              <Link to="/products/Motherboard" className="grid__link">
+                Motherboard
               </Link>
               <img
                 src={motherboard}
@@ -38,22 +38,22 @@ function Components() {
               />
             </div>
             <div className="grid__cell-odd">
-              <Link to="/components/memory" className="grid__link">
-                Memory
+              <Link to="/products/RAM" className="grid__link">
+                RAM
               </Link>
               <img src={memory} alt="memory" className="grid__cell-img" />
             </div>
           </div>
           <div className="grid__block">
             <div className="grid__cell-odd">
-              <Link to="/components/storage" className="grid__link">
+              <Link to="/products/Storage" className="grid__link">
                 Storage
               </Link>
               <img src={storage} alt="storage" className="grid__cell-img" />
             </div>
             <div className="grid__cell-even">
-              <Link to="/components/videoscards" className="grid__link">
-                Video Cards
+              <Link to="/products/GPU" className="grid__link">
+                GPU
               </Link>
               <img
                 src={graphics_card}
@@ -62,8 +62,8 @@ function Components() {
               />
             </div>
             <div className="grid__cell-odd">
-              <Link to="/components/power" className="grid__link">
-                Power Supplies
+              <Link to="/products/PSU" className="grid__link">
+                PSU
               </Link>
               <img
                 src={power}
@@ -72,8 +72,8 @@ function Components() {
               />
             </div>
             <div className="grid__cell-even">
-              <Link to="/components/cases" className="grid__link">
-                Cases
+              <Link to="/products/Case" className="grid__link">
+                Case
               </Link>
               <img src={cases} alt="cases" className="grid__cell-img" />
             </div>

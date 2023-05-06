@@ -12,15 +12,14 @@ export default function Approve() {
 
   useEffect(() => {
     getAllUsers();
-    setisLoading(false);
   }, []);
 
   async function getAllUsers() {
     // request parameters for endpoint depends on the userType of the user currenlty logged in
     let usersParam: string = user.user_type === "Owner" ? "" : "customer";
     let inActiveUsers;
-    const { data, error } = await apiClient.getUsers(usersParam);
 
+    const data = await apiClient.getUsers(usersParam);
     // If the user currently logged in is super_user then response object is called users
     if (data.users) {
       inActiveUsers = data.users.filter((individualUser: UserCredentials) => {
@@ -34,9 +33,9 @@ export default function Approve() {
           return !individualUser.is_active;
         }
       );
-    } else console.log(error);
-
+    }
     setAllUsers(inActiveUsers);
+    setisLoading(false);
   }
 
   return isLoading ? (

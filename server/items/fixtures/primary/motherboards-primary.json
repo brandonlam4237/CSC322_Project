@@ -4,8 +4,8 @@
         "pk": 49,
         "fields": {
             "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "product_name": "X670E-F ROG STRIX GAMING WIFI ATX Motherboard",
+            "price": "449.99"
         }
     },
     {
@@ -13,17 +13,17 @@
         "pk": 50,
         "fields": {
             "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "product_name": "Z790-A ROG Strix Gaming WiFi Intel LGA 1700 ATX Motherboard",
+            "price": "389.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 51,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "brand": "Gigabyte",
+            "product_name": "X670E AORUS MASTER AMD AM5 eATX Motherboard",
+            "price": "489.99"
         }
     },
     {
@@ -31,26 +31,26 @@
         "pk": 52,
         "fields": {
             "brand": "ASUS",
-            "product_name": "Z690-PLUS TUF Gaming WiFi DDR4 Intel LGA 1700 ATX Motherboard",
-            "price": "259.99"
+            "product_name": "Z790-Plus TUF Gaming WiFi D5 Intel LGA 1700 ATX Motherboard",
+            "price": "299.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 53,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "brand": "Gigabyte",
+            "product_name": "Z690 Aorus Elite AX DDR4 Intel LGA 1700 ATX Motherboard",
+            "price": "229.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 54,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "brand": "Gigabyte",
+            "product_name": "B650 AORUS Elite AX AMD AM5 ATX Motherboard",
+            "price": "219.99"
         }
     },
     {
@@ -67,26 +67,26 @@
         "pk": 56,
         "fields": {
             "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "product_name": "B550-F ROG Strix Gaming WiFi II AMD AM4 ATX Motherboard",
+            "price": "204.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 57,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "brand": "Gigabyte",
+            "product_name": "X670 AORUS ELITE AX AMD AM5 ATX Motherboard",
+            "price": "279.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 58,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "brand": "MSI",
+            "product_name": "B650 MAG Tomahawk WiFi AMD AM5 ATX Motherboard",
+            "price": "239.99"
         }
     },
     {
@@ -94,8 +94,8 @@
         "pk": 59,
         "fields": {
             "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "product_name": "X670E-A ROG STRIX GAMING WIFI ATX Motherboard",
+            "price": "419.99"
         }
     },
     {
@@ -103,26 +103,26 @@
         "pk": 60,
         "fields": {
             "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "product_name": "B550-PLUS TUF Gaming WiFi II AMD AM4 ATX Motherboard",
+            "price": "169.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 61,
         "fields": {
-            "brand": "MSI",
-            "product_name": "Z790 MPG Edge WiFi Intel LGA 1700 ATX Motherboard",
-            "price": "379.99"
+            "brand": "Gigabyte",
+            "product_name": "B650M AORUS Elite AX AMD AM5 microATX Motherboard",
+            "price": "189.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 62,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "brand": "Gigabyte",
+            "product_name": "B550 Aorus Elite AX V2 AMD AM4 ATX Motherboard",
+            "price": "159.99"
         }
     },
     {
@@ -130,26 +130,26 @@
         "pk": 63,
         "fields": {
             "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "product_name": "B650-A ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
+            "price": "279.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 64,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "brand": "ASRock",
+            "product_name": "X670E Taichi Carrara AMD AM5 eATX Motherboard",
+            "price": "529.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 65,
         "fields": {
-            "brand": "Gigabyte",
-            "product_name": "B550I AORUS Pro AX AMD AM4 Mini-ITX Motherboard",
-            "price": "199.99"
+            "brand": "ASUS",
+            "product_name": "X670E ROG CROSSHAIR GENE microATX Motherboard",
+            "price": "599.99"
         }
     },
     {
@@ -157,8 +157,8 @@
         "pk": 66,
         "fields": {
             "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "product_name": "Z790-PLUS TUF Gaming WiFi D4 Intel LGA 1700 ATX Motherboard",
+            "price": "289.99"
         }
     },
     {
@@ -166,8 +166,8 @@
         "pk": 67,
         "fields": {
             "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "product_name": "Z690-PLUS TUF Gaming WiFi D5 Intel LGA 1700 ATX Motherboard",
+            "price": "259.99"
         }
     },
     {
@@ -193,8 +193,8 @@
         "pk": 70,
         "fields": {
             "brand": "ASUS",
-            "product_name": "Z690-P Prime WiFi DDR5 Intel LGA 1700 ATX Motherboard",
-            "price": "219.99"
+            "product_name": "Z790-E ROG Strix Gaming WiFi Intel LGA 1700 ATX Motherboard",
+            "price": "499.99"
         }
     },
     {
@@ -202,17 +202,17 @@
         "pk": 71,
         "fields": {
             "brand": "ASUS",
-            "product_name": "Z690-PLUS TUF Gaming WiFi DDR4 Intel LGA 1700 ATX Motherboard",
-            "price": "259.99"
+            "product_name": "B650E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
+            "price": "349.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 72,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "brand": "MSI",
+            "product_name": "B650I MPG Edge WiFi AMD AM5 Mini-ITX Motherboard",
+            "price": "299.99"
         }
     },
     {
@@ -220,22 +220,13 @@
         "pk": 73,
         "fields": {
             "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "product_name": "X570 TUF Gaming Plus (WIFI) AMD AM4 ATX Motherboard",
+            "price": "209.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 74,
-        "fields": {
-            "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 75,
         "fields": {
             "brand": "ASUS",
             "product_name": "Z690-P Prime WiFi DDR5 Intel LGA 1700 ATX Motherboard",
@@ -244,7 +235,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 76,
+        "pk": 75,
         "fields": {
             "brand": "MSI",
             "product_name": "Z790 MPG Edge WiFi Intel LGA 1700 ATX Motherboard",
@@ -253,20 +244,29 @@
     },
     {
         "model": "items.Product",
-        "pk": 77,
+        "pk": 76,
         "fields": {
             "brand": "ASUS",
-            "product_name": "Z690-PLUS TUF Gaming WiFi DDR4 Intel LGA 1700 ATX Motherboard",
+            "product_name": "Z690-A Prime DDR5 Intel LGA 1700 ATX Motherboard",
             "price": "259.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 77,
+        "fields": {
+            "brand": "ASRock",
+            "product_name": "X670E Taichi AMD AM5 eATX Motherboard",
+            "price": "499.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 78,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "brand": "MSI",
+            "product_name": "Z790 MEG Ace Intel LGA 1700 eATX Motherboard",
+            "price": "609.99"
         }
     },
     {
@@ -274,26 +274,26 @@
         "pk": 79,
         "fields": {
             "brand": "ASUS",
-            "product_name": "Z690-P Prime WiFi DDR5 Intel LGA 1700 ATX Motherboard",
-            "price": "219.99"
+            "product_name": "Prime B450M-A II AMD AM4 microATX Motherboard",
+            "price": "79.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 80,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "brand": "Gigabyte",
+            "product_name": "Z790 AORUS ELITE AX Intel LGA 1700 ATX Motherboard",
+            "price": "254.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 81,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "brand": "Gigabyte",
+            "product_name": "B650I Aorus Ultra AMD AM5 Mini-ITX Motherboard",
+            "price": "259.99"
         }
     },
     {
@@ -301,8 +301,8 @@
         "pk": 82,
         "fields": {
             "brand": "ASUS",
-            "product_name": "Z690-P Prime WiFi DDR5 Intel LGA 1700 ATX Motherboard",
-            "price": "219.99"
+            "product_name": "Z790-Creator ProArt WiFi Intel LGA 1700 ATX Motherboard",
+            "price": "469.99"
         }
     },
     {
@@ -310,8 +310,8 @@
         "pk": 83,
         "fields": {
             "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "product_name": "X670E-PRO PRIME WIFI AMD AM5 ATX Motherboard",
+            "price": "349.99"
         }
     },
     {
@@ -319,8 +319,8 @@
         "pk": 84,
         "fields": {
             "brand": "ASUS",
-            "product_name": "Z690-PLUS TUF Gaming WiFi DDR4 Intel LGA 1700 ATX Motherboard",
-            "price": "259.99"
+            "product_name": "B650-PLUS TUF GAMING WIFI ATX AM5 Motherboard",
+            "price": "239.99"
         }
     },
     {
@@ -328,8 +328,8 @@
         "pk": 85,
         "fields": {
             "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "product_name": "X670E-PLUS TUF GAMING WIFI ATX Motherboard",
+            "price": "329.99"
         }
     },
     {
@@ -337,22 +337,13 @@
         "pk": 86,
         "fields": {
             "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "product_name": "B550M-A Prime WiFi II AMD AM4 microATX Motherboard",
+            "price": "139.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 87,
-        "fields": {
-            "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 88,
         "fields": {
             "brand": "ASUS",
             "product_name": "Z790 ROG Maximus Hero Intel LGA 1700 ATX Motherboard",
@@ -361,11 +352,20 @@
     },
     {
         "model": "items.Product",
+        "pk": 88,
+        "fields": {
+            "brand": "ASUS",
+            "product_name": "Z690-P Prime DDR5 Intel LGA 1700 ATX Motherboard",
+            "price": "199.99"
+        }
+    },
+    {
+        "model": "items.Product",
         "pk": 89,
         "fields": {
-            "brand": "MSI",
-            "product_name": "Z790 MPG Edge WiFi Intel LGA 1700 ATX Motherboard",
-            "price": "379.99"
+            "brand": "ASUS",
+            "product_name": "X670E ROG CROSSHAIR Hero AMD AM5 ATX Motherboard",
+            "price": "699.99"
         }
     },
     {
@@ -373,22 +373,13 @@
         "pk": 90,
         "fields": {
             "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "product_name": "B650E-I ROG Strix Gaming WiFi AMD AM5 Mini-ITX Motherboard",
+            "price": "329.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 91,
-        "fields": {
-            "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 92,
         "fields": {
             "brand": "ASUS",
             "product_name": "Z790-A Prime WiFi Intel LGA 1700 ATX Motherboard",
@@ -397,11 +388,11 @@
     },
     {
         "model": "items.Product",
-        "pk": 93,
+        "pk": 92,
         "fields": {
             "brand": "ASUS",
-            "product_name": "X670E-E ROG Strix Gaming WiFi AMD AM5 ATX Motherboard",
-            "price": "499.99"
+            "product_name": "B550M-A PRIME AC PS AMD AM4 microATX Motherboard",
+            "price": "129.99"
         }
     }
 ]

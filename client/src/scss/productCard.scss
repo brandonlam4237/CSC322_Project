@@ -1,0 +1,52 @@
+@import "colors";
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  padding-bottom: 6rem;
+  width: 20rem;
+  background-color: $light-gray;
+  position: relative;
+
+  &__name {
+    font-size: 0.8rem;
+    text-align: center;
+    width: 17rem;
+  }
+
+  &__price {
+    font-weight: bold;
+  }
+
+  &__img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 15rem;
+    width: 18rem;
+  }
+
+  &__img {
+    height: 14rem;
+    width: 14rem;
+    object-fit: cover;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 1rem;
+    gap: 0.5rem;
+  }
+
+  &__btns {
+    display: flex;
+    gap: 1rem;
+  }
+}

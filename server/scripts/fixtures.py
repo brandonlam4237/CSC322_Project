@@ -36,7 +36,7 @@ def process_secondary_data(item_paths) -> tuple:
     for item in item_paths:
         with open(item) as item_file:
             new_data = {}
-            old_data = json.load(item_file)[0]
+            old_data = json.load(item_file)[-1]
 
             model = "items.ComputerPart"
 
@@ -112,7 +112,7 @@ def process_primary_data(item_paths) -> tuple:
     for item in item_paths:
         with open(item) as item_file:
             new_data = {}
-            old_data = json.load(item_file)[0]
+            old_data = json.load(item_file)[-1]
 
             model = "items.Product"
 

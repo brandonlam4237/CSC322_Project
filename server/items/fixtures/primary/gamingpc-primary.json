@@ -1,52 +1,52 @@
 [
     {
         "model": "items.Product",
+        "pk": 189,
+        "fields": {
+            "brand": "MSI",
+            "product_name": "Aegis Z5 5TC-446US Gaming PC",
+            "price": "1199.99"
+        }
+    },
+    {
+        "model": "items.Product",
         "pk": 190,
         "fields": {
-            "brand": "IBuyPower",
-            "product_name": "SlateMRI5N3501 Gaming PC",
-            "price": "799.99"
+            "brand": "PowerSpec",
+            "product_name": "G113 Gaming PC",
+            "price": "649.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 191,
         "fields": {
-            "brand": "PowerSpec",
-            "product_name": "G233 Gaming PC",
-            "price": "899.99"
+            "brand": "Acer",
+            "product_name": "Nitro 50 N50-620-UA14 Gaming PC",
+            "price": "499.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 192,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "ROG Strix G10DK G10DK-AB764 Gaming PC",
-            "price": "649.99"
+            "brand": "HP",
+            "product_name": "OMEN 25L GT12-1149 Gaming PC (Refurbished)",
+            "price": "999.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 193,
         "fields": {
-            "brand": "PowerSpec",
-            "product_name": "G233 Gaming PC",
-            "price": "899.99"
+            "brand": "MSI",
+            "product_name": "Aegis R 13NUG-441US Gaming PC",
+            "price": "2799.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 194,
-        "fields": {
-            "brand": "ASUS",
-            "product_name": "ROG Strix G10DK G10DK-AB764 Gaming PC",
-            "price": "649.99"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 195,
         "fields": {
             "brand": "HP",
             "product_name": "Victus 15L TG02-0130 Gaming PC (Refurbished)",
@@ -55,29 +55,38 @@
     },
     {
         "model": "items.Product",
+        "pk": 195,
+        "fields": {
+            "brand": "PowerSpec",
+            "product_name": "G472 Gaming PC",
+            "price": "2499.99"
+        }
+    },
+    {
+        "model": "items.Product",
         "pk": 196,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "ROG Strix G10DK G10DK-AB764 Gaming PC",
-            "price": "649.99"
+            "brand": "Lenovo",
+            "product_name": "Legion Tower 5i Gaming PC",
+            "price": "1499.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 197,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "ROG Strix G10DK G10DK-AB764 Gaming PC",
-            "price": "649.99"
+            "brand": "HP",
+            "product_name": "Pavilion TG01-2022 Gaming PC (Refurbished)",
+            "price": "399.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 198,
         "fields": {
-            "brand": "PowerSpec",
-            "product_name": "G233 Gaming PC",
-            "price": "899.99"
+            "brand": "Lenovo",
+            "product_name": "Legion 5i Gen 6 Gaming PC",
+            "price": "699.99"
         }
     },
     {
@@ -85,53 +94,53 @@
         "pk": 199,
         "fields": {
             "brand": "Lenovo",
-            "product_name": "Legion 5i Gen 6 Gaming PC",
-            "price": "699.99"
+            "product_name": "Legion 7 Gaming PC Platinum Collection",
+            "price": "2999.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 200,
         "fields": {
-            "brand": "IBuyPower",
-            "product_name": "SlateMRI5N3501 Gaming PC",
-            "price": "799.99"
+            "brand": "PowerSpec",
+            "product_name": "G365 Gaming PC",
+            "price": "1299.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 201,
         "fields": {
-            "brand": "PowerSpec",
-            "product_name": "G233 Gaming PC",
-            "price": "899.99"
+            "brand": "MSI",
+            "product_name": "Aegis ZS 5DS-298US Gaming PC",
+            "price": "1399.96"
         }
     },
     {
         "model": "items.Product",
         "pk": 202,
         "fields": {
-            "brand": "PowerSpec",
-            "product_name": "G233 Gaming PC",
-            "price": "899.99"
+            "brand": "CybertronPC",
+            "product_name": "CLX SET TGISETRTU2B02BM Gaming PC",
+            "price": "3349.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 203,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "ROG Strix G10DK G10DK-AB764 Gaming PC",
-            "price": "649.99"
+            "brand": "PowerSpec",
+            "product_name": "G439 Gaming PC",
+            "price": "1599.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 204,
         "fields": {
-            "brand": "Lenovo",
-            "product_name": "IdeaCentre 5 17ACN7 Gaming PC",
-            "price": "899.99"
+            "brand": "PowerSpec",
+            "product_name": "G514 Gaming PC",
+            "price": "1249.99"
         }
     },
     {
@@ -139,8 +148,8 @@
         "pk": 205,
         "fields": {
             "brand": "PowerSpec",
-            "product_name": "G233 Gaming PC",
-            "price": "899.99"
+            "product_name": "G712 Gaming PC",
+            "price": "1799.99"
         }
     },
     {
@@ -148,61 +157,61 @@
         "pk": 206,
         "fields": {
             "brand": "PowerSpec",
-            "product_name": "G233 Gaming PC",
-            "price": "899.99"
+            "product_name": "G441 Gaming PC",
+            "price": "1799.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 207,
         "fields": {
-            "brand": "Lenovo",
-            "product_name": "IdeaCentre 5 17ACN7 Gaming PC",
-            "price": "899.99"
+            "brand": "Acer",
+            "product_name": "Predator Orion 3000 PO3-640G-UR11 Gaming PC",
+            "price": "1299.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 208,
         "fields": {
-            "brand": "Lenovo",
-            "product_name": "Legion 5i Gen 6 Gaming PC",
-            "price": "699.99"
+            "brand": "Dell",
+            "product_name": "Alienware Aurora R14 Gaming PC",
+            "price": "1499.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 209,
         "fields": {
-            "brand": "IBuyPower",
-            "product_name": "SlateMRI5N3501 Gaming PC",
-            "price": "799.99"
+            "brand": "PowerSpec",
+            "product_name": "G366 Gaming PC",
+            "price": "1299.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 210,
         "fields": {
-            "brand": "PowerSpec",
-            "product_name": "G233 Gaming PC",
-            "price": "899.99"
+            "brand": "MSI",
+            "product_name": "Aegis RS 13NUF-440US Gaming PC",
+            "price": "2299.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 211,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "ROG Strix G10DK G10DK-AB764 Gaming PC",
-            "price": "649.99"
+            "brand": "HP",
+            "product_name": "Pavilion TG01-2285t Gaming PC (Refurbished)",
+            "price": "799.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 212,
         "fields": {
-            "brand": "PowerSpec",
-            "product_name": "G233 Gaming PC",
+            "brand": "HP",
+            "product_name": "Pavilion TG01-2176z Gaming PC (Refurbished)",
             "price": "899.99"
         }
     },
@@ -219,15 +228,6 @@
         "model": "items.Product",
         "pk": 214,
         "fields": {
-            "brand": "PowerSpec",
-            "product_name": "G233 Gaming PC",
-            "price": "899.99"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 215,
-        "fields": {
             "brand": "ASUS",
             "product_name": "ROG Strix G10DK G10DK-AB764 Gaming PC",
             "price": "649.99"
@@ -235,16 +235,16 @@
     },
     {
         "model": "items.Product",
-        "pk": 216,
+        "pk": 215,
         "fields": {
             "brand": "PowerSpec",
-            "product_name": "G233 Gaming PC",
-            "price": "899.99"
+            "product_name": "G368 Gaming PC",
+            "price": "1249.99"
         }
     },
     {
         "model": "items.Product",
-        "pk": 217,
+        "pk": 216,
         "fields": {
             "brand": "Dell",
             "product_name": "Alienware Aurora R12 Gaming PC (Refurbished)",
@@ -253,19 +253,28 @@
     },
     {
         "model": "items.Product",
-        "pk": 218,
+        "pk": 217,
         "fields": {
             "brand": "PowerSpec",
-            "product_name": "G233 Gaming PC",
-            "price": "899.99"
+            "product_name": "G367 Gaming PC",
+            "price": "1099.99"
+        }
+    },
+    {
+        "model": "items.Product",
+        "pk": 218,
+        "fields": {
+            "brand": "IBuyPower",
+            "product_name": "SlateMRI5N3501 Gaming PC",
+            "price": "799.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 219,
         "fields": {
-            "brand": "IBuyPower",
-            "product_name": "SlateMRI5N3501 Gaming PC",
+            "brand": "Lenovo",
+            "product_name": "IdeaCentre 5 Gaming PC",
             "price": "799.99"
         }
     },
@@ -273,36 +282,36 @@
         "model": "items.Product",
         "pk": 220,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "ROG Strix G10DK G10DK-AB764 Gaming PC",
-            "price": "649.99"
+            "brand": "PowerSpec",
+            "product_name": "G906 Gaming PC",
+            "price": "2399.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 221,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "ROG Strix G10DK G10DK-AB764 Gaming PC",
-            "price": "649.99"
+            "brand": "HP",
+            "product_name": "ENVY TE02-0030 Gaming PC",
+            "price": "1399.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 222,
         "fields": {
-            "brand": "IBuyPower",
-            "product_name": "SlateMRI5N3501 Gaming PC",
-            "price": "799.99"
+            "brand": "PowerSpec",
+            "product_name": "G471 Gaming PC",
+            "price": "3299.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 223,
         "fields": {
-            "brand": "ASUS",
-            "product_name": "ROG Strix G10DK G10DK-AB764 Gaming PC",
-            "price": "649.99"
+            "brand": "Acer",
+            "product_name": "Predator Orion 3000 PO3-640-UR11 Gaming PC",
+            "price": "1699.99"
         }
     },
     {
@@ -310,16 +319,16 @@
         "pk": 224,
         "fields": {
             "brand": "PowerSpec",
-            "product_name": "G233 Gaming PC",
-            "price": "899.99"
+            "product_name": "G442 Gaming PC",
+            "price": "1599.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 225,
         "fields": {
-            "brand": "PowerSpec",
-            "product_name": "G233 Gaming PC",
+            "brand": "Lenovo",
+            "product_name": "IdeaCentre 5 17ACN7 Gaming PC",
             "price": "899.99"
         }
     },
@@ -327,9 +336,9 @@
         "model": "items.Product",
         "pk": 226,
         "fields": {
-            "brand": "Lenovo",
-            "product_name": "IdeaCentre 5 17ACN7 Gaming PC",
-            "price": "899.99"
+            "brand": "MSI",
+            "product_name": "Infinite RS 13NUI-432US Gaming PC Platinum Collection",
+            "price": "4099.99"
         }
     },
     {
@@ -337,53 +346,44 @@
         "pk": 227,
         "fields": {
             "brand": "Lenovo",
-            "product_name": "Legion 5i Gen 6 Gaming PC",
-            "price": "699.99"
+            "product_name": "Legion Tower 5 Gaming PC",
+            "price": "799.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 228,
         "fields": {
-            "brand": "Lenovo",
-            "product_name": "IdeaCentre 5 17ACN7 Gaming PC",
-            "price": "899.99"
+            "brand": "HP",
+            "product_name": "OMEN 25L GT12-1179 Gaming PC (Refurbished)",
+            "price": "1099.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 229,
         "fields": {
-            "brand": "PowerSpec",
-            "product_name": "G233 Gaming PC",
-            "price": "899.99"
+            "brand": "HP",
+            "product_name": "OMEN 25L GT12-1199 Gaming PC (Refurbished)",
+            "price": "999.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 230,
         "fields": {
-            "brand": "PowerSpec",
-            "product_name": "G233 Gaming PC",
-            "price": "899.99"
+            "brand": "HP",
+            "product_name": "Victus 15L TG02-0050 Gaming PC (Factory Refurbished)",
+            "price": "999.99"
         }
     },
     {
         "model": "items.Product",
         "pk": 231,
         "fields": {
-            "brand": "HP",
-            "product_name": "Victus 15L TG02-0130 Gaming PC (Refurbished)",
-            "price": "1099.99"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 232,
-        "fields": {
-            "brand": "ASUS",
-            "product_name": "ROG Strix G10DK G10DK-AB764 Gaming PC",
-            "price": "649.99"
+            "brand": "PowerSpec",
+            "product_name": "G713 Gaming PC",
+            "price": "1199.99"
         }
     }
 ]
