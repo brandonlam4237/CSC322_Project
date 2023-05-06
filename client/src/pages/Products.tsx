@@ -16,7 +16,7 @@ function Prodcuts() {
 
   useEffect(() => {
     fetchProducts();
-  }, [fetchProducts]);
+  }, []);
 
   return (
     <main className="products">
