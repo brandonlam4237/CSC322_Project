@@ -28,6 +28,7 @@ export interface IPartsListContext {
   setBuildDescription: (value: string) => void;
   removePart: (value: IPart) => void;
   addPart: (value: IPart) => void;
+  discardBuild:()=>void;
 }
 
 export interface IPartsList {
@@ -86,6 +87,9 @@ export const PartsListContext = createContext<IPartsListContext>({
   addPart: (value: IPart) => {
     /* do nothing */
   },
+  discardBuild:()=>{
+    /* */
+  }
 });
 
 export function usePartsListContext() {
@@ -118,6 +122,9 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
     });
   }
 
+  function discardBuild(){
+    setPartsList(partsListTemplate)
+  }
   /* automatically check local storage for partsList object 
     upon mounting of PartsListProvidor */
 
@@ -149,6 +156,7 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
     setBuildDescription,
     addPart,
     removePart,
+    discardBuild
   };
 
   return (

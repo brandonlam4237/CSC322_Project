@@ -14,6 +14,7 @@ export default function MyBuild() {
   const partsListVariables = usePartsListContext()
   const buildDescription = partsListVariables.buildDescription
   const setBuildDescription = partsListVariables.setBuildDescription
+  const discardBuild = partsListVariables.discardBuild
 
   function handleOnTextAreaChange(event: React.ChangeEvent<HTMLTextAreaElement>){
     setBuildDescription(event.target.value)
@@ -59,8 +60,8 @@ export default function MyBuild() {
           )}
           <div className="buttons-container">
             <div className="buttons-container__save-options">
-              <Button className="blue-primary">Save Build</Button>
-              <Button className="blue-secondary">Discard</Button>
+              <Button className="blue-primary">Validate Build</Button>
+              <Button className="blue-secondary" onClick={discardBuild}>Discard Build</Button>
             </div>
             {user.user_type == ("Owner" || "Employee") ? (
               <Button className="buttons-container__submit-build black-primary">
