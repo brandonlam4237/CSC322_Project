@@ -8,11 +8,12 @@ import Input from "src/components/Input";
 import Button from "src/components/Button";
 import { useState } from "react";
 import { useAuthContext } from "src/contexts/AuthContext";
+import { type } from "@testing-library/user-event/dist/type";
 
 export interface IBalanceForm {
     card_number: string;
     exp_date: string;
-    balance: Number;
+    balance: number;
   }
 
 
@@ -26,6 +27,7 @@ export default function AccountDetails(){
       const authValues = useAuthContext(); 
 
       async function balanceButtonHandler() {
+        balanceForm.balance = Number(balanceForm.balance)
         await authValues.askForBalance(balanceForm); 
       }
 
@@ -116,12 +118,13 @@ export default function AccountDetails(){
                         <p>Amount to Add</p>
                         <input
                             className="input-field"
+                            inputMode="numeric"
                             type="text"
-                            name="amount"
-                            value={balanceForm.balance.toString()}
+                            name="balance"
+                            value={balanceForm.balance == 0 ? "" : balanceForm.balance}
                             onChange={handleOnFormChange}
                         
-                            placeholder="$0.00"
+                            placeholder="0.00"
                         />
                         </label>
                     </form>

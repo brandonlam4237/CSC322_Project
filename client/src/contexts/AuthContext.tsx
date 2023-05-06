@@ -200,7 +200,7 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
   async function askForBalance(balanceForm: IBalanceForm) {
     const accessToken: string = userTokens.access;
     try {
-      await fetch("/users/balance", {
+      await fetch("users/balance", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -208,6 +208,7 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
         },
         body: JSON.stringify(balanceForm),
       });
+      loginWithToken(accessToken)
     } catch (error) {
       console.log(error);
     }
