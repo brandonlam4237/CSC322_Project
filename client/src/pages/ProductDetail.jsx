@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "../scss/productDetails.scss";
 import Button from "src/components/Button";
 import comment from "../assets/icons/comment.png";
 import apiClient from "src/services/apiClient";
+import { usePartsListContext } from "src/contexts/PartsListContext";
+
 
 const fields = {
   Case: ["Case Type", "Color", "Max Motherboard Size", "Height", "Width"],
@@ -100,6 +102,20 @@ function ProductDetail() {
     await apiClient.addToCart(productDetails.id)
   }
 
+  const partsListVariables = usePartsListContext();
+  const addPartToBuild = partsListVariables.addPart;
+
+  function handleAddBuild() {
+    const part = {
+      product_name: productDetails.product_name,
+      price: Number(productDetails.price),
+      image_url: productDetails.image_url,
+      component_name: productDetails.category,
+      isAdded: true,
+    };
+    addPartToBuild(part);
+  }
+
   return (
     <main className="productDetails">
       {!loading && (
@@ -127,7 +143,7 @@ function ProductDetail() {
             </div>
             <div className="productDetails__btns">
               <Button className="blue-primary" onClick={handleAddCart}>Add to cart</Button>
-              <Button className="black-primary">Add to build</Button>
+              <Link to="/mybuild"><Button className="black-primary" onClick={handleAddBuild}>Add to build</Button></Link>
             </div>
             <div className="productDetails__comment">
               <img className="productDetails__comment-icon" src={comment} />
