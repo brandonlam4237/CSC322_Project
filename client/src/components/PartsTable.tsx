@@ -1,13 +1,8 @@
 import "../scss/table.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faPlus } from "@fortawesome/free-solid-svg-icons";
-import Button from "./Button";
-import { Link } from "react-router-dom";
 import {
   usePartsListContext,
-  IPartsList,
-  IPart,
 } from "src/contexts/PartsListContext";
+import PartsTableRow from "./PartsTableRow";
 
 const partsCategoryArray: string[] = [
   "CPU",
@@ -20,10 +15,10 @@ const partsCategoryArray: string[] = [
   "Case",
 ];
 
-interface IRowHeader {
+interface IRowHeaders {
   [key: string]: string;
 }
-const rowHeader: IRowHeader = {
+const rowHeaders: IRowHeaders = {
   CPU: "CPU",
   Cooling: "CPU Cooler",
   Motherboard: "Motherboard",
@@ -37,7 +32,6 @@ const rowHeader: IRowHeader = {
 export default function PartsTable() {
   const partsListVariables = usePartsListContext();
   const partsList = partsListVariables.partsList;
-  const setPartsList = partsListVariables.setPartsList;
   const removePart = partsListVariables.removePart;
   return (
     <table>
@@ -51,60 +45,18 @@ export default function PartsTable() {
       </thead>
       <br />
       <tbody>
-        <TableBody
-          partsList={partsList}
-          setPartsList={setPartsList}
-          removePart={removePart}
-        />
+        {partsCategoryArray.map((categoryName: string, index: number) => {
+          return (
+            <PartsTableRow
+              rowHeader={rowHeaders[categoryName]}
+              part={partsList[categoryName]}
+              removePart={removePart}
+              key={index}
+              categoryName={categoryName}
+            />
+          );
+        })}
       </tbody>
     </table>
-  );
-}
-
-interface TableBodyProps {
-  partsList: IPartsList;
-  setPartsList: (value: IPartsList) => void;
-  removePart: (value: IPart) => void;
-}
-
-function TableBody({ partsList, setPartsList, removePart }: TableBodyProps) {
-  return (
-    <>
-      {partsCategoryArray.map((categoryName, index) => {
-        const part: IPart = partsList[categoryName];
-        if (part.isAdded) {
-          return (
-            <tr>
-              <th className="row-header">{rowHeader[categoryName]}</th>
-              <td>{part.product_name}</td>
-              <td>${part.price}</td>
-              <td className="remove-icon">
-                <FontAwesomeIcon
-                  icon={faXmark}
-                  size="xl"
-                  onClick={() => removePart(part)}
-                />
-              </td>
-            </tr>
-          );
-        } else {
-          return (
-            <tr>
-              <th className="row-header">{rowHeader[categoryName]}</th>
-              <td>
-                <Link to={`/products/${partsCategoryArray[index]}`}>
-                  <Button className="blue-primary">
-                    <FontAwesomeIcon icon={faPlus} size="lg" /> Choose a{" "}
-                    {categoryName}
-                  </Button>
-                </Link>
-              </td>
-              <td></td>
-              <td></td>
-            </tr>
-          );
-        }
-      })}
-    </>
   );
 }
