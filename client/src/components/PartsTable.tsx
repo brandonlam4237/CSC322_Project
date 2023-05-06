@@ -6,14 +6,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const PartsPathArray: string[] = [
-  "cpus",
-  "coolers",
-  "motherboards",
-  "memory",
-  "storage",
-  "videocards",
-  "power",
-  "cases",
+  "CPU",
+  "Cooling",
+  "Motherboard",
+  "RAM",
+  "Storage",
+  "GPU",
+  "PSU",
+  "Case",
 ];
 
 const componentNames: string[] = [
@@ -147,7 +147,7 @@ function TableBody({ partsList, setPartsList }: TableBodyProps) {
             <tr>
               <th className="row-header">{componentName}</th>
               <td>
-                <Link to={`/components/${PartsPathArray[index]}`}>
+                <Link to={`/products/${PartsPathArray[index]}`}>
                   <Button className="blue-primary">
                     <FontAwesomeIcon icon={faPlus} size="lg" /> Choose a{" "}
                     {componentName}

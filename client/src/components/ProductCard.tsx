@@ -27,8 +27,8 @@ function ProductCard(props: ProductCardProps) {
       <footer className="productCard__footer">
         <div className="productCard__price">{"$" + price}</div>
         <div className="productCard__btns">
-          <Button className="blue-primary" onClick={handleAddCart} >Add to cart</Button>
-          <Button className="black-primary">Add to build</Button>
+          <Button className="blue-primary" onClick={handleAddCart}>Add to cart</Button>
+          <Link to={"/myBuild"}><Button className="black-primary">Add to build</Button></Link>
         </div>
       </footer>
     </div>
