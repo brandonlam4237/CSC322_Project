@@ -3,6 +3,7 @@ import { useAuthContext } from "src/contexts/AuthContext";
 import "../scss/partpicker.scss";
 import PartsTable from "src/components/PartsTable";
 import Button from "src/components/Button";
+import { usePartsListContext } from "src/contexts/PartsListContext";
 
 export default function MyBuild() {
   const [isCompatible, setIsCompatible] = useState(true);
@@ -10,6 +11,13 @@ export default function MyBuild() {
   const user = authValues.userData;
   const [isLoading, setisLoading] = useState<boolean>(true);
 
+  const partsListVariables = usePartsListContext()
+  const buildDescription = partsListVariables.buildDescription
+  const setBuildDescription = partsListVariables.setBuildDescription
+
+  function handleOnTextAreaChange(event: React.ChangeEvent<HTMLTextAreaElement>){
+    setBuildDescription(event.target.value)
+  }
   return (
     <div className="fullscreen-bg">
       <main className="mybuild__component">
@@ -41,6 +49,8 @@ export default function MyBuild() {
                   id="suggested-build-form"
                   className="input-field"
                   placeholder="description..."
+                  value={buildDescription}
+                  onChange={handleOnTextAreaChange}
                 ></textarea>
               </form>
             </div>

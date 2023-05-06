@@ -23,7 +23,9 @@ const PARTS_LIST_KEY = "custom-build-parts-list-object";
 
 export interface IPartsListContext {
   partsList: IPartsList;
+  buildDescription: string;
   setPartsList: (value: IPartsList) => void;
+  setBuildDescription: (value: string) => void;
   removePart: (value: IPart) => void;
   addPart: (value: IPart) => void;
 }
@@ -71,7 +73,11 @@ export const partsListTemplate: IPartsList = {
 
 export const PartsListContext = createContext<IPartsListContext>({
   partsList: partsListTemplate,
+  buildDescription:"",
   setPartsList: (value: IPartsList) => {
+    /* do nothing */
+  },
+  setBuildDescription: (value: string) =>{
     /* do nothing */
   },
   removePart: (value: IPart) => {
@@ -93,6 +99,7 @@ interface PartsListProvidorProps {
 export function PartsListProvidor({ children }: PartsListProvidorProps) {
   const [partsList, setPartsList] = useState<IPartsList>(partsListTemplate);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [buildDescription, setBuildDescription] = useState<string>("");
 
   // functions
   function removePart(part: IPart) {
@@ -137,7 +144,9 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
 
   const partsListVariables = {
     partsList,
+    buildDescription,
     setPartsList,
+    setBuildDescription,
     addPart,
     removePart,
   };
