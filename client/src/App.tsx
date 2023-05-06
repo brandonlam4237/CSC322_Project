@@ -15,8 +15,9 @@ import Register from "./pages/Register";
 import Approve from "./pages/Approve";
 import MyBuild from "./pages/PartPicker";
 import Products from "./pages/Products";
-import { AuthContextProvider } from "./contexts/AuthContext";
 import ProductDetail from "./pages/ProductDetail";
+import { AuthContextProvider } from "./contexts/AuthContext";
+import { PartsListProvidor } from "./contexts/PartsListContext";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -43,7 +44,9 @@ const router = createBrowserRouter(
 function App() {
   return (
     <AuthContextProvider>
-      <RouterProvider router={router} />
+      <PartsListProvidor>
+        <RouterProvider router={router} />
+      </PartsListProvidor>
     </AuthContextProvider>
   );
 }
