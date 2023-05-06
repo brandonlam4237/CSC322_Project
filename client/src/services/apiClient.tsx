@@ -6,12 +6,13 @@ class ApiClient {
   accessToken: string;
   refreshToken: string;
   LOCAL_STORAGE_AUTH_KEY: string;
+  baseUrl:string;
   headers: {
     "Content-Type": string;
     Authorization: string | "";
   };
 
-  constructor() {
+  constructor(baseUrl:string) {
     this.accessToken = "null";
     this.refreshToken = "null";
     this.LOCAL_STORAGE_AUTH_KEY = "donut_pcs_local_storage_tokens_key";
@@ -19,6 +20,7 @@ class ApiClient {
       "Content-Type": "application/json",
       Authorization: "",
     };
+    this.baseUrl = baseUrl
   }
 
   setTokens(tokens: { access: string; refresh: string }) {
@@ -42,11 +44,11 @@ class ApiClient {
     let requestInit;
 
     // if request method is GET then do exlclude the "body" attribute
-    if (method != "GET") {
+    if (requestBody) {
       requestInit = {
         method: method,
         headers: this.headers,
-        body: JSON.stringify(requestBody),
+        // body: JSON.stringify(requestBody),
       };
     } else {
       requestInit = {
@@ -54,9 +56,9 @@ class ApiClient {
         headers: this.headers,
       };
     }
-
+    let requestUrl : string = "http://localhost:8000" + endpoint
     try {
-      const response = await fetch(endpoint, requestInit);
+      const response = await fetch(requestUrl, requestInit);
       return await response.json();
     } catch (error: any) {
       console.error(error.response);
@@ -65,7 +67,7 @@ class ApiClient {
 
   async getUsers(usersParam: string) {
     return await this.apiRequest({
-      endpoint: `users/${usersParam}`,
+      endpoint: `/users/${usersParam}`,
       method: "GET",
       requestBody: {},
     });
@@ -73,7 +75,7 @@ class ApiClient {
 
   async activateUser(approvalForm: IApprovalForm, userId: number) {
     return await this.apiRequest({
-      endpoint: `users/activate/${userId}`,
+      endpoint: `/users/activate/${userId}`,
       method: "PATCH",
       requestBody: {
         is_active: approvalForm.is_active,
@@ -93,8 +95,8 @@ class ApiClient {
   // add item to shopping cart
   async addToCart(itemId:number){
     return await this.apiRequest({
-      endpoint: `users/cart/${itemId}`,
-      method: "PATCH",
+      endpoint: `/users/cart/${itemId}`,
+      method: "PUT",
       requestBody: {},
     });
   }
@@ -102,7 +104,7 @@ class ApiClient {
   // doubles as delete 
   async editItemQuantity(desiredQuantity:number, itemId:number){
     return await this.apiRequest({
-      endpoint: `users/cart/${itemId}`,
+      endpoint: `/users/cart/${itemId}`,
       method: "PATCH",
       requestBody: {
         quantity:desiredQuantity
@@ -111,4 +113,4 @@ class ApiClient {
   }
 }
 
-export default new ApiClient();
+export default new ApiClient("http://localhost:8000/");
