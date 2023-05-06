@@ -23,10 +23,10 @@ export default function AccountDetails(){
         balance: 0,
       });
 
-      const authValues = useAuthContext(); // unsure about the use of this, do i need another context for balance?
+      const authValues = useAuthContext(); 
 
       async function balanceButtonHandler() {
-        await authValues.askForBalance(balanceForm); // i think the registerUser is where things need to be changed
+        await authValues.askForBalance(balanceForm); 
       }
 
       function handleOnFormChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -126,7 +126,7 @@ export default function AccountDetails(){
                         </label>
                     </form>
                     <div className="container__button">
-                            <Button variant="primary" onClick={balanceButtonHandler}>
+                            <Button className="primary" onClick={balanceButtonHandler}>
                                 Add Balance
                             </Button>
                     </div>
