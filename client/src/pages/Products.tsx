@@ -4,11 +4,11 @@ import "../scss/products.scss";
 import ProductCard from "src/components/ProductCard";
 
 function Prodcuts() {
-  const { id } = useParams();
+  const { id: category } = useParams();
   const [productList, setProductList] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   async function fetchProducts() {
-    const products = await fetch("/items?category=" + id);
+    const products = await fetch("/items?category=" + category);
     const productsJson = await products.json();
     setProductList(productsJson.products);
     setLoading(false);
@@ -16,13 +16,13 @@ function Prodcuts() {
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [category]);
 
   return (
     <main className="products">
       <header className="title">
         <div className="title__accent">{"<"}</div>
-        <div>{id}</div>
+        <div>{category}</div>
         <div className="title__accent">{">"}</div>
       </header>
       <div className="products__grid">
