@@ -17,6 +17,7 @@ import MyBuild from "./pages/PartPicker";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import { AuthContextProvider } from "./contexts/AuthContext";
+import AccountDetails from "./pages/AccountDetails";
 import { PartsListProvidor } from "./contexts/PartsListContext";
 
 const router = createBrowserRouter(
@@ -37,7 +38,8 @@ const router = createBrowserRouter(
       <Route path="/builds" element={<Builds />} />
       <Route path="/other" element={<Other />} />
       <Route path="/mybuild" element={<MyBuild />} />
-    </Route>
+      <Route path="/accountdetails" element={<AccountDetails/>} />
+ </Route>
   )
 );
 
