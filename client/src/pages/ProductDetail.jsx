@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import "../scss/productDetails.scss";
 import Button from "src/components/Button";
 import comment from "../assets/icons/comment.png";
+import apiClient from "src/services/apiClient";
 
 const fields = {
   Case: ["Case Type", "Color", "Max Motherboard Size", "Height", "Width"],
@@ -95,6 +96,10 @@ function ProductDetail() {
     setLoading(false);
   }
 
+  async function handleAddCart(){
+    await apiClient.addToCart(productDetails.id)
+  }
+
   return (
     <main className="productDetails">
       {!loading && (
@@ -121,7 +126,7 @@ function ProductDetail() {
               })}
             </div>
             <div className="productDetails__btns">
-              <Button className="blue-primary">Add to cart</Button>
+              <Button className="blue-primary" onClick={handleAddCart}>Add to cart</Button>
               <Button className="black-primary">Add to build</Button>
             </div>
             <div className="productDetails__comment">

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../scss/productCard.scss";
 import Button from "./Button";
-
+import apiClient from 'src/services/apiClient';
 interface ProductCardProps {
   product_name: string;
   image_url: string;
@@ -11,6 +11,11 @@ interface ProductCardProps {
 
 function ProductCard(props: ProductCardProps) {
   const { product_name, price, image_url, id } = props;
+
+  async function handleAddCart(){
+    await apiClient.addToCart(id)
+  }
+
   return (
     <div className="productCard">
       <Link to={`${"/product/" + id}`} className="productCard__img-container">
@@ -22,7 +27,7 @@ function ProductCard(props: ProductCardProps) {
       <footer className="productCard__footer">
         <div className="productCard__price">{"$" + price}</div>
         <div className="productCard__btns">
-          <Button className="blue-primary">Add to cart</Button>
+          <Button className="blue-primary" onClick={handleAddCart} >Add to cart</Button>
           <Button className="black-primary">Add to build</Button>
         </div>
       </footer>

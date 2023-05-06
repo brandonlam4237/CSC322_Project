@@ -6,12 +6,13 @@ class ApiClient {
   accessToken: string;
   refreshToken: string;
   LOCAL_STORAGE_AUTH_KEY: string;
+  baseUrl:string;
   headers: {
     "Content-Type": string;
     Authorization: string | "";
   };
 
-  constructor() {
+  constructor(baseUrl:string) {
     this.accessToken = "null";
     this.refreshToken = "null";
     this.LOCAL_STORAGE_AUTH_KEY = "donut_pcs_local_storage_tokens_key";
@@ -19,6 +20,7 @@ class ApiClient {
       "Content-Type": "application/json",
       Authorization: "",
     };
+    this.baseUrl = baseUrl
   }
 
   setTokens(tokens: { access: string; refresh: string }) {
@@ -41,22 +43,22 @@ class ApiClient {
     }
     let requestInit;
 
-    // if request method is GET then do exlclude the "body" attribute
-    if (method != "GET") {
+    // if api call does not require a requestBody then exlclude the "body" attribute
+    if (Object.keys(requestBody).length === 0) {
       requestInit = {
         method: method,
         headers: this.headers,
-        body: JSON.stringify(requestBody),
       };
     } else {
       requestInit = {
         method: method,
         headers: this.headers,
+        body: JSON.stringify(requestBody),
       };
     }
-
+    let requestUrl : string = "http://localhost:8000" + endpoint
     try {
-      const response = await fetch(endpoint, requestInit);
+      const response = await fetch(requestUrl, requestInit);
       return await response.json();
     } catch (error: any) {
       console.error(error.response);
@@ -65,7 +67,7 @@ class ApiClient {
 
   async getUsers(usersParam: string) {
     return await this.apiRequest({
-      endpoint: `users/${usersParam}`,
+      endpoint: `/users/${usersParam}`,
       method: "GET",
       requestBody: {},
     });
@@ -73,7 +75,7 @@ class ApiClient {
 
   async activateUser(approvalForm: IApprovalForm, userId: number) {
     return await this.apiRequest({
-      endpoint: `users/activate/${userId}`,
+      endpoint: `/users/activate/${userId}`,
       method: "PATCH",
       requestBody: {
         is_active: approvalForm.is_active,
@@ -81,6 +83,34 @@ class ApiClient {
       },
     });
   }
+
+  // get shopping cart
+  async getCustomerCart(){
+    return await this.apiRequest({
+      endpoint:"/users/cart",
+      method:"GET",
+      requestBody:{}
+    })
+  }
+  // add item to shopping cart
+  async addToCart(itemId:number){
+    return await this.apiRequest({
+      endpoint: `/users/cart/${itemId}`,
+      method: "PUT",
+      requestBody: {},
+    });
+  }
+  // adjust quantity of item already in shopping cart
+  // doubles as delete 
+  async editItemQuantity(desiredQuantity:number, itemId:number){
+    return await this.apiRequest({
+      endpoint: `/users/cart/${itemId}`,
+      method: "PATCH",
+      requestBody: {
+        quantity:desiredQuantity
+      },
+    });
+  }
 }
 
-export default new ApiClient();
+export default new ApiClient("http://localhost:8000/");
