@@ -6,11 +6,19 @@ class ApiClient {
   accessToken: string;
   refreshToken: string;
   LOCAL_STORAGE_AUTH_KEY: string;
+  headers: {
+    "Content-Type": string;
+    Authorization: string | "";
+  };
 
   constructor() {
     this.accessToken = "null";
     this.refreshToken = "null";
     this.LOCAL_STORAGE_AUTH_KEY = "donut_pcs_local_storage_tokens_key";
+    this.headers = {
+      "Content-Type": "application/json",
+      Authorization: "",
+    };
   }
 
   setTokens(tokens: { access: string; refresh: string }) {
@@ -22,22 +30,34 @@ class ApiClient {
   async apiRequest({
     endpoint,
     method,
-    data = {},
+    requestBody = {},
   }: {
     endpoint: string;
     method: string;
-    data: any;
+    requestBody: object;
   }): Promise<any> {
-    const headers = {
-      "Content-Type": "application/json",
-      Authorization: "",
-    };
     if (this.accessToken !== "null") {
-      headers[`Authorization`] = `Bearer ${this.accessToken}`;
+      this.headers[`Authorization`] = `Bearer ${this.accessToken}`;
     }
+    let requestInit;
+
+    // if request method is GET then do exlclude the "body" attribute
+    if (method != "GET") {
+      requestInit = {
+        method: method,
+        headers: this.headers,
+        body: JSON.stringify(requestBody),
+      };
+    } else {
+      requestInit = {
+        method: method,
+        headers: this.headers,
+      };
+    }
+
     try {
-      const res = await axios({ url: endpoint, method, data, headers });
-      return { data: res.data, error: null };
+      const response = await fetch(endpoint, requestInit);
+      return await response.json();
     } catch (error: any) {
       console.error(error.response);
     }
@@ -47,26 +67,18 @@ class ApiClient {
     return await this.apiRequest({
       endpoint: `users/${usersParam}`,
       method: "GET",
-      data: {},
+      requestBody: {},
     });
   }
 
-  // not working at the moment
-  async activateUser({
-    approvalForm,
-    userId,
-  }: {
-    approvalForm: IApprovalForm;
-    userId: number;
-  }) {
-    let data = {
-      is_active: approvalForm.is_active,
-      memo: approvalForm.memo,
-    };
+  async activateUser(approvalForm: IApprovalForm, userId: number) {
     return await this.apiRequest({
       endpoint: `users/activate/${userId}`,
       method: "PATCH",
-      data,
+      requestBody: {
+        is_active: approvalForm.is_active,
+        memo: approvalForm.memo,
+      },
     });
   }
 }

@@ -1,11 +1,20 @@
 [
     {
         "model": "items.Product",
+        "pk": 232,
+        "fields": {
+            "brand": "Supermicro",
+            "product_name": "Micro-Tower Server",
+            "price": "1399.99"
+        }
+    },
+    {
+        "model": "items.Product",
         "pk": 233,
         "fields": {
             "brand": "Supermicro",
-            "product_name": "A+ Server AS- 1014S-WTRT",
-            "price": "2199.99"
+            "product_name": "Mid-Tower Server",
+            "price": "1349.99"
         }
     },
     {
@@ -22,8 +31,8 @@
         "pk": 235,
         "fields": {
             "brand": "Supermicro",
-            "product_name": "A+ Server AS- 1014S-WTRT",
-            "price": "2199.99"
+            "product_name": "SuperServer SYS-110T-M",
+            "price": "2999.99"
         }
     },
     {
@@ -31,8 +40,8 @@
         "pk": 236,
         "fields": {
             "brand": "Supermicro",
-            "product_name": "A+ Server AS- 1014S-WTRT",
-            "price": "2199.99"
+            "product_name": "SYS-5019C-L Server",
+            "price": "1299.99"
         }
     },
     {
@@ -40,17 +49,8 @@
         "pk": 237,
         "fields": {
             "brand": "Supermicro",
-            "product_name": "A+ Server AS- 1014S-WTRT",
-            "price": "2199.99"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 238,
-        "fields": {
-            "brand": "Supermicro",
-            "product_name": "A+ Server AS- 1014S-WTRT",
-            "price": "2199.99"
+            "product_name": "SuperServer SYS-5019C-MR",
+            "price": "1849.97"
         }
     }
 ]

@@ -27,46 +27,50 @@ const componentNames: string[] = [
   "Case",
 ];
 
-interface Part {
+interface IPart {
   component_name: string;
   product_name: string;
   image_url: string;
   price: number;
-  isAdded:Boolean
+  isAdded: Boolean;
 }
 
-interface PartsList {
-  CPU: Part;
-  "CPU Cooler": Part;
-  Motherboard: Part;
-  Memory: Part;
-  Storage: Part;
-  "Video Card": Part;
-  "Power Supply": Part;
-  Case: Part;
+interface IPartsList {
+  /* enclosing CPU and denoting its type as string prevents implicit type
+  any on keys error when using a string to access as a key to access the object */
+  [CPU: string]: IPart;
+  "CPU Cooler": IPart;
+  Motherboard: IPart;
+  Memory: IPart;
+  Storage: IPart;
+  "Video Card": IPart;
+  "Power Supply": IPart;
+  Case: IPart;
 }
 
-const partTemplate : Part = {
+const partTemplate: IPart = {
   component_name: "",
   product_name: "",
   image_url: "",
   price: -1,
-  isAdded:false,
-}
+  isAdded: false,
+};
 
 export default function PartsTable() {
-  const [partsList, setPartsList] = useState<PartsList>({
+  const [partsList, setPartsList] = useState<IPartsList>({
     CPU: partTemplate,
     "CPU Cooler": {
       component_name: "CPU Cooler",
-      product_name: "iCUE H100i ELITE CAPELLIX XT 240mm All in One Liquid CPU Cooling Kit",
-      image_url: "url",
+      product_name:
+        "iCUE H100i ELITE CAPELLIX XT 240mm All in One Liquid CPU Cooling Kit",
+      image_url:
+        "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=662683_537092_01_package_comping-jpg",
       price: 159.99,
-      isAdded:true,
+      isAdded: true,
     },
-    Motherboard:partTemplate,
-    Memory:partTemplate,
-    Storage:partTemplate,    
+    Motherboard: partTemplate,
+    Memory: partTemplate,
+    Storage: partTemplate,
     "Video Card": {
       component_name: "Video Card",
       product_name:
@@ -74,10 +78,10 @@ export default function PartsTable() {
       image_url:
         "https://90a1c75758623581b3f8-5c119c3de181c9857fcb2784776b17ef.ssl.cf2.rackcdn.com/660700_520452_01_front_zoom.jpg",
       price: 1199.99,
-      isAdded:true,
+      isAdded: true,
     },
-    "Power Supply":partTemplate,
-    Case:partTemplate
+    "Power Supply": partTemplate,
+    Case: partTemplate,
   });
 
   return (
@@ -92,31 +96,56 @@ export default function PartsTable() {
       </thead>
       <br />
       <tbody>
-        <TableBody partsList={partsList} />
+        <TableBody partsList={partsList} setPartsList={setPartsList} />
       </tbody>
     </table>
   );
 }
 
-function TableBody({ partsList }: any) {
+interface TableBodyProps {
+  partsList: IPartsList;
+  setPartsList: (part: IPartsList) => void;
+}
+function TableBody({ partsList, setPartsList }: TableBodyProps) {
+  function removePart(part: IPart) {
+    const componentToRemove: string = part.component_name;
+    setPartsList({
+      ...partsList,
+      [componentToRemove]: partTemplate,
+    });
+  }
+
+  function addPart(part: IPart) {
+    const componentToAdd: string = part.component_name;
+    setPartsList({
+      ...partsList,
+      [componentToAdd]: part,
+    });
+  }
+
   return (
     <>
       {componentNames.map((componentName, index) => {
-        if (partsList[`${componentName}`].isAdded) {
+        const part: any = partsList[`${componentName}`];
+        if (part.isAdded) {
           return (
             <tr>
-              <th>{componentName}</th>
-              <td>{partsList[`${componentName}`].product_name}</td>
-              <td>${partsList[`${componentName}`].price}</td>
+              <th className="row-header">{componentName}</th>
+              <td>{part.product_name}</td>
+              <td>${part.price}</td>
               <td className="remove-icon">
-                <FontAwesomeIcon icon={faXmark} size="xl" />
+                <FontAwesomeIcon
+                  icon={faXmark}
+                  size="xl"
+                  onClick={() => removePart(part)}
+                />
               </td>
             </tr>
           );
         } else {
           return (
             <tr>
-              <th>{componentName}</th>
+              <th className="row-header">{componentName}</th>
               <td>
                 <Link to={`/components/${PartsPathArray[index]}`}>
                   <Button className="blue-primary">

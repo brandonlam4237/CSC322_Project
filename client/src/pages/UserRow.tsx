@@ -5,6 +5,7 @@ import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useAuthContext } from "src/contexts/AuthContext";
 import MemoModal from "src/components/MemoModal";
+import apiClient from "src/services/apiClient";
 
 interface UserRowProps {
   username: string;
@@ -41,14 +42,7 @@ export function UserRow({
       memo: "No Issues With User",
     };
     try {
-      await fetch(`/users/activate/${userId}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`,
-        },
-        body: JSON.stringify(approvalForm),
-      });
+      apiClient.activateUser(approvalForm, userId);
       getAllUsers();
     } catch (error) {
       console.log(error);
@@ -75,7 +69,10 @@ export function UserRow({
         >
           <FontAwesomeIcon icon={faCheck} size="xl" />
         </Button>
-        <Button className="user-row__buttons__reject black-primary" onClick={openMemoModal}>
+        <Button
+          className="user-row__buttons__reject black-primary"
+          onClick={openMemoModal}
+        >
           <FontAwesomeIcon icon={faXmark} size="xl" />
         </Button>
       </div>
