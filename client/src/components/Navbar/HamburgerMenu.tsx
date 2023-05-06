@@ -83,39 +83,39 @@ function HamburgerMenu(props: props) {
             <ul className="hamburger-components__menu">
               <li>
                 <NavLink
-                  to="/components/cpus"
+                  to="/products/CPU"
                   className="hamburger-components__menu-item"
                 >
-                  CPUs
+                  CPU
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/components/coolers"
+                  to="/products/Cooling"
                   className="hamburger-components__menu-item"
                 >
-                  CPU Coolers
+                  Cooling
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/components/motherboards"
+                  to="/products/Motherboards"
                   className="hamburger-components__menu-item"
                 >
-                  Motherboards
+                  Motherboard
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/components/memory"
+                  to="/products/RAM"
                   className="hamburger-components__menu-item"
                 >
-                  Memory
+                  RAM
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/components/storage"
+                  to="/products/Storage"
                   className="hamburger-components__menu-item"
                 >
                   Storage
@@ -123,26 +123,26 @@ function HamburgerMenu(props: props) {
               </li>
               <li>
                 <NavLink
-                  to="/components/videocards"
+                  to="/products/GPU"
                   className="hamburger-components__menu-item"
                 >
-                  Video Cards
+                  GPU
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/components/power"
+                  to="/products/PSU"
                   className="hamburger-components__menu-item"
                 >
-                  Power Supplies
+                  PSU
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/components/cases"
+                  to="/products/Case"
                   className="hamburger-components__menu-item"
                 >
-                  Cases
+                  Case
                 </NavLink>
               </li>
               <li>

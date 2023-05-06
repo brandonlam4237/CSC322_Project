@@ -31,58 +31,46 @@ function NavOptComponents(props: props) {
         {componentsIsOpen && (
           <ul className="components__menu">
             <li>
-              <NavLink to="/components/cpus" className="components__menu-item">
-                CPUs
+              <NavLink to="/products/CPU" className="components__menu-item">
+                CPU
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/products/Cooling" className="components__menu-item">
+                Cooling
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/components/coolers"
+                to="/products/Motherboard"
                 className="components__menu-item"
               >
-                CPU Coolers
+                Motherboard
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/components/motherboards"
-                className="components__menu-item"
-              >
-                Motherboards
+              <NavLink to="/products/RAM" className="components__menu-item">
+                RAM
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/components/memory"
-                className="components__menu-item"
-              >
-                Memory
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/components/storage"
-                className="components__menu-item"
-              >
+              <NavLink to="/products/Storage" className="components__menu-item">
                 Storage
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/components/videocards"
-                className="components__menu-item"
-              >
-                Video Cards
+              <NavLink to="/products/GPU" className="components__menu-item">
+                GPU
               </NavLink>
             </li>
             <li>
-              <NavLink to="/components/power" className="components__menu-item">
-                Power Supplies
+              <NavLink to="/products/PSU" className="components__menu-item">
+                PSU
               </NavLink>
             </li>
             <li>
-              <NavLink to="/components/cases" className="components__menu-item">
-                Cases
+              <NavLink to="/products/Case" className="components__menu-item">
+                Case
               </NavLink>
             </li>
           </ul>
