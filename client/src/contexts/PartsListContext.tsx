@@ -118,7 +118,6 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
     function isString(value: any): value is string {
       return typeof value === "string";
     }
-    console.log("fetch table")
     const storagePartsList = localStorage.getItem(PARTS_LIST_KEY);
     // update state variable if there's a parts list in local storage
     if (isString(storagePartsList)) {
