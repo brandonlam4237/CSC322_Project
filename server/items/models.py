@@ -106,6 +106,10 @@ class CustomBuild(Product):
     build_maker = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
     parts = models.ManyToManyField(ComputerPart, related_name="build_parts")
 
+    # Ratings
+    num_ratings = models.IntegerField(default=0)
+    average_rating = models.IntegerField(default=0)
+
     objects = models.Manager()
 
     def __str__(self) -> str:
