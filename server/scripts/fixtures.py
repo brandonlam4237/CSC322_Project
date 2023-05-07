@@ -45,6 +45,9 @@ def process_secondary_data(item_paths) -> tuple:
 
             fields = {}
             try:
+                if "Flash Drive" in old_data["name"]:
+                    raise ValueError('No Flash Drives Allowed')
+
                 # Product Fields
                 fields["brand"] = old_data["brand"]
                 fields["product_name"] = old_data["name"]
@@ -121,6 +124,9 @@ def process_primary_data(item_paths) -> tuple:
 
             fields = {}
             try:
+                if "Flash Drive" in old_data["name"]:
+                    raise ValueError('No Flash Drives Allowed')
+
                 # Product Fields
                 fields["brand"] = old_data["brand"]
                 fields["product_name"] = old_data["name"]
