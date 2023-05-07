@@ -46,6 +46,7 @@ export interface IPartsList {
 }
 
 export interface IPart {
+  id:number;
   component_name: string;
   product_name: string;
   image_url: string;
@@ -54,6 +55,7 @@ export interface IPart {
 }
 
 export const partTemplate: IPart = {
+  id: -1,
   component_name: "",
   product_name: "",
   image_url: "",
@@ -71,6 +73,7 @@ export const partsListTemplate: IPartsList = {
   PSU: partTemplate,
   Case: partTemplate,
 };
+
 
 export const PartsListContext = createContext<IPartsListContext>({
   partsList: partsListTemplate,
@@ -104,6 +107,7 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
   const [partsList, setPartsList] = useState<IPartsList>(partsListTemplate);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [buildDescription, setBuildDescription] = useState<string>("");
+  const [buildForm, setBuildForm] = useState({});
 
   // functions
   function removePart(part: IPart) {

@@ -107,6 +107,7 @@ function ProductDetail() {
 
   function handleAddBuild() {
     const part = {
+      id: productDetails.id,
       product_name: productDetails.product_name,
       price: Number(productDetails.price),
       image_url: productDetails.image_url,
@@ -115,7 +116,6 @@ function ProductDetail() {
     };
     addPartToBuild(part);
   }
-
   return (
     <main className="productDetails">
       {!loading && (
