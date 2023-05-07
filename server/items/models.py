@@ -106,14 +106,47 @@ class CustomBuild(Product):
     build_maker = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
     parts = models.ManyToManyField(ComputerPart, related_name="build_parts")
 
+    description = models.TextField(default="")
+
     # Ratings
     num_ratings = models.IntegerField(default=0)
-    average_rating = models.IntegerField(default=0)
+    average_rating = models.DecimalField(
+        default=0.0, max_digits=2, decimal_places=1)
+    best_rating_count = models.IntegerField(default=0)
+    worst_rating_count = models.IntegerField(default=0)
 
     objects = models.Manager()
 
     def __str__(self) -> str:
         return f"{self.build_maker.username} - {self.product_name}"
+
+
+class SuggestedBuild(models.Model):
+    """
+    Suggested Build Model
+
+    Fields
+    ------
+    category : CharField
+        Category for Suggested Build
+    build : Build
+    """
+    class Category(models.TextChoices):
+        """
+        Categories of builds
+        """
+        BUSINESS = "Business", "Business"
+        GAMING = "Gaming", "Gaming"
+        ACADEMIC = "Academic", "Academic"
+
+    category = models.CharField(
+        max_length=20, choices=Category.choices, null=False)
+
+    build = models.OneToOneField(
+        CustomBuild, on_delete=models.CASCADE, null=False)
+
+    def __str__(self) -> str:
+        return str(self.build)
 
 
 class Cart(models.Model):
@@ -164,7 +197,7 @@ class CartItem(models.Model):
         Cart relating to the Cart Item
     quantity : IntegerField
         Quantity of cart item
-    
+
     Properties
     ----------
     price : float
