@@ -28,14 +28,14 @@ export interface IPartsListContext {
   setBuildDescription: (value: string) => void;
   removePart: (value: IPart) => void;
   addPart: (value: IPart) => void;
-  discardBuild:()=>void;
+  discardBuild: () => void;
 }
 
 export interface IPartsList {
   /* enclosing CPU and denoting its type as string prevents implicit type
   any on keys error when using a string to access as a key to access the object */
   [key: string]: IPart;
-  CPU:IPart;
+  CPU: IPart;
   Cooling: IPart;
   Motherboard: IPart;
   RAM: IPart;
@@ -46,7 +46,7 @@ export interface IPartsList {
 }
 
 export interface IPart {
-  id:number;
+  id: number;
   component_name: string;
   product_name: string;
   image_url: string;
@@ -74,14 +74,18 @@ export const partsListTemplate: IPartsList = {
   Case: partTemplate,
 };
 
+interface IBuildForm {
+  [key:string]: string | number,
+  build_description:string,
+}
 
 export const PartsListContext = createContext<IPartsListContext>({
   partsList: partsListTemplate,
-  buildDescription:"",
+  buildDescription: "",
   setPartsList: (value: IPartsList) => {
     /* do nothing */
   },
-  setBuildDescription: (value: string) =>{
+  setBuildDescription: (value: string) => {
     /* do nothing */
   },
   removePart: (value: IPart) => {
@@ -90,9 +94,9 @@ export const PartsListContext = createContext<IPartsListContext>({
   addPart: (value: IPart) => {
     /* do nothing */
   },
-  discardBuild:()=>{
+  discardBuild: () => {
     /* */
-  }
+  },
 });
 
 export function usePartsListContext() {
@@ -107,7 +111,9 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
   const [partsList, setPartsList] = useState<IPartsList>(partsListTemplate);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [buildDescription, setBuildDescription] = useState<string>("");
-  const [buildForm, setBuildForm] = useState({});
+  const [buildForm, setBuildForm] = useState<IBuildForm>({
+    build_description:buildDescription,
+  });
 
   // functions
   function removePart(part: IPart) {
@@ -126,8 +132,8 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
     });
   }
 
-  function discardBuild(){
-    setPartsList(partsListTemplate)
+  function discardBuild() {
+    setPartsList(partsListTemplate);
   }
   /* automatically check local storage for partsList object 
     upon mounting of PartsListProvidor */
@@ -141,26 +147,46 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
     if (isString(storagePartsList)) {
       setPartsList(JSON.parse(storagePartsList));
     }
-    setIsLoading(false)
+    setIsLoading(false);
   }, []);
 
   /* Update browser local storage when a new part has been 
     added/removed from partsList state variable */
   useEffect(() => {
-    // don't update local storage before checking if a partsList is in there
+    // don't update local storage before checking if partsList is in there
     if (isLoading == false) {
       localStorage.setItem(PARTS_LIST_KEY, JSON.stringify(partsList));
+
+      // update buildForm that will be sent to backend
+      const formattedPartsList = formatPartsList(partsList);
+      setBuildForm({
+        ...formattedPartsList,
+        build_description:buildDescription,
+      })
     }
   }, [partsList]);
+
+  function formatPartsList(partsList: IPartsList): { [key: string]: number } {
+    let componentNamesArray = Object.keys(partsList) //get the keys as an array
+    // accumulate an object containing only the Id(s) while ignoring any with a value of -1
+    let formattedParts = componentNamesArray.reduce<{ [key: string]: number }>((acc, key) => {
+      let id = partsList[key].id
+      if (id!= -1) acc[key] = id
+      return acc;
+    }, {});
+
+    return formattedParts
+  };
 
   const partsListVariables = {
     partsList,
     buildDescription,
+    buildForm,
     setPartsList,
     setBuildDescription,
     addPart,
     removePart,
-    discardBuild
+    discardBuild,
   };
 
   return (
