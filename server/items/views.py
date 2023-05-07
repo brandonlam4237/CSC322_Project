@@ -63,7 +63,7 @@ class PartDetail(APIView):
         part = get_object_or_404(ComputerPart, id=id)
         serializer = ComputerPartSerializer(part, many=False)
         return Response(
-            {'products': serializer.data},
+            {'product': serializer.data},
             status=status.HTTP_200_OK
         )
 
@@ -127,7 +127,7 @@ class CheckCompatibility(APIView):
         """
         if computer_part is None:
             return True
-        return computer_part.category != category
+        return computer_part.category == category
 
     def post(self, request):
         """
