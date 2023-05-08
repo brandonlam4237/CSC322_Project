@@ -17,6 +17,7 @@ import MyBuild from "./pages/PartPicker";
 import Products from "./pages/Products";
 import { AuthContextProvider } from "./contexts/AuthContext";
 import ProductDetail from "./pages/ProductDetail";
+import Cart from "./pages/Cart";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -36,6 +37,7 @@ const router = createBrowserRouter(
       <Route path="/builds" element={<Builds />} />
       <Route path="/other" element={<Other />} />
       <Route path="/mybuild" element={<MyBuild />} />
+      <Route path="/cart" element={<Cart />} />
     </Route>
   )
 );

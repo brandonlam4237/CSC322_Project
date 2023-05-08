@@ -76,7 +76,9 @@ function Navbar() {
             userType={user.user_type}
           />
         )}
-        <img src={cart_icon} className="options__icon" alt="cart icon" />
+        <NavLink to="/cart">
+          <img src={cart_icon} className="options__icon" alt="cart icon" />
+        </NavLink>
       </section>
 
       {hamburgerMenuIsOpen && (
