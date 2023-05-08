@@ -212,7 +212,22 @@ class BuildSerializer(serializers.ModelSerializer):
     Serializer for Custom Build Data
     """
 
-    build_parts = ComputerPartSerializer(many=True)
+    class BuilderSerializer(serializers.ModelSerializer):
+        class Meta:
+            """
+            Fields
+            ------
+                id
+                username
+            """
+            model = User
+            fields = (
+                'id',
+                'username',
+            )
+
+    builder = BuilderSerializer()
+    parts = ComputerPartSerializer(many=True)
 
     class Meta:
         """
