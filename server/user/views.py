@@ -681,6 +681,10 @@ class ManageOrders(APIView):
                 status=status.HTTP_403_FORBIDDEN
             )
 
+        user.balance -= cart.total_price if not user.has_discount else round(
+            cart.total_price * 0.9, 2)
+        user.save()
+
         cart_items = cart.cart_items.all()
         new_order = Order(customer=user, address=address,
                           total_price=cart.total_price)
@@ -718,7 +722,8 @@ class CheckoutBuild(APIView):
             )
 
         build = get_object_or_404(CustomBuild, id=id)
-        cart_item, _ = CartItem.objects.get_or_create(product=build, quantity=1)
+        cart_item, _ = CartItem.objects.get_or_create(
+            product=build, quantity=1)
         total_price = build.total_price
 
         if total_price > user.balance:
@@ -728,6 +733,10 @@ class CheckoutBuild(APIView):
                 {'error': 'Insufficient balance'},
                 status=status.HTTP_403_FORBIDDEN
             )
+
+        user.balance -= total_price if not user.has_discount else round(
+            total_price * 0.9, 2)
+        user.save()
 
         new_order = Order(customer=user, address=address,
                           total_price=total_price)
