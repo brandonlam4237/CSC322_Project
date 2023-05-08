@@ -9,7 +9,7 @@ from rest_framework.response import Response
 
 
 from .serializers import CustomerSerializer, UserSerializer
-from .serializers import CartItemsSerializer
+from .serializers import CartItemsSerializer, BuildSerializer
 from .serializers import OrderSerializer
 
 User = get_user_model()
@@ -19,6 +19,7 @@ CustomBuild = apps.get_model('items', 'CustomBuild')
 Cart = apps.get_model('items', 'Cart')
 CartItem = apps.get_model('items', 'CartItem')
 Order = apps.get_model('items', 'Order')
+CustomBuild = apps.get_model('items', 'CustomBuild')
 
 
 """
@@ -523,7 +524,7 @@ class ManageCart(APIView):
         Handles a PATCH request to edit quantity of items in cart
     """
 
-    def put(self, request, id):
+    def post(self, request, id):
         """
         Handles a PUT request to add item to customer cart
         """
@@ -645,7 +646,7 @@ class ManageOrders(APIView):
             status=status.HTTP_200_OK
         )
 
-    def put(self, request):
+    def post(self, request):
         """
         Handles a PUT request to submit a user order
         """
@@ -690,3 +691,57 @@ class ManageOrders(APIView):
         cart.cart_items.clear()
 
         return Response(status=status.HTTP_201_CREATED)
+
+
+"""
+Builds Views
+"""
+
+
+class GetLatestBuild(APIView):
+    """
+    Endpoint to get the latest build the user made
+    """
+
+    def get(self, request):
+        """
+        Handles a GET request for retrieving user's latest build
+        """
+        try:
+            user = request.user
+            latest_build = CustomBuild.objects.filter(user=user).latest()
+            serializer = BuildSerializer(latest_build)
+            return Response(
+                serializer.data,
+                status=status.HTTP_200_OK
+            )
+        except ObjectDoesNotExist:
+            return Response(
+                {}, status=status.HTTP_200_OK
+            )
+
+
+class MakeBuildVisible(APIView):
+    """
+    Endpoint to make a build visible
+    """
+
+    def patch(self, request, id):
+        """
+        Handles PATCH request for making a build visible
+        """
+        user = request.user
+        build = get_object_or_404(CustomBuild, id=id)
+
+        if build.builder != user:
+            return Response(
+                {'error': 'Only the original builder can change this setting'},
+                status=status.HTTP_401_UNAUTHORIZED
+            )
+
+        build.visible = True
+        build.save()
+        return Response(
+            {'success': 'Build has been made visible'},
+            status=status.HTTP_200_OK
+        )
