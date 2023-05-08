@@ -121,7 +121,12 @@ class RetrieveCurrentUser(APIView):
             return Response(user.data, status=status.HTTP_200_OK)
 
         if user.is_employee:
-            if user.warnings >= 6:
+            if user.warnings >= 3:
+                user.warnings = 0
+                user.position_tier -= 1
+                user.save()
+
+            if user.position_tier <= -2:
                 user.blacklisted = True
                 user.is_active = False
                 user.save()
