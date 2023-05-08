@@ -226,7 +226,8 @@ class ManageBuild(APIView):
         """
         Handles a GET request for retrieving custom builds
         """
-        build_list = CustomBuild.objects.all()
+        build_list = sorted(CustomBuild.objects.filter(
+            visible=True), key=lambda x: x.overall_rating, reverse=True)
         serializer = BuildSerializer(build_list, many=True)
         return Response(
             serializer.data,
@@ -241,7 +242,13 @@ class ManageBuild(APIView):
 
         user = request.user
 
-        build_name = data.get('Build Name')
+        build_name = data.get('build_name')
+
+        if not build_name:
+            return Response(
+                {'error': 'Must provide a name for the build'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
         cpu_id = data.get('CPU')
         gpu_id = data.get('GPU')
@@ -324,8 +331,8 @@ class ManageBuild(APIView):
 
         build = CustomBuild.objects.create(
             product_name=build_name, price=total_price, builder=user)
-        build.build_parts.add(cpu, gpu, motherboard, ram,
-                              computer_case, psu, cooling, storage)
+        build.parts.add(cpu, gpu, motherboard, ram,
+                        computer_case, psu, cooling, storage)
         build.save()
 
         return Response(status=status.HTTP_201_CREATED)
@@ -340,7 +347,7 @@ class ManageRating(APIView):
         """
         Handles a POST request to add a rating to a build
         """
-        rating = request.data.get('ratings')
+        rating = request.data.get('rating')
 
         if not rating:
             return Response(
@@ -358,8 +365,8 @@ class ManageRating(APIView):
         ratings = build.ratings
 
         ratings["ratings_list"].append(rating)
-        ratings["avg_ratings"] = ratings["avg_ratings"] * \
-            ratings["num_ratings"] / (ratings["num_ratings"] + 1)
+        ratings["avg_ratings"] = (ratings["avg_ratings"] * \
+            ratings["num_ratings"] + rating) / (ratings["num_ratings"] + 1)
         ratings["num_ratings"] += 1
         ratings["best_rating_count"] += 1 if rating == 5 else 0
         ratings["worst_rating_count"] += 1 if rating == 1 else 0

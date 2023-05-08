@@ -709,7 +709,7 @@ class GetLatestBuild(APIView):
         """
         try:
             user = request.user
-            latest_build = CustomBuild.objects.filter(user=user).latest()
+            latest_build = CustomBuild.objects.filter(builder=user).latest()
             serializer = BuildSerializer(latest_build)
             return Response(
                 serializer.data,
