@@ -68,6 +68,7 @@ class EmployeeSerializer(serializers.ModelSerializer):
             'user_type',
             'application_memo',
             'warnings',
+            'compliments',
             'position_tier',
         )
 
@@ -203,4 +204,21 @@ class OrderSerializer(serializers.ModelSerializer):
         model = Order
         exclude = (
             'customer',
+        )
+
+
+class BuildSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Custom Build Data
+    """
+
+    build_parts = ComputerPartSerializer(many=True)
+
+    class Meta:
+        """
+        Serialize all fields in the Build Model
+        """
+        model = CustomBuild
+        exclude = (
+            'date_created',
         )

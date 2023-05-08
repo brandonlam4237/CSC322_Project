@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product, ComputerPart
+from .models import Product, ComputerPart, CustomBuild
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -25,3 +25,20 @@ class ComputerPartSerializer(serializers.ModelSerializer):
         """
         model = ComputerPart
         fields = '__all__'
+
+
+class BuildSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Custom Build Data
+    """
+
+    build_parts = ComputerPartSerializer(many=True)
+
+    class Meta:
+        """
+        Serialize all fields in the Build Model
+        """
+        model = CustomBuild
+        exclude = (
+            'date_created',
+        )
