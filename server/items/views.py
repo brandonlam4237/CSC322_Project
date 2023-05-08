@@ -243,7 +243,7 @@ class ManageBuild(APIView):
         user = request.user
 
         build_name = data.get('build_name')
-        description = data.get("build_description", "")
+        build_description = data.get("build_description", "")
 
         if not build_name:
             return Response(
@@ -331,7 +331,8 @@ class ManageBuild(APIView):
         )
 
         build = CustomBuild.objects.create(
-            product_name=build_name, price=total_price, builder=user, description=description)
+            product_name=build_name, price=total_price,
+            builder=user, build_description=build_description)
         build.parts.add(cpu, gpu, motherboard, ram,
                         computer_case, psu, cooling, storage)
         build.save()
