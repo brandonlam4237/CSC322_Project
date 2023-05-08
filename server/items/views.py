@@ -243,7 +243,7 @@ class ManageBuild(APIView):
         user = request.user
 
         build_name = data.get('build_name')
-        description = data.get("description", "")
+        description = data.get("build_description", "")
 
         if not build_name:
             return Response(
@@ -344,6 +344,19 @@ class ManageRating(APIView):
     Endpoint to manage build ratings
     """
 
+    def update_rewards(self, user):
+        """
+        Update rewards if applicable for customers and employees
+        """
+        if user.user_type == "Customer":
+            if user.compliments % 3 == 0:
+                user.has_discount = True
+                user.save()
+        elif user.user_type == "Employee":
+            if user.compliments % 3 == 0:
+                user.position_tier += 1
+                user.save()
+
     def post(self, request, id):
         """
         Handles a POST request to add a rating to a build
@@ -379,10 +392,15 @@ class ManageRating(APIView):
             build.builder.compliments += 1
             build.builder.save()
 
+            self.update_rewards(build.builder)
+
         if build.ratings["best_rating_count"] == 0 and build.ratings["worst_rating_count"] == 3:
             build.builder.warnings += 1
             build.visible = False
             build.builder.save()
+            build.save()
+
+            self.update_rewards(build.builder)
 
         return Response(
             {'success': 'Rating has been added'},

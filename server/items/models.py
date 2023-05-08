@@ -109,7 +109,7 @@ class CustomBuild(Product):
     parts = models.ManyToManyField(ComputerPart, related_name="build_parts")
     visible = models.BooleanField(default=False)
 
-    description = models.TextField(default="")
+    build_description = models.TextField(default="")
     date_created = models.DateTimeField(auto_now_add=True)
 
     # Ratings
