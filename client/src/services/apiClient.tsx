@@ -55,7 +55,7 @@ class ApiClient {
         body: JSON.stringify(requestBody),
       };
     }
-    let requestUrl : string = "http://localhost:8000" + endpoint
+    let requestUrl : string = this.baseUrl + endpoint
     try {
       const response = await fetch(requestUrl, requestInit);
       return await response.json();
@@ -121,4 +121,4 @@ class ApiClient {
   }
 }
 
-export default new ApiClient("http://localhost:8000/");
+export default new ApiClient("http://localhost:8000");
