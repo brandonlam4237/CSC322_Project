@@ -1,5 +1,8 @@
+import json
+import math
 from django.db import models
 from django.contrib.auth import get_user_model
+
 
 User = get_user_model()
 
@@ -103,19 +106,53 @@ class CustomBuild(Product):
     parts : ManyToManyField
         Parts the Custom Build Takes
     """
-    build_maker = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
+    builder = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
     parts = models.ManyToManyField(ComputerPart, related_name="build_parts")
+    visible = models.BooleanField(default=False)
 
     description = models.TextField(default="")
+    date_created = models.DateTimeField(auto_now_add=True)
 
     # Ratings
-    num_ratings = models.IntegerField(default=0)
-    average_rating = models.DecimalField(
-        default=0.0, max_digits=2, decimal_places=1)
-    best_rating_count = models.IntegerField(default=0)
-    worst_rating_count = models.IntegerField(default=0)
+    DEFAULT_RATINGS = {
+        "ratings_list": [],
+        "num_ratings": 0,
+        "avg_ratings": 0,
+        "best_rating_count": 0,
+        "worst_rating_count": 0
+    }
+    ratings = models.JSONField(default=json.dumps(DEFAULT_RATINGS))
 
     objects = models.Manager()
+
+    get_latest_by = ['date_created']
+
+    @property
+    def overall_rating(self):
+        """
+        http://www.evanmiller.org/ranking-items-with-star-ratings.html
+        """
+        if not self.ratings["ratings_list"]:
+            return 0
+
+        ns = self.ratings["ratings_list"]
+
+        N = sum(ns)
+        K = len(ns)
+        s = list(range(K, 0, -1))
+        s2 = [sk**2 for sk in s]
+        z = 1.65
+
+        def f(s, ns):
+            N = sum(ns)
+            K = len(ns)
+            return sum(sk*(nk+1) for sk, nk in zip(s, ns)) / (N+K)
+        fsns = f(s, ns)
+        return fsns - z * math.sqrt((f(s2, ns) - fsns**2)/(N+K+1))
+    
+    class Meta:
+        """Metadata"""
+        ordering = ["overall_rating"]
 
     def __str__(self) -> str:
         return f"{self.build_maker.username} - {self.product_name}"
