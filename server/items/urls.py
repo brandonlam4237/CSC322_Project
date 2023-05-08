@@ -2,7 +2,7 @@ from django.urls import path
 
 from .views import PartList, PartDetail
 from .views import ManageComment
-from .views import CheckCompatibility
+from .views import CheckCompatibility, ManageBuild, ManageRating
 
 urlpatterns = [
     # Part URLs
@@ -13,5 +13,7 @@ urlpatterns = [
     path('comments/<int:id>', ManageComment.as_view()),
 
     # Build URLs
-    path('builds/compatibility', CheckCompatibility.as_view())
+    path('builds', ManageBuild.as_view()),
+    path('builds/compatibility', CheckCompatibility.as_view()),
+    path('builds/rate/<int:id>', ManageRating.as_view()),
 ]
