@@ -24,6 +24,7 @@ const PARTS_LIST_KEY = "custom-build-parts-list-object";
 export interface IPartsListContext {
   partsList: IPartsList;
   buildDescription: string;
+  buildForm:IBuildForm;
   setPartsList: (value: IPartsList) => void;
   setBuildDescription: (value: string) => void;
   removePart: (value: IPart) => void;
@@ -74,7 +75,7 @@ export const partsListTemplate: IPartsList = {
   Case: partTemplate,
 };
 
-interface IBuildForm {
+export interface IBuildForm {
   [key:string]: string | number,
   build_description:string,
 }
@@ -82,6 +83,9 @@ interface IBuildForm {
 export const PartsListContext = createContext<IPartsListContext>({
   partsList: partsListTemplate,
   buildDescription: "",
+  buildForm:{
+    build_description:""
+  },
   setPartsList: (value: IPartsList) => {
     /* do nothing */
   },

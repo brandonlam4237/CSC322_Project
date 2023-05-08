@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuthContext } from "src/contexts/AuthContext";
 import "../scss/partpicker.scss";
 import PartsTable from "src/components/PartsTable";
 import Button from "src/components/Button";
 import { usePartsListContext } from "src/contexts/PartsListContext";
+import apiClient from "src/services/apiClient";
 
 export default function MyBuild() {
   const [isCompatible, setIsCompatible] = useState(true);
@@ -11,16 +12,47 @@ export default function MyBuild() {
   const user = authValues.userData;
   const [isLoading, setisLoading] = useState<boolean>(true);
 
-  const partsListVariables = usePartsListContext()
-  const buildDescription = partsListVariables.buildDescription
-  const setBuildDescription = partsListVariables.setBuildDescription
-  const discardBuild = partsListVariables.discardBuild
-
-  function handleOnTextAreaChange(event: React.ChangeEvent<HTMLTextAreaElement>){
-    setBuildDescription(event.target.value)
+  const partsListVariables = usePartsListContext();
+  const buildDescription = partsListVariables.buildDescription;
+  const setBuildDescription = partsListVariables.setBuildDescription;
+  const buildForm = partsListVariables.buildForm
+  const discardBuild = partsListVariables.discardBuild;
+  const [compatibilityIssues, setCompatibilityIssues] = useState([]);
+  function handleOnTextAreaChange(
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) {
+    setBuildDescription(event.target.value);
   }
+
+  useEffect(() => {
+    async function validateBuild() {
+      const responseData = await apiClient.validateBuild(
+        partsListVariables.buildForm
+      );
+      let incompatibilityArr = responseData.incompatibilities
+      setIsCompatible(incompatibilityArr.length == 0 ? true : false)
+      setCompatibilityIssues(responseData.incompatibilities);
+      setisLoading(false)
+    }
+
+    validateBuild();
+  }, [buildForm]);
+
+  // TODO: make this look cleaner :face_vomiting: 
+  let incompatibleParts = "";
+  if (compatibilityIssues.length == 2) incompatibleParts += compatibilityIssues[0] + " and " + compatibilityIssues[1]
+  else {
+    let size = compatibilityIssues.length
+    for (let i = 0; i < size - 1; i++ ){
+      incompatibleParts += compatibilityIssues[i] + ", "
+    }
+    incompatibleParts += "and " + compatibilityIssues[size - 1]
+  }
+  
   return (
     <div className="fullscreen-bg">
+      
+      {isLoading ? "" : 
       <main className="mybuild__component">
         <h1 className="mybuild__component__header">
           <div className="logo__accent-left">{`<`}</div> My Custom Build{" "}
@@ -33,8 +65,7 @@ export default function MyBuild() {
             </p>
           ) : (
             <p className="compatibility-banner incompatible">
-              There are compatibility issues with your build! Please check: CPU,
-              Motherboard
+              There are compatibility issues with your build! Please check: {incompatibleParts}
             </p>
           )}
           <PartsTable />
@@ -61,7 +92,9 @@ export default function MyBuild() {
           <div className="buttons-container">
             <div className="buttons-container__save-options">
               <Button className="blue-primary">Validate Build</Button>
-              <Button className="blue-secondary" onClick={discardBuild}>Discard Build</Button>
+              <Button className="blue-secondary" onClick={discardBuild}>
+                Discard Build
+              </Button>
             </div>
             {user.user_type == ("Owner" || "Employee") ? (
               <Button className="buttons-container__submit-build black-primary">
@@ -74,7 +107,7 @@ export default function MyBuild() {
             )}
           </div>
         </div>
-      </main>
+      </main>}
     </div>
   );
 }
