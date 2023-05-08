@@ -243,6 +243,7 @@ class ManageBuild(APIView):
         user = request.user
 
         build_name = data.get('build_name')
+        description = data.get("description", "")
 
         if not build_name:
             return Response(
@@ -330,7 +331,7 @@ class ManageBuild(APIView):
         )
 
         build = CustomBuild.objects.create(
-            product_name=build_name, price=total_price, builder=user)
+            product_name=build_name, price=total_price, builder=user, description=description)
         build.parts.add(cpu, gpu, motherboard, ram,
                         computer_case, psu, cooling, storage)
         build.save()
@@ -365,8 +366,8 @@ class ManageRating(APIView):
         ratings = build.ratings
 
         ratings["ratings_list"].append(rating)
-        ratings["avg_ratings"] = (ratings["avg_ratings"] * \
-            ratings["num_ratings"] + rating) / (ratings["num_ratings"] + 1)
+        ratings["avg_ratings"] = (ratings["avg_ratings"] *
+                                  ratings["num_ratings"] + rating) / (ratings["num_ratings"] + 1)
         ratings["num_ratings"] += 1
         ratings["best_rating_count"] += 1 if rating == 5 else 0
         ratings["worst_rating_count"] += 1 if rating == 1 else 0
@@ -380,6 +381,7 @@ class ManageRating(APIView):
 
         if build.ratings["best_rating_count"] == 0 and build.ratings["worst_rating_count"] == 3:
             build.builder.warnings += 1
+            build.visible = False
             build.builder.save()
 
         return Response(
