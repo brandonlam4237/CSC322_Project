@@ -98,7 +98,7 @@ class CustomBuild(Product):
 
     Fields
     ------
-    build_maker : ForeignKey
+    builder : ForeignKey
         User who made the build
     build_name : CharField
         A unique name for the build
@@ -158,7 +158,7 @@ class CustomBuild(Product):
         get_latest_by = ['date_created']
 
     def __str__(self) -> str:
-        return f"{self.build_maker.username} - {self.product_name}"
+        return f"{self.builder.username} - {self.product_name}"
 
 
 class SuggestedBuild(models.Model):
