@@ -1,4 +1,4 @@
-import axios from "axios";
+import { IBuildForm } from "src/contexts/PartsListContext";
 import { IApprovalForm } from "src/pages/UserRow";
 
 class ApiClient {
@@ -42,7 +42,6 @@ class ApiClient {
       this.headers[`Authorization`] = `Bearer ${this.accessToken}`;
     }
     let requestInit;
-
     // if api call does not require a requestBody then exlclude the "body" attribute
     if (Object.keys(requestBody).length === 0) {
       requestInit = {
@@ -109,6 +108,15 @@ class ApiClient {
       requestBody: {
         quantity:desiredQuantity
       },
+    });
+  }
+  // takes in a build partlist and checks for any compatibility issues
+  // among the parts
+  async validateBuild(buildForm:IBuildForm){
+    return await this.apiRequest({
+      endpoint: `/items/builds/compatibility`,
+      method: "POST",
+      requestBody: buildForm
     });
   }
 }
