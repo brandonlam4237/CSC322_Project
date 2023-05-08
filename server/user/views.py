@@ -565,7 +565,7 @@ class ManageCart(APIView):
 
         try:
             quantity = request.data.get('quantity')
-            if not quantity:
+            if quantity is None:
                 return Response(
                     {'error': 'Please enter the quantity amount'},
                     status=status.HTTP_400_BAD_REQUEST
@@ -590,7 +590,7 @@ class ManageCart(APIView):
             cart_item = CartItem.objects.get(
                 cart=shopping_cart, product=product)
             if quantity == 0:
-                CartItem.objects.delete(cart_item)
+                cart_item.delete()
             else:
                 cart_item.quantity = quantity
                 cart_item.save()
