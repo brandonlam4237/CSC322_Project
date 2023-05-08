@@ -348,7 +348,7 @@ class ManageRating(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        if rating > 5 and rating < 1 and not isinstance(rating, int):
+        if 1 > rating > 5 and not isinstance(rating, int):
             return Response(
                 {'error': 'Rating must be between 1 and 5 inclusive and it must be an integer'},
                 status=status.HTTP_400_BAD_REQUEST
