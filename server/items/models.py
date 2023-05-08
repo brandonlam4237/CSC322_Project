@@ -151,6 +151,15 @@ class CustomBuild(Product):
         fsns = f(s, ns)
         return fsns - z * math.sqrt((f(s2, ns) - fsns**2)/(N+K+1))
 
+    @property
+    def total_price(self) -> float:
+        """
+        Total price of the build
+        """
+        parts = self.parts.all()
+        total = sum([part.price for part in parts])
+        return round(total, 2)
+
     class Meta:
         """
         Metadata Class
