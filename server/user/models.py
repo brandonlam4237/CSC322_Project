@@ -87,6 +87,7 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     # Shop Related Fields
     blacklisted = models.BooleanField(default=False)
     balance = models.IntegerField(default=0)
+    has_discount = models.BooleanField(default=False)
 
     # Account Activation Fields
     is_active = models.BooleanField(default=False)
