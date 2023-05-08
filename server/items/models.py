@@ -1,4 +1,3 @@
-import json
 import math
 from django.db import models
 from django.contrib.auth import get_user_model
@@ -114,18 +113,20 @@ class CustomBuild(Product):
     date_created = models.DateTimeField(auto_now_add=True)
 
     # Ratings
-    DEFAULT_RATINGS = {
-        "ratings_list": [],
-        "num_ratings": 0,
-        "avg_ratings": 0,
-        "best_rating_count": 0,
-        "worst_rating_count": 0
-    }
-    ratings = models.JSONField(default=json.dumps(DEFAULT_RATINGS))
+    def default_ratings():
+        """
+        Default Ratings
+        """
+        return {
+            "ratings_list": [],
+            "num_ratings": 0,
+            "avg_ratings": 0,
+            "best_rating_count": 0,
+            "worst_rating_count": 0
+        }
+    ratings = models.JSONField(default=default_ratings)
 
     objects = models.Manager()
-
-    get_latest_by = ['date_created']
 
     @property
     def overall_rating(self):
@@ -133,7 +134,7 @@ class CustomBuild(Product):
         http://www.evanmiller.org/ranking-items-with-star-ratings.html
         """
         if not self.ratings["ratings_list"]:
-            return 0
+            return 0.0
 
         ns = self.ratings["ratings_list"]
 
@@ -149,10 +150,12 @@ class CustomBuild(Product):
             return sum(sk*(nk+1) for sk, nk in zip(s, ns)) / (N+K)
         fsns = f(s, ns)
         return fsns - z * math.sqrt((f(s2, ns) - fsns**2)/(N+K+1))
-    
+
     class Meta:
-        """Metadata"""
-        ordering = ["overall_rating"]
+        """
+        Metadata Class
+        """
+        get_latest_by = ['date_created']
 
     def __str__(self) -> str:
         return f"{self.build_maker.username} - {self.product_name}"
@@ -208,12 +211,18 @@ class Cart(models.Model):
 
     @property
     def total_price(self) -> float:
+        """
+        Total price of the cart
+        """
         cartitems = self.cart_items.all()
         total = sum([item.price for item in cartitems])
         return round(total, 2)
 
     @property
     def num_items(self) -> int:
+        """
+        Number of items in the cart
+        """
         cartitems = self.cart_items.all()
         quantity = sum([item.quantity for item in cartitems])
         return quantity
@@ -253,6 +262,9 @@ class CartItem(models.Model):
 
     @property
     def price(self):
+        """
+        Total price of the item(s)
+        """
         new_price = self.product.price * self.quantity
         return round(new_price, 2)
 
