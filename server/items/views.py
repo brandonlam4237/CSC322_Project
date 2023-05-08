@@ -337,7 +337,10 @@ class ManageBuild(APIView):
                         computer_case, psu, cooling, storage)
         build.save()
 
-        return Response(status=status.HTTP_201_CREATED)
+        return Response(
+            {'build_id': build.id},
+            status=status.HTTP_201_CREATED
+        )
 
 
 class ManageRating(APIView):
