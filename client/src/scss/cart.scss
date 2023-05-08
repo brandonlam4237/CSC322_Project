@@ -1,0 +1,66 @@
+@import "colors";
+
+.cart-page {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $light-gray;
+    width: 60%;
+    padding-bottom: 2rem;
+    &__title {
+      display: flex;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    &__title-accent {
+      color: $accent;
+    }
+
+    &__item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 90%;
+    }
+
+    &__item {
+      background-color: white;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+    }
+
+    &__item-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    &__item-img {
+      height: 10rem;
+      width: 10rem;
+      object-fit: cover;
+    }
+
+    &__item-name {
+      font-weight: bold;
+    }
+
+    &__total {
+      font-weight: bold;
+      font-size: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      background-color: white;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}

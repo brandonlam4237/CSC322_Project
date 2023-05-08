@@ -11,7 +11,7 @@ function Cart() {
   }, []);
   async function fetchCart() {
     const res = await apiClient.getCustomerCart();
-    console.log(res.items[0].product.product_name);
+    console.log(res.items[0].product.quantity);
     setItemsArr(res.items);
     setTotal(res.total_price);
   }
@@ -26,18 +26,36 @@ function Cart() {
           <p>Shopping Cart</p>
           <p className="cart__title-accent">{">"}</p>
         </div>
-        <div className="cart__item-list">
-          {itemsArr?.map((item, i) => {
-            return (
-              <div key={i} className="cart__item">
-                <div>{item.product.product_name}</div>
-                <div>{item.product.quantity}</div>
-                <div>{item.product.price}</div>
-              </div>
-            );
-          })}
-        </div>
-        <div>{total}</div>
+        {itemsArr.length === 0 && (
+          <div style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+            Cart is empty
+          </div>
+        )}
+        {itemsArr.length !== 0 && (
+          <div className="cart__item-list">
+            {itemsArr?.map((item, i) => {
+              return (
+                <div key={i} className="cart__item">
+                  <div className="cart__item-details">
+                    <div className="cart__item-name">
+                      {item.product.product_name}
+                    </div>
+                    <div>{`Quantity: ${item.quantity}`}</div>
+                    <div>{`$${item.product.price}`}</div>
+                  </div>
+                  <img
+                    className="cart__item-img"
+                    src="https://90a1c75758623581b3f8-5c119c3de181c9857fcb2784776b17ef.ssl.cf2.rackcdn.com/660700_520452_01_front_zoom.jpg"
+                  />
+                </div>
+              );
+            })}
+            <div className="cart__total">
+              <p>Total:</p>
+              <p>{`$${total}`}</p>
+            </div>
+          </div>
+        )}
       </div>
     </main>
   );
