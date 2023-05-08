@@ -517,8 +517,8 @@ class ManageCart(APIView):
 
     Methods
     -------
-    put(request)
-        Handles a PUT request to add items to cart
+    post(request)
+        Handles a POST request to add items to cart
 
     patch(request)
         Handles a PATCH request to edit quantity of items in cart
@@ -526,7 +526,7 @@ class ManageCart(APIView):
 
     def post(self, request, id):
         """
-        Handles a PUT request to add item to customer cart
+        Handles a POST request to add item to customer cart
         """
         user = request.user
 
@@ -553,7 +553,7 @@ class ManageCart(APIView):
 
     def patch(self, request, id):
         """
-        Handles a PUT request to change quantity of an item in a cart or delete it
+        Handles a PATCH request to change quantity of an item in a cart or delete it
         """
         user = request.user
 
@@ -623,8 +623,8 @@ class ManageOrders(APIView):
     get(request)
         Handles a GET request to retrieve user orders
 
-    put(request)
-        Handles a PUT request to submit a user order
+    post(request)
+        Handles a POST request to submit a user order
     """
 
     def get(self, request):
@@ -648,7 +648,7 @@ class ManageOrders(APIView):
 
     def post(self, request):
         """
-        Handles a PUT request to submit a user order
+        Handles a POST request to submit a user order
         """
         user = request.user
 
@@ -689,6 +689,51 @@ class ManageOrders(APIView):
             new_order.items.add(item)
         new_order.save()
         cart.cart_items.clear()
+
+        return Response(status=status.HTTP_201_CREATED)
+
+
+class CheckoutBuild(APIView):
+    """
+    Endpoint to order a custom build
+    """
+
+    def post(self, request, id):
+        """
+        Handles a POST request for checking out a build
+        """
+        user = request.user
+
+        if user.user_type != "Customer":
+            return Response(
+                {'error': 'Only customers can submit orders'},
+                status=status.HTTP_401_UNAUTHORIZED
+            )
+
+        address = request.data.get('address')
+        if not address:
+            return Response(
+                {'error': 'Address must be provided'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        build = get_object_or_404(CustomBuild, id=id)
+        cart_item, _ = CartItem.objects.get_or_create(product=build, quantity=1)
+        total_price = build.total_price
+
+        if total_price > user.balance:
+            user.warnings += 1
+            user.save()
+            return Response(
+                {'error': 'Insufficient balance'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
+        new_order = Order(customer=user, address=address,
+                          total_price=total_price)
+        new_order.save()
+        new_order.items.add(cart_item)
+        new_order.save()
 
         return Response(status=status.HTTP_201_CREATED)
 
