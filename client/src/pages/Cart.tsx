@@ -1,6 +1,7 @@
 import "../scss/cart.scss";
 import apiClient from "src/services/apiClient";
 import { useEffect, useState } from "react";
+import Button from "src/components/Button";
 
 function Cart() {
   const [itemsArr, setItemsArr] = useState<any[]>([]);
@@ -11,13 +12,24 @@ function Cart() {
   }, []);
   async function fetchCart() {
     const res = await apiClient.getCustomerCart();
-    console.log(res.items[0].product.quantity);
+    console.log(res.items[0].product.id);
     setItemsArr(res.items);
     setTotal(res.total_price);
   }
   useEffect(() => {
     console.log(itemsArr);
   }, [itemsArr]);
+
+  async function handleEditRemove(id: number, currQuantity: number) {
+    await apiClient.editItemQuantity(currQuantity - 1, id);
+    fetchCart();
+  }
+
+  async function handleEditAdd(id: number, currQuantity: number) {
+    await apiClient.editItemQuantity(currQuantity + 1, id);
+    fetchCart();
+  }
+
   return (
     <main className="cart-page">
       <div className="cart">
@@ -40,8 +52,26 @@ function Cart() {
                     <div className="cart__item-name">
                       {item.product.product_name}
                     </div>
-                    <div>{`Quantity: ${item.quantity}`}</div>
                     <div>{`$${item.product.price}`}</div>
+                    <div>{`Quantity: ${item.quantity}`}</div>
+                    <div className="edit-btns">
+                      <Button
+                        className="black-primary edit-btn"
+                        onClick={() => {
+                          handleEditRemove(item.product.id, item.quantity);
+                        }}
+                      >
+                        -
+                      </Button>
+                      <Button
+                        className="blue-primary edit-btn"
+                        onClick={() => {
+                          handleEditAdd(item.product.id, item.quantity);
+                        }}
+                      >
+                        +
+                      </Button>
+                    </div>
                   </div>
                   <img
                     className="cart__item-img"

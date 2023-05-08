@@ -63,4 +63,13 @@
       padding-right: 2rem;
     }
   }
+
+  .edit-btns {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .edit-btn {
+    width: 2.5rem;
+  }
 }
