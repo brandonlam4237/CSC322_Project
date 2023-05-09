@@ -32,6 +32,7 @@ function Cart() {
 
   async function handleCheckout() {
     await apiClient.purchaseOrder("address");
+    fetchCart();
   }
 
   return (

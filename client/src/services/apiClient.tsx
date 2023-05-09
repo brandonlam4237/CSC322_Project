@@ -116,7 +116,7 @@ class ApiClient {
   async purchaseOrder(orderAddress: string) {
     return await this.apiRequest({
       endpoint: `/users/orders`,
-      method: "PUT",
+      method: "POST",
       requestBody: {
         address: orderAddress,
       },
