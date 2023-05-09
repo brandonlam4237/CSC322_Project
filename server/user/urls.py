@@ -5,6 +5,7 @@ from .views import UserList
 from .views import ActivateUser
 from .views import AddBalance
 from .views import CustomerCart, ManageCart, ManageOrders
+from .views import GetLatestBuild, MakeBuildVisible, CheckoutBuild
 
 urlpatterns = [
     path('', UserList.as_view()),
@@ -27,4 +28,9 @@ urlpatterns = [
 
     # Order Endpoints
     path('orders', ManageOrders.as_view()),
+
+    # Build Endpoints
+    path('builds/latest', GetLatestBuild.as_view()),
+    path('builds/visible/<int:id>', MakeBuildVisible.as_view()),
+    path('builds/checkout/<int:id>', CheckoutBuild.as_view()),
 ]

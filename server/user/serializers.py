@@ -37,6 +37,9 @@ class UserSerializer(serializers.ModelSerializer):
             'blacklisted',
             'balance',
             'application_memo',
+            'warnings',
+            'compliments',
+            'position_tier',
         )
 
 
@@ -64,6 +67,9 @@ class EmployeeSerializer(serializers.ModelSerializer):
             'blacklisted',
             'user_type',
             'application_memo',
+            'warnings',
+            'compliments',
+            'position_tier',
         )
 
 
@@ -92,6 +98,9 @@ class CustomerSerializer(serializers.ModelSerializer):
             'blacklisted',
             'user_type',
             'application_memo',
+            'warnings',
+            'compliments',
+            'has_discount',
         )
 
 
@@ -196,4 +205,36 @@ class OrderSerializer(serializers.ModelSerializer):
         model = Order
         exclude = (
             'customer',
+        )
+
+
+class BuildSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Custom Build Data
+    """
+
+    class BuilderSerializer(serializers.ModelSerializer):
+        class Meta:
+            """
+            Fields
+            ------
+                id
+                username
+            """
+            model = User
+            fields = (
+                'id',
+                'username',
+            )
+
+    builder = BuilderSerializer()
+    parts = ComputerPartSerializer(many=True)
+
+    class Meta:
+        """
+        Serialize all fields in the Build Model
+        """
+        model = CustomBuild
+        exclude = (
+            'date_created',
         )

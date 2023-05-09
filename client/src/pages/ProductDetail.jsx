@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "../scss/productDetails.scss";
 import Button from "src/components/Button";
 import comment from "../assets/icons/comment.png";
 import apiClient from "src/services/apiClient";
+import { usePartsListContext } from "src/contexts/PartsListContext";
+
 
 const fields = {
   Case: ["Case Type", "Color", "Max Motherboard Size", "Height", "Width"],
@@ -71,11 +73,11 @@ function ProductDetail() {
   async function fetchDetails() {
     const details = await fetch("/items/" + id);
     const detailsJSON = await details.json();
-    const specsArr = fields[detailsJSON.products.category];
+    const specsArr = fields[detailsJSON.product.category];
 
     let specObj = {};
     specsArr.forEach((spec) => {
-      specObj[spec] = detailsJSON.products.specs[spec];
+      specObj[spec] = detailsJSON.product.specs[spec];
     });
 
     const specKeysArr = [];
@@ -92,7 +94,7 @@ function ProductDetail() {
 
     setSpecKeys(specKeysArr);
     setSpecVals(specValsArr);
-    setProductDetails(detailsJSON.products);
+    setProductDetails(detailsJSON.product);
     setLoading(false);
   }
 
@@ -100,6 +102,20 @@ function ProductDetail() {
     await apiClient.addToCart(productDetails.id)
   }
 
+  const partsListVariables = usePartsListContext();
+  const addPartToBuild = partsListVariables.addPart;
+
+  function handleAddBuild() {
+    const part = {
+      id: productDetails.id,
+      product_name: productDetails.product_name,
+      price: Number(productDetails.price),
+      image_url: productDetails.image_url,
+      component_name: productDetails.category,
+      isAdded: true,
+    };
+    addPartToBuild(part);
+  }
   return (
     <main className="productDetails">
       {!loading && (
@@ -107,7 +123,7 @@ function ProductDetail() {
           <div className="productDetails__card-front">
             <img
               className="productDetails__img"
-              src="https://90a1c75758623581b3f8-5c119c3de181c9857fcb2784776b17ef.ssl.cf2.rackcdn.com/660700_520452_01_front_zoom.jpg"
+              src={productDetails.image_url}
             />
           </div>
           <div className="productDetails__card-back">
@@ -127,7 +143,7 @@ function ProductDetail() {
             </div>
             <div className="productDetails__btns">
               <Button className="blue-primary" onClick={handleAddCart}>Add to cart</Button>
-              <Button className="black-primary">Add to build</Button>
+              <Link to="/mybuild"><Button className="black-primary" onClick={handleAddBuild}>Add to build</Button></Link>
             </div>
             <div className="productDetails__comment">
               <img className="productDetails__comment-icon" src={comment} />

@@ -129,8 +129,14 @@ Donut PCs is a website application that uses React and Django
 
 8. Load the fixtures
 
+   Mac/Linux:
    ```txt
    python manage.py loaddata items/fixtures/*/*.json
+   ```
+
+   Windows:
+   ```txt
+   foreach ($f in Get-ChildItem .\items\fixtures\*\*.json) { python manage.py loaddata $f.FullName }
    ```
 
 ## How to Run

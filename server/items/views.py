@@ -1,3 +1,4 @@
+import math
 from rest_framework.views import APIView
 from rest_framework import status, permissions
 from rest_framework.response import Response
@@ -5,8 +6,8 @@ from django.shortcuts import get_object_or_404
 
 from better_profanity import profanity
 
-from .models import ComputerPart, Product
-from .serializers import ComputerPartSerializer
+from .models import ComputerPart, Product, CustomBuild
+from .serializers import ComputerPartSerializer, BuildSerializer
 
 
 class PartList(APIView):
@@ -63,7 +64,7 @@ class PartDetail(APIView):
         part = get_object_or_404(ComputerPart, id=id)
         serializer = ComputerPartSerializer(part, many=False)
         return Response(
-            {'products': serializer.data},
+            {'product': serializer.data},
             status=status.HTTP_200_OK
         )
 
@@ -74,7 +75,10 @@ class ManageComment(APIView):
     """
     permission_classes = (permissions.AllowAny, )
 
-    def put(self, request, id):
+    def post(self, request, id):
+        """
+        Handles a PUT request for adding comments
+        """
         user = request.user
         product = get_object_or_404(Product, id=id)
 
@@ -106,3 +110,303 @@ class ManageComment(APIView):
 
         product.comments.create(username=username, comment=comment)
         return Response(status=status.HTTP_201_CREATED)
+
+
+"""
+Build Endpoints
+"""
+
+
+class CheckCompatibility(APIView):
+    """
+    Endpoint for checking compatibility in build parts
+    """
+
+    def validate_part(self, computer_part, category):
+        """
+        Validate computer part
+        """
+        if computer_part is None:
+            return True
+        return computer_part.category == category
+
+    def post(self, request):
+        """
+        Handles a POST request for checking compatibility
+        """
+        data = request.data
+
+        cpu_id = data.get('CPU')
+        gpu_id = data.get('GPU')
+        motherboard_id = data.get('Motherboard')
+        ram_id = data.get('RAM')
+        case_id = data.get('Case')
+        psu_id = data.get('PSU')
+        cooling_id = data.get('Cooling')
+        storage_id = data.get('Storage')
+
+        cpu = get_object_or_404(
+            ComputerPart, id=cpu_id) if cpu_id is not None else None
+        gpu = get_object_or_404(
+            ComputerPart, id=gpu_id) if gpu_id is not None else None
+        motherboard = get_object_or_404(
+            ComputerPart, id=motherboard_id) if motherboard_id is not None else None
+        ram = get_object_or_404(
+            ComputerPart, id=ram_id) if ram_id is not None else None
+        computer_case = get_object_or_404(
+            ComputerPart, id=case_id) if case_id is not None else None
+        psu = get_object_or_404(
+            ComputerPart, id=psu_id) if psu_id is not None else None
+        cooling = get_object_or_404(
+            ComputerPart, id=cooling_id) if cooling_id is not None else None
+        storage = get_object_or_404(
+            ComputerPart, id=storage_id) if storage_id is not None else None
+
+        if not (self.validate_part(cpu, "CPU") and
+                self.validate_part(gpu, "GPU") and
+                self.validate_part(motherboard, "Motherboard") and
+                self.validate_part(ram, "RAM") and
+                self.validate_part(computer_case, "Case") and
+                self.validate_part(psu, "PSU") and
+                self.validate_part(cooling, "Cooling") and
+                self.validate_part(storage, "Storage")):
+            return Response(
+                {'error': 'At least one of the parts is not of proper category'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        incompatibilities = set()
+
+        # CPU and Motherboard Compatibility Check
+        if cpu and motherboard:
+            if cpu.specs["Socket Type"] != motherboard.specs["Socket Type"]:
+                incompatibilities.update(["CPU", "Motherboard"])
+
+        # Motherboard and Case Compatibility Check
+        if motherboard and computer_case:
+            if motherboard.specs["Form Factor"] not in computer_case.specs["Motherboard Support"]:
+                incompatibilities.update(["Case", "Motherboard"])
+
+        # RAM and Motherboard Compatibility Check
+        if ram and motherboard:
+            if ram.specs["Memory Speed (MHz)"] not in motherboard.specs["Memory Type"]:
+                incompatibilities.update(["Memory", "Motherboard"])
+
+        # PSU and GPU Compatibility Check
+        if psu and gpu:
+            recommended_wattage = int(
+                gpu.specs["Recommended Power Supply"].split(' ')[0])
+            psu_wattage = int(psu.specs["Wattage"].split(' ')[0])
+            if psu_wattage < recommended_wattage:
+                incompatibilities.update(["Power Supply", "Video Card"])
+
+        # CPU Cooler Compatibility Check
+        if cooling:
+            if "Case Fan" in cooling.product_name:
+                incompatibilities.add("CPU Cooler")
+
+        return Response(
+            {"incompatibilities": list(incompatibilities)},
+            status=status.HTTP_200_OK
+        )
+
+
+class ManageBuild(APIView):
+    """
+    Endpoint to manage builds
+    """
+
+    def validate_part(self, computer_part, category):
+        """
+        Validate computer part
+        """
+        return computer_part.category == category
+
+    def get(self, request):
+        """
+        Handles a GET request for retrieving custom builds
+        """
+        build_list = sorted(CustomBuild.objects.filter(
+            visible=True), key=lambda x: x.overall_rating, reverse=True)
+        serializer = BuildSerializer(build_list, many=True)
+        return Response(
+            serializer.data,
+            status=status.HTTP_200_OK
+        )
+
+    def post(self, request):
+        """
+        Handles a POST request for adding a build
+        """
+        data = request.data
+
+        user = request.user
+
+        build_name = data.get('build_name')
+        build_description = data.get("build_description", "")
+
+        if not build_name:
+            return Response(
+                {'error': 'Must provide a name for the build'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        cpu_id = data.get('CPU')
+        gpu_id = data.get('GPU')
+        motherboard_id = data.get('Motherboard')
+        ram_id = data.get('RAM')
+        case_id = data.get('Case')
+        psu_id = data.get('PSU')
+        cooling_id = data.get('Cooling')
+        storage_id = data.get('Storage')
+
+        if not (cpu_id and gpu_id and motherboard_id and ram_id and
+                case_id and psu_id and cooling_id and storage_id):
+            return Response(
+                {'error': 'All parts must be present to make a build'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Get Parts
+        cpu = get_object_or_404(ComputerPart, id=cpu_id)
+        gpu = get_object_or_404(ComputerPart, id=gpu_id)
+        motherboard = get_object_or_404(ComputerPart, id=motherboard_id)
+        ram = get_object_or_404(ComputerPart, id=ram_id)
+        computer_case = get_object_or_404(ComputerPart, id=case_id)
+        psu = get_object_or_404(ComputerPart, id=psu_id)
+        cooling = get_object_or_404(ComputerPart, id=cooling_id)
+        storage = get_object_or_404(ComputerPart, id=storage_id)
+
+        # Verify Part Categories
+        if not (self.validate_part(cpu, "CPU") and
+                self.validate_part(gpu, "GPU") and
+                self.validate_part(motherboard, "Motherboard") and
+                self.validate_part(ram, "RAM") and
+                self.validate_part(computer_case, "Case") and
+                self.validate_part(psu, "PSU") and
+                self.validate_part(cooling, "Cooling") and
+                self.validate_part(storage, "Storage")):
+            return Response(
+                {'error': 'At least one of the parts is not of proper category'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Compatibility Check
+        incompatibilities = set()
+
+        # CPU and Motherboard
+        if cpu.specs["Socket Type"] != motherboard.specs["Socket Type"]:
+            incompatibilities.update(["CPU", "Motherboard"])
+
+        # Case and Motherboard
+        if motherboard.specs["Form Factor"] not in computer_case.specs["Motherboard Support"]:
+            incompatibilities.update(["Case", "Motherboard"])
+
+        # RAM and Motherboard
+        if ram.specs["Memory Speed (MHz)"] not in motherboard.specs["Memory Type"]:
+            incompatibilities.update(["Memory", "Motherboard"])
+
+        # PSU and GPU
+        recommended_wattage = int(
+            gpu.specs["Recommended Power Supply"].split(' ')[0])
+        psu_wattage = int(psu.specs["Wattage"].split(' ')[0])
+        if psu_wattage < recommended_wattage:
+            incompatibilities.update(["Power Supply", "Video Card"])
+
+        # CPU Cooler
+        if "Case Fan" in cooling.product_name:
+            incompatibilities.add("CPU Cooler")
+
+        total_price = sum(
+            [
+                cpu.price,
+                gpu.price,
+                motherboard.price,
+                ram.price,
+                computer_case.price,
+                psu.price,
+                cooling.price,
+                storage.price
+            ]
+        )
+
+        build = CustomBuild.objects.create(
+            product_name=build_name, price=total_price,
+            builder=user, build_description=build_description)
+        build.parts.add(cpu, gpu, motherboard, ram,
+                        computer_case, psu, cooling, storage)
+        build.save()
+
+        return Response(
+            {'build_id': build.id},
+            status=status.HTTP_201_CREATED
+        )
+
+
+class ManageRating(APIView):
+    """
+    Endpoint to manage build ratings
+    """
+
+    def update_rewards(self, user):
+        """
+        Update rewards if applicable for customers and employees
+        """
+        if user.user_type == "Customer":
+            if user.compliments % 3 == 0:
+                user.has_discount = True
+                user.save()
+        elif user.user_type == "Employee":
+            if user.compliments % 3 == 0:
+                user.position_tier += 1
+                user.save()
+
+    def post(self, request, id):
+        """
+        Handles a POST request to add a rating to a build
+        """
+        rating = request.data.get('rating')
+
+        if not rating:
+            return Response(
+                {'error': 'Must provide a rating for the build'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        if 1 > rating > 5 and not isinstance(rating, int):
+            return Response(
+                {'error': 'Rating must be between 1 and 5 inclusive and it must be an integer'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        build = get_object_or_404(CustomBuild, id=id)
+        ratings = build.ratings
+
+        ratings["ratings_list"].append(rating)
+        ratings["avg_ratings"] = (ratings["avg_ratings"] *
+                                  ratings["num_ratings"] + rating) / (ratings["num_ratings"] + 1)
+        ratings["num_ratings"] += 1
+        ratings["best_rating_count"] += 1 if rating == 5 else 0
+        ratings["worst_rating_count"] += 1 if rating == 1 else 0
+
+        build.ratings = ratings
+        build.save()
+
+        if build.ratings["best_rating_count"] == 3 and build.ratings["worst_rating_count"] == 0:
+            build.builder.compliments += 1
+            build.builder.save()
+
+            self.update_rewards(build.builder)
+
+        if build.ratings["best_rating_count"] == 0 and build.ratings["worst_rating_count"] == 3:
+            build.builder.warnings += 1
+            build.visible = False
+            build.builder.save()
+            build.save()
+
+            self.update_rewards(build.builder)
+
+        return Response(
+            {'success': 'Rating has been added'},
+            status=status.HTTP_200_OK
+        )

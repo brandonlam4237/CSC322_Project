@@ -39,6 +39,8 @@
   justify-content: space-between;
   flex-direction: row;
   column-gap: 10px;
+  margin-bottom: 50px;
+
   &__save-options {
     display: flex;  
     column-gap: 10px;
@@ -100,5 +102,12 @@
   max-width: 1200px;
   min-height:200px;
   padding: 10px;
+  resize: none;
+}
+
+#suggested-build-name{
+  max-width: 1200px;
+  padding: 10px;
+  margin-bottom: 15px;
   resize: none;
 }

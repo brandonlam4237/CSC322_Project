@@ -45,11 +45,18 @@ def process_secondary_data(item_paths) -> tuple:
 
             fields = {}
             try:
+                if "Flash Drive" in old_data["name"]:
+                    raise ValueError('No Flash Drives Allowed')
+
                 # Product Fields
                 fields["brand"] = old_data["brand"]
                 fields["product_name"] = old_data["name"]
                 fields["price"] = old_data["price"]
-                fields["image_url"] = old_data["images"][0]
+
+                clean_img_url = "https://90a1c75758623581b3f8-5c119c3de181c9857fcb2784776b17ef.ssl.cf2.rackcdn.com/"
+                clean_img_url = clean_img_url + old_data["images"][0].replace(
+                    "https://www.microcenter.com/endeca/zoomFullScreen.aspx?src=", "").replace("-", ".")
+                fields["image_url"] = clean_img_url
 
                 # Specific Fields
                 fields["product_sku"] = old_data["specs"]["SKU"]
@@ -121,6 +128,9 @@ def process_primary_data(item_paths) -> tuple:
 
             fields = {}
             try:
+                if "Flash Drive" in old_data["name"]:
+                    raise ValueError('No Flash Drives Allowed')
+
                 # Product Fields
                 fields["brand"] = old_data["brand"]
                 fields["product_name"] = old_data["name"]

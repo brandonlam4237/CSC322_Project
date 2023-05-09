@@ -3,15 +3,6 @@
         "model": "items.Product",
         "pk": 391,
         "fields": {
-            "brand": "Micro Center",
-            "product_name": "64GB SuperSpeed USB 3.1 (Gen 1) Flash Drive",
-            "price": "4.99"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 392,
-        "fields": {
             "brand": "G.Skill",
             "product_name": "Ripjaws 32GB 2 x 16GB DDR4-3200 PC4-25600 CL-22 SO-DIMM Memory Kit 3200C22D-32GRS",
             "price": "79.99"
@@ -19,7 +10,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 393,
+        "pk": 392,
         "fields": {
             "brand": "G.Skill",
             "product_name": "Trident Z Neo Series RGB 32GB (2 x 16GB) DDR4-3600 PC4-28800 CL16 Dual Channel Memory Kit F4-3600C16D-32GTZNC - Black",
@@ -28,7 +19,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 394,
+        "pk": 393,
         "fields": {
             "brand": "TeamGroup",
             "product_name": "T-Force Delta RGB 64GB (2 x 32GB) DDR5-6000 PC5-48000 CL38 Dual Channel Desktop Memory Kit FF3D564G6000HC3 - Black",
@@ -37,7 +28,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 395,
+        "pk": 394,
         "fields": {
             "brand": "TeamGroup",
             "product_name": "T-FORCE VULCAN Z 64GB (2 x 32GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit TLZGD464G3200H - Gray",
@@ -46,16 +37,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 396,
-        "fields": {
-            "brand": "Micro Center",
-            "product_name": "512GB  SuperSpeed USB 3.1 (Gen 1) Flash Drive",
-            "price": "44.99"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 397,
+        "pk": 395,
         "fields": {
             "brand": "Corsair",
             "product_name": "VENGEANCE RGB PRO SL 32GB (2 x 16GB) DDR4-3600 PC4-28800 CL18 Dual Channel Desktop Memory Kit CMH32GX4M2D3600 - Black",
@@ -64,7 +46,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 398,
+        "pk": 396,
         "fields": {
             "brand": "Crucial",
             "product_name": "16GB (2 x 8GB) DDR4-3200 PC4-25600 CL22 Dual Channel Desktop Memory Kit CT2K8G4DFRA32A - Green",
@@ -73,7 +55,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 399,
+        "pk": 397,
         "fields": {
             "brand": "Corsair",
             "product_name": "Vengeance RGB Pro 16GB (2 x 8GB) DDR4-3600 PC4-28800 CL18 Dual Channel Desktop Memory Kit CMW16GX4M2D3600C18 - Black",
@@ -82,7 +64,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 400,
+        "pk": 398,
         "fields": {
             "brand": "Corsair",
             "product_name": "Vengeance LPX 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMK32GX4M2E3200 - Black",
@@ -91,16 +73,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 401,
-        "fields": {
-            "brand": "Micro Center",
-            "product_name": "16GB SuperSpeed USB 3.1 (Gen 1) Flash Drive",
-            "price": "3.49"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 402,
+        "pk": 399,
         "fields": {
             "brand": "Corsair",
             "product_name": "Vengeance RGB 64GB (2 x 32GB) DDR5-5600 PC5-44800 CL40 Dual Channel Desktop Memory Kit CMH64GX5M2B5600 - Black",
@@ -109,7 +82,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 403,
+        "pk": 400,
         "fields": {
             "brand": "G.Skill",
             "product_name": "Ripjaws V 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit F4-3200C16D-32G - Black",
@@ -118,7 +91,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 404,
+        "pk": 401,
         "fields": {
             "brand": "Corsair",
             "product_name": "Vengeance LPX 16GB (2 x 8GB) DDR4-3200 C16 Dual Channel Desktop Memory Kit CMK16GX4M2E3200 - Black",
@@ -127,7 +100,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 405,
+        "pk": 402,
         "fields": {
             "brand": "Corsair",
             "product_name": "VENGEANCE RGB PRO SL 32GB (2 x 16GB) DDR4-3600 PC4-28800 CL18 Dual Channel Desktop Memory Kit CMH32GX4M2D36KW - White",
@@ -136,7 +109,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 406,
+        "pk": 403,
         "fields": {
             "brand": "G.Skill",
             "product_name": "Aegis Series 32GB (2 x 16GB) DDR4-2666 PC4-21300 CL19 Dual Channel Desktop Memory Kit F4-2666C19D-32GIS - Black/Red",
@@ -145,7 +118,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 407,
+        "pk": 404,
         "fields": {
             "brand": "TeamGroup",
             "product_name": "T-FORCE Delta RGB 64GB (2 x 32GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit TF4D464G3200HC1 - White",
@@ -154,7 +127,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 408,
+        "pk": 405,
         "fields": {
             "brand": "TeamGroup",
             "product_name": "T-FORCE Delta RGB 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit TF3D416G3200HC - Black",
@@ -163,7 +136,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 409,
+        "pk": 406,
         "fields": {
             "brand": "Corsair",
             "product_name": "Vengeance RGB Pro 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit 16GX4M2C320C16W - White",
@@ -172,7 +145,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 410,
+        "pk": 407,
         "fields": {
             "brand": "TeamGroup",
             "product_name": "T-FORCE VULCAN Z 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit TLZGD416G3200H - Gray",
@@ -181,7 +154,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 411,
+        "pk": 408,
         "fields": {
             "brand": "TeamGroup",
             "product_name": "T-FORCE VULCAN Z 32GB (2 x 16GB) DDR4-3600 PC4-28800 CL18 Dual Channel Desktop Memory Kit TLZGD432G3600HC - Gray",
@@ -190,7 +163,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 412,
+        "pk": 409,
         "fields": {
             "brand": "Corsair",
             "product_name": "Vengeance RGB Pro 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMW32GX4M2E3200C16 - Black",
@@ -199,7 +172,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 413,
+        "pk": 410,
         "fields": {
             "brand": "Crucial",
             "product_name": "32GB (2 x 16GB) DDR4-3200 PC4-25600 CL22 Dual Channel Desktop Memory Kit CT2K16G4DFRA32A - Black",
@@ -208,7 +181,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 414,
+        "pk": 411,
         "fields": {
             "brand": "G.Skill",
             "product_name": "Trident Z5 RGB Series 64GB (2 x 32GB) DDR5-6000 PC5-48000 CL30 Dual Channel Desktop Memory Kit F5-6000J3040G32GX2-TZ5RK - Black",
@@ -217,7 +190,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 415,
+        "pk": 412,
         "fields": {
             "brand": "Corsair",
             "product_name": "Vengeance RGB Pro SL 32GB (2 x 16GB) DDR4-3600 PC4-28800 CL20 Dual Channel Desktop Memory Kit MH32GX4M2C3600 - Black",
@@ -226,7 +199,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 416,
+        "pk": 413,
         "fields": {
             "brand": "G.Skill",
             "product_name": "Ripjaws S5 32GB (2 x 16GB) DDR5-6000 PC5-48000 CL36 Dual Channel Desktop Memory Kit F5-6000J3636F16GX2-RS5K - Black",
@@ -235,7 +208,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 417,
+        "pk": 414,
         "fields": {
             "brand": "Corsair",
             "product_name": "Dominator Platinum RGB 32GB (2 x 16GB) DDR5-6000 PC5-48000 CL36 Dual Channel Desktop Memory Kit CMT32GX5M2D6000 - Black",
@@ -244,7 +217,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 418,
+        "pk": 415,
         "fields": {
             "brand": "G.Skill",
             "product_name": "Ripjaws V 32GB (2 x 16GB) DDR4-3600 PC4-28800 CL18 Dual Channel Desktop Memory Kit F4-3600C18D-32GVK - Black",
@@ -253,7 +226,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 419,
+        "pk": 416,
         "fields": {
             "brand": "Patriot",
             "product_name": "Patriot Viper 3 Series 16GB (2 x 8GB) DDR3-1600 PC3-12800 CL10 Dual Channel Desktop Memory Kit PV316G160C0K - Black",
@@ -262,16 +235,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 420,
-        "fields": {
-            "brand": "Micro Center",
-            "product_name": "256GB SuperSpeed USB 3.1 (Gen 1) Flash Drive - Purple",
-            "price": "18.99"
-        }
-    },
-    {
-        "model": "items.Product",
-        "pk": 421,
+        "pk": 417,
         "fields": {
             "brand": "Corsair",
             "product_name": "Vengeance LPX 64GB (2 x 32GB) DDR4-3600 PC4-28800 CL18 Dual Channel Desktop Memory Kit CMK64GX4M2D3600 - Black",
@@ -280,7 +244,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 422,
+        "pk": 418,
         "fields": {
             "brand": "G.Skill",
             "product_name": "Ripjaws V 64GB (2 x 32GB) DDR4-3600 PC4-28800 CL18 Dual Channel Desktop Memory Kit F4-3600C18D-64GVK - Black",
@@ -289,7 +253,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 423,
+        "pk": 419,
         "fields": {
             "brand": "Corsair",
             "product_name": "VENGEANCE RGB PRO SL 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMH32GX4M2E32KW - White",
@@ -298,7 +262,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 424,
+        "pk": 420,
         "fields": {
             "brand": "Corsair",
             "product_name": "Vengeance RGB RT 32GB (2 x 16GB) DDR4-3600 PC4-28800 CL16 Dual Channel Desktop Memory Kit CMN32GX4M2Z3600 - Black",
@@ -307,7 +271,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 425,
+        "pk": 421,
         "fields": {
             "brand": "G.Skill",
             "product_name": "Ripjaws V 32GB (2 x 16GB) DDR4-3600 PC4-28800 CL16 Dual Channel Desktop Memory Kit F4-3600C16D-32GVKC - Black",
@@ -316,7 +280,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 426,
+        "pk": 422,
         "fields": {
             "brand": "Corsair",
             "product_name": "VENGEANCE RGB PRO SL 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMH32GX4M2E3200 - Black",
@@ -325,7 +289,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 427,
+        "pk": 423,
         "fields": {
             "brand": "Corsair",
             "product_name": "Vengeance RGB Pro 64GB (2 x 32GB) DDR4-3600 PC4-28800 CL18 Dual Channel Desktop Memory Kit CMW64GX4M2D3600 - Black",
@@ -334,7 +298,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 428,
+        "pk": 424,
         "fields": {
             "brand": "Corsair",
             "product_name": "Vengeance LPX 64GB (2 x 32GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMK64GX4M2E3200 - Black",
@@ -343,7 +307,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 429,
+        "pk": 425,
         "fields": {
             "brand": "Corsair",
             "product_name": "Vengeance RGB Pro SL 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL18 Dual Channel Desktop Memory Kit CMH32GX4M2C3600 - Black",
@@ -352,7 +316,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 430,
+        "pk": 426,
         "fields": {
             "brand": "Corsair",
             "product_name": "VENGEANCE RGB PRO SL 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMH16GX4M2E3200 - Black",
@@ -361,7 +325,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 431,
+        "pk": 427,
         "fields": {
             "brand": "Corsair",
             "product_name": "Vengeance RGB Pro 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit CMW16GX4M2E3200C16 - Black",
@@ -370,7 +334,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 432,
+        "pk": 428,
         "fields": {
             "brand": "TeamGroup",
             "product_name": "T-FORCE VULCAN Z 32GB (2 x 16GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit TLZGD432G3200H - Gray",
@@ -379,7 +343,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 433,
+        "pk": 429,
         "fields": {
             "brand": "G.Skill",
             "product_name": "Ripjaws V 16GB (2 x 8GB) DDR4-3200 PC4-25600 CL16 Dual Channel Desktop Memory Kit F4-3200C16D-16GVKB - Black",
@@ -388,7 +352,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 434,
+        "pk": 430,
         "fields": {
             "brand": "Corsair",
             "product_name": "Vengeance RGB 32GB (2 x 16GB) DDR5-5600 PC5-44800 CL36 Dual Channel Desktop Memory Kit CMH32GX5M2B56WK - White",
@@ -397,7 +361,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 435,
+        "pk": 431,
         "fields": {
             "brand": "Crucial",
             "product_name": "64GB (2 x 32GB) DDR4-3200 PC4-25600 CL22 Dual Channel Desktop Memory Kit CT2K32G4DFD832A - Green",
@@ -406,7 +370,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 436,
+        "pk": 432,
         "fields": {
             "brand": "Micro Center",
             "product_name": "Premium 256GB microSDXC Card UHS-I Flash Memory Card C10 U3 V30 A1 Micro SD Card with Adapter",
@@ -415,7 +379,7 @@
     },
     {
         "model": "items.Product",
-        "pk": 437,
+        "pk": 433,
         "fields": {
             "brand": "TeamGroup",
             "product_name": "T-FORCE Delta RGB 32GB (2 x 16GB) DDR4-3600 PC4-28800 CL18 Dual Channel Desktop Memory Kit TF3D432G3600HC1 - Black",

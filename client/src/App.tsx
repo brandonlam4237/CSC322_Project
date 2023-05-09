@@ -15,9 +15,12 @@ import Register from "./pages/Register";
 import Approve from "./pages/Approve";
 import MyBuild from "./pages/PartPicker";
 import Products from "./pages/Products";
-import { AuthContextProvider } from "./contexts/AuthContext";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
+
+import { AuthContextProvider } from "./contexts/AuthContext";
+import AccountDetails from "./pages/AccountDetails";
+import { PartsListProvidor } from "./contexts/PartsListContext";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -39,13 +42,18 @@ const router = createBrowserRouter(
       <Route path="/mybuild" element={<MyBuild />} />
       <Route path="/cart" element={<Cart />} />
     </Route>
+      <Route path="/accountdetails" element={<AccountDetails/>} />
+ </Route>
+    
   )
 );
 
 function App() {
   return (
     <AuthContextProvider>
-      <RouterProvider router={router} />
+      <PartsListProvidor>
+        <RouterProvider router={router} />
+      </PartsListProvidor>
     </AuthContextProvider>
   );
 }
