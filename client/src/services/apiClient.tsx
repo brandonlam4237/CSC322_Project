@@ -6,13 +6,13 @@ class ApiClient {
   accessToken: string;
   refreshToken: string;
   LOCAL_STORAGE_AUTH_KEY: string;
-  baseUrl:string;
+  baseUrl: string;
   headers: {
     "Content-Type": string;
     Authorization: string | "";
   };
 
-  constructor(baseUrl:string) {
+  constructor(baseUrl: string) {
     this.accessToken = "null";
     this.refreshToken = "null";
     this.LOCAL_STORAGE_AUTH_KEY = "donut_pcs_local_storage_tokens_key";
@@ -20,7 +20,7 @@ class ApiClient {
       "Content-Type": "application/json",
       Authorization: "",
     };
-    this.baseUrl = baseUrl
+    this.baseUrl = baseUrl;
   }
 
   setTokens(tokens: { access: string; refresh: string }) {
@@ -55,7 +55,9 @@ class ApiClient {
         body: JSON.stringify(requestBody),
       };
     }
+
     let requestUrl : string = this.baseUrl + endpoint
+
     try {
       const response = await fetch(requestUrl, requestInit);
       return await response.json();
@@ -84,15 +86,15 @@ class ApiClient {
   }
 
   // get shopping cart
-  async getCustomerCart(){
+  async getCustomerCart() {
     return await this.apiRequest({
-      endpoint:"/users/cart",
-      method:"GET",
-      requestBody:{}
-    })
+      endpoint: "/users/cart",
+      method: "GET",
+      requestBody: {},
+    });
   }
   // add item to shopping cart
-  async addToCart(itemId:number){
+  async addToCart(itemId: number) {
     return await this.apiRequest({
       endpoint: `/users/cart/${itemId}`,
       method: "PUT",
@@ -100,13 +102,23 @@ class ApiClient {
     });
   }
   // adjust quantity of item already in shopping cart
-  // doubles as delete 
-  async editItemQuantity(desiredQuantity:number, itemId:number){
+  // doubles as delete
+  async editItemQuantity(desiredQuantity: number, itemId: number) {
     return await this.apiRequest({
       endpoint: `/users/cart/${itemId}`,
       method: "PATCH",
       requestBody: {
-        quantity:desiredQuantity
+        quantity: desiredQuantity,
+      },
+    });
+  }
+
+  async purchaseOrder(orderAddress: string) {
+    return await this.apiRequest({
+      endpoint: `/users/orders`,
+      method: "PUT",
+      requestBody: {
+        address: orderAddress,
       },
     });
   }
@@ -171,5 +183,6 @@ class ApiClient {
     });
   }
 }
+
 
 export default new ApiClient("http://localhost:8000");
