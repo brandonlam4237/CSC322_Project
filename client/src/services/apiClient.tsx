@@ -97,7 +97,7 @@ class ApiClient {
   async addToCart(itemId: number) {
     return await this.apiRequest({
       endpoint: `/users/cart/${itemId}`,
-      method: "PUT",
+      method: "POST",
       requestBody: {},
     });
   }
@@ -180,6 +180,13 @@ class ApiClient {
       requestBody:{
         rating:rating
       }
+    })}
+
+  async getOrders(){
+    return await this.apiRequest({
+      endpoint: `/users/orders`,
+      method: "GET",
+      requestBody: {},
     });
   }
 }
