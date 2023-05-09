@@ -52,8 +52,6 @@ export default function MyBuild() {
     validateBuild();
   }, [partsListIds]);
   
-  console.log(buildForm)
-  
   function getIncompatiblePartsString(){
     let incompatibleParts = "";
     if (compatibilityIssues.length == 2) incompatibleParts += compatibilityIssues[0] + " and " + compatibilityIssues[1]
