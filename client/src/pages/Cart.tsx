@@ -12,7 +12,7 @@ function Cart() {
   }, []);
   async function fetchCart() {
     const res = await apiClient.getCustomerCart();
-    console.log(res.items[0].product.id);
+    console.log(res.items.product);
     setItemsArr(res.items);
     setTotal(res.total_price);
   }
@@ -30,6 +30,10 @@ function Cart() {
     fetchCart();
   }
 
+  async function handleCheckout() {
+    await apiClient.purchaseOrder("address");
+  }
+
   return (
     <main className="cart-page">
       <div className="cart">
@@ -38,12 +42,12 @@ function Cart() {
           <p>Shopping Cart</p>
           <p className="cart__title-accent">{">"}</p>
         </div>
-        {itemsArr.length === 0 && (
+        {itemsArr && itemsArr.length === 0 && (
           <div style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
             Cart is empty
           </div>
         )}
-        {itemsArr.length !== 0 && (
+        {itemsArr && itemsArr.length !== 0 && (
           <div className="cart__item-list">
             {itemsArr?.map((item, i) => {
               return (
@@ -84,6 +88,12 @@ function Cart() {
               <p>Total:</p>
               <p>{`$${total}`}</p>
             </div>
+            <Button
+              className="blue-primary cart__checkout-btn"
+              onClick={handleCheckout}
+            >
+              Checkout
+            </Button>
           </div>
         )}
       </div>

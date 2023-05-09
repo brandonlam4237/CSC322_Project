@@ -2,6 +2,7 @@
 
 .cart-page {
   margin-top: 2rem;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,6 +12,8 @@
     align-items: center;
     background-color: $light-gray;
     width: 60%;
+    max-width: 55rem;
+    min-width: 30rem;
     padding-bottom: 2rem;
     &__title {
       display: flex;
@@ -34,7 +37,8 @@
       padding: 2rem;
       display: flex;
       align-items: center;
-      gap: 5rem;
+      justify-content: space-between;
+      gap: 4rem;
     }
 
     &__item-details {
