@@ -11,42 +11,60 @@ export default function MyBuild() {
   const authValues = useAuthContext();
   const user = authValues.userData;
   const [isLoading, setisLoading] = useState<boolean>(true);
-
-  const partsListVariables = usePartsListContext();
-  const buildDescription = partsListVariables.buildDescription;
-  const setBuildDescription = partsListVariables.setBuildDescription;
-  const buildForm = partsListVariables.buildForm
-  const discardBuild = partsListVariables.discardBuild;
   const [compatibilityIssues, setCompatibilityIssues] = useState([]);
+
+  // partsList context vairables
+  const partsListVariables = usePartsListContext();
+  const setBuildForm = partsListVariables.setBuildForm;
+  const buildForm = partsListVariables.buildForm
+  const partsListIds = partsListVariables.partsListIds
+  const discardBuild = partsListVariables.discardBuild;
+
   function handleOnTextAreaChange(
-    event: React.ChangeEvent<HTMLTextAreaElement>
+    event: React.ChangeEvent<HTMLTextAreaElement> | React.ChangeEvent<HTMLInputElement>
   ) {
-    setBuildDescription(event.target.value);
+    setBuildForm({
+      ...buildForm,
+      [event.target.name]:event.target.value
+    })
+  }
+
+  async function handleSuggestBuild(){
+    let buildId = await apiClient.createBuild(buildForm)
+    await apiClient.setBuildVisible(buildId)
+  }
+
+  async function hanldeBuyBuild(){
+    let buildId = await apiClient.createBuild(buildForm)
+    await apiClient.checkoutBuild(buildId)
   }
 
   useEffect(() => {
     async function validateBuild() {
       const responseData = await apiClient.validateBuild(
-        partsListVariables.buildForm
+        partsListIds
       );
       let incompatibilityArr = responseData.incompatibilities
       setIsCompatible(incompatibilityArr.length == 0 ? true : false)
       setCompatibilityIssues(responseData.incompatibilities);
       setisLoading(false)
     }
-
     validateBuild();
-  }, [buildForm]);
-
-  // TODO: make this look cleaner :face_vomiting: 
-  let incompatibleParts = "";
-  if (compatibilityIssues.length == 2) incompatibleParts += compatibilityIssues[0] + " and " + compatibilityIssues[1]
-  else {
-    let size = compatibilityIssues.length
-    for (let i = 0; i < size - 1; i++ ){
-      incompatibleParts += compatibilityIssues[i] + ", "
+  }, [partsListIds]);
+  
+  console.log(buildForm)
+  
+  function getIncompatiblePartsString(){
+    let incompatibleParts = "";
+    if (compatibilityIssues.length == 2) incompatibleParts += compatibilityIssues[0] + " and " + compatibilityIssues[1]
+    else {
+      let size = compatibilityIssues.length
+      for (let i = 0; i < size - 1; i++ ){
+        incompatibleParts += compatibilityIssues[i] + ", "
+      }
+      incompatibleParts += "and " + compatibilityIssues[size - 1]
     }
-    incompatibleParts += "and " + compatibilityIssues[size - 1]
+    return incompatibleParts
   }
   
   return (
@@ -65,12 +83,27 @@ export default function MyBuild() {
             </p>
           ) : (
             <p className="compatibility-banner incompatible">
-              There are compatibility issues with your build! Please check: {incompatibleParts}
+              There are compatibility issues with your build! Please check: {getIncompatiblePartsString()}
             </p>
           )}
           <PartsTable />
           {user.user_type == ("Owner" || "Employee") ? (
             <div className="build-description-container">
+              <form>
+                <h3>
+                  <label htmlFor="suggested-build-name">
+                    Build Name
+                  </label>
+                </h3>
+                <input
+                  id="suggested-build-name"
+                  className="input-field"
+                  placeholder="build name"
+                  name="build_name"
+                  value={buildForm.build_name}
+                  onChange={handleOnTextAreaChange}
+                ></input>
+              </form>
               <form>
                 <h3>
                   <label htmlFor="suggested-build-form">
@@ -81,7 +114,8 @@ export default function MyBuild() {
                   id="suggested-build-form"
                   className="input-field"
                   placeholder="description..."
-                  value={buildDescription}
+                  name="build_description"
+                  value={buildForm.build_description}
                   onChange={handleOnTextAreaChange}
                 ></textarea>
               </form>
@@ -97,12 +131,12 @@ export default function MyBuild() {
               </Button>
             </div>
             {user.user_type == ("Owner" || "Employee") ? (
-              <Button className="buttons-container__submit-build black-primary">
+              <Button className="buttons-container__submit-build black-primary" onClick={handleSuggestBuild}>
                 Add to Featured Builds
               </Button>
             ) : (
-              <Button className="buttons-container__submit-build black-primary">
-                Add to Cart
+              <Button className="buttons-container__submit-build black-primary" onClick={hanldeBuyBuild}>
+                Buy Build
               </Button>
             )}
           </div>
