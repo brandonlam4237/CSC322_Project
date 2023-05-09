@@ -1,4 +1,4 @@
-import { IBuildForm } from "src/contexts/PartsListContext";
+import { IBuildForm, IPartsListIds } from "src/contexts/PartsListContext";
 import { IApprovalForm } from "src/pages/UserRow";
 
 class ApiClient {
@@ -110,13 +110,64 @@ class ApiClient {
       },
     });
   }
+
+  // --- BUILD ENDPOINTS ---
   // takes in a build partlist and checks for any compatibility issues
   // among the parts
-  async validateBuild(buildForm:IBuildForm){
+  async validateBuild(partsList:IPartsListIds){
     return await this.apiRequest({
       endpoint: `/items/builds/compatibility`,
       method: "POST",
+      requestBody: partsList
+    });
+  }
+  // get all builds created by customers/employees/owner
+  // all users
+  async getAllBuilds(){
+    return await this.apiRequest({
+      endpoint: `/items/builds`,
+      method: "GET",
+      requestBody: {}
+    });
+  }
+  // implements makebuild endpoint
+  // all users
+  async createBuild(buildForm:IBuildForm){
+    return await this.apiRequest({
+      endpoint: `/items/builds`,
+      method: "POST",
       requestBody: buildForm
+    });
+  }
+  // this function is called after createBuild
+  // all users
+  async setBuildVisible(buildId:number){
+    return await this.apiRequest({
+      endpoint: `/users/builds/visible/${buildId}`,
+      method: "PATCH",
+      requestBody:{}
+    });
+  }
+  // this function is called after createBuild
+  // only customer
+  async checkoutBuild(buildId:number){
+    return await this.apiRequest({
+      endpoint: `/users/builds/checkout/${buildId}`,
+      method: "POST",
+      requestBody:{
+        address:"sdfsdfsdf",
+      }
+    });
+  }
+// this function is called after createBuild
+// all users
+  async rateBuild(buildId:number, rating: number){
+    return await this.apiRequest({
+      endpoint: `/items/builds/rate/${buildId}`,
+      method: "POST",
+      requestBody:{
+        rating:rating
+      }
     });
   }
 }
