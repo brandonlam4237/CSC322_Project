@@ -107,10 +107,35 @@ class RetrieveCurrentUser(APIView):
         user = request.user
 
         if user.is_customer:
+            if user.warnings >= 3:
+                user.blacklisted = True
+                user.is_active = False
+                user.save()
+
+                return Response(
+                    {'error': 'You have been banned from the site.'},
+                    status=status.HTTP_401_UNAUTHORIZED
+                )
+
             user = CustomerSerializer(user)
             return Response(user.data, status=status.HTTP_200_OK)
 
         if user.is_employee:
+            if user.warnings >= 3:
+                user.warnings = 0
+                user.position_tier -= 1
+                user.save()
+
+            if user.position_tier <= -2:
+                user.blacklisted = True
+                user.is_active = False
+                user.save()
+
+                return Response(
+                    {'error': 'You have been fired.'},
+                    status=status.HTTP_401_UNAUTHORIZED
+                )
+
             user = EmployeeSerializer(user)
             return Response(user.data, status=status.HTTP_200_OK)
 

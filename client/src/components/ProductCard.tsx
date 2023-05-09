@@ -23,6 +23,7 @@ function ProductCard(props: ProductCardProps) {
 
   function handleAddBuild() {
     const part = {
+      id: id,
       product_name: product_name,
       price: Number(price),
       image_url: image_url,

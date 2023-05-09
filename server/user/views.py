@@ -9,7 +9,7 @@ from rest_framework.response import Response
 
 
 from .serializers import CustomerSerializer, UserSerializer
-from .serializers import CartItemsSerializer
+from .serializers import CartItemsSerializer, BuildSerializer
 from .serializers import OrderSerializer
 
 User = get_user_model()
@@ -19,6 +19,7 @@ CustomBuild = apps.get_model('items', 'CustomBuild')
 Cart = apps.get_model('items', 'Cart')
 CartItem = apps.get_model('items', 'CartItem')
 Order = apps.get_model('items', 'Order')
+CustomBuild = apps.get_model('items', 'CustomBuild')
 
 
 """
@@ -516,16 +517,16 @@ class ManageCart(APIView):
 
     Methods
     -------
-    put(request)
-        Handles a PUT request to add items to cart
+    post(request)
+        Handles a POST request to add items to cart
 
     patch(request)
         Handles a PATCH request to edit quantity of items in cart
     """
 
-    def put(self, request, id):
+    def post(self, request, id):
         """
-        Handles a PUT request to add item to customer cart
+        Handles a POST request to add item to customer cart
         """
         user = request.user
 
@@ -552,7 +553,7 @@ class ManageCart(APIView):
 
     def patch(self, request, id):
         """
-        Handles a PUT request to change quantity of an item in a cart or delete it
+        Handles a PATCH request to change quantity of an item in a cart or delete it
         """
         user = request.user
 
@@ -564,7 +565,7 @@ class ManageCart(APIView):
 
         try:
             quantity = request.data.get('quantity')
-            if not quantity:
+            if quantity is None:
                 return Response(
                     {'error': 'Please enter the quantity amount'},
                     status=status.HTTP_400_BAD_REQUEST
@@ -589,7 +590,7 @@ class ManageCart(APIView):
             cart_item = CartItem.objects.get(
                 cart=shopping_cart, product=product)
             if quantity == 0:
-                CartItem.objects.delete(cart_item)
+                cart_item.delete()
             else:
                 cart_item.quantity = quantity
                 cart_item.save()
@@ -622,8 +623,8 @@ class ManageOrders(APIView):
     get(request)
         Handles a GET request to retrieve user orders
 
-    put(request)
-        Handles a PUT request to submit a user order
+    post(request)
+        Handles a POST request to submit a user order
     """
 
     def get(self, request):
@@ -645,9 +646,9 @@ class ManageOrders(APIView):
             status=status.HTTP_200_OK
         )
 
-    def put(self, request):
+    def post(self, request):
         """
-        Handles a PUT request to submit a user order
+        Handles a POST request to submit a user order
         """
         user = request.user
 
@@ -680,6 +681,10 @@ class ManageOrders(APIView):
                 status=status.HTTP_403_FORBIDDEN
             )
 
+        user.balance -= cart.total_price if not user.has_discount else round(
+            cart.total_price * 0.9, 2)
+        user.save()
+
         cart_items = cart.cart_items.all()
         new_order = Order(customer=user, address=address,
                           total_price=cart.total_price)
@@ -690,3 +695,107 @@ class ManageOrders(APIView):
         cart.cart_items.clear()
 
         return Response(status=status.HTTP_201_CREATED)
+
+
+class CheckoutBuild(APIView):
+    """
+    Endpoint to order a custom build
+    """
+
+    def post(self, request, id):
+        """
+        Handles a POST request for checking out a build
+        """
+        user = request.user
+
+        if user.user_type != "Customer":
+            return Response(
+                {'error': 'Only customers can submit orders'},
+                status=status.HTTP_401_UNAUTHORIZED
+            )
+
+        address = request.data.get('address')
+        if not address:
+            return Response(
+                {'error': 'Address must be provided'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        build = get_object_or_404(CustomBuild, id=id)
+        cart_item, _ = CartItem.objects.get_or_create(
+            product=build, quantity=1)
+        total_price = build.total_price
+
+        if total_price > user.balance:
+            user.warnings += 1
+            user.save()
+            return Response(
+                {'error': 'Insufficient balance'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
+        user.balance -= total_price if not user.has_discount else round(
+            total_price * 0.9, 2)
+        user.save()
+
+        new_order = Order(customer=user, address=address,
+                          total_price=total_price)
+        new_order.save()
+        new_order.items.add(cart_item)
+        new_order.save()
+
+        return Response(status=status.HTTP_201_CREATED)
+
+
+"""
+Builds Views
+"""
+
+
+class GetLatestBuild(APIView):
+    """
+    Endpoint to get the latest build the user made
+    """
+
+    def get(self, request):
+        """
+        Handles a GET request for retrieving user's latest build
+        """
+        try:
+            user = request.user
+            latest_build = CustomBuild.objects.filter(builder=user).latest()
+            serializer = BuildSerializer(latest_build)
+            return Response(
+                serializer.data,
+                status=status.HTTP_200_OK
+            )
+        except ObjectDoesNotExist:
+            return Response(
+                {}, status=status.HTTP_200_OK
+            )
+
+
+class MakeBuildVisible(APIView):
+    """
+    Endpoint to make a build visible
+    """
+
+    def patch(self, request, id):
+        """
+        Handles PATCH request for making a build visible
+        """
+        user = request.user
+        build = get_object_or_404(CustomBuild, id=id)
+
+        if build.builder != user:
+            return Response(
+                {'error': 'Only the original builder can change this setting'},
+                status=status.HTTP_401_UNAUTHORIZED
+            )
+
+        build.visible = True
+        build.save()
+        return Response(
+            {'success': 'Build has been made visible'},
+            status=status.HTTP_200_OK
+        )

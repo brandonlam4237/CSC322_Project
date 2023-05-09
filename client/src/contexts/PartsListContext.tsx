@@ -1,16 +1,3 @@
-/*
-Will provide the following: 
-  1. add/remove part functions
-  2. partslist object 
-  3. (maybe) add build to cart function (need to wait for Jed on that)
-  4. (maybe) check for compatibility function (need to wait for Jed on that)
-
-Should probably do the following: 
-  - Need to update local storage upon adding/removing
-  - Need to run a useEffect to see if there's anything in local storage
-  - Set up interfaces for part object and partlist object (both already in PartsTable component)
-*/
-
 import {
   useState,
   useEffect,
@@ -23,19 +10,21 @@ const PARTS_LIST_KEY = "custom-build-parts-list-object";
 
 export interface IPartsListContext {
   partsList: IPartsList;
-  buildDescription: string;
+  partsListIds:IPartsListIds;
+  buildForm: IBuildForm;
   setPartsList: (value: IPartsList) => void;
-  setBuildDescription: (value: string) => void;
+  setPartsListIds: (value: IPartsListIds) => void;
+  setBuildForm: (value: IBuildForm) => void;
   removePart: (value: IPart) => void;
   addPart: (value: IPart) => void;
-  discardBuild:()=>void;
+  discardBuild: () => void;
 }
 
 export interface IPartsList {
   /* enclosing CPU and denoting its type as string prevents implicit type
   any on keys error when using a string to access as a key to access the object */
   [key: string]: IPart;
-  CPU:IPart;
+  CPU: IPart;
   Cooling: IPart;
   Motherboard: IPart;
   RAM: IPart;
@@ -46,6 +35,7 @@ export interface IPartsList {
 }
 
 export interface IPart {
+  id: number;
   component_name: string;
   product_name: string;
   image_url: string;
@@ -54,6 +44,7 @@ export interface IPart {
 }
 
 export const partTemplate: IPart = {
+  id: -1,
   component_name: "",
   product_name: "",
   image_url: "",
@@ -72,13 +63,41 @@ export const partsListTemplate: IPartsList = {
   Case: partTemplate,
 };
 
+export const partsListIdsTemplate: IPartsListIds = {
+  CPU: -1,
+  Cooling: -1,
+  Motherboard: -1,
+  RAM: -1,
+  Storage: -1,
+  GPU: -1,
+  PSU: -1,
+  Case: -1,
+};
+
+export interface IBuildForm {
+  [key: string]: string | number;
+  build_description: string;
+  build_name: string;
+}
+
+export interface IPartsListIds {
+  [key:string]:number
+}
+
 export const PartsListContext = createContext<IPartsListContext>({
   partsList: partsListTemplate,
-  buildDescription:"",
+  partsListIds:partsListIdsTemplate,
+  buildForm: {
+    build_description: "",
+    build_name: "",
+  },
   setPartsList: (value: IPartsList) => {
     /* do nothing */
   },
-  setBuildDescription: (value: string) =>{
+  setPartsListIds: (value:IPartsListIds) => {
+    /* do nothing */
+  },
+  setBuildForm: (value: IBuildForm) => {
     /* do nothing */
   },
   removePart: (value: IPart) => {
@@ -87,9 +106,9 @@ export const PartsListContext = createContext<IPartsListContext>({
   addPart: (value: IPart) => {
     /* do nothing */
   },
-  discardBuild:()=>{
+  discardBuild: () => {
     /* */
-  }
+  },
 });
 
 export function usePartsListContext() {
@@ -101,9 +120,16 @@ interface PartsListProvidorProps {
 }
 
 export function PartsListProvidor({ children }: PartsListProvidorProps) {
+  // for displaying part picker table
   const [partsList, setPartsList] = useState<IPartsList>(partsListTemplate);
+  // for validating a build
+  const [partsListIds, setPartsListIds] = useState<IPartsListIds>({});
+  // for buying and suggesting a build
+  const [buildForm, setBuildForm] = useState<IBuildForm>({
+    build_description: "",
+    build_name: "",
+  });
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [buildDescription, setBuildDescription] = useState<string>("");
 
   // functions
   function removePart(part: IPart) {
@@ -122,8 +148,8 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
     });
   }
 
-  function discardBuild(){
-    setPartsList(partsListTemplate)
+  function discardBuild() {
+    setPartsList(partsListTemplate);
   }
   /* automatically check local storage for partsList object 
     upon mounting of PartsListProvidor */
@@ -137,26 +163,54 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
     if (isString(storagePartsList)) {
       setPartsList(JSON.parse(storagePartsList));
     }
-    setIsLoading(false)
+    setIsLoading(false);
   }, []);
 
   /* Update browser local storage when a new part has been 
     added/removed from partsList state variable */
   useEffect(() => {
-    // don't update local storage before checking if a partsList is in there
+    // don't update local storage before checking if partsList is in there
     if (isLoading == false) {
       localStorage.setItem(PARTS_LIST_KEY, JSON.stringify(partsList));
+
+      // update buildForm that will be sent to backend
+      const formattedPartsList = formatPartsList(partsList);
+      // update both Ids object 
+      setPartsListIds(formattedPartsList)
+      // update build form build form but  keep build_description and name constant
+      setBuildForm({
+        ...formattedPartsList,
+        build_description: buildForm.build_description,
+        build_name: buildForm.build_name,
+      });
     }
   }, [partsList]);
 
+  function formatPartsList(partsList: IPartsList): { [key: string]: number } {
+    let componentNamesArray = Object.keys(partsList); //get the keys as an array
+    // accumulate an object containing only the Id(s) while ignoring any with a value of -1
+    let formattedParts = componentNamesArray.reduce<{ [key: string]: number }>(
+      (acc, key) => {
+        let id = partsList[key].id;
+        if (id != -1) acc[key] = id;
+        return acc;
+      },
+      {}
+    );
+
+    return formattedParts;
+  }
+
   const partsListVariables = {
     partsList,
-    buildDescription,
+    buildForm,
+    partsListIds,
     setPartsList,
-    setBuildDescription,
+    setPartsListIds,
+    setBuildForm,
     addPart,
     removePart,
-    discardBuild
+    discardBuild,
   };
 
   return (

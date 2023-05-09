@@ -73,11 +73,11 @@ function ProductDetail() {
   async function fetchDetails() {
     const details = await fetch("/items/" + id);
     const detailsJSON = await details.json();
-    const specsArr = fields[detailsJSON.products.category];
+    const specsArr = fields[detailsJSON.product.category];
 
     let specObj = {};
     specsArr.forEach((spec) => {
-      specObj[spec] = detailsJSON.products.specs[spec];
+      specObj[spec] = detailsJSON.product.specs[spec];
     });
 
     const specKeysArr = [];
@@ -94,7 +94,7 @@ function ProductDetail() {
 
     setSpecKeys(specKeysArr);
     setSpecVals(specValsArr);
-    setProductDetails(detailsJSON.products);
+    setProductDetails(detailsJSON.product);
     setLoading(false);
   }
 
@@ -107,6 +107,7 @@ function ProductDetail() {
 
   function handleAddBuild() {
     const part = {
+      id: productDetails.id,
       product_name: productDetails.product_name,
       price: Number(productDetails.price),
       image_url: productDetails.image_url,
@@ -115,7 +116,6 @@ function ProductDetail() {
     };
     addPartToBuild(part);
   }
-
   return (
     <main className="productDetails">
       {!loading && (
@@ -123,7 +123,7 @@ function ProductDetail() {
           <div className="productDetails__card-front">
             <img
               className="productDetails__img"
-              src="https://90a1c75758623581b3f8-5c119c3de181c9857fcb2784776b17ef.ssl.cf2.rackcdn.com/660700_520452_01_front_zoom.jpg"
+              src={productDetails.image_url}
             />
           </div>
           <div className="productDetails__card-back">

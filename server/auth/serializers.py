@@ -30,6 +30,9 @@ class UserSerializer(serializers.ModelSerializer):
             'blacklisted',
             'balance',
             'application_memo',
+            'warnings',
+            'compliments',
+            'position_tier',
         )
 
 
@@ -57,6 +60,8 @@ class EmployeeSerializer(serializers.ModelSerializer):
             'user_type',
             'blacklisted',
             'application_memo',
+            'warnings',
+            'position_tier',
         )
 
 
@@ -85,4 +90,6 @@ class CustomerSerializer(serializers.ModelSerializer):
             'balance',
             'blacklisted',
             'application_memo',
+            'warnings',
+            'compliments',
         )

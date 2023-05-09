@@ -1,5 +1,7 @@
+import math
 from django.db import models
 from django.contrib.auth import get_user_model
+
 
 User = get_user_model()
 
@@ -96,20 +98,104 @@ class CustomBuild(Product):
 
     Fields
     ------
-    build_maker : ForeignKey
+    builder : ForeignKey
         User who made the build
     build_name : CharField
         A unique name for the build
     parts : ManyToManyField
         Parts the Custom Build Takes
     """
-    build_maker = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
+    builder = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
     parts = models.ManyToManyField(ComputerPart, related_name="build_parts")
+    visible = models.BooleanField(default=False)
+
+    build_description = models.TextField(default="")
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    # Ratings
+    def default_ratings():
+        """
+        Default Ratings
+        """
+        return {
+            "ratings_list": [],
+            "num_ratings": 0,
+            "avg_ratings": 0,
+            "best_rating_count": 0,
+            "worst_rating_count": 0
+        }
+    ratings = models.JSONField(default=default_ratings)
 
     objects = models.Manager()
 
+    @property
+    def overall_rating(self):
+        """
+        http://www.evanmiller.org/ranking-items-with-star-ratings.html
+        """
+        if not self.ratings["ratings_list"]:
+            return 0.0
+
+        ns = self.ratings["ratings_list"]
+
+        N = sum(ns)
+        K = len(ns)
+        s = list(range(K, 0, -1))
+        s2 = [sk**2 for sk in s]
+        z = 1.65
+
+        def f(s, ns):
+            N = sum(ns)
+            K = len(ns)
+            return sum(sk*(nk+1) for sk, nk in zip(s, ns)) / (N+K)
+        fsns = f(s, ns)
+        return fsns - z * math.sqrt((f(s2, ns) - fsns**2)/(N+K+1))
+
+    @property
+    def total_price(self) -> float:
+        """
+        Total price of the build
+        """
+        parts = self.parts.all()
+        total = sum([part.price for part in parts])
+        return round(total, 2)
+
+    class Meta:
+        """
+        Metadata Class
+        """
+        get_latest_by = ['date_created']
+
     def __str__(self) -> str:
-        return f"{self.build_maker.username} - {self.product_name}"
+        return f"{self.builder.username} - {self.product_name}"
+
+
+class SuggestedBuild(models.Model):
+    """
+    Suggested Build Model
+
+    Fields
+    ------
+    category : CharField
+        Category for Suggested Build
+    build : Build
+    """
+    class Category(models.TextChoices):
+        """
+        Categories of builds
+        """
+        BUSINESS = "Business", "Business"
+        GAMING = "Gaming", "Gaming"
+        ACADEMIC = "Academic", "Academic"
+
+    category = models.CharField(
+        max_length=20, choices=Category.choices, null=False)
+
+    build = models.OneToOneField(
+        CustomBuild, on_delete=models.CASCADE, null=False)
+
+    def __str__(self) -> str:
+        return str(self.build)
 
 
 class Cart(models.Model):
@@ -134,12 +220,18 @@ class Cart(models.Model):
 
     @property
     def total_price(self) -> float:
+        """
+        Total price of the cart
+        """
         cartitems = self.cart_items.all()
         total = sum([item.price for item in cartitems])
         return round(total, 2)
 
     @property
     def num_items(self) -> int:
+        """
+        Number of items in the cart
+        """
         cartitems = self.cart_items.all()
         quantity = sum([item.quantity for item in cartitems])
         return quantity
@@ -160,7 +252,7 @@ class CartItem(models.Model):
         Cart relating to the Cart Item
     quantity : IntegerField
         Quantity of cart item
-    
+
     Properties
     ----------
     price : float
@@ -179,6 +271,9 @@ class CartItem(models.Model):
 
     @property
     def price(self):
+        """
+        Total price of the item(s)
+        """
         new_price = self.product.price * self.quantity
         return round(new_price, 2)
 
