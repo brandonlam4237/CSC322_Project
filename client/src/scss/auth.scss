@@ -60,3 +60,14 @@
     text-decoration: underline;
   }
 }
+
+.protest-banner{
+  max-width: 600px;
+  &__button{
+    &:hover{
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
