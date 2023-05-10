@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../scss/products.scss";
 import ProductCard from "src/components/ProductCard";
+import apiClient from "src/services/apiClient";
 
 function Prodcuts() {
   const category = useParams().id || "";
   const [productList, setProductList] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   async function fetchProducts() {
-    const products = await fetch("/items?category=" + category);
-    const productsJson = await products.json();
+    const productsJson = await apiClient.getItemsByCategory(category)
     setProductList(productsJson.products);
     setLoading(false);
   }
@@ -37,6 +37,7 @@ function Prodcuts() {
                 price={item.price}
                 category = {category}
                 id={item.id}
+                isCompatible = {item.isCompatible}
               />
             );
           })}

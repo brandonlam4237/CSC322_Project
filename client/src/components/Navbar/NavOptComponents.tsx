@@ -25,7 +25,7 @@ function NavOptComponents(props: props) {
     >
       <div className="components">
         <NavLink to="/components" className="components__link">
-          Components
+          Products
         </NavLink>
 
         {componentsIsOpen && (
@@ -71,6 +71,11 @@ function NavOptComponents(props: props) {
             <li>
               <NavLink to="/products/Case" className="components__menu-item">
                 Case
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/products/Desktop" className="components__menu-item">
+                Desktop
               </NavLink>
             </li>
           </ul>

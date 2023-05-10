@@ -1,8 +1,6 @@
-import Input from "src/components/Input";
 import Button from "src/components/Button";
 import { useState } from "react";
 import { useAuthContext } from "src/contexts/AuthContext";
-import { type } from "@testing-library/user-event/dist/type";
 import "../scss/accountDetails.scss";
 
 export interface IBalanceForm {
@@ -45,16 +43,16 @@ export default function AccountDetails() {
         <section className="account-details-component__content__container-left">
           <h2 className="account-username">
             <div className="logo__accent-left">{`<`}</div>{" "}
-            {authValues.userData.first_name.charAt(0).toUpperCase() +
-              authValues.userData.first_name.slice(1)}{" "}
-            {authValues.userData.last_name.charAt(0).toUpperCase() +
-              authValues.userData.last_name.slice(1)}
+            {user.first_name.charAt(0).toUpperCase() +
+              user.first_name.slice(1)}{" "}
+            {user.last_name.charAt(0).toUpperCase() +
+              user.last_name.slice(1)}
             <div className="logo__accent-right">{`>`}</div>
           </h2>
-          <h2> {authValues.userData.email}</h2>
-          <h2> Current Balance: ${authValues.userData.balance}</h2>
-          <h2> Warnings: 2</h2>
-          <h2> Compliments: 4</h2>
+          <h2> {user.email}</h2>
+          <h2> Current Balance: ${user.balance}</h2>
+          <h2> Compliments: {user.compliments}</h2>
+          <h2> Warnings: {user.warnings}</h2>
         </section>
 
         <section className="account-details-component__content__container-right">
@@ -127,7 +125,7 @@ export default function AccountDetails() {
                 />
               </label>
             </form>
-            <Button className="blue-primary " onClick={balanceButtonHandler}>
+            <Button className="blue-primary" onClick={balanceButtonHandler}>
               Add Balance
             </Button>
           </div>

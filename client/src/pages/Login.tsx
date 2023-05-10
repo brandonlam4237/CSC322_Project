@@ -4,6 +4,7 @@ import { useState } from "react";
 import "../scss/auth.scss";
 import { useAuthContext } from "src/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import Box from "src/components/Box";
 interface LoginForm {
   username: string;
   password: string;
@@ -30,11 +31,20 @@ export default function Login() {
   async function loginButtonHandler() {
     await authValues.loginUser(loginForm.username, loginForm.password);
   }
-  if (authValues.userData.user_type!="Visitor") navigate("/");
+  if (authValues.userData.user_type != "Visitor") navigate("/");
 
   return (
     <main className="auth">
       <h1 className="auth__header">Login to your account</h1>
+      {/* Customer Protest Button */}
+      {/* <Box className="protest-banner" color={"red"} isRound={true}>
+        Uh Oh! I it looks like your registration application has been rejected.
+        If you believe that this is a mistake, please{"  "}
+        <strong className="protest-banner__button">click here</strong>
+      </Box>
+      <Box className="protest-banner" color={"blue"} isRound={true}>
+        We have received your request, please wait while it gets processed!
+      </Box> */}
       <section className="container">
         <div className="container__forms">
           <form>

@@ -1,6 +1,6 @@
 import "../scss/approve.scss";
 import { useEffect, useState } from "react";
-import { UserCredentials, useAuthContext } from "src/contexts/AuthContext";
+import { IUserCredentials, useAuthContext } from "src/contexts/AuthContext";
 import apiClient from "src/services/apiClient";
 import { UserRow } from "./UserRow";
 
@@ -22,14 +22,14 @@ export default function Approve() {
     const data = await apiClient.getUsers(usersParam);
     // If the user currently logged in is super_user then response object is called users
     if (data.users) {
-      inActiveUsers = data.users.filter((individualUser: UserCredentials) => {
+      inActiveUsers = data.users.filter((individualUser: IUserCredentials) => {
         return !individualUser.is_active;
       });
     }
     // If the user currently logged in is super_user then response object is called customers
     else if (data.customers) {
       inActiveUsers = data.customers.filter(
-        (individualUser: UserCredentials) => {
+        (individualUser: IUserCredentials) => {
           return !individualUser.is_active;
         }
       );
@@ -52,7 +52,7 @@ export default function Approve() {
         </div>
       ) : (
         <div className="component__content">
-          {allUsers.map((individualUser: UserCredentials, index: number) => {
+          {allUsers.map((individualUser: IUserCredentials, index: number) => {
             return (
               <UserRow
                 username={individualUser.username}
