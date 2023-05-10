@@ -11,7 +11,7 @@ interface BoxProps {
 }
 
 export default function Box({
-  className,
+  className="",
   color = "blue",
   isBold = false,
   padding = 10,
