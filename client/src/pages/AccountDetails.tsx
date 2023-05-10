@@ -125,7 +125,7 @@ export default function AccountDetails() {
                 />
               </label>
             </form>
-            <Button className="blue-primary " onClick={balanceButtonHandler}>
+            <Button className="blue-primary" onClick={balanceButtonHandler}>
               Add Balance
             </Button>
           </div>
