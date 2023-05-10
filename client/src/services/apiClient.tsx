@@ -183,11 +183,27 @@ class ApiClient {
     })}
 
   async getOrders(){
-    return await this.apiRequest({
+    const customerOrders = await this.apiRequest({
       endpoint: `/users/orders`,
       method: "GET",
       requestBody: {},
     });
+
+    if(customerOrders){
+      await Promise.all(
+        customerOrders.map(async (order: any) => {
+          await Promise.all(
+            order.items.map(async (item: any) => {
+              const details = await fetch("/items/" + item.product.id);
+              const detailsJSON = await details.json();
+              item.product["image_url"] = detailsJSON.product.image_url;
+              return item;
+            })
+          );
+        })
+      );
+    }
+    return customerOrders;
   }
 }
 
