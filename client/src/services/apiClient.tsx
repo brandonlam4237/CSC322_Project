@@ -56,7 +56,7 @@ class ApiClient {
       };
     }
 
-    let requestUrl : string = this.baseUrl + endpoint
+    let requestUrl: string = this.baseUrl + endpoint;
 
     try {
       const response = await fetch(requestUrl, requestInit);
@@ -87,12 +87,24 @@ class ApiClient {
 
   // get shopping cart
   async getCustomerCart() {
-    return await this.apiRequest({
+    const customerCart = await this.apiRequest({
       endpoint: "/users/cart",
       method: "GET",
       requestBody: {},
     });
+
+    // add image_url to cart items.product attribute object field
+    if (customerCart.items) {
+      await Promise.all(customerCart.items.map(async (item: any) => {
+        const details = await fetch("/items/" + item.product.id);
+        const detailsJSON = await details.json();
+        item.product['image_url'] = detailsJSON.product.image_url;
+        return item;
+      }));
+    }
+    return customerCart;
   }
+
   // add item to shopping cart
   async addToCart(itemId: number) {
     return await this.apiRequest({
@@ -126,63 +138,64 @@ class ApiClient {
   // --- BUILD ENDPOINTS ---
   // takes in a build partlist and checks for any compatibility issues
   // among the parts
-  async validateBuild(partsList:IPartsListIds){
+  async validateBuild(partsList: IPartsListIds) {
     return await this.apiRequest({
       endpoint: `/items/builds/compatibility`,
       method: "POST",
-      requestBody: partsList
+      requestBody: partsList,
     });
   }
   // get all builds created by customers/employees/owner
   // all users
-  async getAllBuilds(){
+  async getAllBuilds() {
     return await this.apiRequest({
       endpoint: `/items/builds`,
       method: "GET",
-      requestBody: {}
+      requestBody: {},
     });
   }
   // implements makebuild endpoint
   // all users
-  async createBuild(buildForm:IBuildForm){
+  async createBuild(buildForm: IBuildForm) {
     return await this.apiRequest({
       endpoint: `/items/builds`,
       method: "POST",
-      requestBody: buildForm
+      requestBody: buildForm,
     });
   }
   // this function is called after createBuild
   // all users
-  async setBuildVisible(buildId:number){
+  async setBuildVisible(buildId: number) {
     return await this.apiRequest({
       endpoint: `/users/builds/visible/${buildId}`,
       method: "PATCH",
-      requestBody:{}
+      requestBody: {},
     });
   }
   // this function is called after createBuild
   // only customer
-  async checkoutBuild(buildId:number){
+  async checkoutBuild(buildId: number) {
     return await this.apiRequest({
       endpoint: `/users/builds/checkout/${buildId}`,
       method: "POST",
-      requestBody:{
-        address:"sdfsdfsdf",
-      }
+      requestBody: {
+        address: "sdfsdfsdf",
+      },
     });
   }
-// this function is called after createBuild
-// all users
-  async rateBuild(buildId:number, rating: number){
+  // this function is called after createBuild
+  // all users
+  async rateBuild(buildId: number, rating: number) {
     return await this.apiRequest({
       endpoint: `/items/builds/rate/${buildId}`,
       method: "POST",
-      requestBody:{
-        rating:rating
-      }
-    })}
+      requestBody: {
+        rating: rating,
+      },
+    });
+  }
 
-  async getOrders(){
+  async getOrders() {
     return await this.apiRequest({
       endpoint: `/users/orders`,
       method: "GET",
@@ -190,6 +203,5 @@ class ApiClient {
     });
   }
 }
-
 
 export default new ApiClient("http://localhost:8000");
