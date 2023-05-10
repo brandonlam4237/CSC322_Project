@@ -6,7 +6,6 @@ import comment from "../assets/icons/comment.png";
 import apiClient from "src/services/apiClient";
 import { usePartsListContext } from "src/contexts/PartsListContext";
 
-
 const fields = {
   Case: ["Case Type", "Color", "Max Motherboard Size", "Height", "Width"],
   Cooling: [
@@ -57,6 +56,18 @@ const fields = {
     "Interface",
     "Form Factor",
   ],
+  Desktop: [
+    "CPU Summary",
+    "Cores",
+    "Chipset",
+    "Total Memory",
+    "GPU Type",
+    "Heatsink",
+    "SSD Capacity",
+    "HD Capacity",
+    "Turbo Boost Speed",
+    "Power Supply",
+  ],
 };
 
 function ProductDetail() {
@@ -98,8 +109,8 @@ function ProductDetail() {
     setLoading(false);
   }
 
-  async function handleAddCart(){
-    await apiClient.addToCart(productDetails.id)
+  async function handleAddCart() {
+    await apiClient.addToCart(productDetails.id);
   }
 
   const partsListVariables = usePartsListContext();
@@ -131,6 +142,9 @@ function ProductDetail() {
               <div className="productDetails__name">
                 {productDetails.product_name}
               </div>
+              <div className="productDetails__brand">
+                {productDetails.brand}
+              </div>
               <div className="productDetails__price">
                 {"$" + productDetails.price}
               </div>
@@ -138,12 +152,26 @@ function ProductDetail() {
 
             <div className="productDetails__specs">
               {specKeys.map((specKey, idx) => {
-                return <div key={idx}>{`${specKey} : ${specVals[idx]}`}</div>;
+                return specVals[idx] ? (
+                  <div key={idx}>{`${specKey}: ${specVals[idx]}`}</div>
+                ) : (
+                  <></>
+                );
               })}
             </div>
             <div className="productDetails__btns">
-              <Button className="blue-primary" onClick={handleAddCart}>Add to cart</Button>
-              <Link to="/mybuild"><Button className="black-primary" onClick={handleAddBuild}>Add to build</Button></Link>
+              <Button className="blue-primary" onClick={handleAddCart}>
+                Add to cart
+              </Button>
+              {productDetails.category != "Desktop" ? (
+                <Link to="/mybuild">
+                  <Button className="black-primary" onClick={handleAddBuild}>
+                    Add to build
+                  </Button>
+                </Link>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="productDetails__comment">
               <img className="productDetails__comment-icon" src={comment} />
