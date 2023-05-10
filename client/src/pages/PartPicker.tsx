@@ -5,7 +5,7 @@ import PartsTable from "src/components/PartsTable";
 import Button from "src/components/Button";
 import { usePartsListContext } from "src/contexts/PartsListContext";
 import apiClient from "src/services/apiClient";
-
+import Box from "src/components/Box";
 export default function MyBuild() {
   const [isCompatible, setIsCompatible] = useState(true);
   const authValues = useAuthContext();
@@ -76,13 +76,13 @@ export default function MyBuild() {
         </h1>
         <div className="mybuild__component__content">
           {isCompatible ? (
-            <p className="compatibility-banner compatible">
+            <Box color={"green"} isBold={true} isRound={true}>
               There are no compatibility issues with your build!
-            </p>
+            </Box>
           ) : (
-            <p className="compatibility-banner incompatible">
+            <Box color="red" isBold={true} isRound={true}>
               There are compatibility issues with your build! Please check: {getIncompatiblePartsString()}
-            </p>
+            </Box>
           )}
           <PartsTable />
           {user.user_type == ("Owner" || "Employee") ? (
