@@ -11,6 +11,7 @@ class ApiClient {
     "Content-Type": string;
     Authorization: string | "";
   };
+  partsListIds: IPartsListIds;
 
   constructor(baseUrl: string) {
     this.accessToken = "null";
@@ -21,12 +22,17 @@ class ApiClient {
       Authorization: "",
     };
     this.baseUrl = baseUrl;
+
+    this.partsListIds = {};
   }
 
   setTokens(tokens: { access: string; refresh: string }) {
     this.accessToken = tokens.access;
     this.refreshToken = tokens.refresh;
     localStorage.setItem(this.LOCAL_STORAGE_AUTH_KEY, JSON.stringify(tokens));
+  }
+  setPartsListIds(partsListIds: IPartsListIds) {
+    this.partsListIds = partsListIds;
   }
 
   async apiRequest({
@@ -85,6 +91,27 @@ class ApiClient {
     });
   }
 
+  async getItemsByCategory(category: string) {
+    const products = await fetch("/items?category=" + category);
+    const productsJson = await products.json();
+    const isPartsListEmpty =
+      Object.keys(this.partsListIds).length === 0 ? true : false;
+
+    await Promise.all(
+      productsJson.products.map(
+        async (individualProduct: any, index: number) => {
+          const inCompatibilityArr = (
+            await this.validateBuild({
+              ...this.partsListIds,
+              [individualProduct.category]: individualProduct.id,
+            })
+          ).incompatibilities;
+          individualProduct["isCompatible"] =
+            !isPartsListEmpty && inCompatibilityArr.length === 0 ? true : false;
+    }));
+    return productsJson;
+  }
+
   // get shopping cart
   async getCustomerCart() {
     const customerCart = await this.apiRequest({
@@ -95,12 +122,14 @@ class ApiClient {
 
     // add image_url to cart items.product attribute object field
     if (customerCart.items) {
-      await Promise.all(customerCart.items.map(async (item: any) => {
-        const details = await fetch("/items/" + item.product.id);
-        const detailsJSON = await details.json();
-        item.product['image_url'] = detailsJSON.product.image_url;
-        return item;
-      }));
+      await Promise.all(
+        customerCart.items.map(async (item: any) => {
+          const details = await fetch("/items/" + item.product.id);
+          const detailsJSON = await details.json();
+          item.product["image_url"] = detailsJSON.product.image_url;
+          return item;
+        })
+      );
     }
     return customerCart;
   }

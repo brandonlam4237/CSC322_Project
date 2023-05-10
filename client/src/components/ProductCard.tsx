@@ -9,10 +9,11 @@ interface ProductCardProps {
   price: string;
   category: string;
   id: number;
+  isCompatible:boolean
 }
 
 function ProductCard(props: ProductCardProps) {
-  const { product_name, price, image_url, category, id } = props;
+  const { product_name, price, image_url, category, id, isCompatible } = props;
 
   async function handleAddCart() {
     await apiClient.addToCart(id);
