@@ -43,4 +43,10 @@ class UserAccountAdmin(admin.ModelAdmin):
     readonly_fields = (
         'balance',
         'date_created',
+        'username',
+        'email',
+    )
+    search_fields = (
+        'username',
+        'email',
     )

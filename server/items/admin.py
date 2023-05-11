@@ -32,6 +32,7 @@ class ProductAdmin(admin.ModelAdmin):
     )
     list_filter = ('brand',)
     search_fields = ('product_name',)
+    readonly_fields = ('price',)
 
 
 @admin.register(ComputerPart)
@@ -54,6 +55,7 @@ class ComputerPartAdmin(admin.ModelAdmin):
     )
     readonly_fields = (
         'specs',
+        'price',
     )
     list_filter = ('brand',)
     search_fields = ('product_name',)
@@ -73,6 +75,7 @@ class CustomBuildAdmin(admin.ModelAdmin):
     )
     list_filter = ('visible',)
     search_fields = ('product_name',)
+    readonly_fields = ('price',)
 
 
 @admin.register(Cart)
@@ -109,5 +112,5 @@ class OrderAdmin(admin.ModelAdmin):
         'datetime_ordered',
         'items',
     )
-    readonly_fields = ('datetime_ordered',)
+    readonly_fields = ('datetime_ordered', 'total_price',)
     search_fields = ('customer',)
