@@ -97,18 +97,24 @@ class ApiClient {
     const isPartsListEmpty =
       Object.keys(this.partsListIds).length === 0 ? true : false;
 
-    await Promise.all(
-      productsJson.products.map(
-        async (individualProduct: any, index: number) => {
-          const inCompatibilityArr = (
-            await this.validateBuild({
-              ...this.partsListIds,
-              [individualProduct.category]: individualProduct.id,
-            })
-          ).incompatibilities;
-          individualProduct["isCompatible"] =
-            !isPartsListEmpty && inCompatibilityArr.length === 0 ? true : false;
-    }));
+    if (this.accessToken != "null") {
+      await Promise.all(
+        productsJson.products.map(
+          async (individualProduct: any, index: number) => {
+            const inCompatibilityArr = (
+              await this.validateBuild({
+                ...this.partsListIds,
+                [individualProduct.category]: individualProduct.id,
+              })
+            ).incompatibilities;
+            individualProduct["isCompatible"] =
+              !isPartsListEmpty && inCompatibilityArr.length === 0
+                ? true
+                : false;
+          }
+        )
+      );
+    }
     return productsJson;
   }
 
@@ -224,14 +230,14 @@ class ApiClient {
     });
   }
 
-  async getOrders(){
+  async getOrders() {
     const customerOrders = await this.apiRequest({
       endpoint: `/users/orders`,
       method: "GET",
       requestBody: {},
     });
 
-    if(customerOrders){
+    if (customerOrders) {
       await Promise.all(
         customerOrders.map(async (order: any) => {
           await Promise.all(
@@ -245,7 +251,7 @@ class ApiClient {
         })
       );
     }
-    return customerOrders.sort((a:any, b:any) => (a.id < b.id) ? 1 : -1);;
+    return customerOrders.sort((a: any, b: any) => (a.id < b.id ? 1 : -1));
   }
 }
 

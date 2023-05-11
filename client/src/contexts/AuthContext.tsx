@@ -111,8 +111,8 @@ export interface UserTokens {
 }
 // to keep typescript happy
 export const userTokensTemplate: UserTokens = {
-  refresh: "",
-  access: "",
+  refresh: "null",
+  access: "null",
 };
 
 export function AuthContextProvider({ children }: AuthProvidorProps) {
@@ -176,6 +176,8 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
       setUserData(userDataTemplate);
       setUserTokens(userTokensTemplate);
       localStorage.removeItem(LOCAL_STORAGE_AUTH_KEY);
+      // reset user tokens private variables in apiClient
+      apiClient.setTokens(userTokensTemplate)
     } catch (error) {
       console.log(error);
     }
