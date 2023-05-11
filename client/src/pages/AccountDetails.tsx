@@ -7,6 +7,8 @@ export interface IBalanceForm {
   card_number: string;
   exp_date: string;
   balance: number;
+  name_on_card: string;
+  cvc: number;
 }
 
 export default function AccountDetails() {
@@ -14,13 +16,20 @@ export default function AccountDetails() {
     card_number: "",
     exp_date: "",
     balance: 0,
+    name_on_card: "",
+    cvc: 0,
   });
 
   const authValues = useAuthContext();
   const user = authValues.userData;
   async function balanceButtonHandler() {
     balanceForm.balance = Number(balanceForm.balance);
-    await authValues.askForBalance(balanceForm);
+
+    if (balanceForm.name_on_card.length > 0 && balanceForm.cvc.toString().length > 1){
+      await authValues.askForBalance(balanceForm);
+    }else{
+      alert("Please Insert Name and CVC");
+    }
   }
 
   function handleOnFormChange(event: React.ChangeEvent<HTMLInputElement>) {
