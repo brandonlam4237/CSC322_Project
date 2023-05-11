@@ -67,6 +67,7 @@ export default function OrderHistory() {
                             </div>
                             <div>{`$${order.items[j].price}`}</div>
                             <div>{`Quantity: ${order.items[j].quantity}`}</div>
+                            <div>{`Date: ${order["datetime_ordered"].toString().substring(4, 15)}`}</div>
                           </div>
                           <img
                             className="order-history__item-img"
