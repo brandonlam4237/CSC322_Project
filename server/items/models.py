@@ -305,7 +305,7 @@ class Order(models.Model):
     address = models.TextField(null=False)
     items = models.ManyToManyField(CartItem, related_name='order_items')
 
-    datetime_ordred = models.DateTimeField(auto_now_add=True, null=False)
+    datetime_ordered = models.DateTimeField(auto_now_add=True, null=False)
     total_price = models.DecimalField(
         max_digits=50, decimal_places=2, null=False)
 
