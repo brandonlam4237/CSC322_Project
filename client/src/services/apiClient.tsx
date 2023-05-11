@@ -234,6 +234,11 @@ class ApiClient {
     if(customerOrders){
       await Promise.all(
         customerOrders.map(async (order: any) => {
+          var dateString = order["datetime_ordered"].toString().substring(0, 10);
+          var year = dateString.substring(0,4);
+          var month = dateString.substring(5,7);
+          var day = dateString.substring(8,10);
+          var date = new Date(year, month-1, day);
           await Promise.all(
             order.items.map(async (item: any) => {
               const details = await fetch("/items/" + item.product.id);
@@ -242,6 +247,8 @@ class ApiClient {
               return item;
             })
           );
+          order["datetime_ordered"] = date;
+          return order;
         })
       );
     }
