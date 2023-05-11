@@ -15,9 +15,9 @@ const LOCAL_STORAGE_AUTH_KEY = "donut_pcs_local_storage_tokens_key";
 // If adding more functions/variables to the AuthProvider, then
 // IAuthContext is expected to be updated
 interface IAuthContext {
-  userData: UserCredentials;
+  userData: IUserCredentials;
   userTokens: UserTokens;
-  setUserData: (value: UserCredentials) => void;
+  setUserData: (value: IUserCredentials) => void;
   registerUser: (value: object) => void;
   loginUser: (username: string, password: string) => void;
   logoutUser: () => void;
@@ -44,7 +44,7 @@ export const AuthContext = createContext<IAuthContext>({
     refresh: "",
     access: "",
   },
-  setUserData: (value: UserCredentials) => {
+  setUserData: (value: IUserCredentials) => {
     /* do nothing */
   },
   registerUser: (value) => {
@@ -76,7 +76,7 @@ interface AuthProvidorProps {
 // T stands for "type". This defined type will be used for components such as navbar and approve
 export type TUserType = "Owner" | "Employee" | "Customer" | "Visitor";
 
-export interface UserCredentials {
+export interface IUserCredentials {
   id: number;
   username: string;
   email: string;
@@ -88,9 +88,11 @@ export interface UserCredentials {
   blacklisted: boolean;
   balance: number | null;
   memo: "";
+  warnings?:number;
+  compliments?:number;
 }
 // to keep typescript happy
-export const userDataTemplate: UserCredentials = {
+export const userDataTemplate: IUserCredentials = {
   id: -1,
   username: "",
   email: "",
@@ -115,7 +117,7 @@ export const userTokensTemplate: UserTokens = {
 
 export function AuthContextProvider({ children }: AuthProvidorProps) {
   const [userTokens, setUserTokens] = useState<UserTokens>(userTokensTemplate);
-  const [userData, setUserData] = useState<UserCredentials>(userDataTemplate);
+  const [userData, setUserData] = useState<IUserCredentials>(userDataTemplate);
 
   async function loginUser(username: string, password: string) {
     try {

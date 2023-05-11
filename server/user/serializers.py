@@ -114,7 +114,9 @@ class ProductSerializer(serializers.ModelSerializer):
         Serialize all fields in Product model
         """
         model = Product
-        fields = '__all__'
+        exclude = (
+            'comments'
+        )
 
 
 class ComputerPartSerializer(serializers.ModelSerializer):

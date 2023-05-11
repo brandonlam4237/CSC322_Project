@@ -57,6 +57,18 @@ const fields = {
     "Interface",
     "Form Factor",
   ],
+  Desktop: [
+    "CPU Summary",
+    "Cores",
+    "Chipset",
+    "Total Memory",
+    "GPU Type",
+    "Heatsink",
+    "SSD Capacity",
+    "HD Capacity",
+    "Turbo Boost Speed",
+    "Power Supply",
+  ],
 };
 
 function ProductDetail() {
@@ -132,6 +144,9 @@ function ProductDetail() {
               <div className="productDetails__name">
                 {productDetails.product_name}
               </div>
+              <div className="productDetails__brand">
+                {productDetails.brand}
+              </div>
               <div className="productDetails__price">
                 {"$" + productDetails.price}
               </div>
@@ -139,18 +154,26 @@ function ProductDetail() {
 
             <div className="productDetails__specs">
               {specKeys.map((specKey, idx) => {
-                return <div key={idx}>{`${specKey} : ${specVals[idx]}`}</div>;
+                return specVals[idx] ? (
+                  <div key={idx}>{`${specKey}: ${specVals[idx]}`}</div>
+                ) : (
+                  <></>
+                );
               })}
             </div>
             <div className="productDetails__btns">
               <Button className="blue-primary" onClick={handleAddCart}>
                 Add to cart
               </Button>
-              <Link to="/mybuild">
-                <Button className="black-primary" onClick={handleAddBuild}>
-                  Add to build
-                </Button>
-              </Link>
+              {productDetails.category != "Desktop" ? (
+                <Link to="/mybuild">
+                  <Button className="black-primary" onClick={handleAddBuild}>
+                    Add to build
+                  </Button>
+                </Link>
+              ) : (
+                <></>
+              )}
             </div>
             <div
               className="productDetails__comment"

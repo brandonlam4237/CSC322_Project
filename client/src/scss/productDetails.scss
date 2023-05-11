@@ -48,6 +48,11 @@
       0.5000000000000004rem + 0.7999999999999995vw,
       1.4rem
     );
+    font-weight: bold;
+  }
+  &__brand{
+    color:$accent;
+    font-weight: bold;
   }
 
   &__price {
@@ -61,11 +66,7 @@
   }
 
   &__specs {
-    font-size: clamp(
-      0.7rem,
-      0.29999999999999977rem + 0.5333333333333335vw,
-      0.9rem
-    );
+    font-size: clamp(0.9rem, 0.45rem + 0.6vw, 1.125rem);
   }
 
   &__btns {

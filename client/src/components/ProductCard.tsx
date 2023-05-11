@@ -3,16 +3,18 @@ import "../scss/productCard.scss";
 import Button from "./Button";
 import apiClient from "src/services/apiClient";
 import { usePartsListContext } from "src/contexts/PartsListContext";
+import Box from "./Box";
 interface ProductCardProps {
   product_name: string;
   image_url: string;
   price: string;
   category: string;
   id: number;
+  isCompatible:boolean
 }
 
 function ProductCard(props: ProductCardProps) {
-  const { product_name, price, image_url, category, id } = props;
+  const { product_name, price, image_url, category, id, isCompatible } = props;
 
   async function handleAddCart() {
     await apiClient.addToCart(id);
@@ -39,7 +41,9 @@ function ProductCard(props: ProductCardProps) {
         <img src={image_url} className="productCard__img" />
       </Link>
       <Link to={`${"/product/" + id}`}>
-        <div className="productCard__name">{product_name}</div>
+        <div className="productCard__name">
+        {isCompatible && category !="Desktop"  ? <Box color="green" padding={5}>{product_name}</Box> : product_name}
+        </div>
       </Link>
       <footer className="productCard__footer">
         <div className="productCard__price">{"$" + price}</div>

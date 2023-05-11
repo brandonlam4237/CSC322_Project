@@ -2,6 +2,8 @@ import "../scss/cart.scss";
 import apiClient from "src/services/apiClient";
 import { useEffect, useState } from "react";
 import Button from "src/components/Button";
+import { faAdd, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Cart() {
   const [itemsArr, setItemsArr] = useState<any[]>([]);
@@ -9,16 +11,20 @@ function Cart() {
 
   useEffect(() => {
     fetchCart();
+    fetchImagesUrl()  
+
   }, []);
+
   async function fetchCart() {
     const res = await apiClient.getCustomerCart();
-    console.log(res.items.product);
     setItemsArr(res.items);
     setTotal(res.total_price);
   }
-  useEffect(() => {
-    console.log(itemsArr);
-  }, [itemsArr]);
+
+  
+  async function fetchImagesUrl(){
+
+  }
 
   async function handleEditRemove(id: number, currQuantity: number) {
     await apiClient.editItemQuantity(currQuantity - 1, id);
@@ -57,8 +63,10 @@ function Cart() {
                     <div className="cart__item-name">
                       {item.product.product_name}
                     </div>
-                    <div>{`$${item.product.price}`}</div>
+                    <div>Unit Price: {`$${item.product.price}`}</div>
                     <div>{`Quantity: ${item.quantity}`}</div>
+                    {/* If we want to display total item price */}
+                    {/* <div>Total Price: {`$${(item.product.price*item.quantity).toFixed(2)}`}</div> */}
                     <div className="edit-btns">
                       <Button
                         className="black-primary edit-btn"
@@ -66,7 +74,7 @@ function Cart() {
                           handleEditRemove(item.product.id, item.quantity);
                         }}
                       >
-                        -
+                        <FontAwesomeIcon icon={faMinus}/> 
                       </Button>
                       <Button
                         className="blue-primary edit-btn"
@@ -74,13 +82,13 @@ function Cart() {
                           handleEditAdd(item.product.id, item.quantity);
                         }}
                       >
-                        +
+                        <FontAwesomeIcon icon={faAdd}/>  
                       </Button>
                     </div>
                   </div>
                   <img
                     className="cart__item-img"
-                    src="https://90a1c75758623581b3f8-5c119c3de181c9857fcb2784776b17ef.ssl.cf2.rackcdn.com/660700_520452_01_front_zoom.jpg"
+                    src={item.product.image_url}
                   />
                 </div>
               );

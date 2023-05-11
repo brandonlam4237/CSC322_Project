@@ -5,6 +5,7 @@ import {
   useContext,
   ReactNode,
 } from "react";
+import apiClient from "src/services/apiClient";
 
 const PARTS_LIST_KEY = "custom-build-parts-list-object";
 
@@ -175,9 +176,11 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
 
       // update buildForm that will be sent to backend
       const formattedPartsList = formatPartsList(partsList);
-      // update both Ids object 
+      // update Ids object 
       setPartsListIds(formattedPartsList)
-      // update build form build form but  keep build_description and name constant
+      // Update partsListIds on the apiClient
+      apiClient.setPartsListIds(formattedPartsList)
+      // update build form build form but keep build_description and name constant
       setBuildForm({
         ...formattedPartsList,
         build_description: buildForm.build_description,
