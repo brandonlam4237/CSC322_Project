@@ -27,6 +27,10 @@ export default function AccountDetails() {
 
     if (balanceForm.name_on_card.length > 0 && balanceForm.cvc.toString().length > 1){
       await authValues.askForBalance(balanceForm);
+    }else if(balanceForm.name_on_card.length > 0 && balanceForm.cvc.toString().length == 1){
+      alert("Please Insert CVC");
+    }else if(balanceForm.name_on_card.length == 0 && balanceForm.cvc.toString().length > 1){
+      alert("Please Insert Name");
     }else{
       alert("Please Insert Name and CVC");
     }
@@ -72,7 +76,8 @@ export default function AccountDetails() {
                 <input
                   className="input-field"
                   type="text"
-                  name="card_name"
+                  name="name_on_card"
+                  value={balanceForm.name_on_card}
                   onChange={handleOnFormChange}
                   placeholder="Name on Card"
                 />
@@ -112,7 +117,8 @@ export default function AccountDetails() {
                 <input
                   className="input-field"
                   type="password"
-                  name="sec_code"
+                  name="cvc"
+                  value={balanceForm.cvc == 0 ? "" : balanceForm.cvc}
                   onChange={handleOnFormChange}
                   placeholder="CVC"
                 />
