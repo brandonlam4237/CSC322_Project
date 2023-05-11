@@ -20,6 +20,7 @@ import Cart from "./pages/Cart";
 import { AuthContextProvider } from "./contexts/AuthContext";
 import AccountDetails from "./pages/AccountDetails";
 import { PartsListProvidor } from "./contexts/PartsListContext";
+import OrderHistory from "./pages/OrderHistory";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -40,6 +41,7 @@ const router = createBrowserRouter(
       <Route path="/mybuild" element={<MyBuild />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/accountDetails" element={<AccountDetails />} />
+      <Route path="/orderHistory" element={<OrderHistory />} />
     </Route>
   )
 );
