@@ -203,7 +203,7 @@ class ApiClient {
         })
       );
     }
-    return customerOrders;
+    return customerOrders.sort((a:any, b:any) => (a.id < b.id) ? 1 : -1);;
   }
 }
 

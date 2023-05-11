@@ -33,11 +33,11 @@ export default function OrderHistory(){
         <h1>Loading...</h1>
     ) : (
     <main className="cart-page">
-        <div className="cart">
+        <div className="cart" > 
             <div className="cart__title">
-            <p className="cart__title-accent">{"<"}</p>
-            <p>Order History</p>
-            <p className="cart__title-accent">{">"}</p>
+                <p className="cart__title-accent">{"<"}</p>
+                <p>Order History</p>
+                <p className="cart__title-accent">{">"}</p>
             </div>
 
             {/* If the orderArr list is empty*/}
@@ -46,7 +46,7 @@ export default function OrderHistory(){
                     No Orders Have Been Made
                 </div>
             )}
-
+            
             {/* If the orderArr list is not empty*/}
             {orderArr && orderArr.length != 0 && (
                 <div className="cart__item-list">
@@ -89,5 +89,4 @@ export default function OrderHistory(){
     );
 }
 
-// Sort orders
 // Fix order boxes
