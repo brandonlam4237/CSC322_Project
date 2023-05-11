@@ -1,22 +1,37 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
+from .models import Comment
 from .models import Product, ComputerPart, CustomBuild
 
 
 User = get_user_model()
 
 
+class CommentSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Comments
+    """
+
+    class Meta:
+        """
+        Serialize all fields in Comment model
+        """
+        model = Comment
+        fields = '__all__'
+
+
 class ProductSerializer(serializers.ModelSerializer):
     """
     Serializer for Computer Part Data
     """
-
     class Meta:
         """
         Serialize all fields in Computer Part model
         """
         model = Product
         fields = '__all__'
+
+    comments = CommentSerializer(many=True)
 
 
 class ComputerPartSerializer(serializers.ModelSerializer):
@@ -29,6 +44,8 @@ class ComputerPartSerializer(serializers.ModelSerializer):
         """
         model = ComputerPart
         fields = '__all__'
+
+    comments = CommentSerializer(many=True)
 
 
 class BuildSerializer(serializers.ModelSerializer):
@@ -61,3 +78,5 @@ class BuildSerializer(serializers.ModelSerializer):
         exclude = (
             'date_created',
         )
+
+    comments = CommentSerializer(many=True)

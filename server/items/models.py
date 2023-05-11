@@ -21,6 +21,13 @@ class Comment(models.Model):
     """
     username = models.CharField(max_length=255, null=False)
     comment = models.TextField(null=False)
+    datetime_added = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        """
+        Metadata class
+        """
+        ordering = ('-datetime_added',)
 
     objects = models.Manager()
 
