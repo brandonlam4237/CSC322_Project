@@ -115,7 +115,7 @@ class ProductSerializer(serializers.ModelSerializer):
         """
         model = Product
         exclude = (
-            'comments'
+            'comments',
         )
 
 
@@ -145,7 +145,7 @@ class CustomBuildSerializer(serializers.ModelSerializer):
         """
         model = CustomBuild
         fields = (
-            'parts'
+            'parts',
         )
 
 
@@ -167,7 +167,7 @@ class CartItemsSerializer(serializers.ModelSerializer):
         fields = (
             'product',
             'quantity',
-            'price'
+            'price',
         )
 
 
@@ -185,7 +185,7 @@ class CartSerializer(serializers.ModelSerializer):
         model = Cart
         fields = (
             'num_items',
-            'total_price'
+            'total_price',
         )
 
 
