@@ -5,7 +5,7 @@ import Button from "src/components/Button";
 import comment from "../assets/icons/comment.png";
 import apiClient from "src/services/apiClient";
 import { usePartsListContext } from "src/contexts/PartsListContext";
-
+import CommentsModal from "src/components/CommentsModal";
 
 const fields = {
   Case: ["Case Type", "Color", "Max Motherboard Size", "Height", "Width"],
@@ -65,6 +65,7 @@ function ProductDetail() {
   const [loading, setLoading] = useState(true);
   const [specKeys, setSpecKeys] = useState([]);
   const [specVals, setSpecVals] = useState([]);
+  const [commentsOpen, setCommentsOpen] = useState(false);
 
   useEffect(() => {
     fetchDetails();
@@ -98,8 +99,8 @@ function ProductDetail() {
     setLoading(false);
   }
 
-  async function handleAddCart(){
-    await apiClient.addToCart(productDetails.id)
+  async function handleAddCart() {
+    await apiClient.addToCart(productDetails.id);
   }
 
   const partsListVariables = usePartsListContext();
@@ -142,14 +143,33 @@ function ProductDetail() {
               })}
             </div>
             <div className="productDetails__btns">
-              <Button className="blue-primary" onClick={handleAddCart}>Add to cart</Button>
-              <Link to="/mybuild"><Button className="black-primary" onClick={handleAddBuild}>Add to build</Button></Link>
+              <Button className="blue-primary" onClick={handleAddCart}>
+                Add to cart
+              </Button>
+              <Link to="/mybuild">
+                <Button className="black-primary" onClick={handleAddBuild}>
+                  Add to build
+                </Button>
+              </Link>
             </div>
-            <div className="productDetails__comment">
+            <div
+              className="productDetails__comment"
+              onClick={() => {
+                setCommentsOpen(true);
+              }}
+            >
               <img className="productDetails__comment-icon" src={comment} />
               <div>Leave a comment</div>
             </div>
           </div>
+          {commentsOpen && (
+            <CommentsModal
+              closeModal={() => {
+                setCommentsOpen(false);
+              }}
+              productId={id}
+            />
+          )}
         </div>
       )}
     </main>
