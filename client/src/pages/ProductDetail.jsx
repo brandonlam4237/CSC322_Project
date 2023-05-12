@@ -6,6 +6,7 @@ import comment from "../assets/icons/comment.png";
 import apiClient from "src/services/apiClient";
 import { usePartsListContext } from "src/contexts/PartsListContext";
 import CommentsModal from "src/components/CommentsModal";
+import { useAuthContext } from "src/contexts/AuthContext";
 
 const fields = {
   Case: ["Case Type", "Color", "Max Motherboard Size", "Height", "Width"],
@@ -78,6 +79,8 @@ function ProductDetail() {
   const [specKeys, setSpecKeys] = useState([]);
   const [specVals, setSpecVals] = useState([]);
   const [commentsOpen, setCommentsOpen] = useState(false);
+
+  const user = useAuthContext().userData;
 
   useEffect(() => {
     fetchDetails();
@@ -161,20 +164,22 @@ function ProductDetail() {
                 );
               })}
             </div>
-            <div className="productDetails__btns">
-              <Button className="blue-primary" onClick={handleAddCart}>
-                Add to cart
-              </Button>
-              {productDetails.category != "Desktop" ? (
-                <Link to="/mybuild">
-                  <Button className="black-primary" onClick={handleAddBuild}>
-                    Add to build
-                  </Button>
-                </Link>
-              ) : (
-                <></>
-              )}
-            </div>
+            {user.is_active && user.user_type !== "Visitor" && (
+              <div className="productDetails__btns">
+                <Button className="blue-primary" onClick={handleAddCart}>
+                  Add to cart
+                </Button>
+                {productDetails.category != "Desktop" ? (
+                  <Link to="/mybuild">
+                    <Button className="black-primary" onClick={handleAddBuild}>
+                      Add to build
+                    </Button>
+                  </Link>
+                ) : (
+                  <></>
+                )}
+              </div>
+            )}
             <div
               className="productDetails__comment"
               onClick={() => {

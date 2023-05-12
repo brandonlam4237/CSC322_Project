@@ -111,8 +111,8 @@ export interface UserTokens {
 }
 // to keep typescript happy
 export const userTokensTemplate: UserTokens = {
-  refresh: "",
-  access: "",
+  refresh: "null",
+  access: "null",
 };
 
 export function AuthContextProvider({ children }: AuthProvidorProps) {
@@ -121,7 +121,7 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
 
   async function loginUser(username: string, password: string) {
     try {
-      const tokensResponse = await fetch("/auth/login", {
+      const tokensResponse = await fetch("http://localhost:8000/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -149,7 +149,7 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
 
   async function registerUser(registerForm: object) {
     try {
-      await fetch("/auth/register", {
+      await fetch("http://localhost:8000/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -165,7 +165,7 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
     const refreshToken: string = userTokens.refresh;
     const accessToken: string = userTokens.access;
     try {
-      await fetch("/auth/logout", {
+      await fetch("http://localhost:8000/auth/logout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -176,6 +176,8 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
       setUserData(userDataTemplate);
       setUserTokens(userTokensTemplate);
       localStorage.removeItem(LOCAL_STORAGE_AUTH_KEY);
+      // reset user tokens private variables in apiClient
+      apiClient.setTokens(userTokensTemplate)
     } catch (error) {
       console.log(error);
     }
@@ -188,7 +190,7 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
       };
       headers["Authorization"] = `Bearer ${access}`;
       const response = await axios({
-        url: "auth/me",
+        url: "http://localhost:8000/auth/me",
         method: "GET",
         data: {},
         headers: headers,
@@ -202,7 +204,7 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
   async function askForBalance(balanceForm: IBalanceForm) {
     const accessToken: string = userTokens.access;
     try {
-      await fetch("users/balance", {
+      await fetch("http://localhost:8000/users/balance", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

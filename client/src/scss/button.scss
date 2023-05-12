@@ -96,3 +96,17 @@ button {
     color: #d23c3c;
   }
 }
+
+.green-primary {
+  color: white;
+  background-color: #3cd296;
+  border: transparent solid 1px;
+  &:hover {
+    background-color:#36c089;
+  }
+  &:active {
+    background-color: white;
+    border: #3cd296 solid 1px;
+    color: #3cd296;
+  }
+}

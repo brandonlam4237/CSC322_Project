@@ -97,18 +97,26 @@ class ApiClient {
     const isPartsListEmpty =
       Object.keys(this.partsListIds).length === 0 ? true : false;
 
-    await Promise.all(
-      productsJson.products.map(
-        async (individualProduct: any, index: number) => {
-          const inCompatibilityArr = (
-            await this.validateBuild({
-              ...this.partsListIds,
-              [individualProduct.category]: individualProduct.id,
-            })
-          ).incompatibilities;
-          individualProduct["isCompatible"] =
-            !isPartsListEmpty && inCompatibilityArr.length === 0 ? true : false;
-    }));
+    if (this.accessToken != "null" && !isPartsListEmpty) {
+      await Promise.all(
+        productsJson.products.map(
+          async (individualProduct: any, index: number) => {
+            // product with id 429 (flashdrive)
+            if (individualProduct.id != 429) {
+              const response = await this.validateBuild({
+                ...this.partsListIds,
+                [individualProduct.category]: individualProduct.id,
+              });
+              const inCompatibilityArr = response.incompatibilities;
+              individualProduct["isCompatible"] =
+                !isPartsListEmpty && inCompatibilityArr.length === 0
+                  ? true
+                  : false;
+            }
+          }
+        )
+      );
+    }
     return productsJson;
   }
 
@@ -224,14 +232,14 @@ class ApiClient {
     });
   }
 
-  async getOrders(){
+  async getOrders() {
     const customerOrders = await this.apiRequest({
       endpoint: `/users/orders`,
       method: "GET",
       requestBody: {},
     });
 
-    if(customerOrders){
+    if (customerOrders) {
       await Promise.all(
         customerOrders.map(async (order: any) => {
           var dateString = order["datetime_ordered"].toString().substring(0, 10);
@@ -252,7 +260,7 @@ class ApiClient {
         })
       );
     }
-    return customerOrders.sort((a:any, b:any) => (a.id < b.id) ? 1 : -1);;
+    return customerOrders.sort((a: any, b: any) => (a.id < b.id ? 1 : -1));
   }
 }
 
