@@ -273,6 +273,17 @@ class ApiClient {
       },
     });
   }
+
+  // add a comment to an item
+  async addComment(productId: number, comment: string) {
+    return await this.apiRequest({
+      endpoint: `/items/comments/${productId}`,
+      method: "POST",
+      requestBody: {
+        comment: comment,
+      },
+    });
+  }
 }
 
 export default new ApiClient("http://localhost:8000");
