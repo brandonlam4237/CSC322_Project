@@ -76,11 +76,12 @@ function Navbar() {
             userType={user.user_type}
           />
         )}
-        <NavLink to="/cart">
-          <img src={cart_icon} className="options__icon" alt="cart icon" />
-        </NavLink>
+        {user.is_active && user.user_type !== "Visitor" && (
+          <NavLink to="/cart">
+            <img src={cart_icon} className="options__icon" alt="cart icon" />
+          </NavLink>
+        )}
       </section>
-
       {hamburgerMenuIsOpen && (
         <HamburgerMenu
           setHamburgerComponentsIsOpen={setHamburgerComponentsIsOpen}
