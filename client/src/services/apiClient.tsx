@@ -98,7 +98,6 @@ class ApiClient {
       Object.keys(this.partsListIds).length === 0 ? true : false;
 
     if (this.accessToken != "null" && !isPartsListEmpty) {
-      console.log(123);
       await Promise.all(
         productsJson.products.map(
           async (individualProduct: any, index: number) => {
@@ -109,7 +108,6 @@ class ApiClient {
                 [individualProduct.category]: individualProduct.id,
               });
               const inCompatibilityArr = response.incompatibilities;
-              console.log(inCompatibilityArr);
               individualProduct["isCompatible"] =
                 !isPartsListEmpty && inCompatibilityArr.length === 0
                   ? true
