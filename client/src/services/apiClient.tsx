@@ -97,20 +97,24 @@ class ApiClient {
     const isPartsListEmpty =
       Object.keys(this.partsListIds).length === 0 ? true : false;
 
-    if (this.accessToken != "null") {
+    if (this.accessToken != "null" && !isPartsListEmpty) {
+      console.log(123);
       await Promise.all(
         productsJson.products.map(
           async (individualProduct: any, index: number) => {
-            const inCompatibilityArr = (
-              await this.validateBuild({
+            // product with id 429 (flashdrive)
+            if (individualProduct.id != 429) {
+              const response = await this.validateBuild({
                 ...this.partsListIds,
                 [individualProduct.category]: individualProduct.id,
-              })
-            ).incompatibilities;
-            individualProduct["isCompatible"] =
-              !isPartsListEmpty && inCompatibilityArr.length === 0
-                ? true
-                : false;
+              });
+              const inCompatibilityArr = response.incompatibilities;
+              console.log(inCompatibilityArr);
+              individualProduct["isCompatible"] =
+                !isPartsListEmpty && inCompatibilityArr.length === 0
+                  ? true
+                  : false;
+            }
           }
         )
       );
