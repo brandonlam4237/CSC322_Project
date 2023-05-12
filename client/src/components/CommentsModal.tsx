@@ -1,8 +1,9 @@
 import "../scss/commentsModal.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./Button";
+import apiClient from "src/services/apiClient";
 
 interface UserRowProps {
   closeModal: Function;
@@ -11,6 +12,25 @@ interface UserRowProps {
 
 function CommentsModal(Props: UserRowProps) {
   const { closeModal, productId } = Props;
+  const [comment, setComment] = useState("");
+  const [comments, setComments] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetchProductData();
+  }, []);
+
+  async function fetchProductData() {
+    const res = await fetch("http://localhost:8000/items/" + productId);
+    const resJSON = await res.json();
+    console.log(resJSON.product.comments);
+    setComments(resJSON.product.comments);
+  }
+
+  async function handleSubmit() {
+    await apiClient.addComment(productId, comment);
+    setComment("");
+    fetchProductData();
+  }
 
   return (
     <div className="comments-modal">
@@ -33,9 +53,30 @@ function CommentsModal(Props: UserRowProps) {
           <textarea
             className="comments-modal__text-field"
             placeholder="Leave a comment"
+            value={comment}
+            onChange={(e) => {
+              setComment(e.target.value);
+            }}
           />
-          <Button className="blue-primary">Submit</Button>
+          <Button className="blue-primary" onClick={handleSubmit}>
+            Submit
+          </Button>
         </div>
+
+        {comments.length ? (
+          <div className="comments-modal__comments">
+            {comments.map((ele, i) => {
+              return (
+                <div key={i} className="comments-modal__comment">
+                  <p className="comments-modal__username">{ele.username}</p>
+                  <p>{ele.comment}</p>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div style={{ textAlign: "center" }}>No comments yet</div>
+        )}
       </div>
       <div
         onClick={() => {
