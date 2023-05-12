@@ -1,8 +1,8 @@
-import math
 from rest_framework.views import APIView
 from rest_framework import status, permissions
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.models import AnonymousUser
 
 from better_profanity import profanity
 
@@ -82,7 +82,7 @@ class ManageComment(APIView):
         user = request.user
         product = get_object_or_404(Product, id=id)
 
-        if not user:
+        if not isinstance(user, AnonymousUser):
             username = user.username
         else:
             username = "Anonymous"
