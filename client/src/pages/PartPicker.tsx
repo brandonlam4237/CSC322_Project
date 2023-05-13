@@ -7,14 +7,19 @@ import Button from "src/components/Button";
 import { usePartsListContext } from "src/contexts/PartsListContext";
 import apiClient from "src/services/apiClient";
 import PartPickerBanner from "src/components/PartPickerBanner";
+import BasicRating from "src/components/BasicRating";
 export default function MyBuild() {
+  // Set compatibility before loading up the page
+  const [isLoading, setisLoading] = useState<boolean>(true);
   const [isCompatible, setIsCompatible] = useState(true);
+  const [compatibilityIssues, setCompatibilityIssues] = useState([]);
+  // if a customer wishes to suggest a build as they buy
+  const [isChecked, setIsChecked] = useState(false);
+  // to pass down to rating component in order to rate build
+  const [rating, setRating] = useState<number | null>(0);
+  // auth context variables
   const authValues = useAuthContext();
   const user = authValues.userData;
-  const [isLoading, setisLoading] = useState<boolean>(true);
-  const [compatibilityIssues, setCompatibilityIssues] = useState([]);
-  const [isChecked, setIsChecked] = useState(false);
-
   // partsList context vairables
   const partsListVariables = usePartsListContext();
   const setBuildForm = partsListVariables.setBuildForm;
@@ -55,11 +60,19 @@ export default function MyBuild() {
     // if the user happens to be also customer then buy the build
     if (user.user_type == "Customer")
       await apiClient.checkoutBuild(buildIdObject.build_id);
+
+    if (rating != 0 && typeof rating === "number")
+      await apiClient.rateBuild(buildIdObject.build_id, rating);
+
     await apiClient.setBuildVisible(buildIdObject.build_id);
   }
 
   async function hanldeBuyBuild() {
     let buildIdObject = await apiClient.createBuild(buildForm);
+    console.log(buildIdObject)
+    if (rating != 0 && typeof rating === "number")
+      await apiClient.rateBuild(buildIdObject.build_id, rating);
+
     await apiClient.checkoutBuild(buildIdObject.build_id);
   }
 
@@ -92,16 +105,24 @@ export default function MyBuild() {
             <PartsTable />
 
             {user.user_type == "Customer" && (
-              <label htmlFor="checkbox1">
-                <input
-                  id="checkbox1"
-                  name="checkbox"
-                  type="checkbox"
-                  checked={isChecked}
-                  onClick={handleCheckBox}
+              <div className="customer-options">
+                <BasicRating
+                  name="read-only"
+                  ratingCaption="You're Honest Rating :)"
+                  defaultRatingValue={rating}
+                  setRating={setRating}
                 />
-                Check this box if you'd like to share your build!
-              </label>
+                <label htmlFor="checkbox1">
+                  <input
+                    id="checkbox1"
+                    name="checkbox"
+                    type="checkbox"
+                    checked={isChecked}
+                    onClick={handleCheckBox}
+                  />
+                  Check this box if you'd like to share your build!
+                </label>
+              </div>
             )}
 
             {user.user_type == ("Owner" || "Employee") ||
