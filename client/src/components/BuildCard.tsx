@@ -21,7 +21,9 @@ function BuildCard(props: BuildCardProps) {
       <p>{build.build_description}</p>
       <p>{build.product_name}</p>
       <div className="grid">
-        <img src={currImg} className="grid__img-big" />
+        <div className="grid__img-big">
+          <img src={currImg} className="grid__img-big" />
+        </div>
         <Link to={`/product/` + parts[0].id}>
           <img
             src={parts[0].image_url}
