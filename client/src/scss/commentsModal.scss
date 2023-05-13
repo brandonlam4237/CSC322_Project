@@ -6,6 +6,7 @@
 
   &__content {
     background-color: white;
+    border: solid black 2px;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -52,15 +53,29 @@
     -moz-box-shadow: none;
     box-shadow: none;
     width: 100%;
-    border: solid 2px black;
     font-family: "Poppins", sans-serif;
     padding: 0.7rem;
-    height: 3rem;
+    border: solid black 2px;
+    //height: 3rem;
   }
 
   &__comment-sub {
     display: flex;
     height: 3rem;
+  }
+
+  &__comment {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__comments {
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  &__username {
+    color: $accent;
   }
 
   &__close-btn {
@@ -69,7 +84,9 @@
     align-items: center;
     width: 2.5rem;
     height: 2.5rem;
+    border: none;
     border-radius: 0px;
     position: absolute;
+    background-color: $dark-gray;
   }
 }
