@@ -4,6 +4,7 @@ import "../scss/builds.scss";
 import Button from "src/components/Button";
 import { Link } from "react-router-dom";
 import pc_img from "../assets/images/pc.png";
+import BuildCard from "src/components/BuildCard";
 
 function Builds() {
   const [builds, setBuilds] = useState<any[]>([]);
@@ -11,6 +12,10 @@ function Builds() {
   useEffect(() => {
     fetchBuilds();
   }, []);
+
+  useEffect(() => {
+    console.log(builds);
+  }, [builds]);
 
   async function fetchBuilds() {
     const res = await apiClient.getAllBuilds();
@@ -44,6 +49,15 @@ function Builds() {
         </div>
         <img className="builds__banner-img" src={pc_img} />
       </div>
+      {builds.length ? (
+        <div className="builds__cards">
+          {builds.map((build, i) => {
+            return <BuildCard build={build} key={i} />;
+          })}
+        </div>
+      ) : (
+        <div>No builds</div>
+      )}
     </main>
   );
 }

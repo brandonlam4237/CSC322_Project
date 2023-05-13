@@ -34,4 +34,10 @@
   &__mybuild-btn {
     width: 9rem;
   }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
