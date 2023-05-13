@@ -157,7 +157,6 @@ export default function MyBuild() {
               ))}
             <div className="buttons-container">
               <div className="buttons-container__save-options">
-                <Button className="blue-primary">Validate Build</Button>
                 <Button className="red-secondary" onClick={discardBuild}>
                   Discard Build
                 </Button>
