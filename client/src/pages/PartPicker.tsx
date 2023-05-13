@@ -32,13 +32,13 @@ export default function MyBuild() {
   }
 
   async function handleSuggestBuild() {
-    let buildId = await apiClient.createBuild(buildForm);
-    await apiClient.setBuildVisible(buildId);
+    let buildIdObject = await apiClient.createBuild(buildForm);
+    await apiClient.setBuildVisible(buildIdObject.build_id);
   }
 
   async function hanldeBuyBuild() {
-    let buildId = await apiClient.createBuild(buildForm);
-    await apiClient.checkoutBuild(buildId);
+    let buildIdObject = await apiClient.createBuild(buildForm);
+    await apiClient.checkoutBuild(buildIdObject.build_id);
   }
 
   useEffect(() => {
@@ -51,7 +51,6 @@ export default function MyBuild() {
     }
     validateBuild();
   }, [partsListIds]);
-
 
   return (
     <div className="fullscreen-bg">

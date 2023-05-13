@@ -141,7 +141,6 @@ class ApiClient {
     }
     return customerCart;
   }
-
   // add item to shopping cart
   async addToCart(itemId: number) {
     return await this.apiRequest({
@@ -150,6 +149,7 @@ class ApiClient {
       requestBody: {},
     });
   }
+
   // adjust quantity of item already in shopping cart
   // doubles as delete
   async editItemQuantity(desiredQuantity: number, itemId: number) {
@@ -182,6 +182,7 @@ class ApiClient {
       requestBody: partsList,
     });
   }
+  
   // get all builds created by customers/employees/owner
   // all users
   async getAllBuilds() {
@@ -191,6 +192,7 @@ class ApiClient {
       requestBody: {},
     });
   }
+
   // implements makebuild endpoint
   // all users
   async createBuild(buildForm: IBuildForm) {
@@ -200,6 +202,7 @@ class ApiClient {
       requestBody: buildForm,
     });
   }
+
   // this function is called after createBuild
   // all users
   async setBuildVisible(buildId: number) {
@@ -209,6 +212,7 @@ class ApiClient {
       requestBody: {},
     });
   }
+
   // this function is called after createBuild
   // only customer
   async checkoutBuild(buildId: number) {
@@ -216,10 +220,11 @@ class ApiClient {
       endpoint: `/users/builds/checkout/${buildId}`,
       method: "POST",
       requestBody: {
-        address: "sdfsdfsdf",
+        address: "place holder address",
       },
     });
   }
+
   // this function is called after createBuild
   // all users
   async rateBuild(buildId: number, rating: number) {
@@ -262,7 +267,7 @@ class ApiClient {
     }
     return customerOrders.sort((a: any, b: any) => (a.id < b.id ? 1 : -1));
   }
-
+  
   // add a comment to an item
   async addComment(productId: number, comment: string) {
     return await this.apiRequest({
