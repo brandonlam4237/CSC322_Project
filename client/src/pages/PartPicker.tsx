@@ -69,7 +69,6 @@ export default function MyBuild() {
 
   async function hanldeBuyBuild() {
     let buildIdObject = await apiClient.createBuild(buildForm);
-    console.log(buildIdObject)
     if (rating != 0 && typeof rating === "number")
       await apiClient.rateBuild(buildIdObject.build_id, rating);
 
