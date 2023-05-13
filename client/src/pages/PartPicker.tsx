@@ -54,7 +54,8 @@ export default function MyBuild() {
   
   function getIncompatiblePartsString(){
     let incompatibleParts = "";
-    if (compatibilityIssues.length == 2) incompatibleParts += compatibilityIssues[0] + " and " + compatibilityIssues[1]
+    if (compatibilityIssues.length == 1) incompatibleParts += compatibilityIssues[0];
+    else if (compatibilityIssues.length == 2) incompatibleParts += compatibilityIssues[0] + " and " + compatibilityIssues[1]
     else {
       let size = compatibilityIssues.length
       for (let i = 0; i < size - 1; i++ ){
@@ -64,7 +65,6 @@ export default function MyBuild() {
     }
     return incompatibleParts
   }
-  
   return (
     <div className="fullscreen-bg">
       
