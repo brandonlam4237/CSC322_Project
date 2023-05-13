@@ -5,7 +5,7 @@ import PartsTable from "src/components/PartsTable";
 import Button from "src/components/Button";
 import { usePartsListContext } from "src/contexts/PartsListContext";
 import apiClient from "src/services/apiClient";
-import Box from "src/components/Box";
+import PartPickerBanner from "src/components/PartPickerBanner";
 export default function MyBuild() {
   const [isCompatible, setIsCompatible] = useState(true);
   const authValues = useAuthContext();
@@ -52,22 +52,7 @@ export default function MyBuild() {
     validateBuild();
   }, [partsListIds]);
 
-  function getIncompatiblePartsString() {
-    let incompatibleParts = "";
-    if (compatibilityIssues.length == 1)
-      incompatibleParts += compatibilityIssues[0];
-    else if (compatibilityIssues.length == 2)
-      incompatibleParts +=
-        compatibilityIssues[0] + " and " + compatibilityIssues[1];
-    else {
-      let size = compatibilityIssues.length;
-      for (let i = 0; i < size - 1; i++) {
-        incompatibleParts += compatibilityIssues[i] + ", ";
-      }
-      incompatibleParts += "and " + compatibilityIssues[size - 1];
-    }
-    return incompatibleParts;
-  }
+
   return (
     <div className="fullscreen-bg">
       {isLoading ? (
@@ -79,21 +64,11 @@ export default function MyBuild() {
             <div className="logo__accent-right">{`>`}</div>
           </h1>
           <div className="mybuild__component__content">
-            {Object.keys(partsListIds).length == 0 ? (
-              <Box color="blue" isBold={true} isRound={true}>
-                Start by adding parts to your build!
-              </Box>
-            ) : isCompatible ? (
-              <Box color={"green"} isBold={true} isRound={true}>
-                There are no compatibility issues with your build!
-              </Box>
-            ) : (
-              <Box color="red" isBold={true} isRound={true}>
-                There are compatibility issues with your build! Please check:{" "}
-                {getIncompatiblePartsString()}
-              </Box>
-            )}
-
+            <PartPickerBanner
+              compatibilityIssues={compatibilityIssues}
+              isCompatible={isCompatible}
+              partsListIds={partsListIds}
+            />
             <PartsTable />
             {user.user_type == ("Owner" || "Employee") ? (
               <div className="build-description-container">
@@ -109,8 +84,6 @@ export default function MyBuild() {
                     value={buildForm.build_name}
                     onChange={handleOnTextAreaChange}
                   ></input>
-                </form>
-                <form>
                   <h3>
                     <label htmlFor="suggested-build-form">
                       Build Description
