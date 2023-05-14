@@ -30,6 +30,8 @@ class UserSerializer(serializers.ModelSerializer):
             'blacklisted',
             'balance',
             'application_memo',
+            'rejected',
+            'protested',
             'warnings',
             'compliments',
             'position_tier',
@@ -60,6 +62,8 @@ class EmployeeSerializer(serializers.ModelSerializer):
             'user_type',
             'blacklisted',
             'application_memo',
+            'rejected',
+            'protested',
             'warnings',
             'position_tier',
         )
@@ -90,6 +94,30 @@ class CustomerSerializer(serializers.ModelSerializer):
             'balance',
             'blacklisted',
             'application_memo',
+            'rejected',
+            'protested',
             'warnings',
             'compliments',
+        )
+
+
+class RejectedUserSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Rejected Users
+    """
+    class Meta:
+        """
+        Fields
+        ------
+        model : django Model
+            User model
+        fields : tuple[str]
+            Tuple of every field to be serialized
+        """
+        model = User
+        fields = (
+            'username',
+            'application_memo',
+            'rejected',
+            'protested',
         )
