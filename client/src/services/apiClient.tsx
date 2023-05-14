@@ -1,5 +1,5 @@
 import { IBuildForm, IPartsListIds } from "src/contexts/PartsListContext";
-import { IApprovalForm } from "src/pages/UserRow";
+import { IApprovalForm } from "src/components/UserRow";
 
 class ApiClient {
   // specify class variables along with their types

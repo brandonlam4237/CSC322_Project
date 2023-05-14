@@ -2,7 +2,7 @@ import "../scss/approve.scss";
 import { useEffect, useState } from "react";
 import { IUserCredentials, useAuthContext } from "src/contexts/AuthContext";
 import apiClient from "src/services/apiClient";
-import { UserRow } from "./UserRow";
+import { UserRow } from "../components/UserRow";
 
 export default function Approve() {
   const authValues = useAuthContext();
