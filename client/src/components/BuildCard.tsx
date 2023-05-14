@@ -10,6 +10,7 @@ import {
   usePartsListContext,
 } from "src/contexts/PartsListContext";
 import BasicRating from "./BasicRating";
+import apiClient from "src/services/apiClient";
 interface BuildCardProps {
   build: any;
 }
@@ -31,6 +32,10 @@ function BuildCard(props: BuildCardProps) {
       };
     });
     setPartsList(partsList);
+  }
+
+  async function handleAddCart() {
+    await apiClient.addToCart(build.id);
   }
 
   return (
@@ -59,6 +64,7 @@ function BuildCard(props: BuildCardProps) {
           <Button
             className="black-primary"
             style={{ padding: "1rem", width: "10rem" }}
+            onClick={handleAddCart}
           >
             Add to Cart
           </Button>
