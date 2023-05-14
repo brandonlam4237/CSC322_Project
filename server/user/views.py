@@ -447,6 +447,12 @@ class ActivateUser(APIView):
         """
         user = request.user
 
+        if user.is_customer:
+            return Response(
+                {'detail': 'Customers do not have permission for this endpoint'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
         user_to_activate = get_object_or_404(User, id=id)
 
         if user_to_activate.is_employee and not user.is_superuser:
@@ -489,9 +495,15 @@ class RejectUser(APIView):
         """
         user = request.user
 
-        user_to_activate = get_object_or_404(User, id=user_id)
+        if user.is_customer:
+            return Response(
+                {'detail': 'Customers do not have permission for this endpoint'},
+                status=status.HTTP_403_FORBIDDEN
+            )
 
-        if user_to_activate.is_employee and not user.is_superuser:
+        user_to_reject = get_object_or_404(User, id=user_id)
+
+        if user_to_reject.is_employee and not user.is_superuser:
             return Response(
                 {'error': 'User doesn\'t have the proper permissions to activate reject users'},
                 status=status.HTTP_401_UNAUTHORIZED
@@ -506,7 +518,7 @@ class RejectUser(APIView):
 
         memo = str(memo)
 
-        User.objects.filter(id=user_to_activate.id).update(
+        User.objects.filter(id=user_to_reject.id).update(
             rejected=True, application_memo=memo)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
