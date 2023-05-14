@@ -86,13 +86,14 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
 
     # Shop Related Fields
     blacklisted = models.BooleanField(default=False)
-    balance = models.DecimalField(default=0.00, max_digits=13, decimal_places=2)
+    balance = models.DecimalField(
+        default=0.00, max_digits=13, decimal_places=2)
     has_discount = models.BooleanField(default=False)
 
     # Account Activation Fields
     is_active = models.BooleanField(default=False)
-    is_rejected = models.BooleanField(default=False)
-    is_protested = models.BooleanField(default=False)
+    rejected = models.BooleanField(default=False)
+    protested = models.BooleanField(default=False)
     application_memo = models.TextField(default="")
 
     # Employee Related Fields
@@ -134,3 +135,21 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self) -> str:
         return f"[Username: {self.username}, Email: {self.email}]"
+
+
+class Protest(models.Model):
+    """
+    Protest Model
+    """
+    protestor = models.OneToOneField(
+        UserAccount, on_delete=models.CASCADE, null=False)
+    datetime_protested = models.DateTimeField(auto_now_add=True)
+    reviewed = models.BooleanField(default=False)
+
+    objects = models.Manager()
+
+    class Meta:
+        """
+        Metadata class
+        """
+        ordering = ['-datetime_protested', 'reviewed']
