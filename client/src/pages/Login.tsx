@@ -38,7 +38,7 @@ export default function Login() {
       <h1 className="auth__header">Login to your account</h1>
       {/* Customer Protest Button */}
       {/* <Box className="protest-banner" color={"red"} isRound={true}>
-        Uh Oh! I it looks like your registration application has been rejected.
+        Uh Oh! It looks like your registration application has been rejected.
         If you believe that this is a mistake, please{"  "}
         <strong className="protest-banner__button">click here</strong>
       </Box>
