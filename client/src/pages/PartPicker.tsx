@@ -107,7 +107,7 @@ export default function MyBuild() {
               <div className="customer-options">
                 <BasicRating
                   name="read-only"
-                  ratingCaption="You're Honest Rating :)"
+                  ratingCaption="Your Honest Rating :)"
                   defaultRatingValue={rating}
                   setRating={setRating}
                 />
