@@ -2,7 +2,7 @@ from django.urls import path
 from .views import CustomerList
 from .views import BlacklistedUserList, BlacklistUser, CustomerDetail
 from .views import UserList
-from .views import ActivateUser
+from .views import ActivateUser, RejectUser, ProtestRejection
 from .views import AddBalance
 from .views import CustomerCart, ManageCart, ManageOrders
 from .views import GetLatestBuild, MakeBuildVisible, CheckoutBuild
@@ -19,6 +19,8 @@ urlpatterns = [
     path('blacklist/<int:id>', BlacklistUser.as_view()),
 
     path('activate/<int:id>', ActivateUser.as_view()),
+    path('reject/<int:user_id>', RejectUser.as_view()),
+    path('protest', ProtestRejection.as_view()),
 
     path('balance', AddBalance.as_view()),
 
