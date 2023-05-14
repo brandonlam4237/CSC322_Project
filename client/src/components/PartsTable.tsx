@@ -1,7 +1,5 @@
 import "../scss/table.scss";
-import {
-  usePartsListContext,
-} from "src/contexts/PartsListContext";
+import { IPart, usePartsListContext } from "src/contexts/PartsListContext";
 import PartsTableRow from "./PartsTableRow";
 
 const partsCategoryArray: string[] = [
@@ -32,7 +30,16 @@ const rowHeaders: IRowHeaders = {
 export default function PartsTable() {
   const partsListVariables = usePartsListContext();
   const partsList = partsListVariables.partsList;
+  const partsListIds = partsListVariables.partsListIds;
   const removePart = partsListVariables.removePart;
+
+  // Compute total price of all the parts so far
+  let totalPrice = 0;
+  partsCategoryArray.forEach((categoryName: string) => {
+    totalPrice += partsList[categoryName].price;
+  });
+
+  console.log(partsList);
   return (
     <table>
       <thead>
@@ -43,7 +50,6 @@ export default function PartsTable() {
           <th></th>
         </tr>
       </thead>
-      <br />
       <tbody>
         {partsCategoryArray.map((categoryName: string, index: number) => {
           return (
@@ -57,6 +63,16 @@ export default function PartsTable() {
           );
         })}
       </tbody>
+      {Object.keys(partsListIds).length > 0 && (
+        <tfoot>
+          <tr>
+            <th>Total Price</th>
+            <td></td>
+            <th>${totalPrice.toFixed(2)}</th>
+            <td></td>
+          </tr>
+        </tfoot>
+      )}
     </table>
   );
 }
