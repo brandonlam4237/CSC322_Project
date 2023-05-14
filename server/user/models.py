@@ -91,6 +91,8 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
 
     # Account Activation Fields
     is_active = models.BooleanField(default=False)
+    is_rejected = models.BooleanField(default=False)
+    is_protested = models.BooleanField(default=False)
     application_memo = models.TextField(default="")
 
     # Employee Related Fields
