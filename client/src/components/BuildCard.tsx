@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import "../scss/buildCard.scss";
 import Button from "./Button";
 import comment from "../assets/icons/comment.png";
-import { IPart } from "src/contexts/PartsListContext";
+import {
+  IPart,
+  IPartsList,
+  partsListTemplate,
+  usePartsListContext,
+} from "src/contexts/PartsListContext";
 import BasicRating from "./BasicRating";
-
 interface BuildCardProps {
   build: any;
 }
@@ -14,6 +18,21 @@ function BuildCard(props: BuildCardProps) {
   const { build } = props;
   const [parts, setParts] = useState(build.parts);
   const [currImg, setCurrImg] = useState(parts[0].image_url);
+  // partsList context variables
+  const partsListVariables = usePartsListContext();
+  const setPartsList = partsListVariables.setPartsList;
+  
+  function handleCustomizeBuild() {
+    let partsList: IPartsList = partsListTemplate;
+    parts.forEach((part: any) => {
+      partsList = {
+        ...partsList,
+        [part.category]: { ...part, isAdded: true },
+      };
+    });
+    setPartsList(partsList);
+  }
+
   return (
     <main className="buildCard">
       <div className="buildCard__text">
@@ -26,7 +45,10 @@ function BuildCard(props: BuildCardProps) {
           <p className="buildCard__desc">{` ${build.build_description}`}</p>
         </div>
         <p className="buildCard__price">{`$${build.price}`}</p>
-          <BasicRating defaultRatingValue={build.ratings.avg_ratings} readOnly={true}/>
+        <BasicRating
+          defaultRatingValue={build.ratings.avg_ratings}
+          readOnly={true}
+        />
         <div className="buildCard__parts">
           {parts.length &&
             parts.map((part: any, index: number) => {
@@ -40,12 +62,15 @@ function BuildCard(props: BuildCardProps) {
           >
             Add to Cart
           </Button>
-          <Button
-            className="blue-primary"
-            style={{ padding: "1rem", width: "10rem" }}
-          >
-            Customize
-          </Button>
+          <Link to={"/mybuild"}>
+            <Button
+              className="blue-primary"
+              style={{ padding: "1rem", width: "10rem" }}
+              onClick={handleCustomizeBuild}
+            >
+              Customize
+            </Button>
+          </Link>
         </div>
         <div className="buildCard__comment">
           <img src={comment} className="buildCard__comment-btn" />
@@ -57,7 +82,7 @@ function BuildCard(props: BuildCardProps) {
           <img src={currImg} className="grid__img-big" />
         </div>
 
-        {parts.map((part:IPart, index: number) => {
+        {parts.map((part: IPart, index: number) => {
           return (
             <Link to={`/product/` + part.id} key={index}>
               <img

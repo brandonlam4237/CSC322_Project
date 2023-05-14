@@ -11,7 +11,7 @@ const PARTS_LIST_KEY = "custom-build-parts-list-object";
 
 export interface IPartsListContext {
   partsList: IPartsList;
-  partsListIds:IPartsListIds;
+  partsListIds: IPartsListIds;
   buildForm: IBuildForm;
   setPartsList: (value: IPartsList) => void;
   setPartsListIds: (value: IPartsListIds) => void;
@@ -83,12 +83,12 @@ export interface IBuildForm {
 }
 
 export interface IPartsListIds {
-  [key:string]:number
+  [key: string]: number;
 }
 
 export const PartsListContext = createContext<IPartsListContext>({
   partsList: partsListTemplate,
-  partsListIds:partsListIdsTemplate,
+  partsListIds: partsListIdsTemplate,
   buildForm: {
     build_description: "",
     build_name: "",
@@ -96,10 +96,10 @@ export const PartsListContext = createContext<IPartsListContext>({
   setPartsList: (value: IPartsList) => {
     /* do nothing */
   },
-  setPartsListIds: (value:IPartsListIds) => {
+  setPartsListIds: (value: IPartsListIds) => {
     /* do nothing */
   },
-  formatPartsList: (value:IPartsList) => {
+  formatPartsList: (value: IPartsList) => {
     /* do nothing */
   },
   setBuildForm: (value: IBuildForm) => {
@@ -146,10 +146,9 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
   }
 
   function addPart(part: IPart) {
-    const componentToAdd: string = part.category;
     setPartsList({
       ...partsList,
-      [componentToAdd]: part,
+      [part.category]: { ...part, isAdded: true },
     });
   }
 
@@ -180,10 +179,10 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
 
       // update buildForm that will be sent to backend
       const formattedPartsList = formatPartsList(partsList);
-      // update Ids object 
-      setPartsListIds(formattedPartsList)
+      // update Ids object
+      setPartsListIds(formattedPartsList);
       // Update partsListIds on the apiClient
-      apiClient.setPartsListIds(formattedPartsList)
+      apiClient.setPartsListIds(formattedPartsList);
       // update build form build form but keep build_description and name constant
       setBuildForm({
         ...formattedPartsList,
