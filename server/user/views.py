@@ -534,7 +534,7 @@ class ProtestRejection(APIView):
 
         if not username:
             return Response(
-                {'detail' 'Must provide a username'},
+                {'detail': 'Must provide a username'},
                 status=status.HTTP_400_BAD_REQUEST
             )
 
