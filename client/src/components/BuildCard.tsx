@@ -4,6 +4,7 @@ import "../scss/buildCard.scss";
 import Button from "./Button";
 import comment from "../assets/icons/comment.png";
 import { IPart } from "src/contexts/PartsListContext";
+import BasicRating from "./BasicRating";
 
 interface BuildCardProps {
   build: any;
@@ -13,7 +14,6 @@ function BuildCard(props: BuildCardProps) {
   const { build } = props;
   const [parts, setParts] = useState(build.parts);
   const [currImg, setCurrImg] = useState(parts[0].image_url);
-
   return (
     <main className="buildCard">
       <div className="buildCard__text">
@@ -26,6 +26,7 @@ function BuildCard(props: BuildCardProps) {
           <p className="buildCard__desc">{` ${build.build_description}`}</p>
         </div>
         <p className="buildCard__price">{`$${build.price}`}</p>
+          <BasicRating defaultRatingValue={build.ratings.avg_ratings} readOnly={true}/>
         <div className="buildCard__parts">
           {parts.length &&
             parts.map((part: any, index: number) => {
