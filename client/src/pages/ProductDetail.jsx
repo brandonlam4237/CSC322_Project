@@ -79,6 +79,8 @@ function ProductDetail() {
   const [specKeys, setSpecKeys] = useState([]);
   const [specVals, setSpecVals] = useState([]);
   const [commentsOpen, setCommentsOpen] = useState(false);
+  const [prodInCart, setProdInCart] = useState(false);
+  const [productIds, setProductIds] = useState([]);
 
   const user = useAuthContext().userData;
 
@@ -114,8 +116,23 @@ function ProductDetail() {
     setLoading(false);
   }
 
+  async function fetchCart() {
+    const res = await apiClient.getCustomerCart();
+    console.log(res)
+    let ids = new Array ();
+    for(let i=0; i<res.items.length; i++){
+      ids.push(res.items[i].product.id)
+    }
+    setProductIds(ids);
+  }
+
   async function handleAddCart() {
     await apiClient.addToCart(productDetails.id);
+    setProdInCart(!prodInCart)
+  }
+  async function handleRemoveFromCart() {
+    await apiClient.editItemQuantity(0, id);
+    setProdInCart(!prodInCart)
   }
 
   const partsListVariables = usePartsListContext();
@@ -166,9 +183,17 @@ function ProductDetail() {
             </div>
             {user.is_active && user.user_type !== "Visitor" && (
               <div className="productDetails__btns">
-                <Button className="blue-primary" onClick={handleAddCart}>
-                  Add to cart
-                </Button>
+
+            {prodInCart ? (
+              <Button className="red-primary" onClick={handleRemoveFromCart}> 
+              Remove From Cart
+              </Button>
+            ) : (
+              <Button className="blue-primary" onClick={handleAddCart}>
+              Add to cart
+              </Button>
+            )}
+
                 {productDetails.category != "Desktop" ? (
                   <Link to="/mybuild">
                     <Button className="black-primary" onClick={handleAddBuild}>

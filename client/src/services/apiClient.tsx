@@ -68,7 +68,7 @@ class ApiClient {
       const response = await fetch(requestUrl, requestInit);
       return await response.json();
     } catch (error: any) {
-      console.error(error.response);
+      console.error(error);
     }
   }
 

@@ -4,6 +4,7 @@ import Button from "./Button";
 import apiClient from "src/services/apiClient";
 import { usePartsListContext } from "src/contexts/PartsListContext";
 import { useAuthContext } from "src/contexts/AuthContext";
+import {useState } from "react";
 interface ProductCardProps {
   product_name: string;
   image_url: string;
@@ -11,14 +12,24 @@ interface ProductCardProps {
   category: string;
   id: number;
   isCompatible: boolean;
+  isInCart?: boolean;
 }
 
 function ProductCard(props: ProductCardProps) {
-  const { product_name, price, image_url, category, id, isCompatible } = props;
+  const { product_name, price, image_url, category, id, isCompatible, isInCart=false } = props;
   let buttonClassName =
     isCompatible && category != "Desktop" ? "green-primary" : "black-primary";
+
+  const [prodInCart, setProdInCart] = useState<boolean>(isInCart);
+  
   async function handleAddCart() {
     await apiClient.addToCart(id);
+    setProdInCart(!prodInCart)
+  }
+
+  async function handleRemoveFromCart() {
+    await apiClient.editItemQuantity(0, id);
+    setProdInCart(!prodInCart)
   }
 
   const user = useAuthContext().userData;
@@ -50,9 +61,16 @@ function ProductCard(props: ProductCardProps) {
 
         {user.is_active && user.user_type != "Visitor" && (
           <div className="productCard__btns">
-            <Button className="blue-primary" onClick={handleAddCart}>
+            {prodInCart ? (
+              <Button className="red-primary" onClick={handleRemoveFromCart}> 
+              Remove From Cart
+              </Button>
+            ) : (
+              <Button className="blue-primary" onClick={handleAddCart}>
               Add to cart
-            </Button>
+              </Button>
+            )}
+
             <Link to={"/myBuild"}>
               <Button className={buttonClassName} onClick={handleAddBuild}>
                 Add to build
