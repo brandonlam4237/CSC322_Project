@@ -15,6 +15,7 @@ export interface IPartsListContext {
   buildForm: IBuildForm;
   setPartsList: (value: IPartsList) => void;
   setPartsListIds: (value: IPartsListIds) => void;
+  formatPartsList: (value: IPartsList) => void;
   setBuildForm: (value: IBuildForm) => void;
   removePart: (value: IPart) => void;
   addPart: (value: IPart) => void;
@@ -37,7 +38,7 @@ export interface IPartsList {
 
 export interface IPart {
   id: number;
-  component_name: string;
+  category: string;
   product_name: string;
   image_url: string;
   price: number;
@@ -46,7 +47,7 @@ export interface IPart {
 
 export const partTemplate: IPart = {
   id: -1,
-  component_name: "",
+  category: "",
   product_name: "",
   image_url: "",
   price: -1,
@@ -98,6 +99,9 @@ export const PartsListContext = createContext<IPartsListContext>({
   setPartsListIds: (value:IPartsListIds) => {
     /* do nothing */
   },
+  formatPartsList: (value:IPartsList) => {
+    /* do nothing */
+  },
   setBuildForm: (value: IBuildForm) => {
     /* do nothing */
   },
@@ -134,7 +138,7 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
 
   // functions
   function removePart(part: IPart) {
-    const componentToRemove: string = part.component_name;
+    const componentToRemove: string = part.category;
     setPartsList({
       ...partsList,
       [componentToRemove]: partTemplate,
@@ -142,7 +146,7 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
   }
 
   function addPart(part: IPart) {
-    const componentToAdd: string = part.component_name;
+    const componentToAdd: string = part.category;
     setPartsList({
       ...partsList,
       [componentToAdd]: part,
@@ -210,6 +214,7 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
     partsListIds,
     setPartsList,
     setPartsListIds,
+    formatPartsList,
     setBuildForm,
     addPart,
     removePart,

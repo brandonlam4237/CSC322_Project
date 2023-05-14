@@ -127,7 +127,7 @@ function ProductDetail() {
       product_name: productDetails.product_name,
       price: Number(productDetails.price),
       image_url: productDetails.image_url,
-      component_name: productDetails.category,
+      category: productDetails.category,
       isAdded: true,
     };
     addPartToBuild(part);
