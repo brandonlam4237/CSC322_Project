@@ -118,7 +118,6 @@ function ProductDetail() {
 
   async function fetchCart() {
     const res = await apiClient.getCustomerCart();
-    console.log(res)
     let ids = new Array ();
     for(let i=0; i<res.items.length; i++){
       ids.push(res.items[i].product.id)

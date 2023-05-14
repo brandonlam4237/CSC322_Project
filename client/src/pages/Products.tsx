@@ -18,7 +18,6 @@ function Prodcuts() {
 
   async function fetchCart() {
     const res = await apiClient.getCustomerCart();
-    console.log(res)
     var ids: any[] = []
     for(let i=0; i<res.items.length; i++){
       ids.push(res.items[i].product.id)
