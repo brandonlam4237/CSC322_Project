@@ -166,7 +166,7 @@ export default function MyBuild() {
                   className="buttons-container__submit-build black-primary"
                   onClick={handleSuggestBuild}
                 >
-                  Add to Featured Builds
+                  {isChecked ? "Buy and Share Build" : "Add to Featured Builds"}
                 </Button>
               ) : (
                 <Button
