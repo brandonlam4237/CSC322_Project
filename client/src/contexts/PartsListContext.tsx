@@ -154,6 +154,10 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
 
   function discardBuild() {
     setPartsList(partsListTemplate);
+    setBuildForm({
+      build_description: "",
+      build_name: "",
+    })
   }
   /* automatically check local storage for partsList object 
     upon mounting of PartsListProvidor */
