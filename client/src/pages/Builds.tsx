@@ -13,14 +13,10 @@ function Builds() {
     fetchBuilds();
   }, []);
 
-  useEffect(() => {
-    console.log(builds);
-  }, [builds]);
 
   async function fetchBuilds() {
     const res = await apiClient.getAllBuilds();
     setBuilds(res);
-    console.log(res);
   }
 
   return (
