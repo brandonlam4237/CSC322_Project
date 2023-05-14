@@ -44,7 +44,12 @@ function Builds() {
             </p>
           </div>
           <Link to="/mybuild" className="builds__mybuild-btn">
-            <Button className="black-primary">Build Your Own</Button>
+            <Button
+              className="black-primary"
+              style={{ padding: "1rem", width: "10rem" }}
+            >
+              Build Your Own
+            </Button>
           </Link>
         </div>
         <img className="builds__banner-img" src={pc_img} />
@@ -56,7 +61,7 @@ function Builds() {
           })}
         </div>
       ) : (
-        <div>No builds</div>
+        <div></div>
       )}
     </main>
   );
