@@ -22,7 +22,6 @@ function CommentsModal(Props: UserRowProps) {
   async function fetchProductData() {
     const res = await fetch("http://localhost:8000/items/" + productId);
     const resJSON = await res.json();
-    console.log(resJSON.product.comments);
     setComments(resJSON.product.comments);
   }
 

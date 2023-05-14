@@ -1,0 +1,152 @@
+@import "colors";
+
+:root {
+  --md-sys-color-on-surface: #1c1b1f;
+  --md-sys-color-background: #fef7ff;
+  --md-sys-color-primary: #54aeef;
+}
+
+label:has(input[type="checkbox"]) {
+  cursor: pointer;
+
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 1em;
+  transition: all 200ms;
+  line-height: 1.2;
+
+  &:not(& ~ &) {
+    margin-block-start: 1em;
+  }
+
+  & > input[type="checkbox"] {
+    cursor: pointer;
+
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+
+    width: 1.5125em;
+    height: 1.5125em;
+    margin: 0;
+
+    font: inherit;
+    color: currentcolor;
+
+    border: 0.15em solid var(--md-sys-color-on-surface);
+    border-radius: 0.15em;
+
+    appearance: none;
+
+    &::before {
+      content: "";
+
+      transform: scale(0);
+
+      width: 0.65em;
+      height: 0.65em;
+
+      clip-path: polygon(
+        11.25% 41.29%,
+        0% 54.25%,
+        39.75% 88.75%,
+        100% 20%,
+        86.6% 8.25%,
+        37.6% 64.16%
+      );
+      border-radius: 0.15em;
+      box-shadow: inset 1em 1em var(--md-sys-color-background);
+
+      transition: 120ms transform ease-in-out;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+      inset-block-start: 50%;
+      inset-inline-start: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 2.2em;
+      height: 2.2em;
+
+      opacity: 0;
+      background-color: var(--md-sys-color-on-surface);
+      border-radius: 2.2rem;
+    }
+
+    &:focus {
+      outline: unset;
+
+      &::after {
+        opacity: 0.12;
+      }
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+
+      opacity: 0.38;
+      border-color: var(--md-sys-color-on-surface);
+    }
+
+    &:checked {
+      background-color: var(--md-sys-color-primary);
+      border-color: var(--md-sys-color-primary);
+
+      &::after {
+        opacity: 0;
+      }
+
+      &::before {
+        transform: scale(1);
+      }
+
+      &:disabled {
+        background-color: var(--md-sys-color-on-surface);
+        border-color: var(--md-sys-color-on-surface);
+      }
+
+      &:is(:hover, :focus) {
+        &::after {
+          background-color: var(--md-sys-color-primary);
+        }
+      }
+
+      &:active {
+        &::after {
+          background-color: var(--md-sys-color-on-surface);
+        }
+      }
+    }
+
+    &:hover:not(:disabled) {
+      &::after {
+        opacity: 0.08;
+      }
+    }
+
+    &:active {
+      &:not(:checked) {
+        &::after {
+          background-color: var(--md-sys-color-primary);
+
+          transition: 200ms opacity ease-in-out;
+        }
+      }
+
+      &:not(:disabled) {
+        &::after {
+          transform-origin: top left;
+
+          opacity: 0.12;
+
+          transition: border-color 0.2s, background-color 0.2s;
+        }
+      }
+    }
+  }
+}
