@@ -230,6 +230,25 @@ class GetBuilds(APIView):
         )
 
 
+class GetBuildDetail(APIView):
+    """
+    Endpoint to get details about a build
+    """
+
+    permission_classes = (permissions.AllowAny,)
+
+    def get(self, request, build_id):
+        """
+        Handles a GET request for retrieving custom build detail
+        """
+        build = get_object_or_404(CustomBuild, id=build_id)
+        serializer = BuildSerializer(build, many=False)
+        return Response(
+            serializer.data,
+            status=status.HTTP_200_OK
+        )
+
+
 class CreateBuild(APIView):
     """
     Endpoint to manage builds
@@ -347,23 +366,6 @@ class CreateBuild(APIView):
         return Response(
             {'build_id': build.id},
             status=status.HTTP_201_CREATED
-        )
-
-
-class GetBuildDetail(APIView):
-    """
-    Endpoint to get details about a build
-    """
-
-    def get(self, request, build_id):
-        """
-        Handles a GET request for retrieving custom build detail
-        """
-        build = get_object_or_404(CustomBuild, id=build_id)
-        serializer = BuildSerializer(build, many=False)
-        return Response(
-            serializer.data,
-            status=status.HTTP_200_OK
         )
 
 
