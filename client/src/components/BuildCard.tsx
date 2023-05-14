@@ -10,6 +10,8 @@ import {
   usePartsListContext,
 } from "src/contexts/PartsListContext";
 import BasicRating from "./BasicRating";
+import apiClient from "src/services/apiClient";
+import CommentsBuildModal from "./CommentsBuildModal";
 interface BuildCardProps {
   build: any;
 }
@@ -18,10 +20,11 @@ function BuildCard(props: BuildCardProps) {
   const { build } = props;
   const [parts, setParts] = useState(build.parts);
   const [currImg, setCurrImg] = useState(parts[0].image_url);
+  const [commentsOpen, setCommentsOpen] = useState(false);
   // partsList context variables
   const partsListVariables = usePartsListContext();
   const setPartsList = partsListVariables.setPartsList;
-  
+
   function handleCustomizeBuild() {
     let partsList: IPartsList = partsListTemplate;
     parts.forEach((part: any) => {
@@ -31,6 +34,10 @@ function BuildCard(props: BuildCardProps) {
       };
     });
     setPartsList(partsList);
+  }
+
+  async function handleAddCart() {
+    await apiClient.addToCart(build.id);
   }
 
   return (
@@ -52,13 +59,19 @@ function BuildCard(props: BuildCardProps) {
         <div className="buildCard__parts">
           {parts.length &&
             parts.map((part: any, index: number) => {
-              return <p key={index}>{part.product_name}</p>;
+              return (
+                <div key={index} className="buildCard__part">
+                  <p className="buildCard__part-category">{`${parts[index].category}:`}</p>
+                  <p>{`${part.product_name}`}</p>
+                </div>
+              );
             })}
         </div>
         <div className="buildCard__btns">
           <Button
             className="black-primary"
             style={{ padding: "1rem", width: "10rem" }}
+            onClick={handleAddCart}
           >
             Add to Cart
           </Button>
@@ -72,7 +85,12 @@ function BuildCard(props: BuildCardProps) {
             </Button>
           </Link>
         </div>
-        <div className="buildCard__comment">
+        <div
+          className="buildCard__comment"
+          onClick={() => {
+            setCommentsOpen(true);
+          }}
+        >
           <img src={comment} className="buildCard__comment-btn" />
           <p>Leave a comment</p>
         </div>
@@ -96,6 +114,14 @@ function BuildCard(props: BuildCardProps) {
           );
         })}
       </div>
+      {commentsOpen && (
+        <CommentsBuildModal
+          closeModal={() => {
+            setCommentsOpen(false);
+          }}
+          productId={build.id}
+        />
+      )}
     </main>
   );
 }
