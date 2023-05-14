@@ -180,7 +180,7 @@ function ProductDetail() {
                 );
               })}
             </div>
-            {user.is_active && user.user_type !== "Visitor" && (
+            {user.is_active && user.user_type === "Customer" && (
               <div className="productDetails__btns">
 
             {prodInCart ? (
