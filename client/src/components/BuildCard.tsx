@@ -11,7 +11,7 @@ import {
 } from "src/contexts/PartsListContext";
 import BasicRating from "./BasicRating";
 import apiClient from "src/services/apiClient";
-
+import CommentsBuildModal from "./CommentsBuildModal";
 interface BuildCardProps {
   build: any;
 }
@@ -20,7 +20,7 @@ function BuildCard(props: BuildCardProps) {
   const { build } = props;
   const [parts, setParts] = useState(build.parts);
   const [currImg, setCurrImg] = useState(parts[0].image_url);
-
+  const [commentsOpen, setCommentsOpen] = useState(false);
   // partsList context variables
   const partsListVariables = usePartsListContext();
   const setPartsList = partsListVariables.setPartsList;
@@ -85,7 +85,12 @@ function BuildCard(props: BuildCardProps) {
             </Button>
           </Link>
         </div>
-        <div className="buildCard__comment">
+        <div
+          className="buildCard__comment"
+          onClick={() => {
+            setCommentsOpen(true);
+          }}
+        >
           <img src={comment} className="buildCard__comment-btn" />
           <p>Leave a comment</p>
         </div>
@@ -109,6 +114,14 @@ function BuildCard(props: BuildCardProps) {
           );
         })}
       </div>
+      {commentsOpen && (
+        <CommentsBuildModal
+          closeModal={() => {
+            setCommentsOpen(false);
+          }}
+          productId={build.id}
+        />
+      )}
     </main>
   );
 }
