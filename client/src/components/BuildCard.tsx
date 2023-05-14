@@ -11,7 +11,7 @@ import {
 } from "src/contexts/PartsListContext";
 import BasicRating from "./BasicRating";
 import apiClient from "src/services/apiClient";
-import CommentsBuildModal from "./CommentsBuildModal";
+import CommentsModal from "./CommentsModal";
 interface BuildCardProps {
   build: any;
 }
@@ -115,11 +115,12 @@ function BuildCard(props: BuildCardProps) {
         })}
       </div>
       {commentsOpen && (
-        <CommentsBuildModal
+        <CommentsModal
           closeModal={() => {
             setCommentsOpen(false);
           }}
           productId={build.id}
+          isBuild={true}
         />
       )}
     </main>
