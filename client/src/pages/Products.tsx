@@ -8,14 +8,28 @@ function Prodcuts() {
   const category = useParams().id || "";
   const [productList, setProductList] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [productIds, setProductIds] = useState<any[]>([]);
+
   async function fetchProducts() {
     const productsJson = await apiClient.getItemsByCategory(category)
     setProductList(productsJson.products);
     setLoading(false);
   }
 
+  async function fetchCart() {
+    const res = await apiClient.getCustomerCart();
+    console.log(res)
+    var ids: any[] = []
+    for(let i=0; i<res.items.length; i++){
+      ids.push(res.items[i].product.id)
+    }
+    setProductIds(ids);
+  }
+
+
   useEffect(() => {
     fetchProducts();
+    fetchCart();
   }, [category]);
 
   return (
@@ -38,6 +52,7 @@ function Prodcuts() {
                 category = {category}
                 id={item.id}
                 isCompatible = {item.isCompatible}
+                isInCart = {productIds.includes(item.id) ? true : false}
               />
             );
           })}
