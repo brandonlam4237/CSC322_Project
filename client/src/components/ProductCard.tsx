@@ -59,7 +59,7 @@ function ProductCard(props: ProductCardProps) {
       <footer className="productCard__footer">
         <div className="productCard__price">{"$" + price}</div>
 
-        {user.is_active && user.user_type != "Visitor" && (
+        {user.is_active && user.user_type === "Customer" && (
           <div className="productCard__btns">
             {prodInCart ? (
               <Button className="red-primary" onClick={handleRemoveFromCart}> 
