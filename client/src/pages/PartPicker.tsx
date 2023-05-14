@@ -124,37 +124,38 @@ export default function MyBuild() {
               </div>
             )}
 
-            {user.user_type == ("Owner" || "Employee") ||
-              (isChecked && (
-                <div className="build-description-container">
-                  <form>
-                    <h3>
-                      <label htmlFor="suggested-build-name">Build Name</label>
-                    </h3>
-                    <input
-                      id="suggested-build-name"
-                      className="input-field"
-                      placeholder="build name"
-                      name="build_name"
-                      value={buildForm.build_name}
-                      onChange={handleOnTextAreaChange}
-                    ></input>
-                    <h3>
-                      <label htmlFor="suggested-build-form">
-                        Build Description
-                      </label>
-                    </h3>
-                    <textarea
-                      id="suggested-build-form"
-                      className="input-field"
-                      placeholder="description..."
-                      name="build_description"
-                      value={buildForm.build_description}
-                      onChange={handleOnTextAreaChange}
-                    ></textarea>
-                  </form>
-                </div>
-              ))}
+            {user.user_type === ("Owner" || "Employee") || isChecked ? (
+              <div className="build-description-container">
+                <form>
+                  <h3>
+                    <label htmlFor="suggested-build-name">Build Name</label>
+                  </h3>
+                  <input
+                    id="suggested-build-name"
+                    className="input-field"
+                    placeholder="build name"
+                    name="build_name"
+                    value={buildForm.build_name}
+                    onChange={handleOnTextAreaChange}
+                  ></input>
+                  <h3>
+                    <label htmlFor="suggested-build-form">
+                      Build Description
+                    </label>
+                  </h3>
+                  <textarea
+                    id="suggested-build-form"
+                    className="input-field"
+                    placeholder="description..."
+                    name="build_description"
+                    value={buildForm.build_description}
+                    onChange={handleOnTextAreaChange}
+                  ></textarea>
+                </form>
+              </div>
+            ) : (
+              <></>
+            )}
             <div className="buttons-container">
               <div className="buttons-container__save-options">
                 <Button className="red-secondary" onClick={discardBuild}>

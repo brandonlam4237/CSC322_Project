@@ -42,7 +42,7 @@ function ProductCard(props: ProductCardProps) {
       product_name: product_name,
       price: Number(price),
       image_url: image_url,
-      component_name: category,
+      category: category,
       isAdded: true,
     };
     addPartToBuild(part);
