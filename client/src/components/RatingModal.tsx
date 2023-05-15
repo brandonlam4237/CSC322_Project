@@ -9,16 +9,15 @@ import apiClient from "src/services/apiClient";
 interface RatingModalProps {
   closeModal: Function;
   id: number;
+  submitRating: Function;
 }
 
 function RatingModal(Props: RatingModalProps) {
-  const { closeModal, id } = Props;
+  const { closeModal, id, submitRating } = Props;
   const [rating, setRating] = useState<number | null>(0);
 
-  async function submitRating() {
-    if (rating) {
-      await apiClient.rateBuild(id, rating);
-    }
+  function handleClick() {
+    submitRating(rating, id);
   }
 
   return (
@@ -47,7 +46,7 @@ function RatingModal(Props: RatingModalProps) {
         </div>
         <Button
           className="ratingModal__submit-btn blue-primary"
-          onClick={submitRating}
+          onClick={handleClick}
         >
           Submit
         </Button>

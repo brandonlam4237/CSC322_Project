@@ -114,5 +114,8 @@
   &__stars {
     width: fit-content;
     cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    font-weight: bold;
   }
 }

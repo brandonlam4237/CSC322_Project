@@ -27,6 +27,16 @@ function BuildCard(props: BuildCardProps) {
   const partsListVariables = usePartsListContext();
   const setPartsList = partsListVariables.setPartsList;
 
+  const [buildState, setBuildState] = useState(build);
+
+  async function submitRating(rating: number, id: number) {
+    if (rating) {
+      await apiClient.rateBuild(id, rating);
+      const res = await apiClient.getBuild(id);
+      setBuildState(res);
+    }
+  }
+
   function handleCustomizeBuild() {
     let partsList: IPartsList = partsListTemplate;
     parts.forEach((part: any) => {
@@ -61,9 +71,11 @@ function BuildCard(props: BuildCardProps) {
           className="buildCard__stars"
         >
           <BasicRating
-            defaultRatingValue={build.ratings.avg_ratings}
+            key={buildState.ratings.num_ratings}
+            defaultRatingValue={buildState.ratings.avg_ratings}
             readOnly={true}
           />
+          <p>{buildState.ratings.num_ratings}</p>
         </div>
         <div className="buildCard__parts">
           {parts.length &&
@@ -138,6 +150,7 @@ function BuildCard(props: BuildCardProps) {
             setModalOpen(false);
           }}
           id={build.id}
+          submitRating={submitRating}
         />
       )}
     </main>
