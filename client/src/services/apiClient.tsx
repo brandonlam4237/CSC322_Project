@@ -198,6 +198,16 @@ class ApiClient {
     });
   }
 
+  // get build by id created by customers/employees/owner
+  // all users
+  async getBuild(id: number) {
+    return await this.apiRequest({
+      endpoint: `/items/builds/${id}`,
+      method: "GET",
+      requestBody: {},
+    });
+  }
+
   // implements makebuild endpoint
   // all users
   async createBuild(buildForm: IBuildForm) {

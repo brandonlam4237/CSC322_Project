@@ -681,8 +681,7 @@ class ManageOrders(APIView):
                 status=status.HTTP_403_FORBIDDEN
             )
 
-        user.balance -= cart.total_price if not user.has_discount else round(
-            cart.total_price * 0.9, 2)
+        user.balance -= cart.total_price
         user.save()
 
         cart_items = cart.cart_items.all()

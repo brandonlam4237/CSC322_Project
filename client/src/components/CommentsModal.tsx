@@ -8,27 +8,37 @@ import apiClient from "src/services/apiClient";
 interface UserRowProps {
   closeModal: Function;
   productId: number;
+  isBuild: boolean;
 }
 
 function CommentsModal(Props: UserRowProps) {
-  const { closeModal, productId } = Props;
+  const { closeModal, productId, isBuild } = Props;
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState<any[]>([]);
 
   useEffect(() => {
-    fetchProductData();
+    if (isBuild) fetchBuildData();
+    else fetchProductData();
   }, []);
 
   async function fetchProductData() {
     const res = await fetch("http://localhost:8000/items/" + productId);
     const resJSON = await res.json();
+    console.log(resJSON);
     setComments(resJSON.product.comments);
+  }
+
+  async function fetchBuildData() {
+    const res = await fetch("http://localhost:8000/items/builds/" + productId);
+    const resJSON = await res.json();
+    setComments(resJSON.comments);
   }
 
   async function handleSubmit() {
     await apiClient.addComment(productId, comment);
     setComment("");
-    fetchProductData();
+    if (isBuild) fetchBuildData();
+    else fetchProductData();
   }
 
   return (
