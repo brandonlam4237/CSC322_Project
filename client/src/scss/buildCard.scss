@@ -110,4 +110,9 @@
   &__comment-btn {
     height: 2.5rem;
   }
+
+  &__stars {
+    width: fit-content;
+    cursor: pointer;
+  }
 }
