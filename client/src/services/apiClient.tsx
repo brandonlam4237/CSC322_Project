@@ -1,5 +1,6 @@
 import { IBuildForm, IPartsListIds } from "src/contexts/PartsListContext";
 import { IApprovalForm } from "src/components/UserRow";
+import customBuild from "../assets/images/customBuild.png";
 
 class ApiClient {
   // specify class variables along with their types
@@ -132,9 +133,13 @@ class ApiClient {
     if (customerCart.items) {
       await Promise.all(
         customerCart.items.map(async (item: any) => {
-          const details = await fetch("/items/" + item.product.id);
-          const detailsJSON = await details.json();
-          item.product["image_url"] = detailsJSON.product.image_url;
+          if (item.product.brand != "DP") {
+            const details = await fetch("/items/" + item.product.id);
+            const detailsJSON = await details.json();
+            item.product["image_url"] = detailsJSON.product.image_url;
+          } else {
+            item.product["image_url"] = customBuild;
+          }
           return item;
         })
       );
@@ -266,9 +271,13 @@ class ApiClient {
           var date = new Date(year, month - 1, day);
           await Promise.all(
             order.items.map(async (item: any) => {
-              const details = await fetch("/items/" + item.product.id);
-              const detailsJSON = await details.json();
-              item.product["image_url"] = detailsJSON.product.image_url;
+              if (item.product.brand != "DP") {
+                const details = await fetch("/items/" + item.product.id);
+                const detailsJSON = await details.json();
+                item.product["image_url"] = detailsJSON.product.image_url;
+              } else {
+                item.product["image_url"] = customBuild;
+              }
               return item;
             })
           );
