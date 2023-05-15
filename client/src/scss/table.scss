@@ -5,37 +5,35 @@ table {
   vertical-align: middle;
   border-collapse:collapse;
   font-size: 1rem;
+  background-color: white; 
 }
 
-thead {
-  background-color: white;
-  padding: 20px;
+thead, tfoot {
+  border-bottom:  #F7F7F7 solid 15px;
+  border-top:  #F7F7F7 solid 15px;
 }
 
 thead tr,
-tbody tr
- {
+tbody tr,
+tfoot tr {
   width: 100%;
   justify-content: space-between;
-  padding: 20px;
 }
 
 tbody {
-  background-color: white;
-  padding: 20px;
   tr {
   border-bottom:  #F7F7F7 solid 4px;
   }
 }
 
 th, td {
+  // size of each row in the table 
   padding: 25px; 
 }
 
 .remove-icon {
   color:  rgb(141, 141, 141);
   text-align: right;
-  
   &:hover{
     color:  rgb(68, 68, 68);
     cursor: pointer;
