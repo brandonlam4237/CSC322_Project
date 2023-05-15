@@ -12,6 +12,7 @@ import {
 import BasicRating from "./BasicRating";
 import apiClient from "src/services/apiClient";
 import CommentsModal from "./CommentsModal";
+import RatingModal from "./RatingModal";
 interface BuildCardProps {
   build: any;
 }
@@ -21,9 +22,20 @@ function BuildCard(props: BuildCardProps) {
   const [parts, setParts] = useState(build.parts);
   const [currImg, setCurrImg] = useState(parts[0].image_url);
   const [commentsOpen, setCommentsOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   // partsList context variables
   const partsListVariables = usePartsListContext();
   const setPartsList = partsListVariables.setPartsList;
+
+  const [buildState, setBuildState] = useState(build);
+
+  async function submitRating(rating: number, id: number) {
+    if (rating) {
+      await apiClient.rateBuild(id, rating);
+      const res = await apiClient.getBuild(id);
+      setBuildState(res);
+    }
+  }
 
   function handleCustomizeBuild() {
     let partsList: IPartsList = partsListTemplate;
@@ -52,10 +64,19 @@ function BuildCard(props: BuildCardProps) {
           <p className="buildCard__desc">{` ${build.build_description}`}</p>
         </div>
         <p className="buildCard__price">{`$${build.price}`}</p>
-        <BasicRating
-          defaultRatingValue={build.ratings.avg_ratings}
-          readOnly={true}
-        />
+        <div
+          onClick={() => {
+            setModalOpen(true);
+          }}
+          className="buildCard__stars"
+        >
+          <BasicRating
+            key={buildState.ratings.num_ratings}
+            defaultRatingValue={buildState.ratings.avg_ratings}
+            readOnly={true}
+          />
+          <p>{buildState.ratings.num_ratings}</p>
+        </div>
         <div className="buildCard__parts">
           {parts.length &&
             parts.map((part: any, index: number) => {
@@ -121,6 +142,15 @@ function BuildCard(props: BuildCardProps) {
           }}
           productId={build.id}
           isBuild={true}
+        />
+      )}
+      {modalOpen && (
+        <RatingModal
+          closeModal={() => {
+            setModalOpen(false);
+          }}
+          id={build.id}
+          submitRating={submitRating}
         />
       )}
     </main>

@@ -1,0 +1,67 @@
+@import "colors";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.ratingModal {
+  position: absolute;
+
+  &__content {
+    background-color: white;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    height: 14rem;
+    width: clamp(20rem, 12.666666666666668rem + 21.333333333333332vw, 30rem);
+    padding: 1.5rem;
+  }
+
+  &__overlay {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba($color: #000000, $alpha: 0.15);
+    z-index: 10;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    width: 100%;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+
+    .accent {
+      color: $accent;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 0px;
+    position: absolute;
+    background-color: $dark-gray;
+  }
+}
