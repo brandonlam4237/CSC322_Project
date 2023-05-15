@@ -4,6 +4,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import BasicRating from "./BasicRating";
 import Button from "./Button";
+import apiClient from "src/services/apiClient";
 
 interface RatingModalProps {
   closeModal: Function;
@@ -13,6 +14,12 @@ interface RatingModalProps {
 function RatingModal(Props: RatingModalProps) {
   const { closeModal, id } = Props;
   const [rating, setRating] = useState<number | null>(0);
+
+  async function submitRating() {
+    if (rating) {
+      await apiClient.rateBuild(id, rating);
+    }
+  }
 
   return (
     <div className="ratingModal">
@@ -38,7 +45,12 @@ function RatingModal(Props: RatingModalProps) {
             setRating={setRating}
           />
         </div>
-        <Button className="ratingModal__submit-btn blue-primary">Submit</Button>
+        <Button
+          className="ratingModal__submit-btn blue-primary"
+          onClick={submitRating}
+        >
+          Submit
+        </Button>
       </div>
       <div
         onClick={() => {

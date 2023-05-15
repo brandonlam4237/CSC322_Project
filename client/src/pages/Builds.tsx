@@ -13,7 +13,6 @@ function Builds() {
     fetchBuilds();
   }, []);
 
-
   async function fetchBuilds() {
     const res = await apiClient.getAllBuilds();
     setBuilds(res);
