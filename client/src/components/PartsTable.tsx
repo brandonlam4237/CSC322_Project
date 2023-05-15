@@ -32,14 +32,11 @@ export default function PartsTable() {
   const partsList = partsListVariables.partsList;
   const partsListIds = partsListVariables.partsListIds;
   const removePart = partsListVariables.removePart;
-
   // Compute total price of all the parts so far
-  let totalPrice = 0;
+  let totalPrice : number = 0;
   partsCategoryArray.forEach((categoryName: string) => {
-    totalPrice += partsList[categoryName].price;
+    totalPrice += Number(partsList[categoryName].price);
   });
-
-  console.log(partsList);
   return (
     <table>
       <thead>
@@ -68,7 +65,7 @@ export default function PartsTable() {
           <tr>
             <th>Total Price</th>
             <td></td>
-            <th>${totalPrice.toFixed(2)}</th>
+            <th>${Number(totalPrice).toFixed(2)}</th>
             <td></td>
           </tr>
         </tfoot>
