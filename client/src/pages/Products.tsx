@@ -3,12 +3,13 @@ import { useParams } from "react-router-dom";
 import "../scss/products.scss";
 import ProductCard from "src/components/ProductCard";
 import apiClient from "src/services/apiClient";
-
+import { useAuthContext } from "src/contexts/AuthContext";
 function Prodcuts() {
   const category = useParams().id || "";
   const [productList, setProductList] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [productIds, setProductIds] = useState<any[]>([]);
+  const user = useAuthContext().userData;
 
   async function fetchProducts() {
     const productsJson = await apiClient.getItemsByCategory(category)
@@ -22,13 +23,15 @@ function Prodcuts() {
     for(let i=0; i<res.items.length; i++){
       ids.push(res.items[i].product.id)
     }
+    
     setProductIds(ids);
   }
+  console.log(productIds)
 
 
   useEffect(() => {
     fetchProducts();
-    fetchCart();
+    if (user.user_type === "Customer") fetchCart();
   }, [category]);
 
   return (

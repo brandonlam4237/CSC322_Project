@@ -180,21 +180,21 @@ function ProductDetail() {
                 );
               })}
             </div>
-            {user.is_active && user.user_type === "Customer" && (
+            {user.is_active && user.user_type !== "Visitor" && (
               <div className="productDetails__btns">
-                {prodInCart ? (
-                  <Button
-                    className="red-primary"
-                    onClick={handleRemoveFromCart}
-                  >
-                    Remove From Cart
-                  </Button>
-                ) : (
-                  <Button className="blue-primary" onClick={handleAddCart}>
-                    Add to cart
-                  </Button>
-                )}
-
+                {user.user_type == "Customer" &&
+                  (prodInCart ? (
+                    <Button
+                      className="red-primary"
+                      onClick={handleRemoveFromCart}
+                    >
+                      Remove From Cart
+                    </Button>
+                  ) : (
+                    <Button className="blue-primary" onClick={handleAddCart}>
+                      Add to cart
+                    </Button>
+                  ))}
                 {productDetails.category != "Desktop" ? (
                   <Link to="/mybuild">
                     <Button className="black-primary" onClick={handleAddBuild}>

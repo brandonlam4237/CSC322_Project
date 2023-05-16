@@ -4,7 +4,7 @@ import Button from "./Button";
 import apiClient from "src/services/apiClient";
 import { usePartsListContext } from "src/contexts/PartsListContext";
 import { useAuthContext } from "src/contexts/AuthContext";
-import {useState } from "react";
+import { useState } from "react";
 interface ProductCardProps {
   product_name: string;
   image_url: string;
@@ -16,20 +16,28 @@ interface ProductCardProps {
 }
 
 function ProductCard(props: ProductCardProps) {
-  const { product_name, price, image_url, category, id, isCompatible, isInCart=false } = props;
+  const {
+    product_name,
+    price,
+    image_url,
+    category,
+    id,
+    isCompatible,
+    isInCart = false,
+  } = props;
   let buttonClassName =
     isCompatible && category != "Desktop" ? "green-primary" : "black-primary";
 
   const [prodInCart, setProdInCart] = useState<boolean>(isInCart);
-  
+
   async function handleAddCart() {
     await apiClient.addToCart(id);
-    setProdInCart(!prodInCart)
+    setProdInCart(!prodInCart);
   }
 
   async function handleRemoveFromCart() {
     await apiClient.editItemQuantity(0, id);
-    setProdInCart(!prodInCart)
+    setProdInCart(!prodInCart);
   }
 
   const user = useAuthContext().userData;
@@ -59,17 +67,18 @@ function ProductCard(props: ProductCardProps) {
       <footer className="productCard__footer">
         <div className="productCard__price">{"$" + price}</div>
 
-        {user.is_active && user.user_type === "Customer" && (
+        {user.is_active && user.user_type !== "Visitor" && (
           <div className="productCard__btns">
-            {prodInCart ? (
-              <Button className="red-primary" onClick={handleRemoveFromCart}> 
-              Remove From Cart
-              </Button>
-            ) : (
-              <Button className="blue-primary" onClick={handleAddCart}>
-              Add to cart
-              </Button>
-            )}
+            {user.user_type == "Customer" &&
+              (prodInCart ? (
+                <Button className="red-primary" onClick={handleRemoveFromCart}>
+                  Remove From Cart
+                </Button>
+              ) : (
+                <Button className="blue-primary" onClick={handleAddCart}>
+                  Add to cart
+                </Button>
+              ))}
 
             <Link to={"/myBuild"}>
               <Button className={buttonClassName} onClick={handleAddBuild}>
