@@ -131,8 +131,8 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
   const [partsListIds, setPartsListIds] = useState<IPartsListIds>({});
   // for buying and suggesting a build
   const [buildForm, setBuildForm] = useState<IBuildForm>({
-    build_description: "",
-    build_name: "",
+    build_description: "place_holder",
+    build_name: "place_holder",
   });
   const [isLoading, setIsLoading] = useState<boolean>(true);
 

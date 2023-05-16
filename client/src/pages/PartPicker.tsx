@@ -55,6 +55,15 @@ export default function MyBuild() {
     setIsChecked(!isChecked);
   }
 
+  useEffect(() => {
+    if (user.user_type === ("Owner" || "Employee")) {
+      setBuildForm({
+        ...buildForm,
+        build_name: "",
+        build_description: "",
+      });
+    }
+  }, []);
   async function handleSuggestBuild() {
     let buildIdObject = await apiClient.createBuild(buildForm);
     // if the user happens to be also customer then buy the build
