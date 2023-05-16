@@ -684,6 +684,10 @@ class ManageOrders(APIView):
         user.balance = float(user.balance) - cart.total_price
         user.save()
 
+        if user.has_discount:
+            user.has_discount = False
+            user.save()
+
         cart_items = cart.cart_items.all()
         new_order = Order(customer=user, address=address,
                           total_price=cart.total_price)
@@ -736,6 +740,10 @@ class CheckoutBuild(APIView):
 
         user.balance = round(float(user.balance), 2) - total_price
         user.save()
+
+        if user.has_discount:
+            user.has_discount = False
+            user.save()
 
         new_order = Order(customer=user, address=address,
                           total_price=total_price)
