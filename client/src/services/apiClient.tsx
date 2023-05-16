@@ -92,6 +92,17 @@ class ApiClient {
     });
   }
 
+  async rejectUser(approvalForm: IApprovalForm, userId: number) {
+    return await this.apiRequest({
+      endpoint: `/users/reject/${userId}`,
+      method: "PATCH",
+      requestBody: {
+        is_active: approvalForm.is_active,
+        memo: approvalForm.memo,
+      },
+    });
+  }
+
   async getItemsByCategory(category: string) {
     const products = await fetch("/items?category=" + category);
     const productsJson = await products.json();

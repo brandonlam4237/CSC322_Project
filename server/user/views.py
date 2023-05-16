@@ -4,7 +4,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import get_object_or_404
 from django.apps import apps
 from rest_framework.views import APIView
-from rest_framework import status
+from rest_framework import status, permissions
 from rest_framework.response import Response
 
 
@@ -20,6 +20,7 @@ Cart = apps.get_model('items', 'Cart')
 CartItem = apps.get_model('items', 'CartItem')
 Order = apps.get_model('items', 'Order')
 CustomBuild = apps.get_model('items', 'CustomBuild')
+Protest = apps.get_model('user', 'Protest')
 
 
 """
@@ -446,11 +447,17 @@ class ActivateUser(APIView):
         """
         user = request.user
 
+        if user.is_customer:
+            return Response(
+                {'detail': 'Customers do not have permission for this endpoint'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
         user_to_activate = get_object_or_404(User, id=id)
 
         if user_to_activate.is_employee and not user.is_superuser:
             return Response(
-                {'error': 'User doesn\'t have the proper permissions to activate employee users'},
+                {'error': 'User doesn\'t have the proper permissions to activate users'},
                 status=status.HTTP_401_UNAUTHORIZED
             )
 
@@ -466,6 +473,99 @@ class ActivateUser(APIView):
         User.objects.filter(id=user_to_activate.id).update(
             is_active=True, application_memo=memo)
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class RejectUser(APIView):
+    """
+    An API View class for activating Employee/Customer UserAccounts
+
+    Permissions
+    -----------
+        User must be an owner/Employee type
+
+    Methods
+    -------
+    patch(request)
+        Handles a PATCH request to reject a user
+    """
+
+    def patch(self, request, user_id, format=None):
+        """
+        Handles a PATCH request to activate a user
+        """
+        user = request.user
+
+        if user.is_customer:
+            return Response(
+                {'detail': 'Customers do not have permission for this endpoint'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
+        user_to_reject = get_object_or_404(User, id=user_id)
+
+        if user_to_reject.is_employee and not user.is_superuser:
+            return Response(
+                {'error': 'User doesn\'t have the proper permissions to activate reject users'},
+                status=status.HTTP_401_UNAUTHORIZED
+            )
+
+        memo = request.data.get('memo')
+        if not memo:
+            return Response(
+                {'error': 'Invalid memo'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        memo = str(memo)
+
+        User.objects.filter(id=user_to_reject.id).update(
+            rejected=True, application_memo=memo)
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class ProtestRejection(APIView):
+    """
+    An API View class for activating Employee/Customer UserAccounts
+
+    Permissions
+    -----------
+        User must be an Customer/Employee type
+
+    Methods
+    -------
+    post(request)
+        Handles a POST request to activate a user
+    """
+    permission_classes = (permissions.AllowAny,)
+
+    def post(self, request):
+        """
+        Handles a POST request to activate a user
+        """
+        username = request.data.get('username')
+
+        if not username:
+            return Response(
+                {'detail': 'Must provide a username'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        protestor = get_object_or_404(User, username=username)
+
+        if not protestor.rejected:
+            return Response(
+                {'detail': 'You must be a rejected applicant to send a protest'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
+        if protestor.protested:
+            return Response(
+                {'detail': 'You can only protest once'}
+            )
+
+        Protest.objects.create(protestor=protestor)
+        User.objects.filter(username=username).update(protested=True)
+        return Response(status=status.HTTP_201_CREATED)
 
 
 """

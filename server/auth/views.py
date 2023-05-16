@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework import permissions, status
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
-from .serializers import CustomerSerializer, EmployeeSerializer, UserSerializer
+from .serializers import CustomerSerializer, EmployeeSerializer, UserSerializer, RejectedUserSerializer
 
 User = get_user_model()
 Cart = apps.get_model('items', 'Cart')
@@ -162,6 +162,13 @@ class LoginUser(APIView):
         password = request.data.get('password')
         user = get_object_or_404(User, username=username)
 
+        if user.rejected:
+            serializer = RejectedUserSerializer(user, many=False)
+            return Response(
+                serializer.data,
+                status=status.HTTP_200_OK
+            )
+
         if not user.check_password(password):
             return Response(
                 {'error': 'Wrong password'},
@@ -176,18 +183,10 @@ class LoginUser(APIView):
 
         refresh = RefreshToken.for_user(user)
 
-        if user.is_superuser:
-            user = UserSerializer(user)
-        elif user.is_customer:
-            user = CustomerSerializer(user)
-        else:
-            user = EmployeeSerializer(user)
-
         return Response(
             {
                 'refresh': str(refresh),
-                'access': str(refresh.access_token),
-                'user': user.data
+                'access': str(refresh.access_token)
             }
         )
 

@@ -1,9 +1,13 @@
 from django.contrib import admin
 from .models import UserAccount
+from .models import Protest
 
 
 @admin.register(UserAccount)
 class UserAccountAdmin(admin.ModelAdmin):
+    """
+    Admin Panel for User Accounts
+    """
     fieldsets = [
         (
             'User Detail',
@@ -22,9 +26,8 @@ class UserAccountAdmin(admin.ModelAdmin):
             {
                 'classes': ['extrapretty'],
                 'fields': [
-                    'blacklisted',
-                    'is_active',
-                    'has_discount',
+                    ('blacklisted', 'is_active',),
+                    ('rejected', 'protested',),
                     'application_memo',
                 ]
             }
@@ -33,6 +36,7 @@ class UserAccountAdmin(admin.ModelAdmin):
             'Point System',
             {
                 'fields': [
+                    'has_discount',
                     'warnings',
                     'compliments',
                     'position_tier',
@@ -50,3 +54,27 @@ class UserAccountAdmin(admin.ModelAdmin):
         'username',
         'email',
     )
+
+
+@admin.register(Protest)
+class ProtestAdmin(admin.ModelAdmin):
+    """
+    Admin panel for protests
+    """
+    list_display = (
+        'protestor',
+        'reviewed',
+    )
+    fields = (
+        'protestor',
+        'reviewed',
+        'datetime_protested',
+    )
+    readonly_fields = (
+        'datetime_protested',
+        'protestor',
+    )
+    search_fields = (
+        'protestor',
+    )
+    list_filter = ('reviewed',)
