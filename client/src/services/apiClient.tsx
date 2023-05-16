@@ -212,7 +212,7 @@ class ApiClient {
   // all users
   async createBuild(buildForm: IBuildForm) {
     return await this.apiRequest({
-      endpoint: `/items/builds`,
+      endpoint: `/items/builds/create`,
       method: "POST",
       requestBody: buildForm,
     });
