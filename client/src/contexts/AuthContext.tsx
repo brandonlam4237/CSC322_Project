@@ -98,6 +98,7 @@ export interface IUserCredentials {
   compliments?:number;
   rejected?: boolean;
   protested?: boolean;
+  has_discount?:boolean;
 }
 // to keep typescript happy
 export const userDataTemplate: IUserCredentials = {

@@ -62,7 +62,6 @@ export default function Login() {
           We have received your request, please wait while it gets processed!
         </Box>
       )}
-
       <section className="container">
         <div className="container__forms">
           <form>

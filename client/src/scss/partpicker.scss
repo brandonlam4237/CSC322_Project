@@ -81,10 +81,12 @@
 }
 
 #suggested-build-form {
+  font-family: "Poppins", sans-serif;
   max-width: 1200px;
   min-height:200px;
   padding: 10px;
   resize: none;
+  font-size: 1rem;
 }
 
 #suggested-build-name{
@@ -92,6 +94,7 @@
   padding: 10px;
   margin-bottom: 15px;
   resize: none;
+  font-size: 1rem;
 }
 
 .customer-options{

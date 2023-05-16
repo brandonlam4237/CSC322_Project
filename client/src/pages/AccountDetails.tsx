@@ -63,88 +63,91 @@ export default function AccountDetails() {
             <div className="logo__accent-right">{`>`}</div>
           </h2>
           <h2> {user.email}</h2>
-          <h2> Current Balance: ${user.balance}</h2>
+          <h2>{user.user_type}</h2>
+          {user.user_type === "Customer" ? <h2> Current Balance: ${user.balance}</h2> : ""}
           <h2> Compliments: {user.compliments}</h2>
           <h2> Warnings: {user.warnings}</h2>
         </section>
-
+        
+        {user.user_type === "Customer" ? 
         <section className="account-details-component__content__container-right">
-          <div className="name_and_credit">
-            <form>
-              <label>
-                <p>Name</p>
-                <input
-                  className="input-field"
-                  type="text"
-                  name="name_on_card"
-                  value={balanceForm.name_on_card}
-                  onChange={handleOnFormChange}
-                  placeholder="Name on Card"
-                />
-              </label>
-            </form>
-            <form>
-              <label>
-                <p>Credit Card Number</p>
-                <input
-                  className="input-field"
-                  type="password"
-                  name="card_number"
-                  value={balanceForm.card_number}
-                  onChange={handleOnFormChange}
-                  placeholder="9999 9999 9999"
-                />
-              </label>
-            </form>
-          </div>
-          <div className="exp_and_cvc">
-            <form>
-              <label>
-                <p>Expiration Date</p>
-                <input
-                  className="input-field"
-                  type="text"
-                  name="exp_date"
-                  value={balanceForm.exp_date}
-                  onChange={handleOnFormChange}
-                  placeholder="MMYYYY"
-                />
-              </label>
-            </form>
-            <form>
-              <label>
-                <p>Security Code</p>
-                <input
-                  className="input-field"
-                  type="password"
-                  name="cvc"
-                  value={balanceForm.cvc == 0 ? "" : balanceForm.cvc}
-                  onChange={handleOnFormChange}
-                  placeholder="CVC"
-                />
-              </label>
-            </form>
-          </div>
-          <div className="deposit-amount">
-            <form>
-              <label>
-                <p>Amount to Add</p>
-                <input
-                  className="input-field"
-                  inputMode="numeric"
-                  type="text"
-                  name="balance"
-                  value={balanceForm.balance == 0 ? "" : balanceForm.balance}
-                  onChange={handleOnFormChange}
-                  placeholder="0.00"
-                />
-              </label>
-            </form>
-            <Button className="blue-primary" onClick={balanceButtonHandler}>
-              Add Balance
-            </Button>
-          </div>
-        </section>
+            <div className="name_and_credit">
+              <form>
+                <label>
+                  <p>Name</p>
+                  <input
+                    className="input-field"
+                    type="text"
+                    name="name_on_card"
+                    value={balanceForm.name_on_card}
+                    onChange={handleOnFormChange}
+                    placeholder="Name on Card"
+                  />
+                </label>
+              </form>
+              <form>
+                <label>
+                  <p>Credit Card Number</p>
+                  <input
+                    className="input-field"
+                    type="password"
+                    name="card_number"
+                    value={balanceForm.card_number}
+                    onChange={handleOnFormChange}
+                    placeholder="9999 9999 9999"
+                  />
+                </label>
+              </form>
+            </div>
+            <div className="exp_and_cvc">
+              <form>
+                <label>
+                  <p>Expiration Date</p>
+                  <input
+                    className="input-field"
+                    type="text"
+                    name="exp_date"
+                    value={balanceForm.exp_date}
+                    onChange={handleOnFormChange}
+                    placeholder="MMYYYY"
+                  />
+                </label>
+              </form>
+              <form>
+                <label>
+                  <p>Security Code</p>
+                  <input
+                    className="input-field"
+                    type="password"
+                    name="cvc"
+                    value={balanceForm.cvc == 0 ? "" : balanceForm.cvc}
+                    onChange={handleOnFormChange}
+                    placeholder="CVC"
+                  />
+                </label>
+              </form>
+            </div>
+            <div className="deposit-amount">
+              <form>
+                <label>
+                  <p>Amount to Add</p>
+                  <input
+                    className="input-field"
+                    inputMode="numeric"
+                    type="text"
+                    name="balance"
+                    value={balanceForm.balance == 0 ? "" : balanceForm.balance}
+                    onChange={handleOnFormChange}
+                    placeholder="0.00"
+                  />
+                </label>
+              </form>
+              <Button className="blue-primary" onClick={balanceButtonHandler}>
+                Add Balance
+              </Button>
+            </div>
+          </section> 
+        : ""}
       </div>
     </main>
   );

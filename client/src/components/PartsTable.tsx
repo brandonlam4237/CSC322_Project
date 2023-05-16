@@ -1,8 +1,7 @@
 import "../scss/table.scss";
-import {
-  usePartsListContext,
-} from "src/contexts/PartsListContext";
+import { IPart, usePartsListContext } from "src/contexts/PartsListContext";
 import PartsTableRow from "./PartsTableRow";
+import { useAuthContext } from "src/contexts/AuthContext";
 
 const partsCategoryArray: string[] = [
   "CPU",
@@ -32,7 +31,15 @@ const rowHeaders: IRowHeaders = {
 export default function PartsTable() {
   const partsListVariables = usePartsListContext();
   const partsList = partsListVariables.partsList;
+  const partsListIds = partsListVariables.partsListIds;
   const removePart = partsListVariables.removePart;
+  // auth context
+  const user = useAuthContext().userData;
+  // Compute total price of all the parts so far
+  let totalPrice: number = 0;
+  partsCategoryArray.forEach((categoryName: string) => {
+    totalPrice += Number(partsList[categoryName].price);
+  });
   return (
     <table>
       <thead>
@@ -43,7 +50,6 @@ export default function PartsTable() {
           <th></th>
         </tr>
       </thead>
-      <br />
       <tbody>
         {partsCategoryArray.map((categoryName: string, index: number) => {
           return (
@@ -57,6 +63,29 @@ export default function PartsTable() {
           );
         })}
       </tbody>
+      {Object.keys(partsListIds).length > 0 && (
+        <tfoot>
+          <tr  >
+            <th >
+              <p>Total Price</p>
+            </th>
+            <td></td>
+            <th >
+              {user.has_discount ? (
+                <>
+                  <p className="original-price">
+                    ${Number(totalPrice).toFixed(2)}
+                  </p>
+                  <p className="discount">${Number(totalPrice*0.9).toFixed(2)}</p>
+                </>
+              ) : (
+                <p>{Number(totalPrice).toFixed(2)}</p>
+              )}
+            </th>
+            <td></td>
+          </tr>
+        </tfoot>
+      )}
     </table>
   );
 }

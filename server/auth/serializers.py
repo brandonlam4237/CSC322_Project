@@ -98,6 +98,7 @@ class CustomerSerializer(serializers.ModelSerializer):
             'protested',
             'warnings',
             'compliments',
+            'has_discount',
         )
 
 

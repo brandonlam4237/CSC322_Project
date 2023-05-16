@@ -11,10 +11,11 @@ const PARTS_LIST_KEY = "custom-build-parts-list-object";
 
 export interface IPartsListContext {
   partsList: IPartsList;
-  partsListIds:IPartsListIds;
+  partsListIds: IPartsListIds;
   buildForm: IBuildForm;
   setPartsList: (value: IPartsList) => void;
   setPartsListIds: (value: IPartsListIds) => void;
+  formatPartsList: (value: IPartsList) => void;
   setBuildForm: (value: IBuildForm) => void;
   removePart: (value: IPart) => void;
   addPart: (value: IPart) => void;
@@ -37,7 +38,7 @@ export interface IPartsList {
 
 export interface IPart {
   id: number;
-  component_name: string;
+  category: string;
   product_name: string;
   image_url: string;
   price: number;
@@ -46,7 +47,7 @@ export interface IPart {
 
 export const partTemplate: IPart = {
   id: -1,
-  component_name: "",
+  category: "",
   product_name: "",
   image_url: "",
   price: -1,
@@ -82,12 +83,12 @@ export interface IBuildForm {
 }
 
 export interface IPartsListIds {
-  [key:string]:number
+  [key: string]: number;
 }
 
 export const PartsListContext = createContext<IPartsListContext>({
   partsList: partsListTemplate,
-  partsListIds:partsListIdsTemplate,
+  partsListIds: partsListIdsTemplate,
   buildForm: {
     build_description: "",
     build_name: "",
@@ -95,7 +96,10 @@ export const PartsListContext = createContext<IPartsListContext>({
   setPartsList: (value: IPartsList) => {
     /* do nothing */
   },
-  setPartsListIds: (value:IPartsListIds) => {
+  setPartsListIds: (value: IPartsListIds) => {
+    /* do nothing */
+  },
+  formatPartsList: (value: IPartsList) => {
     /* do nothing */
   },
   setBuildForm: (value: IBuildForm) => {
@@ -127,14 +131,14 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
   const [partsListIds, setPartsListIds] = useState<IPartsListIds>({});
   // for buying and suggesting a build
   const [buildForm, setBuildForm] = useState<IBuildForm>({
-    build_description: "",
-    build_name: "",
+    build_description: "place_holder",
+    build_name: "place_holder",
   });
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   // functions
   function removePart(part: IPart) {
-    const componentToRemove: string = part.component_name;
+    const componentToRemove: string = part.category;
     setPartsList({
       ...partsList,
       [componentToRemove]: partTemplate,
@@ -142,15 +146,18 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
   }
 
   function addPart(part: IPart) {
-    const componentToAdd: string = part.component_name;
     setPartsList({
       ...partsList,
-      [componentToAdd]: part,
+      [part.category]: { ...part, isAdded: true },
     });
   }
 
   function discardBuild() {
     setPartsList(partsListTemplate);
+    setBuildForm({
+      build_description: "",
+      build_name: "",
+    })
   }
   /* automatically check local storage for partsList object 
     upon mounting of PartsListProvidor */
@@ -176,10 +183,10 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
 
       // update buildForm that will be sent to backend
       const formattedPartsList = formatPartsList(partsList);
-      // update Ids object 
-      setPartsListIds(formattedPartsList)
+      // update Ids object
+      setPartsListIds(formattedPartsList);
       // Update partsListIds on the apiClient
-      apiClient.setPartsListIds(formattedPartsList)
+      apiClient.setPartsListIds(formattedPartsList);
       // update build form build form but keep build_description and name constant
       setBuildForm({
         ...formattedPartsList,
@@ -210,6 +217,7 @@ export function PartsListProvidor({ children }: PartsListProvidorProps) {
     partsListIds,
     setPartsList,
     setPartsListIds,
+    formatPartsList,
     setBuildForm,
     addPart,
     removePart,

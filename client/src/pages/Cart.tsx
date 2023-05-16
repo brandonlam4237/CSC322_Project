@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Button from "src/components/Button";
 import { faAdd, faMinus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useAuthContext } from "src/contexts/AuthContext";
 
 function Cart() {
   const [itemsArr, setItemsArr] = useState<any[]>([]);
@@ -11,8 +12,7 @@ function Cart() {
 
   useEffect(() => {
     fetchCart();
-    fetchImagesUrl()  
-
+    fetchImagesUrl();
   }, []);
 
   async function fetchCart() {
@@ -21,10 +21,7 @@ function Cart() {
     setTotal(res.total_price);
   }
 
-  
-  async function fetchImagesUrl(){
-
-  }
+  async function fetchImagesUrl() {}
 
   async function handleEditRemove(id: number, currQuantity: number) {
     await apiClient.editItemQuantity(currQuantity - 1, id);
@@ -40,6 +37,7 @@ function Cart() {
     await apiClient.purchaseOrder("address");
     fetchCart();
   }
+  const user = useAuthContext().userData;
 
   return (
     <main className="cart-page">
@@ -65,8 +63,6 @@ function Cart() {
                     </div>
                     <div>Unit Price: {`$${item.product.price}`}</div>
                     <div>{`Quantity: ${item.quantity}`}</div>
-                    {/* If we want to display total item price */}
-                    {/* <div>Total Price: {`$${(item.product.price*item.quantity).toFixed(2)}`}</div> */}
                     <div className="edit-btns">
                       <Button
                         className="black-primary edit-btn"
@@ -74,7 +70,7 @@ function Cart() {
                           handleEditRemove(item.product.id, item.quantity);
                         }}
                       >
-                        <FontAwesomeIcon icon={faMinus}/> 
+                        <FontAwesomeIcon icon={faMinus} />
                       </Button>
                       <Button
                         className="blue-primary edit-btn"
@@ -82,7 +78,7 @@ function Cart() {
                           handleEditAdd(item.product.id, item.quantity);
                         }}
                       >
-                        <FontAwesomeIcon icon={faAdd}/>  
+                        <FontAwesomeIcon icon={faAdd} />
                       </Button>
                     </div>
                   </div>
@@ -95,7 +91,16 @@ function Cart() {
             })}
             <div className="cart__total">
               <p>Total:</p>
-              <p>{`$${total}`}</p>
+              <p className="price">
+                {user.has_discount ? (
+                  <>
+                    <p className="original-price">${Number(total / 0.9).toFixed(2)}</p>
+                    <p className="discount"> ${total}</p>
+                  </>
+                ) : (
+                  <p>${total}</p>
+                )}
+              </p>
             </div>
             <Button
               className="blue-primary cart__checkout-btn"

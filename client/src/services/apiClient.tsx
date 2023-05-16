@@ -1,5 +1,6 @@
 import { IBuildForm, IPartsListIds } from "src/contexts/PartsListContext";
-import { IApprovalForm } from "src/pages/UserRow";
+import { IApprovalForm } from "src/components/UserRow";
+import customBuild from "../assets/images/customBuild.png";
 
 class ApiClient {
   // specify class variables along with their types
@@ -143,9 +144,13 @@ class ApiClient {
     if (customerCart.items) {
       await Promise.all(
         customerCart.items.map(async (item: any) => {
-          const details = await fetch("/items/" + item.product.id);
-          const detailsJSON = await details.json();
-          item.product["image_url"] = detailsJSON.product.image_url;
+          if (item.product.brand != "DP") {
+            const details = await fetch("/items/" + item.product.id);
+            const detailsJSON = await details.json();
+            item.product["image_url"] = detailsJSON.product.image_url;
+          } else {
+            item.product["image_url"] = customBuild;
+          }
           return item;
         })
       );
@@ -193,7 +198,7 @@ class ApiClient {
       requestBody: partsList,
     });
   }
-  
+
   // get all builds created by customers/employees/owner
   // all users
   async getAllBuilds() {
@@ -204,11 +209,21 @@ class ApiClient {
     });
   }
 
+  // get build by id created by customers/employees/owner
+  // all users
+  async getBuild(id: number) {
+    return await this.apiRequest({
+      endpoint: `/items/builds/${id}`,
+      method: "GET",
+      requestBody: {},
+    });
+  }
+
   // implements makebuild endpoint
   // all users
   async createBuild(buildForm: IBuildForm) {
     return await this.apiRequest({
-      endpoint: `/items/builds`,
+      endpoint: `/items/builds/create`,
       method: "POST",
       requestBody: buildForm,
     });
@@ -258,16 +273,22 @@ class ApiClient {
     if (customerOrders) {
       await Promise.all(
         customerOrders.map(async (order: any) => {
-          var dateString = order["datetime_ordered"].toString().substring(0, 10);
-          var year = dateString.substring(0,4);
-          var month = dateString.substring(5,7);
-          var day = dateString.substring(8,10);
-          var date = new Date(year, month-1, day);
+          var dateString = order["datetime_ordered"]
+            .toString()
+            .substring(0, 10);
+          var year = dateString.substring(0, 4);
+          var month = dateString.substring(5, 7);
+          var day = dateString.substring(8, 10);
+          var date = new Date(year, month - 1, day);
           await Promise.all(
             order.items.map(async (item: any) => {
-              const details = await fetch("/items/" + item.product.id);
-              const detailsJSON = await details.json();
-              item.product["image_url"] = detailsJSON.product.image_url;
+              if (item.product.brand != "DP") {
+                const details = await fetch("/items/" + item.product.id);
+                const detailsJSON = await details.json();
+                item.product["image_url"] = detailsJSON.product.image_url;
+              } else {
+                item.product["image_url"] = customBuild;
+              }
               return item;
             })
           );
@@ -278,7 +299,7 @@ class ApiClient {
     }
     return customerOrders.sort((a: any, b: any) => (a.id < b.id ? 1 : -1));
   }
-  
+
   // add a comment to an item
   async addComment(productId: number, comment: string) {
     return await this.apiRequest({
