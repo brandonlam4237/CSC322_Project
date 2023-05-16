@@ -723,7 +723,8 @@ class CheckoutBuild(APIView):
         build = get_object_or_404(CustomBuild, id=id)
         cart_item, _ = CartItem.objects.get_or_create(
             product=build, quantity=1)
-        total_price = build.total_price
+        total_price = round(float(build.total_price), 2) if not user.has_discount else round(
+            float(build.total_price) * 0.9, 2)
 
         if total_price > user.balance:
             user.warnings += 1
@@ -733,8 +734,7 @@ class CheckoutBuild(APIView):
                 status=status.HTTP_403_FORBIDDEN
             )
 
-        user.balance -= total_price if not user.has_discount else round(
-            total_price * 0.9, 2)
+        user.balance -= total_price
         user.save()
 
         new_order = Order(customer=user, address=address,
