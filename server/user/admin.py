@@ -26,9 +26,8 @@ class UserAccountAdmin(admin.ModelAdmin):
             {
                 'classes': ['extrapretty'],
                 'fields': [
-                    'blacklisted',
-                    'is_active',
-                    'has_discount',
+                    ('blacklisted', 'is_active',),
+                    ('rejected', 'protested',),
                     'application_memo',
                 ]
             }
@@ -37,6 +36,7 @@ class UserAccountAdmin(admin.ModelAdmin):
             'Point System',
             {
                 'fields': [
+                    'has_discount',
                     'warnings',
                     'compliments',
                     'position_tier',
