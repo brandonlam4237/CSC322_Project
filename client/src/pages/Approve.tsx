@@ -10,10 +10,6 @@ export default function Approve() {
   const [allUsers, setAllUsers] = useState([]);
   const [isLoading, setisLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    getAllUsers();
-  }, []);
-
   async function getAllUsers() {
     // request parameters for endpoint depends on the userType of the user currenlty logged in
     let usersParam: string = user.user_type === "Owner" ? "" : "customer";
@@ -23,20 +19,25 @@ export default function Approve() {
     // If the user currently logged in is super_user then response object is called users
     if (data.users) {
       inActiveUsers = data.users.filter((individualUser: IUserCredentials) => {
-        return !individualUser.is_active;
+        return !individualUser.rejected;
       });
     }
     // If the user currently logged in is super_user then response object is called customers
     else if (data.customers) {
       inActiveUsers = data.customers.filter(
         (individualUser: IUserCredentials) => {
-          return !individualUser.is_active;
+          return !individualUser.rejected;
         }
       );
     }
-    setAllUsers(inActiveUsers);
+
+    if (data.users || data.customers) setAllUsers(inActiveUsers);
     setisLoading(false);
   }
+
+  useEffect(() => {
+    getAllUsers();
+  }, []);
 
   return isLoading ? (
     <h1>Loading...</h1>
@@ -46,7 +47,7 @@ export default function Approve() {
         <div className="logo__accent-left">{`<`}</div> Account Registration
         Requests <div className="logo__accent-right">{`>`}</div>
       </h1>
-      {allUsers.length == 0 ? (
+      {allUsers && allUsers.length == 0 ? (
         <div className="component__content">
           <h2 className="component__header">No Pending Requests </h2>
         </div>
