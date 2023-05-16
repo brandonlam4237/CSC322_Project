@@ -65,8 +65,6 @@ function Cart() {
                     </div>
                     <div>Unit Price: {`$${item.product.price}`}</div>
                     <div>{`Quantity: ${item.quantity}`}</div>
-                    {/* If we want to display total item price */}
-                    {/* <div>Total Price: {`$${(item.product.price*item.quantity).toFixed(2)}`}</div> */}
                     <div className="edit-btns">
                       <Button
                         className="black-primary edit-btn"
