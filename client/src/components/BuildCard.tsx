@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../scss/buildCard.scss";
 import Button from "./Button";
 import comment from "../assets/icons/comment.png";
+import { useAuthContext } from "src/contexts/AuthContext";
 import {
   IPart,
   IPartsList,
@@ -15,17 +16,21 @@ import CommentsModal from "./CommentsModal";
 import RatingModal from "./RatingModal";
 interface BuildCardProps {
   build: any;
+  isInCart?: boolean;
 }
 
 function BuildCard(props: BuildCardProps) {
-  const { build } = props;
+  const { build, isInCart = false } = props;
   const [parts, setParts] = useState(build.parts);
   const [currImg, setCurrImg] = useState(parts[0].image_url);
   const [commentsOpen, setCommentsOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [prodInCart, setProdInCart] = useState(isInCart);
   // partsList context variables
   const partsListVariables = usePartsListContext();
   const setPartsList = partsListVariables.setPartsList;
+  // auth context
+  const user = useAuthContext().userData;
 
   const [buildState, setBuildState] = useState(build);
 
@@ -50,8 +55,13 @@ function BuildCard(props: BuildCardProps) {
 
   async function handleAddCart() {
     await apiClient.addToCart(build.id);
+    setProdInCart(!prodInCart);
   }
 
+  async function handleRemoveFromCart() {
+    await apiClient.editItemQuantity(0, build.id);
+    setProdInCart(!prodInCart);
+  }
   return (
     <main className="buildCard">
       <div className="buildCard__text">
@@ -88,24 +98,36 @@ function BuildCard(props: BuildCardProps) {
               );
             })}
         </div>
-        <div className="buildCard__btns">
-          <Button
-            className="black-primary"
-            style={{ padding: "1rem", width: "10rem" }}
-            onClick={handleAddCart}
-          >
-            Add to Cart
-          </Button>
-          <Link to={"/mybuild"}>
-            <Button
-              className="blue-primary"
-              style={{ padding: "1rem", width: "10rem" }}
-              onClick={handleCustomizeBuild}
-            >
-              Customize
-            </Button>
-          </Link>
-        </div>
+        {user.is_active && user.user_type !== "Visitor" && (
+          <div className="buildCard__btns">
+            {user.user_type == "Customer" &&
+              (prodInCart ? (
+                <Button 
+                className="red-primary"
+                style={{ padding: "", width: "10rem" }}
+                onClick={handleRemoveFromCart}>
+                  Remove From Cart
+                </Button>
+              ) : (
+                <Button
+                  className="blue-primary"
+                  style={{ padding: "1rem", width: "10rem" }}
+                  onClick={handleAddCart}
+                >
+                  Add to Cart
+                </Button>
+              ))}
+            <Link to={"/mybuild"}>
+              <Button
+                className="black-primary"
+                style={{ padding: "1rem", width: "10rem" }}
+                onClick={handleCustomizeBuild}
+              >
+                Customize
+              </Button>
+            </Link>
+          </div>
+        )}
         <div
           className="buildCard__comment"
           onClick={() => {

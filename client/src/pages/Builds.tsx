@@ -5,17 +5,32 @@ import Button from "src/components/Button";
 import { Link } from "react-router-dom";
 import pc_img from "../assets/images/pc.png";
 import BuildCard from "src/components/BuildCard";
+import { useAuthContext } from "src/contexts/AuthContext";
 
 function Builds() {
   const [builds, setBuilds] = useState<any[]>([]);
+  const [productIds, setProductIds] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const user = useAuthContext().userData;
 
   useEffect(() => {
     fetchBuilds();
+    if (user.user_type === "Customer") fetchCart();
+    setLoading(false);
   }, []);
 
   async function fetchBuilds() {
     const res = await apiClient.getAllBuilds();
     setBuilds(res);
+  }
+
+  async function fetchCart() {
+    const res = await apiClient.getCustomerCart();
+    var ids: any[] = [];
+    for (let i = 0; i < res.items.length; i++) {
+      ids.push(res.items[i].product.id);
+    }
+    setProductIds(ids);
   }
 
   return (
@@ -49,10 +64,16 @@ function Builds() {
         </div>
         <img className="builds__banner-img" src={pc_img} />
       </div>
-      {builds.length ? (
+      {!loading && builds.length ? (
         <div className="builds__cards">
           {builds.map((build, i) => {
-            return <BuildCard build={build} key={i} />;
+            return (
+              <BuildCard
+                build={build}
+                key={i}
+                isInCart={productIds.includes(build.id) ? true : false}
+              />
+            );
           })}
         </div>
       ) : (
