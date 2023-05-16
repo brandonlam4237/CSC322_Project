@@ -76,7 +76,7 @@ function BuildCard(props: BuildCardProps) {
         <p className="buildCard__price">{`$${build.price}`}</p>
         <div
           onClick={() => {
-            setModalOpen(true);
+            if (user.user_type !== "Visitor") setModalOpen(true);
           }}
           className="buildCard__stars"
         >
@@ -102,10 +102,11 @@ function BuildCard(props: BuildCardProps) {
           <div className="buildCard__btns">
             {user.user_type == "Customer" &&
               (prodInCart ? (
-                <Button 
-                className="red-primary"
-                style={{ padding: "", width: "10rem" }}
-                onClick={handleRemoveFromCart}>
+                <Button
+                  className="red-primary"
+                  style={{ padding: "", width: "10rem" }}
+                  onClick={handleRemoveFromCart}
+                >
                   Remove From Cart
                 </Button>
               ) : (
