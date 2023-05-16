@@ -92,4 +92,5 @@ class CustomerSerializer(serializers.ModelSerializer):
             'application_memo',
             'warnings',
             'compliments',
+            'has_discount',
         )

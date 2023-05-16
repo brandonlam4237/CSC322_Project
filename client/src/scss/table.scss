@@ -26,6 +26,13 @@ tbody {
   }
 }
 
+tfoot th {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+
 th, td {
   // size of each row in the table 
   padding: 25px; 

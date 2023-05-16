@@ -90,6 +90,7 @@ export interface IUserCredentials {
   memo: "";
   warnings?:number;
   compliments?:number;
+  has_discount?:boolean;
 }
 // to keep typescript happy
 export const userDataTemplate: IUserCredentials = {

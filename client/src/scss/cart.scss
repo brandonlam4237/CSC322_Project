@@ -65,6 +65,7 @@
       background-color: white;
       padding-left: 2rem;
       padding-right: 2rem;
+      align-items: flex-end;
     }
   }
 
@@ -76,4 +77,20 @@
   .edit-btn {
     width: 2.5rem;
   }
+}
+
+.discount {
+  color: #3cd296;
+}
+
+.price {
+  // display: flex;
+  column-gap: 10px;
+  margin: 0px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #5e5e5e;
+  // margin: 0px;
 }

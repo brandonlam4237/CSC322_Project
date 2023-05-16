@@ -684,6 +684,10 @@ class ManageOrders(APIView):
         user.balance = float(user.balance) - cart.total_price
         user.save()
 
+        if user.has_discount:
+            user.has_discount = False
+            user.save()
+
         cart_items = cart.cart_items.all()
         new_order = Order(customer=user, address=address,
                           total_price=cart.total_price)
@@ -723,7 +727,8 @@ class CheckoutBuild(APIView):
         build = get_object_or_404(CustomBuild, id=id)
         cart_item, _ = CartItem.objects.get_or_create(
             product=build, quantity=1)
-        total_price = build.total_price
+        total_price = round(float(build.total_price), 2) if not user.has_discount else round(
+            float(build.total_price) * 0.9, 2)
 
         if total_price > user.balance:
             user.warnings += 1
@@ -733,9 +738,12 @@ class CheckoutBuild(APIView):
                 status=status.HTTP_403_FORBIDDEN
             )
 
-        user.balance -= total_price if not user.has_discount else round(
-            total_price * 0.9, 2)
+        user.balance = round(float(user.balance), 2) - total_price
         user.save()
+
+        if user.has_discount:
+            user.has_discount = False
+            user.save()
 
         new_order = Order(customer=user, address=address,
                           total_price=total_price)
