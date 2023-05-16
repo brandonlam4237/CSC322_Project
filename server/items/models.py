@@ -232,7 +232,7 @@ class Cart(models.Model):
         """
         cartitems = self.cart_items.all()
         total = sum([item.price for item in cartitems])
-        return round(total, 2) if self.customer.has_discount else round(total * 0.9, 2)
+        return round(float(total), 2) if self.customer.has_discount else round(float(total) * 0.9, 2)
 
     @property
     def num_items(self) -> int:
