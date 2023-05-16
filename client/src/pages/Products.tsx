@@ -26,14 +26,11 @@ function Prodcuts() {
     
     setProductIds(ids);
   }
-  console.log(productIds)
-
 
   useEffect(() => {
     fetchProducts();
     if (user.user_type === "Customer") fetchCart();
   }, [category]);
-
   return (
     <main className="products">
       <header className="title">
