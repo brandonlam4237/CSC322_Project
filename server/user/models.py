@@ -131,4 +131,4 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
         return f"{self.first_name} {self.last_name}"
 
     def __str__(self) -> str:
-        return f"[Username: {self.username}, Email: {self.email}]"
+        return self.username
