@@ -42,7 +42,8 @@ class ComputerPartAdmin(admin.ModelAdmin):
     """
     list_display = (
         'product_name',
-        'brand'
+        'brand',
+        'category',
     )
     fields = (
         ('brand', 'product_name'),
@@ -57,8 +58,8 @@ class ComputerPartAdmin(admin.ModelAdmin):
         'specs',
         'price',
     )
-    list_filter = ('brand',)
-    search_fields = ('product_name',)
+    list_filter = ('category', 'brand',)
+    search_fields = ('product_name', 'category',)
 
 
 @admin.register(CustomBuild)
@@ -66,9 +67,10 @@ class CustomBuildAdmin(admin.ModelAdmin):
     """
     Customized admin panel for CustomBuild
     """
-    list_display = ('product_name',)
+    list_display = ('product_name', 'builder',)
     fields = (
         ('brand', 'product_name'),
+        'build_description',
         'price',
         ('builder', 'visible',),
         'parts',
