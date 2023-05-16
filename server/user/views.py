@@ -734,7 +734,7 @@ class CheckoutBuild(APIView):
                 status=status.HTTP_403_FORBIDDEN
             )
 
-        user.balance -= total_price
+        user.balance = round(float(user.balance), 2) - total_price
         user.save()
 
         new_order = Order(customer=user, address=address,
