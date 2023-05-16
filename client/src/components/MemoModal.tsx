@@ -2,6 +2,7 @@ import "../scss/modal.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import apiClient from "src/services/apiClient";
 
 interface UserRowProps {
   closeModal: Function;
@@ -31,28 +32,9 @@ function MemoModal(Props: UserRowProps) {
       setTextareaBorder({ border: "solid 1.5px red" });
       return;
     }
-    try {
-      await fetch(`/users/activate/${userId}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`,
-        },
-        body: JSON.stringify(approvalForm),
-      });
-      await fetch(`/users/blacklist/${userId}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`,
-        },
-        body: JSON.stringify({ blacklisted: true }),
-      });
+      await apiClient.rejectUser(approvalForm, userId)
       getAllUsers();
       closeModal();
-    } catch (error) {
-      console.log(error);
-    }
   }
 
   return (

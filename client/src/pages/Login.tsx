@@ -17,6 +17,7 @@ export default function Login() {
   });
 
   const authValues = useAuthContext();
+  const user = authValues.userData;
   const navigate = useNavigate();
 
   function handleOnFormChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -29,22 +30,39 @@ export default function Login() {
   }
 
   async function loginButtonHandler() {
+    if(authValues.userData.rejected === false){
+      await authValues.loginUser(loginForm.username, loginForm.password);
+    }
+  }
+  async function handleProtest() {
+    await authValues.protest(loginForm.username);
     await authValues.loginUser(loginForm.username, loginForm.password);
   }
-  if (authValues.userData.user_type != "Visitor") navigate("/");
+
+  if(user.is_active && user.user_type !== "Visitor" && user.rejected === false){
+    navigate("/")
+  }
 
   return (
     <main className="auth">
       <h1 className="auth__header">Login to your account</h1>
+
       {/* Customer Protest Button */}
-      {/* <Box className="protest-banner" color={"red"} isRound={true}>
-        Uh Oh! I it looks like your registration application has been rejected.
-        If you believe that this is a mistake, please{"  "}
-        <strong className="protest-banner__button">click here</strong>
-      </Box>
-      <Box className="protest-banner" color={"blue"} isRound={true}>
-        We have received your request, please wait while it gets processed!
-      </Box> */}
+      {user.rejected == true && user.protested == false && (
+        <Box className="protest-banner" color={"red"} isRound={true}>
+          Uh Oh! I it looks like your registration application has been
+          rejected. If you believe that this is a mistake, please{"  "}
+          <strong className="protest-banner__button" onClick={handleProtest}>
+            click here
+          </strong>
+        </Box>
+      )}
+      {user.rejected && user.protested && (
+        <Box className="protest-banner" color={"blue"} isRound={true}>
+          We have received your request, please wait while it gets processed!
+        </Box>
+      )}
+
       <section className="container">
         <div className="container__forms">
           <form>

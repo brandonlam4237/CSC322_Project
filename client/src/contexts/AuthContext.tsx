@@ -22,6 +22,7 @@ interface IAuthContext {
   loginUser: (username: string, password: string) => void;
   logoutUser: () => void;
   askForBalance: (value: IBalanceForm) => void;
+  protest:(username: string) => void;
 }
 
 // Also need to give default values for the fields the authcontext is expected to have
@@ -39,6 +40,8 @@ export const AuthContext = createContext<IAuthContext>({
     blacklisted: false,
     balance: null,
     memo: "",
+    rejected: false,
+    protested: false
   },
   userTokens: {
     refresh: "",
@@ -57,6 +60,9 @@ export const AuthContext = createContext<IAuthContext>({
     /* do nothing */
   },
   askForBalance: () => {
+    /* do nothing */
+  },
+  protest: () => {
     /* do nothing */
   },
 });
@@ -90,6 +96,8 @@ export interface IUserCredentials {
   memo: "";
   warnings?:number;
   compliments?:number;
+  rejected?: boolean;
+  protested?: boolean;
 }
 // to keep typescript happy
 export const userDataTemplate: IUserCredentials = {
@@ -104,6 +112,8 @@ export const userDataTemplate: IUserCredentials = {
   blacklisted: false,
   balance: null,
   memo: "",
+  rejected: false,
+  protested: false
 };
 export interface UserTokens {
   access: string;
@@ -121,7 +131,7 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
 
   async function loginUser(username: string, password: string) {
     try {
-      const tokensResponse = await fetch("http://localhost:8000/auth/login", {
+      const response = await fetch("http://localhost:8000/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -132,16 +142,21 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
         }),
       });
 
-      const tokensData: UserTokens = await tokensResponse.json();
-      // set tokens state to contain the response data
-      setUserTokens({ ...tokensData });
-      /* put tokens in local storage to use for login persistance. 
-      (the following two lines do the same thing, will delete one of them later) */
-      localStorage.setItem(LOCAL_STORAGE_AUTH_KEY, JSON.stringify(tokensData));
-      apiClient.setTokens(tokensData);
+      const responseData = await response.json();
+      if(responseData.rejected === true){
+        setUserData(responseData)
+      }else{
+        const tokensData: UserTokens = responseData;
+        //set tokens state to contain the response data
+        setUserTokens({ ...tokensData });
+        /* put tokens in local storage to use for login persistance. 
+        (the following two lines do the same thing, will delete one of them later) */
+        localStorage.setItem(LOCAL_STORAGE_AUTH_KEY, JSON.stringify(tokensData));
+        apiClient.setTokens(tokensData);
 
-      // finally, login the user using the tokens
-      loginWithToken(tokensData.access);
+        // finally, login the user using the tokens
+        loginWithToken(tokensData.access);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -218,6 +233,20 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
     }
   }
 
+  async function protest(username: string) {
+    try {
+      await fetch("http://localhost:8000/users/protest", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({"username": username}),
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   /* automatically login user upon refresh if refresh and access tokens
     are available in local storage */
   useEffect(() => {
@@ -241,7 +270,8 @@ export function AuthContextProvider({ children }: AuthProvidorProps) {
     loginUser,
     registerUser,
     logoutUser,
-    askForBalance
+    askForBalance,
+    protest
   };
   return (
     <AuthContext.Provider value={authValues}>{children}</AuthContext.Provider>
